@@ -538,6 +538,77 @@
     </div>
   </main>
 
+  <!-- ==================== FOOTER 4 CỘT ==================== -->
+  <footer class="bg-cream-100 border-t border-cream-200 pt-10 pb-24 md:pb-12 text-charcoal-700 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Cột 1: Logo & Lời Cam Kết -->
+      <div class="space-y-3">
+        <a href="javascript:void(0)" onclick="navigateTo('home')" class="inline-block">
+          <span class="text-2xl sm:text-3xl font-extrabold font-heading text-honey-600 tracking-tight">T'Petie</span>
+        </a>
+        <p class="text-xs leading-relaxed text-charcoal-600">
+          <strong class="font-bold text-charcoal-900 uppercase">LỜI CAM KẾT:</strong> Thương hiệu thời trang thiết kế trẻ em, nâng niu từng bước chạm đầu đời của bé yêu.
+        </p>
+        <div class="pt-1">
+          <span class="text-[11px] font-semibold text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 inline-block">
+            🌿 Thiết kế &amp; May đo tại Việt Nam
+          </span>
+        </div>
+      </div>
+
+      <!-- Cột 2: Chính Sách -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">CHÍNH SÁCH</h4>
+        <ul class="space-y-2 text-xs text-charcoal-600">
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách bảo mật thông tin khách hàng')" class="hover:text-honey-600 block">Chính sách bảo mật</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách đổi trả miễn phí trong 7 ngày')" class="hover:text-honey-600 block">Chính sách đổi trả</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách giao hàng toàn quốc 2-3 ngày')" class="hover:text-honey-600 block">Chính sách giao hàng</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách thanh toán an toàn COD & QR')" class="hover:text-honey-600 block">Chính sách thanh toán</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: Chăm Sóc Khách Hàng -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">CHĂM SÓC KHÁCH HÀNG</h4>
+        <ul class="space-y-2 text-xs text-charcoal-600">
+          <li><a href="javascript:void(0)" onclick="navigateTo('tai-khoan')" class="hover:text-honey-600 block">Tra cứu đơn hàng</a></li>
+          <li><a href="javascript:void(0)" onclick="openSizeGuideModal()" class="hover:text-honey-600 block">Hướng dẫn chọn size</a></li>
+          <li><a href="javascript:void(0)" onclick="navigateTo('cua-hang')" class="hover:text-honey-600 block">Hệ thống Showroom offline</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4: Kết Nối Với T'Petie -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">KẾT NỐI VỚI T'PETIE</h4>
+        <div class="space-y-2 text-xs">
+          <a href="tel:0988123456" class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
+            <span>📞</span>
+            <span>Hotline: 0988.123.456 (8h - 22h)</span>
+          </a>
+          <a href="https://zalo.me" target="_blank" class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
+            <span>💬</span>
+            <span>Zalo Official: T'Petie Baby &amp; Mom</span>
+          </a>
+        </div>
+        <div class="pt-2">
+          <span class="text-[11px] font-semibold text-charcoal-400 block mb-2">Mạng xã hội:</span>
+          <div class="flex items-center space-x-2.5">
+            <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-blue-50">📘</a>
+            <a href="https://tiktok.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-cream-200">🎵</a>
+            <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-pink-50">📷</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 pt-6 border-t border-cream-200 text-center text-xs text-charcoal-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2024 T'Petie Vietnam. All rights reserved.</p>
+      <p>Made with love for Mom &amp; Baby ❤️</p>
+    </div>
+  </footer>
+
   <!-- ==================== MINI-CART DRAWER TRƯỢT TỪ BÊN PHẢI ==================== -->
   <div id="minicart-backdrop" onclick="closeMiniCart()" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"></div>
   <div id="minicart-drawer" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between">
