@@ -48,17 +48,14 @@ export function Header() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo Brand */}
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center group py-1">
             <span className="text-2xl sm:text-3xl font-extrabold font-heading text-honey-600 tracking-tight group-hover:text-honey-700 transition-colors">
               T&apos;Petie
-            </span>
-            <span className="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-sage-100 text-sage-700 border border-sage-200">
-              Ngọt Ngào
             </span>
           </Link>
 
           {/* Navigation Menu Desktop */}
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold">
+          <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold">
             {MAIN_NAV_ITEMS.map((item) => {
               const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
               return (
