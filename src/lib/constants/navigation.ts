@@ -11,17 +11,16 @@ export interface NavItem {
 
 export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: 'Trang Chủ', href: '/' },
-  { label: 'Bé Gái', href: '/category/be-gai' },
-  { label: 'Bé Trai', href: '/category/be-trai' },
-  { label: 'Sơ Sinh Organic', href: '/category/so-sinh' },
-  { label: 'Bộ Sưu Tập', href: '/collections/huong-com-mua-thu', badge: 'Mới' },
+  { label: 'Bé Gái', href: '/be-gai' },
+  { label: 'Bé Trai', href: '/be-trai' },
+  { label: 'Bộ Sưu Tập', href: '/bo-suu-tap', badge: 'Mới' },
   { label: 'Sale Khuyến Mãi', href: '/sale', badge: 'Hot' },
 ];
 
 export const MOBILE_BOTTOM_NAV: NavItem[] = [
   { label: 'Trang Chủ', href: '/', icon: 'Home' },
-  { label: 'Danh Mục', href: '/category/be-gai', icon: 'LayoutGrid' },
-  { label: 'Bộ Sưu Tập', href: '/collections/huong-com-mua-thu', icon: 'Sparkles' },
+  { label: 'Bé Gái', href: '/be-gai', icon: 'LayoutGrid' },
+  { label: 'Bộ Sưu Tập', href: '/bo-suu-tap', icon: 'Sparkles' },
   { label: 'Sale', href: '/sale', icon: 'Percent', badge: 'Hot' },
-  { label: 'Giỏ Hàng', href: '/cart', icon: 'ShoppingBag' },
+  { label: 'Tài Khoản', href: '/tai-khoan', icon: 'User' },
 ];

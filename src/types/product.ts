@@ -18,7 +18,7 @@ export interface Product {
   id: string;               // ID duy nhất (slug / SKU)
   sku: string;              // Mã sản phẩm (VD: "TP-VG-001")
   name: string;             // Tên sản phẩm
-  category: 'be-gai' | 'be-trai' | 'so-sinh' | 'phu-kien';
+  category: 'be-gai' | 'be-trai' | 'phu-kien';
   categoryName: string;     // Tên hiển thị danh mục (VD: "Váy Bé Gái")
   subcategory?: ProductSubcategory; // Subcategory: ao, quan, vay, set-do
   subcategoryName?: string;

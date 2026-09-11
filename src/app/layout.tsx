@@ -10,8 +10,8 @@ import { MiniCart } from '@/components/cart/MiniCart';
 
 export const metadata: Metadata = {
   title: "T'Petie | Thời Trang Trẻ Em Cao Cấp & Dịu Ngọt",
-  description: "Thương hiệu thời trang thiết kế cho bé gái, bé trai và đồ sơ sinh hữu cơ mềm mát. Phong cách ngọt ngào, trong trẻo, an toàn cho làn da nhạy cảm của bé.",
-  keywords: ["thời trang trẻ em", "váy bé gái", "đồ sơ sinh organic", "T'Petie", "thời trang mẹ và bé"],
+  description: "Thương hiệu thời trang thiết kế cho bé gái và bé trai từ chất liệu organic mềm mát. Phong cách ngọt ngào, trong trẻo, an toàn cho làn da nhạy cảm của bé.",
+  keywords: ["thời trang trẻ em", "váy bé gái", "set đồ bé trai", "T'Petie", "thời trang mẹ và bé"],
   openGraph: {
     title: "T'Petie | Thời Trang Trẻ Em Cao Cấp",
     description: "Nâng niu từng bước chạm của bé yêu với chất liệu hữu cơ mềm mại và thiết kế ngọt ngào.",
