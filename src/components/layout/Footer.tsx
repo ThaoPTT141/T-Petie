@@ -120,14 +120,14 @@ export function Footer() {
           </h4>
           <div className="space-y-2 text-xs">
             <a
-              href="tel:0988123456"
+              href="tel:0359995381"
               className="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600 transition-colors"
             >
               <Phone className="w-4 h-4 text-honey-500 shrink-0" />
-              <span>Hotline: 0988.123.456 (8h - 22h)</span>
+              <span>Hotline: 035 999 5381 (8h - 22h)</span>
             </a>
             <a
-              href="https://zalo.me"
+              href="https://zalo.me/0359995381"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600 transition-colors"
@@ -143,7 +143,7 @@ export function Footer() {
             <div className="flex items-center space-x-2.5">
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/thoitrangtreemtpetie/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-charcoal-700 hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50 transition-all shadow-2xs"
@@ -156,7 +156,7 @@ export function Footer() {
 
               {/* TikTok */}
               <a
-                href="https://tiktok.com"
+                href="https://www.tiktok.com/@tpetie"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-charcoal-700 hover:text-black hover:border-charcoal-400 hover:bg-cream-50 transition-all shadow-2xs"
@@ -169,7 +169,7 @@ export function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/tpetie.design/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-charcoal-700 hover:text-pink-600 hover:border-pink-300 hover:bg-pink-50 transition-all shadow-2xs"
