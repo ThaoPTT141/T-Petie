@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { ShoppingBag, Search, User, Sparkles, MapPin, X } from 'lucide-react';
+import { ShoppingBag, Search, Sparkles, MapPin, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { MAIN_NAV_ITEMS } from '@/lib/constants/navigation';
 
@@ -103,17 +103,6 @@ export function Header() {
             >
               <Search className="w-5 h-5" />
             </button>
-
-            {/* Account Icon */}
-            <Link
-              href="/tai-khoan"
-              data-track="nav-account"
-              className="p-2 rounded-full hover:bg-cream-100 text-charcoal-700 transition-colors hidden sm:inline-flex"
-              aria-label="Tài khoản Mẹ & Bé"
-              title="Tài khoản Mẹ & Bé"
-            >
-              <User className="w-5 h-5" />
-            </Link>
 
             {/* Cart Button với Bounce Animation */}
             <motion.button

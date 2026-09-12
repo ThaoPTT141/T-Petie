@@ -22,5 +22,4 @@ export const MOBILE_BOTTOM_NAV: NavItem[] = [
   { label: 'Bé Gái', href: '/be-gai', icon: 'LayoutGrid' },
   { label: 'Bộ Sưu Tập', href: '/bo-suu-tap', icon: 'Sparkles' },
   { label: 'Sale', href: '/sale', icon: 'Percent', badge: 'Hot' },
-  { label: 'Tài Khoản', href: '/tai-khoan', icon: 'User' },
 ];

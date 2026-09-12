@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, LayoutGrid, Sparkles, Percent, ShoppingBag, User } from 'lucide-react';
+import { Home, LayoutGrid, Sparkles, Percent, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 export function MobileBottomNav() {
@@ -15,7 +15,6 @@ export function MobileBottomNav() {
     { label: 'Bé Gái', href: '/be-gai', icon: LayoutGrid },
     { label: 'Bộ Sưu Tập', href: '/bo-suu-tap', icon: Sparkles },
     { label: 'Sale', href: '/sale', icon: Percent, badge: 'Hot' },
-    { label: 'Tài Khoản', href: '/tai-khoan', icon: User },
   ];
 
   return (

@@ -96,8 +96,8 @@ export function Footer() {
           </h4>
           <ul className="space-y-2 text-xs text-charcoal-600">
             <li>
-              <Link href="/tai-khoan" className="hover:text-honey-600 transition-colors block">
-                Tra cứu đơn hàng
+              <Link href="/chinh-sach-giao-hang" className="hover:text-honey-600 transition-colors block">
+                Tra cứu đơn hàng & Giao nhận
               </Link>
             </li>
             <li>
