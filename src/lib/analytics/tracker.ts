@@ -99,3 +99,30 @@ export function trackPurchase(orderId: string, totalValue: number, items: GA4Ite
     items,
   });
 }
+
+/**
+ * Đo lường khi mở modal đăng nhập
+ */
+export function trackLoginModalOpen(triggerSource: string = 'header') {
+  trackEvent('login_modal_open', {
+    source: triggerSource,
+  });
+}
+
+/**
+ * Đo lường khi đăng nhập thành công qua Social OAuth (Google / Facebook)
+ */
+export function trackLogin(method: 'google' | 'facebook', userId?: string) {
+  trackEvent('login', {
+    method,
+    user_id: userId,
+  });
+}
+
+/**
+ * Đo lường khi người dùng đăng xuất
+ */
+export function trackLogout() {
+  trackEvent('logout');
+}
+

@@ -32,7 +32,11 @@ export type EventName =
   | 'click_sale_banner'
   | 'open_size_guide'
   | 'filter_products'
-  | 'search';
+  | 'search'
+  | 'login_modal_open'
+  | 'login_modal_close'
+  | 'login'
+  | 'logout';
 
 export interface DataLayerEvent {
   event: EventName;

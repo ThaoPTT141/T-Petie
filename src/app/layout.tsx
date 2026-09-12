@@ -3,10 +3,12 @@ import './globals.css';
 import Script from 'next/script';
 import { CartProvider } from '@/context/CartContext';
 import { ToastProvider } from '@/context/ToastContext';
+import { AuthProvider } from '@/context/AuthContext';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { MiniCart } from '@/components/cart/MiniCart';
+import { LoginModal } from '@/components/auth/LoginModal';
 
 export const metadata: Metadata = {
   title: "T'Petie | Thời Trang Trẻ Em Cao Cấp & Dịu Ngọt",
@@ -80,24 +82,29 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-cream-50 text-charcoal-900 font-sans selection:bg-honey-100 selection:text-honey-700">
-        <CartProvider>
-          <ToastProvider>
-            {/* Header Sticky */}
-            <Header />
+        <ToastProvider>
+          <AuthProvider>
+            <CartProvider>
+              {/* Header Sticky */}
+              <Header />
 
-            {/* Main Content Area */}
-            <main className="flex-1 pb-16 md:pb-0">{children}</main>
+              {/* Main Content Area */}
+              <main className="flex-1 pb-16 md:pb-0">{children}</main>
 
-            {/* Mini Cart Slide-in Drawer */}
-            <MiniCart />
+              {/* Mini Cart Slide-in Drawer */}
+              <MiniCart />
 
-            {/* Mobile Bottom Navigation */}
-            <MobileBottomNav />
+              {/* Login Modal Popup */}
+              <LoginModal />
 
-            {/* Footer */}
-            <Footer />
-          </ToastProvider>
-        </CartProvider>
+              {/* Mobile Bottom Navigation */}
+              <MobileBottomNav />
+
+              {/* Footer */}
+              <Footer />
+            </CartProvider>
+          </AuthProvider>
+        </ToastProvider>
       </body>
     </html>
   );
