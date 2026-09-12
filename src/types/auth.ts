@@ -32,13 +32,13 @@ export interface UserProfile {
   name: string;
   email: string;
   avatar: string;
-  phone: string;
-  address: string;
+  phone?: string;
+  address?: string;
   provider: SocialProvider;
   points: number;
   membershipTier: string;
-  babyInfo: BabyInfo;
-  orders: UserOrder[];
+  babyInfo?: BabyInfo | null;
+  orders?: UserOrder[];
   createdAt: string;
 }
 

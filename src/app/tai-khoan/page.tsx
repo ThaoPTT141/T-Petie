@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { User, Heart, Package, Sparkles, Edit2, LogOut, ShieldCheck, Check, ArrowRight } from 'lucide-react';
+import { User, Heart, Package, Sparkles, Edit2, LogOut, ShieldCheck, ArrowRight, ShoppingBag, PlusCircle } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 import { useAuth } from '@/context/AuthContext';
 import { BabyInfo } from '@/types/auth';
@@ -28,9 +29,9 @@ export default function TaiKhoanPage() {
     name: '',
     gender: 'girl',
     birthday: '',
-    weight: 11.2,
-    height: 86,
-    recommendedSize: 'Size 2 (10 - 12kg)',
+    weight: 10.0,
+    height: 80,
+    recommendedSize: 'Size 1 (8 - 10kg / 6-12M)',
   });
   const [isEditingBaby, setIsEditingBaby] = useState(false);
 
@@ -45,11 +46,13 @@ export default function TaiKhoanPage() {
   // Đồng bộ form khi user thay đổi
   useEffect(() => {
     if (user) {
-      setBabyForm(user.babyInfo);
+      if (user.babyInfo) {
+        setBabyForm(user.babyInfo);
+      }
       setProfileForm({
-        name: user.name,
-        phone: user.phone,
-        address: user.address,
+        name: user.name || '',
+        phone: user.phone || '',
+        address: user.address || '',
       });
     }
   }, [user]);
@@ -132,7 +135,12 @@ export default function TaiKhoanPage() {
     );
   }
 
-  // 3. Trạng thái ĐÃ ĐĂNG NHẬP (Authenticated with Dynamic Data)
+  const hasBabyInfo = Boolean(user.babyInfo && user.babyInfo.name && user.babyInfo.name.trim() !== '');
+  const hasPhone = Boolean(user.phone && user.phone.trim() !== '');
+  const userPoints = user.points ?? 0;
+  const userOrders = user.orders ?? [];
+
+  // 3. Trạng thái ĐÃ ĐĂNG NHẬP (Authenticated with Dynamic Session Data)
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 space-y-6">
       <Breadcrumb items={[{ label: 'Tài Khoản Mẹ & Bé', href: '/tai-khoan' }]} />
@@ -140,7 +148,7 @@ export default function TaiKhoanPage() {
       {/* Header Profile - Dynamic Data Binding */}
       <div className="bg-gradient-to-r from-cream-100 via-blush-50 to-honey-100 rounded-3xl p-6 border border-cream-200 shadow-card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center space-x-4">
-          {/* Avatar động */}
+          {/* Avatar động lấy từ session Google/Facebook */}
           {user.avatar ? (
             <img
               src={user.avatar}
@@ -155,28 +163,44 @@ export default function TaiKhoanPage() {
 
           <div>
             <div className="flex flex-wrap items-center gap-2">
+              {/* Tên mẹ từ session */}
               <h1 className="text-lg sm:text-xl font-bold font-heading text-charcoal-900">{user.name}</h1>
               <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-honey-500 text-white font-bold shrink-0">
-                {user.membershipTier}
+                {user.membershipTier || 'Thành Viên Mới 🌱'}
               </span>
-              {/* Badge Social Provider */}
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/80 border border-cream-300 text-charcoal-600 font-medium inline-flex items-center space-x-1 shrink-0">
-                {user.provider === 'google' ? (
-                  <>
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    <span>Google Account</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#1877F2]" />
-                    <span>Facebook Account</span>
-                  </>
-                )}
+              {/* Email từ session thay thế text tĩnh */}
+              <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/90 border border-cream-300 text-charcoal-700 font-medium inline-flex items-center space-x-1 shrink-0">
+                <span>{user.email}</span>
               </span>
             </div>
-            <p className="text-xs text-charcoal-600 mt-1">
-              SĐT: {user.phone} • Đã tích lũy: <strong className="text-honey-600">{user.points} điểm</strong>
-            </p>
+
+            {/* SĐT & Điểm tích luỹ động */}
+            <div className="text-xs text-charcoal-600 mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <div>
+                <span>SĐT: </span>
+                {hasPhone ? (
+                  <span className="font-semibold text-charcoal-800">{user.phone}</span>
+                ) : (
+                  <span className="inline-flex items-center space-x-1">
+                    <span className="text-charcoal-400 italic">Chưa cập nhật SĐT</span>
+                    <button
+                      onClick={() => {
+                        setActiveTab('profile');
+                        setIsEditingProfile(true);
+                      }}
+                      className="text-[11px] font-bold text-honey-600 hover:text-honey-700 underline ml-1"
+                    >
+                      [Thêm SĐT]
+                    </button>
+                  </span>
+                )}
+              </div>
+              <span>•</span>
+              <div>
+                <span>Đã tích lũy: </span>
+                <strong className="text-honey-600 font-bold">{userPoints} điểm</strong>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -213,7 +237,7 @@ export default function TaiKhoanPage() {
         })}
       </div>
 
-      {/* TAB 1: HỒ SƠ BÉ YÊU */}
+      {/* TAB 1: HỒ SƠ BÉ YÊU (Xử lý Empty State) */}
       {activeTab === 'baby' && (
         <div className="bg-white rounded-3xl border border-cream-200 p-6 shadow-card space-y-6">
           <div className="flex items-center justify-between pb-3 border-b border-cream-200">
@@ -225,49 +249,80 @@ export default function TaiKhoanPage() {
                 Hệ thống tự động đề xuất kích cỡ quần áo vừa vặn nhất cho con
               </p>
             </div>
-            <button
-              onClick={() => setIsEditingBaby(!isEditingBaby)}
-              className="text-xs font-bold text-honey-600 hover:text-honey-700 flex items-center space-x-1 p-2 rounded-xl bg-honey-50 border border-honey-200 transition-colors"
-            >
-              <Edit2 className="w-3.5 h-3.5" />
-              <span>{isEditingBaby ? 'Hủy Sửa' : 'Chỉnh Sửa'}</span>
-            </button>
+            {hasBabyInfo && (
+              <button
+                onClick={() => setIsEditingBaby(!isEditingBaby)}
+                className="text-xs font-bold text-honey-600 hover:text-honey-700 flex items-center space-x-1 p-2 rounded-xl bg-honey-50 border border-honey-200 transition-colors"
+              >
+                <Edit2 className="w-3.5 h-3.5" />
+                <span>{isEditingBaby ? 'Hủy Sửa' : 'Chỉnh Sửa'}</span>
+              </button>
+            )}
           </div>
 
-          {!isEditingBaby ? (
+          {/* TRƯỜNG HỢP 1: ĐÃ CÓ HỒ SƠ BÉ VÀ KHÔNG Ở CHẾ ĐỘ SỬA */}
+          {hasBabyInfo && !isEditingBaby && (
             <div className="space-y-4">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div className="p-4 rounded-2xl bg-cream-50 border border-cream-200">
                   <span className="text-[11px] text-charcoal-400 block mb-1">Tên Thường Gọi:</span>
-                  <span className="text-xs sm:text-sm font-bold text-charcoal-900">{babyForm.name}</span>
+                  <span className="text-xs sm:text-sm font-bold text-charcoal-900">{user.babyInfo?.name}</span>
                 </div>
                 <div className="p-4 rounded-2xl bg-cream-50 border border-cream-200">
                   <span className="text-[11px] text-charcoal-400 block mb-1">Cân Nặng Hiện Tại:</span>
-                  <span className="text-xs sm:text-sm font-bold text-honey-600">{babyForm.weight} kg</span>
+                  <span className="text-xs sm:text-sm font-bold text-honey-600">{user.babyInfo?.weight} kg</span>
                 </div>
                 <div className="p-4 rounded-2xl bg-cream-50 border border-cream-200">
                   <span className="text-[11px] text-charcoal-400 block mb-1">Chiều Cao:</span>
-                  <span className="text-xs sm:text-sm font-bold text-charcoal-900">{babyForm.height} cm</span>
+                  <span className="text-xs sm:text-sm font-bold text-charcoal-900">{user.babyInfo?.height} cm</span>
                 </div>
                 <div className="p-4 rounded-2xl bg-sage-50 border border-sage-200">
                   <span className="text-[11px] text-sage-700 block mb-1">Size Gợi Ý Cho Bé:</span>
-                  <span className="text-xs sm:text-sm font-extrabold text-sage-800">{babyForm.recommendedSize}</span>
+                  <span className="text-xs sm:text-sm font-extrabold text-sage-800">{user.babyInfo?.recommendedSize}</span>
                 </div>
               </div>
 
               <div className="p-4 bg-honey-50 rounded-2xl border border-honey-200 text-xs text-honey-800 flex items-center space-x-2">
                 <Sparkles className="w-4 h-4 text-honey-600 shrink-0" />
-                <span>Khi mẹ xem sản phẩm, T&apos;Petie sẽ tự động làm nổi bật <strong>{babyForm.recommendedSize}</strong> để mẹ chọn nhanh nhé!</span>
+                <span>Khi mẹ xem sản phẩm, T&apos;Petie sẽ tự động làm nổi bật <strong>{user.babyInfo?.recommendedSize}</strong> để mẹ chọn nhanh nhé!</span>
               </div>
             </div>
-          ) : (
+          )}
+
+          {/* TRƯỜNG HỢP 2: CHƯA CÓ HỒ SƠ BÉ (EMPTY STATE) */}
+          {!hasBabyInfo && !isEditingBaby && (
+            <div className="p-8 text-center bg-cream-50/60 rounded-3xl border border-dashed border-cream-300 space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-blush-50 text-blush-500 border border-blush-200 flex items-center justify-center mx-auto shadow-2xs">
+                <Heart className="w-7 h-7 fill-blush-400 text-blush-500" />
+              </div>
+              <div className="space-y-1.5 max-w-sm mx-auto">
+                <h3 className="text-sm sm:text-base font-bold text-charcoal-900 font-heading">
+                  Mẹ chưa tạo hồ sơ cho bé
+                </h3>
+                <p className="text-xs text-charcoal-600 leading-relaxed">
+                  Cập nhật ngay để T&apos;Petie gợi ý size tự động nhé!
+                </p>
+              </div>
+              <button
+                onClick={() => setIsEditingBaby(true)}
+                className="px-6 py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-xs shadow-sm hover:shadow transition-all inline-flex items-center space-x-1.5 active:scale-95"
+              >
+                <PlusCircle className="w-4 h-4" />
+                <span>Thêm Hồ Sơ</span>
+              </button>
+            </div>
+          )}
+
+          {/* TRƯỜNG HỢP 3: FORM NHẬP / CHỈNH SỬA HỒ SƠ BÉ */}
+          {isEditingBaby && (
             <form onSubmit={handleSaveBaby} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <label className="text-xs font-semibold text-charcoal-700 block mb-1">Tên Bé:</label>
+                  <label className="text-xs font-semibold text-charcoal-700 block mb-1">Tên Thường Gọi Của Bé:</label>
                   <input
                     type="text"
                     required
+                    placeholder="VD: Bé Bắp, Bé Sữa..."
                     value={babyForm.name}
                     onChange={(e) => setBabyForm({ ...babyForm, name: e.target.value })}
                     className="w-full p-2.5 rounded-xl border border-cream-300 text-xs bg-cream-50 focus:outline-none focus:border-honey-500"
@@ -281,6 +336,7 @@ export default function TaiKhoanPage() {
                     min="1"
                     max="50"
                     required
+                    placeholder="VD: 10.5"
                     value={babyForm.weight}
                     onChange={(e) => setBabyForm({ ...babyForm, weight: parseFloat(e.target.value) || 0 })}
                     className="w-full p-2.5 rounded-xl border border-cream-300 text-xs bg-cream-50 focus:outline-none focus:border-honey-500"
@@ -294,6 +350,7 @@ export default function TaiKhoanPage() {
                     min="30"
                     max="160"
                     required
+                    placeholder="VD: 85"
                     value={babyForm.height}
                     onChange={(e) => setBabyForm({ ...babyForm, height: parseInt(e.target.value, 10) || 0 })}
                     className="w-full p-2.5 rounded-xl border border-cream-300 text-xs bg-cream-50 focus:outline-none focus:border-honey-500"
@@ -304,9 +361,9 @@ export default function TaiKhoanPage() {
               <div className="flex items-center space-x-3 pt-2">
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold shadow-sm transition-all active:scale-95"
+                  className="px-6 py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold shadow-sm transition-all active:scale-95"
                 >
-                  Lưu Thay Đổi
+                  {hasBabyInfo ? 'Lưu Thay Đổi' : 'Lưu Hồ Sơ Bé'}
                 </button>
                 <button
                   type="button"
@@ -321,16 +378,16 @@ export default function TaiKhoanPage() {
         </div>
       )}
 
-      {/* TAB 2: LỊCH SỬ ĐƠN HÀNG */}
+      {/* TAB 2: LỊCH SỬ ĐƠN HÀNG (Xử lý Empty State) */}
       {activeTab === 'orders' && (
         <div className="bg-white rounded-3xl border border-cream-200 p-6 shadow-card space-y-4">
           <h2 className="text-base font-bold font-heading text-charcoal-900 pb-2 border-b border-cream-200">
             Đơn Hàng Gần Đây Của Mẹ
           </h2>
 
-          {user.orders && user.orders.length > 0 ? (
+          {userOrders.length > 0 ? (
             <div className="space-y-4">
-              {user.orders.map((order) => (
+              {userOrders.map((order) => (
                 <div key={order.id} className="p-4 rounded-2xl border border-cream-200 bg-cream-50/50 space-y-3">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-mono font-bold text-charcoal-900">Mã Đơn: {order.id}</span>
@@ -358,8 +415,26 @@ export default function TaiKhoanPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-8 text-charcoal-500 text-xs">
-              Mẹ chưa có đơn hàng nào tại T&apos;Petie. Hãy cùng khám phá các bộ sưu tập xinh xắn cho con nhé!
+            /* EMPTY STATE CHO ĐƠN HÀNG */
+            <div className="p-8 text-center bg-cream-50/60 rounded-3xl border border-dashed border-cream-300 space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-cream-100 text-charcoal-400 border border-cream-200 flex items-center justify-center mx-auto shadow-2xs">
+                <ShoppingBag className="w-7 h-7 text-honey-500" />
+              </div>
+              <div className="space-y-1 max-w-sm mx-auto">
+                <h3 className="text-sm sm:text-base font-bold text-charcoal-900 font-heading">
+                  Chưa có đơn hàng nào
+                </h3>
+                <p className="text-xs text-charcoal-600 leading-relaxed">
+                  Mẹ chưa có đơn hàng nào tại T&apos;Petie. Hãy cùng khám phá các bộ sưu tập xinh xắn cho bé nhé!
+                </p>
+              </div>
+              <Link
+                href="/be-gai"
+                className="px-6 py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-xs shadow-sm hover:shadow transition-all inline-flex items-center space-x-1.5 active:scale-95"
+              >
+                <span>Mua sắm ngay</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           )}
         </div>
@@ -382,12 +457,31 @@ export default function TaiKhoanPage() {
           </div>
 
           {!isEditingProfile ? (
-            <div className="space-y-2.5">
-              <p><strong>Họ và tên:</strong> {user.name}</p>
-              <p><strong>Email:</strong> {user.email}</p>
-              <p><strong>Số điện thoại:</strong> {user.phone}</p>
-              <p><strong>Địa chỉ nhận hàng:</strong> {user.address || 'Chưa cập nhật địa chỉ'}</p>
-              <p><strong>Phương thức đăng nhập:</strong> {user.provider === 'google' ? 'Google OAuth 2.0' : 'Facebook OAuth 2.0'}</p>
+            <div className="space-y-3">
+              <div>
+                <strong className="text-charcoal-900 block mb-0.5">Họ và tên:</strong>
+                <span>{user.name}</span>
+              </div>
+              <div>
+                <strong className="text-charcoal-900 block mb-0.5">Email tài khoản:</strong>
+                <span>{user.email}</span>
+              </div>
+              <div>
+                <strong className="text-charcoal-900 block mb-0.5">Số điện thoại:</strong>
+                {hasPhone ? (
+                  <span>{user.phone}</span>
+                ) : (
+                  <span className="text-charcoal-400 italic">Chưa cập nhật SĐT</span>
+                )}
+              </div>
+              <div>
+                <strong className="text-charcoal-900 block mb-0.5">Địa chỉ nhận hàng:</strong>
+                <span>{user.address || 'Chưa cập nhật địa chỉ'}</span>
+              </div>
+              <div>
+                <strong className="text-charcoal-900 block mb-0.5">Phương thức đăng nhập:</strong>
+                <span className="capitalize">{user.provider === 'google' ? 'Google OAuth 2.0' : 'Facebook OAuth 2.0'}</span>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSaveProfile} className="space-y-3">
@@ -405,7 +499,7 @@ export default function TaiKhoanPage() {
                 <label className="text-xs font-semibold text-charcoal-700 block mb-1">Số điện thoại:</label>
                 <input
                   type="text"
-                  required
+                  placeholder="VD: 0988123456"
                   value={profileForm.phone}
                   onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
                   className="w-full p-2.5 rounded-xl border border-cream-300 text-xs bg-cream-50 focus:outline-none focus:border-honey-500"
@@ -415,7 +509,7 @@ export default function TaiKhoanPage() {
                 <label className="text-xs font-semibold text-charcoal-700 block mb-1">Địa chỉ nhận hàng:</label>
                 <input
                   type="text"
-                  required
+                  placeholder="VD: Số 12 Ngõ 45 Cầu Giấy, Hà Nội"
                   value={profileForm.address}
                   onChange={(e) => setProfileForm({ ...profileForm, address: e.target.value })}
                   className="w-full p-2.5 rounded-xl border border-cream-300 text-xs bg-cream-50 focus:outline-none focus:border-honey-500"

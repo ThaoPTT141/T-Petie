@@ -8,72 +8,35 @@ import { useToast } from '@/context/ToastContext';
 
 const STORAGE_KEY = 'tpetie_auth_user';
 
-// Mock profiles phong cách T'Petie
-const MOCK_GOOGLE_USER: UserProfile = {
-  id: 'user_google_01',
-  name: 'Mẹ Thu Trang',
+// Cấu hình hồ sơ ban đầu từ phiên đăng nhập OAuth Google/Facebook (User mới)
+const DEFAULT_GOOGLE_USER: UserProfile = {
+  id: 'user_google_oauth_' + Math.random().toString(36).substring(2, 7),
+  name: 'Thu Trang',
   email: 'trang.nguyen@gmail.com',
   avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
-  phone: '0988.***.456',
-  address: 'Số 12 Ngõ 45 Cầu Giấy, Quận Cầu Giấy, Hà Nội',
+  phone: '',
+  address: '',
   provider: 'google',
-  points: 350,
-  membershipTier: 'Thành Viên Thân Thiết ⭐',
-  createdAt: '2026-01-15',
-  babyInfo: {
-    name: 'Bé Bắp (Nguyễn Tuệ Mẫn)',
-    gender: 'girl',
-    birthday: '2023-04-15',
-    weight: 11.2,
-    height: 86,
-    recommendedSize: 'Size 2 (10 - 12kg)',
-  },
-  orders: [
-    {
-      id: '#TP-884920',
-      date: '10/09/2026',
-      status: 'shipping',
-      statusText: 'Đang Giao Hàng 🚚',
-      items: [
-        { name: 'Váy Công Chúa Voan Tơ Hoa Nhí', size: 'Size 2', quantity: 1, price: 295000 },
-        { name: 'Áo Sơ Mi Cổ Sen Thêu Tay', size: 'Size 2', quantity: 1, price: 185000 },
-      ],
-      total: 480000,
-    },
-  ],
+  points: 0,
+  membershipTier: 'Thành Viên Mới 🌱',
+  createdAt: new Date().toISOString(),
+  babyInfo: null,
+  orders: [],
 };
 
-const MOCK_FACEBOOK_USER: UserProfile = {
-  id: 'user_facebook_02',
-  name: 'Mẹ Mai Linh',
+const DEFAULT_FACEBOOK_USER: UserProfile = {
+  id: 'user_facebook_oauth_' + Math.random().toString(36).substring(2, 7),
+  name: 'Mai Linh',
   email: 'linh.mai@facebook.com',
   avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80',
-  phone: '0912.***.789',
-  address: 'Chung cư Vinhomes Central Park, Bình Thạnh, TP. Hồ Chí Minh',
+  phone: '',
+  address: '',
   provider: 'facebook',
-  points: 520,
-  membershipTier: 'Thành Viên VIP Vàng 👑',
-  createdAt: '2025-11-20',
-  babyInfo: {
-    name: 'Bé Sữa (Lê Hà Linh)',
-    gender: 'girl',
-    birthday: '2023-08-20',
-    weight: 9.5,
-    height: 78,
-    recommendedSize: 'Size 1 (8 - 10kg)',
-  },
-  orders: [
-    {
-      id: '#TP-912044',
-      date: '05/09/2026',
-      status: 'delivered',
-      statusText: 'Đã Giao Thành Công ✨',
-      items: [
-        { name: 'Set Váy Yếm Linen Hạt Dẻ Kem', size: 'Size 1', quantity: 1, price: 345000 },
-      ],
-      total: 345000,
-    },
-  ],
+  points: 0,
+  membershipTier: 'Thành Viên Mới 🌱',
+  createdAt: new Date().toISOString(),
+  babyInfo: null,
+  orders: [],
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -158,7 +121,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       // Giả lập độ trễ xác thực OAuth 2.0 an toàn (500ms)
       await new Promise((resolve) => setTimeout(resolve, 500));
-      handleAuthSuccess(MOCK_GOOGLE_USER, 'google');
+      handleAuthSuccess(DEFAULT_GOOGLE_USER, 'google');
     } catch (error) {
       console.error('Lỗi đăng nhập Google:', error);
       showToast('Đăng nhập Google không thành công. Vui lòng thử lại!', 'info');
@@ -185,7 +148,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       // Giả lập độ trễ xác thực OAuth 2.0 an toàn (500ms)
       await new Promise((resolve) => setTimeout(resolve, 500));
-      handleAuthSuccess(MOCK_FACEBOOK_USER, 'facebook');
+      handleAuthSuccess(DEFAULT_FACEBOOK_USER, 'facebook');
     } catch (error) {
       console.error('Lỗi đăng nhập Facebook:', error);
       showToast('Đăng nhập Facebook không thành công. Vui lòng thử lại!', 'info');
