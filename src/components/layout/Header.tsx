@@ -6,13 +6,11 @@ import { usePathname } from 'next/navigation';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { ShoppingBag, Search, User, Sparkles, MapPin, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import { useAuth } from '@/context/AuthContext';
 import { MAIN_NAV_ITEMS } from '@/lib/constants/navigation';
 
 export function Header() {
   const pathname = usePathname();
   const { totalItems, openMiniCart, cartBounceTrigger } = useCart();
-  const { user, isAuthenticated, openLoginModal } = useAuth();
   const [hidden, setHidden] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -106,41 +104,16 @@ export function Header() {
               <Search className="w-5 h-5" />
             </button>
 
-            {/* Account Icon (Check Auth State) */}
-            {isAuthenticated && user ? (
-              <Link
-                href="/tai-khoan"
-                data-track="nav-account"
-                className="flex items-center space-x-1.5 p-1 sm:px-2.5 sm:py-1 rounded-full hover:bg-cream-100 text-charcoal-700 transition-colors hidden sm:inline-flex border border-cream-200"
-                aria-label={`Tài khoản của ${user.name}`}
-                title={`Tài khoản của ${user.name}`}
-              >
-                {user.avatar ? (
-                  <img
-                    src={user.avatar}
-                    alt={user.name}
-                    className="w-6 h-6 rounded-full object-cover border border-honey-400"
-                  />
-                ) : (
-                  <div className="w-6 h-6 rounded-full bg-honey-500 text-white flex items-center justify-center text-xs font-bold font-heading">
-                    {user.name.charAt(0)}
-                  </div>
-                )}
-                <span className="text-xs font-semibold text-charcoal-800 max-w-[100px] truncate hidden md:inline">
-                  {user.name}
-                </span>
-              </Link>
-            ) : (
-              <button
-                onClick={() => openLoginModal('/tai-khoan')}
-                data-track="nav-account-unauth"
-                className="p-2 rounded-full hover:bg-cream-100 text-charcoal-700 transition-colors hidden sm:inline-flex"
-                aria-label="Đăng nhập tài khoản mẹ"
-                title="Đăng nhập tài khoản mẹ"
-              >
-                <User className="w-5 h-5" />
-              </button>
-            )}
+            {/* Account Icon */}
+            <Link
+              href="/tai-khoan"
+              data-track="nav-account"
+              className="p-2 rounded-full hover:bg-cream-100 text-charcoal-700 transition-colors hidden sm:inline-flex"
+              aria-label="Tài khoản Mẹ & Bé"
+              title="Tài khoản Mẹ & Bé"
+            >
+              <User className="w-5 h-5" />
+            </Link>
 
             {/* Cart Button với Bounce Animation */}
             <motion.button

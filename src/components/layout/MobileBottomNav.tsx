@@ -5,12 +5,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, LayoutGrid, Sparkles, Percent, ShoppingBag, User } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import { useAuth } from '@/context/AuthContext';
 
 export function MobileBottomNav() {
   const pathname = usePathname();
   const { totalItems, openMiniCart } = useCart();
-  const { isAuthenticated, openLoginModal } = useAuth();
 
   const navItems = [
     { label: 'Trang Chủ', href: '/', icon: Home },
@@ -25,22 +23,6 @@ export function MobileBottomNav() {
       {navItems.map((item) => {
         const Icon = item.icon;
         const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
-
-        if (item.href === '/tai-khoan' && !isAuthenticated) {
-          return (
-            <button
-              key={item.href}
-              onClick={() => openLoginModal('/tai-khoan')}
-              data-track="mobile-nav-account-unauth"
-              className="flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl transition-all relative text-charcoal-600 hover:text-honey-600 font-medium"
-            >
-              <div className="relative">
-                <Icon className="w-5 h-5 stroke-2" />
-              </div>
-              <span className="text-[10px] mt-0.5">{item.label}</span>
-            </button>
-          );
-        }
 
         return (
           <Link
