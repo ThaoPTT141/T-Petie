@@ -124,7 +124,7 @@ export function Footer() {
               className="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600 transition-colors"
             >
               <Phone className="w-4 h-4 text-honey-500 shrink-0" />
-              <span>Hotline: 035 999 5381 (8h - 22h)</span>
+              <span>Hotline: 035 999 5381</span>
             </a>
             <a
               href="https://zalo.me/0359995381"
@@ -133,7 +133,7 @@ export function Footer() {
               className="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600 transition-colors"
             >
               <MessageCircle className="w-4 h-4 text-sage-600 shrink-0" />
-              <span>Zalo Official: T&apos;Petie Baby &amp; Mom</span>
+              <span>Zalo Official: T&apos;Petie</span>
             </a>
           </div>
 
