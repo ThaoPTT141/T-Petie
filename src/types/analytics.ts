@@ -16,6 +16,8 @@ export interface AnalyticsEventParams {
   [key: string]: string | number | boolean | GA4Item[] | undefined;
 }
 
+export type LoginMethod = 'google' | 'facebook' | 'password';
+
 export type EventName =
   | 'page_view'
   | 'view_item_list'

@@ -3,7 +3,9 @@
  * Đảm bảo an toàn khi chạy trên môi trường SSR (Next.js)
  */
 
-import { EventName, AnalyticsEventParams, GA4Item } from '@/types/analytics';
+import { EventName, AnalyticsEventParams, GA4Item, LoginMethod } from '@/types/analytics';
+
+export type { LoginMethod };
 
 declare global {
   interface Window {
@@ -110,9 +112,9 @@ export function trackLoginModalOpen(triggerSource: string = 'header') {
 }
 
 /**
- * Đo lường khi đăng nhập thành công qua Social OAuth (Google / Facebook)
+ * Đo lường khi đăng nhập thành công (Google / Facebook / Password)
  */
-export function trackLogin(method: 'google' | 'facebook', userId?: string) {
+export function trackLogin(method: LoginMethod, userId?: string) {
   trackEvent('login', {
     method,
     user_id: userId,
