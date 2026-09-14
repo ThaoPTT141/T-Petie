@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
@@ -10,16 +10,16 @@ import {
   Mail, 
   Eye, 
   EyeOff, 
-  Sparkles, 
   ArrowRight, 
-  ShieldCheck, 
-  CheckCircle2, 
   AlertCircle,
   Crown,
   Heart
 } from 'lucide-react';
 
-export default function LoginPage() {
+/**
+ * Component con chứa logic sử dụng useSearchParams()
+ */
+function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl');
@@ -335,5 +335,32 @@ export default function LoginPage() {
 
       </div>
     </div>
+  );
+}
+
+/**
+ * Loading fallback hiển thị khi component con đang hydrate / giải mã URL params
+ */
+function LoginLoadingFallback() {
+  return (
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
+      <div className="bg-white rounded-3xl border border-cream-200 shadow-card min-h-[580px] flex flex-col items-center justify-center p-8 space-y-4">
+        <div className="w-12 h-12 rounded-full border-4 border-cream-200 border-t-honey-500 animate-spin" />
+        <p className="text-xs sm:text-sm font-medium text-charcoal-500 font-sans">
+          Đang tải trang đăng nhập T&apos;Petie... 🌸
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Component Cha bọc <Suspense> theo đúng chuẩn Next.js App Router
+ */
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<LoginLoadingFallback />}>
+      <LoginContent />
+    </Suspense>
   );
 }
