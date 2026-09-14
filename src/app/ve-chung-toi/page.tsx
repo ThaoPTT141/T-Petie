@@ -1,119 +1,557 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, Heart, ShieldCheck, Leaf, Scissors, Smile, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Sparkles, 
+  Heart, 
+  Compass, 
+  Target, 
+  Award, 
+  ChevronRight, 
+  ArrowRight, 
+  Shirt, 
+  Smile, 
+  Camera, 
+  Feather, 
+  CheckCircle2 
+} from 'lucide-react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
-export const metadata = {
-  title: "Về Chúng Tôi | Câu Chuyện Thương Hiệu T'Petie",
-  description: "Tìm hiểu câu chuyện thương hiệu thời trang trẻ em cao cấp T'Petie — Ngọt ngào, trong trẻo và nâng niu từng bước chạm của bé yêu.",
-};
+// 5 Main Tabs Data
+const ABOUT_TABS = [
+  {
+    id: 'story',
+    number: '01',
+    title: 'Câu chuyện thương hiệu',
+    subtitle: 'Hành trình từ năm 2021',
+    icon: Sparkles,
+    color: 'from-honey-100 to-cream-100 text-honey-700 border-honey-200',
+  },
+  {
+    id: 'belief',
+    number: '02',
+    title: 'Niềm Tin',
+    subtitle: 'Tuổi thơ chỉ cần được nâng niu',
+    icon: Heart,
+    color: 'from-blush-100 to-cream-100 text-blush-600 border-blush-200',
+  },
+  {
+    id: 'vision',
+    number: '03',
+    title: 'Tầm nhìn',
+    subtitle: 'Hệ sinh thái Lifestyle cho bé',
+    icon: Compass,
+    color: 'from-sage-100 to-cream-100 text-sage-700 border-sage-200',
+  },
+  {
+    id: 'mission',
+    number: '04',
+    title: 'Sứ mệnh',
+    subtitle: 'Cùng tâm hồn nhỏ bé lớn lên',
+    icon: Target,
+    color: 'from-honey-100 to-blush-50 text-honey-700 border-honey-200',
+  },
+  {
+    id: 'values',
+    number: '05',
+    title: 'Giá trị cốt lõi',
+    subtitle: '4 nguyên tắc bất biến',
+    icon: Award,
+    color: 'from-cream-200 to-cream-100 text-charcoal-800 border-cream-300',
+  },
+];
 
 export default function AboutPage() {
+  const [activeTab, setActiveTab] = useState<string>('story');
+
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 space-y-12 sm:space-y-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-8 space-y-8 sm:space-y-12">
       {/* Breadcrumb */}
       <Breadcrumb items={[{ label: 'Về Chúng Tôi', href: '/ve-chung-toi' }]} />
 
-      {/* 1. HERO STORY BANNER */}
-      <section className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cream-100 via-blush-50 to-sage-50 border border-cream-200 p-8 sm:p-14 text-center max-w-4xl mx-auto shadow-soft">
-        <div className="inline-flex items-center space-x-1.5 px-4 py-1.5 rounded-full bg-honey-500 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Câu Chuyện Thương Hiệu</span>
+      {/* 1. HERO HEADER BANNER (Soft & Poetic) */}
+      <section className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cream-100 via-blush-50/60 to-sage-50/70 border border-cream-200/80 p-6 sm:p-12 text-center shadow-soft">
+        {/* Subtle blur orbs */}
+        <div className="absolute -top-16 -right-16 w-60 h-60 rounded-full bg-honey-100/50 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-16 -left-16 w-60 h-60 rounded-full bg-blush-100/50 blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 max-w-3xl mx-auto space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-cream-300 shadow-xs text-xs font-semibold text-charcoal-700">
+            <span className="w-2 h-2 rounded-full bg-honey-500 animate-pulse" />
+            <span className="font-serif italic text-honey-700">T&apos;Petie — Est. 2021</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-charcoal-900 tracking-tight">
+            Made for little souls.
+          </h1>
+
+          <p className="text-sm sm:text-base font-sans text-charcoal-600 max-w-xl mx-auto leading-relaxed">
+            Chúng tôi tạo ra những thiết kế nhẹ nhàng, tinh tế và tự nhiên — nơi quần áo đồng hành cùng những ngày tháng rất thật của một đứa trẻ.
+          </p>
+        </div>
+      </section>
+
+      {/* 2. INTERACTIVE VERTICAL TABS / ACCORDION LAYOUT */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        
+        {/* LEFT COLUMN: Navigation Tabs (Vertical on Desktop, Horizontal Scroll on Mobile) */}
+        <div className="lg:col-span-4 space-y-2">
+          <div className="hidden lg:block mb-3 px-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-charcoal-400">
+              Khám Phá T&apos;Petie
+            </span>
+          </div>
+
+          {/* Desktop Vertical List / Mobile Scrollable Pill Row */}
+          <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar gap-2 sm:gap-2.5 pb-2 lg:pb-0">
+            {ABOUT_TABS.map((tab) => {
+              const Icon = tab.icon;
+              const isCurrent = activeTab === tab.id;
+
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex-1 lg:w-full min-w-[200px] lg:min-w-0 text-left p-3.5 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-between group border relative ${
+                    isCurrent
+                      ? 'bg-white border-honey-300 shadow-md ring-2 ring-honey-200/50'
+                      : 'bg-cream-50/70 hover:bg-white border-cream-200 text-charcoal-700 hover:border-cream-300'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <div
+                      className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
+                        isCurrent
+                          ? 'bg-honey-500 text-white shadow-xs'
+                          : 'bg-cream-200 text-charcoal-600'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                    </div>
+
+                    <div>
+                      <div className="flex items-center space-x-1.5">
+                        <span className={`text-[10px] font-mono font-bold ${isCurrent ? 'text-honey-600' : 'text-charcoal-400'}`}>
+                          {tab.number}
+                        </span>
+                        <h3 className={`text-xs sm:text-sm font-bold tracking-tight ${isCurrent ? 'text-charcoal-900' : 'text-charcoal-700'}`}>
+                          {tab.title}
+                        </h3>
+                      </div>
+                      <p className="text-[11px] text-charcoal-400 line-clamp-1">
+                        {tab.subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  <ChevronRight
+                    className={`w-4 h-4 shrink-0 transition-transform ${
+                      isCurrent
+                        ? 'text-honey-600 translate-x-0.5'
+                        : 'text-charcoal-300 group-hover:text-charcoal-500 group-hover:translate-x-0.5'
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-charcoal-900 leading-tight mb-4">
-          Nâng Niu Từng Bước Chạm Của Bé Yêu 🌸
-        </h1>
+        {/* RIGHT COLUMN: Dynamic Animated Content Panel */}
+        <div className="lg:col-span-8">
+          <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-10 shadow-card min-h-[460px] flex flex-col justify-between">
+            <AnimatePresence mode="wait">
+              
+              {/* ==================== TAB 1: CÂU CHUYỆN THƯƠNG HIỆU ==================== */}
+              {activeTab === 'story' && (
+                <motion.div
+                  key="story"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className="space-y-6"
+                >
+                  {/* Title Header */}
+                  <div className="border-b border-cream-200 pb-4">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-honey-600 bg-honey-50 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
+                      Mục 01 • Khởi Nguồn
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
+                      Câu chuyện thương hiệu T&apos;Petie
+                    </h2>
+                    <p className="font-serif italic text-honey-700 text-sm sm:text-base mt-1">
+                      Made for little souls.
+                    </p>
+                  </div>
 
-        <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed max-w-2xl mx-auto">
-          <strong>T&apos;Petie</strong> ra đời từ tình yêu vô điều kiện của những người mẹ muốn dành tặng cho con những bộ trang phục mềm mại nhất, an toàn nhất và ngọt ngào nhất trong những năm tháng đầu đời.
+                  {/* Body Story Paragraphs */}
+                  <div className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
+                    <p>
+                      <strong>T&apos;Petie</strong> được hình thành từ năm 2021, bắt đầu bằng một tình yêu giản dị dành cho thời trang trẻ em và những điều nhỏ bé tạo nên một tuổi thơ đẹp.
+                    </p>
+                    <p className="text-charcoal-800 font-medium">
+                      Chúng tôi tin rằng quần áo không chỉ là thứ trẻ mặc trên người.
+                    </p>
+
+                    {/* 4 Emotional Memory Cards */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 py-2">
+                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                        <span className="text-lg">👗</span>
+                        <span className="text-xs text-charcoal-800">Một chiếc váy trong ngày đặc biệt.</span>
+                      </div>
+                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                        <span className="text-lg">🎒</span>
+                        <span className="text-xs text-charcoal-800">Một chiếc áo mặc đến trường.</span>
+                      </div>
+                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                        <span className="text-lg">🚗</span>
+                        <span className="text-xs text-charcoal-800">Một bộ đồ trong chuyến đi cùng gia đình.</span>
+                      </div>
+                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                        <span className="text-lg">🧸</span>
+                        <span className="text-xs text-charcoal-800">Hay một bộ quần áo được mặc đi mặc lại vì đó là món đồ mà bé yêu thích.</span>
+                      </div>
+                    </div>
+
+                    <p className="italic text-charcoal-600 font-serif">
+                      Những điều rất nhỏ ấy, theo thời gian, có thể trở thành những ký ức rất lớn.
+                    </p>
+
+                    <p>
+                      Vì vậy, T&apos;Petie tạo ra những thiết kế dành cho trẻ nhỏ với tinh thần nhẹ nhàng, tinh tế và tự nhiên — những món đồ đủ đẹp để người lớn yêu thích, nhưng đủ thoải mái để trẻ được tự do vui chơi, khám phá và lớn lên.
+                    </p>
+
+                    {/* Highlighted Quote Callout */}
+                    <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-cream-100 via-honey-50 to-blush-50 border border-honey-200/80 shadow-2xs my-3">
+                      <p className="font-serif text-sm sm:text-base text-charcoal-900 leading-relaxed font-semibold italic text-center">
+                        &ldquo;Chúng tôi không tin tuổi thơ cần phải hoàn hảo.<br />
+                        Chúng tôi tin tuổi thơ chỉ cần được nâng niu.&rdquo;
+                      </p>
+                    </div>
+
+                    <p>
+                      Từ cách lựa chọn chất liệu, phom dáng, màu sắc đến từng chi tiết nhỏ, T&apos;Petie luôn cố gắng tạo nên những sản phẩm không chỉ đẹp trong một khoảnh khắc, mà có thể đồng hành cùng những ngày tháng rất thật của một đứa trẻ.
+                    </p>
+
+                    <p className="font-serif italic text-honey-800 font-medium pt-1">
+                      Bởi cuối cùng, điều chúng tôi muốn giữ lại không chỉ là một bộ quần áo đẹp. Mà là cảm giác của một tuổi thơ đẹp.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* ==================== TAB 2: NIỀM TIN ==================== */}
+              {activeTab === 'belief' && (
+                <motion.div
+                  key="belief"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className="space-y-6"
+                >
+                  <div className="border-b border-cream-200 pb-4">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blush-600 bg-blush-50 px-2.5 py-1 rounded-full border border-blush-200 inline-block mb-2">
+                      Mục 02 • Triết Lý
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
+                      Niềm Tin
+                    </h2>
+                  </div>
+
+                  <div className="space-y-5 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
+                    {/* Big Quote */}
+                    <div className="p-6 rounded-3xl bg-gradient-to-br from-blush-50 via-cream-100 to-honey-50 border border-blush-200 text-center space-y-2 shadow-soft">
+                      <Heart className="w-8 h-8 text-blush-500 mx-auto" />
+                      <blockquote className="font-serif text-base sm:text-lg text-charcoal-900 italic font-bold">
+                        &ldquo;T&apos;Petie tin rằng tuổi thơ không cần phải hoàn hảo.<br />Tuổi thơ chỉ cần được nâng niu.&rdquo;
+                      </blockquote>
+                    </div>
+
+                    <p>
+                      Trẻ em không cần những bộ quần áo khiến chúng trở thành một <em>&ldquo;phiên bản hoàn hảo&rdquo;</em> trong mắt người lớn.
+                    </p>
+                    <p>
+                      Các em cần được thoải mái chạy nhảy, nghịch ngợm, khám phá, đến trường, đi chơi và lớn lên theo cách của riêng mình.
+                    </p>
+
+                    {/* 3 "Vừa Đủ" Balance Pillars */}
+                    <div className="pt-2">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal-400 mb-3">
+                        Tinh Thần Thiết Kế Cân Bằng Của T&apos;Petie
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-center space-y-1.5">
+                          <span className="w-8 h-8 rounded-full bg-honey-100 text-honey-700 font-serif font-bold text-xs flex items-center justify-center mx-auto">
+                            01
+                          </span>
+                          <h5 className="font-bold text-xs text-charcoal-900">Đẹp vừa đủ</h5>
+                          <p className="text-[11px] text-charcoal-500">Nhã nhặn, tôn trọn nét ngây thơ trong trẻo.</p>
+                        </div>
+
+                        <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-center space-y-1.5">
+                          <span className="w-8 h-8 rounded-full bg-sage-100 text-sage-700 font-serif font-bold text-xs flex items-center justify-center mx-auto">
+                            02
+                          </span>
+                          <h5 className="font-bold text-xs text-charcoal-900">Thoải mái vừa đủ</h5>
+                          <p className="text-[11px] text-charcoal-500">Thấm hút tốt, êm ái cho từng cử động chạy nhảy.</p>
+                        </div>
+
+                        <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-center space-y-1.5">
+                          <span className="w-8 h-8 rounded-full bg-blush-100 text-blush-700 font-serif font-bold text-xs flex items-center justify-center mx-auto">
+                            03
+                          </span>
+                          <h5 className="font-bold text-xs text-charcoal-900">Cá tính vừa đủ</h5>
+                          <p className="text-[11px] text-charcoal-500">Mang phong cách riêng, tự nhiên không gượng ép.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className="pt-2 font-serif italic text-charcoal-800 text-center sm:text-left">
+                      Vì vậy, T&apos;Petie theo đuổi những thiết kế đẹp vừa đủ, thoải mái vừa đủ và có cá tính vừa đủ — để quần áo trở thành một phần của tuổi thơ, thay vì che lấp nó.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* ==================== TAB 3: TẦM NHÌN ==================== */}
+              {activeTab === 'vision' && (
+                <motion.div
+                  key="vision"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className="space-y-6"
+                >
+                  <div className="border-b border-cream-200 pb-4">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 inline-block mb-2">
+                      Mục 03 • Tương Lai
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
+                      Tầm nhìn
+                    </h2>
+                  </div>
+
+                  <div className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
+                    <p className="text-sm sm:text-base text-charcoal-900 font-medium">
+                      Trở thành một thương hiệu thời trang trẻ em Việt Nam có dấu ấn riêng, được nhớ đến bởi vẻ đẹp tinh tế, chất lượng và cách trân trọng những năm tháng tuổi thơ.
+                    </p>
+
+                    <p>
+                      Về dài hạn, T&apos;Petie có thể phát triển thành một thương hiệu lifestyle dành cho trẻ nhỏ, không chỉ giới hạn ở quần áo.
+                    </p>
+
+                    <div className="pt-2 space-y-3">
+                      <p className="text-xs font-bold text-charcoal-800">
+                        Tức là T&apos;Petie có thể sở hữu một thế giới riêng gồm:
+                      </p>
+
+                      {/* Interactive Visual Ecosystem Roadmap Flow */}
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
+                        {[
+                          { step: '01', name: 'Clothing', desc: 'Trang phục hữu cơ', icon: '👗' },
+                          { step: '02', name: 'Accessories', desc: 'Phụ kiện dịu ngọt', icon: '🎀' },
+                          { step: '03', name: 'Objects', desc: 'Đồ dùng nâng niu', icon: '🧸' },
+                          { step: '04', name: 'Visuals', desc: 'Hình ảnh trong trẻo', icon: '🎨' },
+                          { step: '05', name: 'Stories', desc: 'Câu chuyện nuôi dưỡng', icon: '📖' },
+                          { step: '06', name: 'Childhood experiences', desc: 'Trải nghiệm tuổi thơ', icon: '✨' },
+                        ].map((item, idx) => (
+                          <div
+                            key={item.name}
+                            className="p-3.5 bg-gradient-to-b from-cream-50 to-white rounded-2xl border border-cream-200 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-1 group"
+                          >
+                            <span className="text-xl block group-hover:scale-110 transition-transform">{item.icon}</span>
+                            <span className="text-[10px] font-mono text-honey-600 font-bold block">{item.step}</span>
+                            <h5 className="font-bold text-xs text-charcoal-900">{item.name}</h5>
+                            <p className="text-[10px] text-charcoal-400">{item.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Flow summary bar */}
+                      <div className="p-3 bg-sage-50/70 rounded-2xl border border-sage-200 text-center text-xs text-sage-800 font-medium">
+                        Clothing ➔ Accessories ➔ Objects ➔ Visuals ➔ Stories ➔ Childhood experiences
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* ==================== TAB 4: SỨ MỆNH ==================== */}
+              {activeTab === 'mission' && (
+                <motion.div
+                  key="mission"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className="space-y-6"
+                >
+                  <div className="border-b border-cream-200 pb-4">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-honey-600 bg-honey-50 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
+                      Mục 04 • Trọng Trách
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
+                      Sứ mệnh
+                    </h2>
+                  </div>
+
+                  <div className="py-8 text-center space-y-6 max-w-xl mx-auto">
+                    <div className="w-16 h-16 rounded-full bg-honey-100 text-honey-600 flex items-center justify-center mx-auto shadow-sm">
+                      <Sparkles className="w-8 h-8 animate-spin-slow" />
+                    </div>
+
+                    <blockquote className="font-serif text-xl sm:text-3xl text-charcoal-900 italic font-bold leading-relaxed px-4">
+                      &ldquo;Tạo nên những điều đẹp đẽ để những tâm hồn nhỏ bé lớn lên cùng.&rdquo;
+                    </blockquote>
+
+                    <p className="text-xs sm:text-sm font-sans text-charcoal-600 leading-relaxed max-w-md mx-auto">
+                      Mỗi đường chỉ êm ái, mỗi gam màu pastel thanh thoát đều là một lời nhắn nhủ yêu thương, gửi trao đến những mầm non đang khám phá thế giới rộng lớn.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* ==================== TAB 5: GIÁ TRỊ CỐT LÕI ==================== */}
+              {activeTab === 'values' && (
+                <motion.div
+                  key="values"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className="space-y-6"
+                >
+                  <div className="border-b border-cream-200 pb-4">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-charcoal-600 bg-cream-100 px-2.5 py-1 rounded-full border border-cream-300 inline-block mb-2">
+                      Mục 05 • Kim Chỉ Nam
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
+                      Giá trị cốt lõi
+                    </h2>
+                    <p className="text-xs text-charcoal-500 font-sans mt-1">
+                      4 nguyên tắc bất biến định hình mọi sản phẩm và quyết định tại T&apos;Petie
+                    </p>
+                  </div>
+
+                  {/* 4 Core Value Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    {/* Card 01 */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-honey-300 hover:shadow-card transition-all space-y-2 group">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-honey-600 bg-honey-50 px-2 py-0.5 rounded-full border border-honey-200">
+                          01
+                        </span>
+                        <Smile className="w-4 h-4 text-honey-500 group-hover:scale-110 transition-transform" />
+                      </div>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
+                        CHILDHOOD FIRST <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Tuổi thơ là trung tâm)</span>
+                      </h3>
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                        Mọi thiết kế cuối cùng đều phải quay về một câu hỏi: <em>&ldquo;Điều này có thực sự dành cho một đứa trẻ không?&rdquo;</em>. Không hy sinh sự thoải mái của trẻ chỉ để đổi lấy một hình ảnh đẹp.
+                      </p>
+                    </div>
+
+                    {/* Card 02 */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-sage-300 hover:shadow-card transition-all space-y-2 group">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-sage-700 bg-sage-50 px-2 py-0.5 rounded-full border border-sage-200">
+                          02
+                        </span>
+                        <Feather className="w-4 h-4 text-sage-600 group-hover:scale-110 transition-transform" />
+                      </div>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
+                        QUIETLY BEAUTIFUL <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Đẹp một cách tinh tế)</span>
+                      </h3>
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                        T&apos;Petie không chạy theo sự nổi bật bằng mọi giá. Thay vào đó là màu sắc, chất liệu, phom dáng và những chi tiết nhỏ có thể khiến người ta nhìn lâu hơn một chút.
+                      </p>
+                    </div>
+
+                    {/* Card 03 */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-blush-300 hover:shadow-card transition-all space-y-2 group">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-blush-600 bg-blush-50 px-2 py-0.5 rounded-full border border-blush-200">
+                          03
+                        </span>
+                        <Shirt className="w-4 h-4 text-blush-500 group-hover:scale-110 transition-transform" />
+                      </div>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
+                        MADE WITH CARE <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Làm bằng sự chăm chút)</span>
+                      </h3>
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                        Từ thiết kế, chất liệu, đường may, đóng gói đến cách giao tiếp với khách hàng — những điều nhỏ đều quan trọng.
+                      </p>
+                    </div>
+
+                    {/* Card 04 */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-honey-300 hover:shadow-card transition-all space-y-2 group">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-honey-700 bg-honey-50 px-2 py-0.5 rounded-full border border-honey-200">
+                          04
+                        </span>
+                        <Camera className="w-4 h-4 text-honey-600 group-hover:scale-110 transition-transform" />
+                      </div>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
+                        LASTING MEMORIES <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Tạo nên ký ức có thể ở lại)</span>
+                      </h3>
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                        T&apos;Petie không chỉ nghĩ về mùa này hay xu hướng này. Chúng tôi muốn những sản phẩm của mình có thể xuất hiện trong những bức ảnh mà nhiều năm sau bố mẹ vẫn muốn giữ lại.
+                      </p>
+                    </div>
+
+                  </div>
+                </motion.div>
+              )}
+
+            </AnimatePresence>
+
+            {/* Bottom Footer Action Inside Card */}
+            <div className="pt-6 mt-6 border-t border-cream-200/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div className="flex items-center space-x-2 text-charcoal-500 font-sans">
+                <CheckCircle2 className="w-4 h-4 text-sage-600" />
+                <span>Thương hiệu thiết kế &amp; may đo tại Việt Nam</span>
+              </div>
+
+              <Link
+                href="/be-gai"
+                className="inline-flex items-center space-x-1.5 font-bold text-honey-700 hover:text-honey-800 transition-colors"
+              >
+                <span>Khám phá các thiết kế của T&apos;Petie</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* 3. INVITATION FOOTER BANNER */}
+      <section className="bg-gradient-to-r from-cream-100 via-honey-50 to-blush-50 rounded-3xl p-6 sm:p-10 border border-cream-200 text-center space-y-4">
+        <h3 className="text-xl sm:text-2xl font-serif text-charcoal-900">
+          Cùng T&apos;Petie Nâng Niu Tuổi Thơ Của Con 🌸
+        </h3>
+        <p className="text-xs sm:text-sm text-charcoal-600 max-w-lg mx-auto font-sans leading-relaxed">
+          Mời ba mẹ ghé thăm các bộ sưu tập mới nhất để chọn cho bé những món đồ nhẹ nhàng và thoải mái nhất.
         </p>
-      </section>
-
-      {/* 2. SỨ MỆNH & TRIẾT LÝ THIẾT KẾ */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col items-center text-center group">
-          <div className="w-14 h-14 rounded-2xl bg-sage-100 text-sage-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <Leaf className="w-7 h-7" />
-          </div>
-          <h3 className="font-heading font-bold text-lg text-charcoal-900 mb-2">
-            100% Chất Liệu Hữu Cơ
-          </h3>
-          <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-            Tuyển chọn vải thô đũi organic, cotton dệt tự nhiên và voan tơ mềm mịn. Thoáng mát, thấm hút mồ hôi tối đa và không gây kích ứng cho làn da nhạy cảm của bé.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col items-center text-center group">
-          <div className="w-14 h-14 rounded-2xl bg-blush-100 text-blush-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <Scissors className="w-7 h-7" />
-          </div>
-          <h3 className="font-heading font-bold text-lg text-charcoal-900 mb-2">
-            May Đo Thủ Công Tỉ Mỉ
-          </h3>
-          <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-            Mỗi thiết kế đều được may đo thủ công bởi những người thợ lành nghề tại Việt Nam. Từng đường bèo nhún, cúc bọc vải và họa tiết thêu tay đều chứa đựng tình yêu thương.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col items-center text-center group">
-          <div className="w-14 h-14 rounded-2xl bg-honey-100 text-honey-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <Heart className="w-7 h-7" />
-          </div>
-          <h3 className="font-heading font-bold text-lg text-charcoal-900 mb-2">
-            Tone Màu Pastel Ngọt Ngào
-          </h3>
-          <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-            Bảng màu chủ đạo Vàng Mật Ong ấm áp, Xanh Cốm non tươi mát, Kem Vani dịu nhẹ và Hồng Cánh Sen trong trẻo mang lại cảm giác bình yên, hồn nhiên cho tuổi thơ của con.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. LỜI CAM KẾT TỪ T'PETIE */}
-      <section className="bg-gradient-to-r from-cream-100 via-honey-50 to-cream-100 rounded-3xl p-8 sm:p-12 border border-cream-200 shadow-soft">
-        <div className="max-w-3xl mx-auto space-y-6">
-          <div className="flex items-center space-x-3">
-            <ShieldCheck className="w-6 h-6 text-honey-600 shrink-0" />
-            <h2 className="text-xl sm:text-2xl font-bold font-heading text-charcoal-900">
-              Lời Cam Kết Của T&apos;Petie Dành Cho Mẹ &amp; Bé
-            </h2>
-          </div>
-
-          <div className="space-y-4 text-xs sm:text-sm text-charcoal-700 leading-relaxed">
-            <p>
-              Tại T&apos;Petie, chúng mình tin rằng quần áo trẻ em không chỉ đẹp mà quan trọng nhất phải mang lại sự thoải mái tuyệt đối cho từng chuyển động bò, lẫy, chạy nhảy của con yêu.
-            </p>
-            <ul className="space-y-2.5 pl-2">
-              <li className="flex items-start space-x-2">
-                <span className="text-sage-600 font-bold">✓</span>
-                <span><strong>Đổi trả miễn phí trong 7 ngày</strong> nếu bé mặc không vừa hoặc mẹ không ưng ý chất vải.</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-sage-600 font-bold">✓</span>
-                <span><strong>Kiểm tra hàng trước khi thanh toán</strong> (Đồng kiểm tận tay mẹ bỉm).</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-sage-600 font-bold">✓</span>
-                <span><strong>Đóng gói quà tặng cao cấp</strong> — Hộp quà pastel chỉn chu nâng niu mọi khoảnh khắc.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="pt-4 flex flex-wrap items-center gap-4">
-            <Link
-              href="/be-gai"
-              className="px-6 py-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-xs sm:text-sm shadow-md active:scale-95 transition-all flex items-center space-x-2"
-            >
-              <span>Khám Phá Thời Trang Bé Gái</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/bo-suu-tap"
-              className="px-6 py-3 rounded-full bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-300 font-bold text-xs sm:text-sm active:scale-95 transition-all"
-            >
-              <span>Xem Bộ Sưu Tập Mới</span>
-            </Link>
-          </div>
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/be-gai"
+            className="px-6 py-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-xs sm:text-sm shadow-md active:scale-95 transition-all"
+          >
+            Mua Sắm Đồ Bé Gái
+          </Link>
+          <Link
+            href="/bo-suu-tap"
+            className="px-6 py-3 rounded-full bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-300 font-bold text-xs sm:text-sm active:scale-95 transition-all"
+          >
+            Xem Lookbook Bộ Sưu Tập
+          </Link>
         </div>
       </section>
     </div>

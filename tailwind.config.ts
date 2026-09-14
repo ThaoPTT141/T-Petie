@@ -42,8 +42,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        heading: ['var(--font-quicksand)', 'sans-serif'],
-        sans: ['var(--font-be-vietnam-pro)', 'sans-serif'],
+        heading: ['var(--font-quicksand)', 'Quicksand', 'sans-serif'],
+        sans: ['var(--font-be-vietnam-pro)', 'Be Vietnam Pro', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
       },
       boxShadow: {
         soft: '0 4px 20px -2px rgba(220, 190, 160, 0.15)',
