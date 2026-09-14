@@ -10,7 +10,6 @@ Tài liệu này định hình kiến trúc cây trang web (Sitemap) và sơ đ�
 / (Trang Chủ)
 ├── /category/ (Danh Mục Sản Phẩm)
 │   ├── /category/be-gai (Thời trang bé gái: Váy đầm, áo kiểu, set bộ)
-│   ├── /category/be-trai (Thời trang bé trai: Set sơ mi, quần yếm, áo polo)
 │   ├── /category/so-sinh (Đồ sơ sinh organic: Body chip, bao tay chân, chăn ủ)
 │   └── /category/phu-kien (Phụ kiện: Mũ len, nơ cài tóc, tất hữu cơ)
 │
@@ -44,8 +43,8 @@ Tài liệu này định hình kiến trúc cây trang web (Sitemap) và sơ đ�
 ### Global Header (Sticky)
 - **Top Bar**: Thông báo ưu đãi ("Miễn phí vận chuyển cho đơn từ 399k" / "Tặng kèm kẹp nơ xinh cho đơn đầu tiên").
 - **Main Bar**:
-  - Logo T'Petie (Typography cách điệu dễ thương, màu vàng mật ong + xanh cốm).
-  - Navigation Menu Desktop (Trang chủ, Bé gái, Bé trai, Sơ sinh, BST Mới, Sale).
+   Logo T'Petie (Typography cách điệu dễ thương, màu vàng mật ong + xanh cốm).
+  - Navigation Menu Desktop (Trang chủ, Bé gái, BST Mới, Sale, Cửa hàng).
   - Search Icon & Drawer mở rộng.
   - Cart Icon có Badge đếm số lượng giỏ hàng thực tế.
 

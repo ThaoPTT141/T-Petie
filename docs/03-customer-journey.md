@@ -11,7 +11,7 @@ flowchart TD
     A[Mở Trang Chủ T'Petie] --> B{Tìm kiếm nhu cầu?}
     B -->|Lướt Banner / BST| C[Trang Bộ Sưu Tập]
     B -->|Xem Khuyến Mãi| D[Trang Sale Đợt Này]
-    B -->|Lọc theo giới tính/tuổi| E[Danh Mục Bé Gái / Bé Trai]
+    B -->|Lọc theo phân loại/tuổi| E[Danh Mục Bé Gái]
     B -->|Tìm kiếm từ khoá| F[Kết Quả Tìm Kiếm]
 
     C --> G[Xem Danh Sách Sản Phẩm]

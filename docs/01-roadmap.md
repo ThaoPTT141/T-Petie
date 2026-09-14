@@ -16,7 +16,7 @@ Tài liệu này chi tiết hoá toàn bộ công việc, mục tiêu và kết 
 ## Giai Đoạn 2 — Wireframe & UI Design (Tuần 2)
 - [ ] Thiết kế Wireframe Low-Fidelity cho 6 màn hình chính:
   1. Trang chủ (Hero Banner, BST nổi bật, Sản phẩm mới, Feedback mẹ bỉm).
-  2. Danh mục Bé Gái / Bé Trai / Sơ Sinh.
+  2. Danh mục Bé Gái / Sơ Sinh / Phụ Kiện.
   3. Trang Bộ sưu tập (Lookbook & Storytelling).
   4. Trang Sale (Đồng giá, Flash Sale theo giờ).
   5. Trang Chi tiết sản phẩm (Bộ ảnh zoom, Chọn size theo cân nặng, Hướng dẫn giặt ủi).

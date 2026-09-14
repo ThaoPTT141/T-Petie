@@ -12,7 +12,6 @@ export interface NavItem {
 export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: 'Trang Chủ', href: '/' },
   { label: 'Bé Gái', href: '/be-gai' },
-  { label: 'Bé Trai', href: '/be-trai' },
   { label: 'Bộ Sưu Tập', href: '/bo-suu-tap', badge: 'Mới' },
   { label: 'Sale Khuyến Mãi', href: '/sale', badge: 'Hot' },
 ];

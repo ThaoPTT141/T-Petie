@@ -56,7 +56,7 @@ export function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps) {
                     : 'text-charcoal-600 hover:text-charcoal-900'
                 }`}
               >
-                Bé Gái / Bé Trai (1 - 5 Tuổi)
+                Bé Gái (1 - 5 Tuổi)
               </button>
               <button
                 onClick={() => setActiveTab('baby')}
