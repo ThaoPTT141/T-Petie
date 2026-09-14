@@ -49,9 +49,11 @@ export function Header() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo Brand */}
           <Link href="/" className="flex items-center group py-1">
-            <span className="text-2xl sm:text-3xl font-extrabold font-heading text-honey-600 tracking-tight group-hover:text-honey-700 transition-colors">
-              T&apos;Petie
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="T'Petie - Made for little souls"
+              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
+            />
           </Link>
 
           {/* Navigation Menu Desktop */}

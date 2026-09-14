@@ -46,9 +46,11 @@ export function Footer() {
         {/* CỘT 1: LOGO & LỜI CAM KẾT */}
         <div className="space-y-3">
           <Link href="/" className="inline-block group">
-            <span className="text-2xl sm:text-3xl font-extrabold font-heading text-honey-600 tracking-tight group-hover:text-honey-700 transition-colors">
-              T&apos;Petie
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="T'Petie - Made for little souls"
+              className="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
+            />
           </Link>
           <p className="text-xs leading-relaxed text-charcoal-600">
             <strong className="font-bold text-charcoal-900 uppercase">LỜI CAM KẾT:</strong> Thương hiệu thời trang thiết kế trẻ em, nâng niu từng bước chạm đầu đời của bé yêu.
