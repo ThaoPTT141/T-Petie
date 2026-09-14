@@ -1,18 +1,89 @@
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
-interface RouteParams {
+interface RouteContext {
   params: {
     id: string;
   };
 }
 
-// PATCH: Cập nhật Role (Phân quyền) hoặc Status (Khóa/Mở khóa)
-export async function PATCH(req: Request, { params }: RouteParams) {
+/**
+ * GET: Lấy thông tin chi tiết một người dùng theo ID (Dành riêng cho Admin)
+ */
+export async function GET(req: Request, { params }: RouteContext) {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session || session.user?.role !== 'admin') {
+      return NextResponse.json(
+        { error: '403 Forbidden: Bạn không có quyền truy cập thông tin này.' },
+        { status: 403 }
+      );
+    }
+
+    const { id: targetUserId } = params;
+
+    if (!targetUserId) {
+      return NextResponse.json(
+        { error: 'Thiếu mã định danh người dùng (ID).' },
+        { status: 400 }
+      );
+    }
+
+    const user = await prisma.user.findUnique({
+      where: { id: targetUserId },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        status: true,
+        image: true,
+        phone: true,
+        address: true,
+        city: true,
+        points: true,
+        babyName: true,
+        babyBirthDate: true,
+        babyWeight: true,
+        babyHeight: true,
+        babyGender: true,
+        recommendedSize: true,
+        createdAt: true,
+        updatedAt: true,
+        lastLoginAt: true,
+      },
+    });
+
+    if (!user) {
+      return NextResponse.json(
+        { error: 'Không tìm thấy người dùng trong hệ thống.' },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.error('Error in Admin GET /api/admin/users/[id]:', error);
+    return NextResponse.json(
+      { error: 'Lỗi máy chủ khi lấy thông tin người dùng.' },
+      { status: 500 }
+    );
+  }
+}
+
+/**
+ * PATCH: Cập nhật Role (Phân quyền), Status (Khóa/Mở) hoặc thông tin người dùng (Admin)
+ */
+export async function PATCH(req: Request, { params }: RouteContext) {
   try {
     const session = await getServerSession(authOptions);
 
@@ -25,7 +96,7 @@ export async function PATCH(req: Request, { params }: RouteParams) {
 
     const { id: targetUserId } = params;
     const body = await req.json();
-    const { role, status } = body;
+    const { role, status, name, phone, address, city, points } = body;
 
     // Không cho phép Admin tự khóa hoặc tự hạ quyền chính mình
     if (session.user.id === targetUserId) {
@@ -48,16 +119,24 @@ export async function PATCH(req: Request, { params }: RouteParams) {
     });
 
     if (!targetUser) {
-      return NextResponse.json({ error: 'Không tìm thấy người dùng.' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'Không tìm thấy người dùng cần cập nhật.' },
+        { status: 404 }
+      );
     }
 
-    const updateData: Record<string, string> = {};
+    const updateData: Record<string, unknown> = {};
     if (role && (role === 'admin' || role === 'user')) {
       updateData.role = role;
     }
     if (status && (status === 'active' || status === 'blocked')) {
       updateData.status = status;
     }
+    if (name !== undefined) updateData.name = name.trim();
+    if (phone !== undefined) updateData.phone = phone.trim();
+    if (address !== undefined) updateData.address = address.trim();
+    if (city !== undefined) updateData.city = city.trim();
+    if (points !== undefined) updateData.points = Number(points);
 
     const updatedUser = await prisma.user.update({
       where: { id: targetUserId },
@@ -66,17 +145,29 @@ export async function PATCH(req: Request, { params }: RouteParams) {
 
     return NextResponse.json({
       success: true,
-      message: 'Cập nhật tài khoản thành công!',
+      message: 'Cập nhật tài khoản người dùng thành công!',
       user: updatedUser,
     });
   } catch (error) {
     console.error('Error in Admin PATCH /api/admin/users/[id]:', error);
-    return NextResponse.json({ error: 'Lỗi server khi cập nhật tài khoản' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Lỗi máy chủ khi cập nhật tài khoản.' },
+      { status: 500 }
+    );
   }
 }
 
-// DELETE: Xóa tài khoản người dùng
-export async function DELETE(req: Request, { params }: RouteParams) {
+/**
+ * PUT: Hỗ trợ cập nhật toàn phần thông tin tài khoản người dùng (Admin)
+ */
+export async function PUT(req: Request, context: RouteContext) {
+  return PATCH(req, context);
+}
+
+/**
+ * DELETE: Xóa tài khoản người dùng khỏi hệ thống (Admin)
+ */
+export async function DELETE(req: Request, { params }: RouteContext) {
   try {
     const session = await getServerSession(authOptions);
 
@@ -102,7 +193,10 @@ export async function DELETE(req: Request, { params }: RouteParams) {
     });
 
     if (!targetUser) {
-      return NextResponse.json({ error: 'Không tìm thấy người dùng cần xóa.' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'Không tìm thấy người dùng cần xóa.' },
+        { status: 404 }
+      );
     }
 
     await prisma.user.delete({
@@ -115,6 +209,9 @@ export async function DELETE(req: Request, { params }: RouteParams) {
     });
   } catch (error) {
     console.error('Error in Admin DELETE /api/admin/users/[id]:', error);
-    return NextResponse.json({ error: 'Lỗi server khi xóa người dùng' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Lỗi máy chủ khi xóa người dùng.' },
+      { status: 500 }
+    );
   }
 }
