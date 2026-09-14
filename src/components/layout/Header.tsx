@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { ShoppingBag, Search, MapPin, X } from 'lucide-react';
+import { ShoppingBag, Search, Heart, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { MAIN_NAV_ITEMS } from '@/lib/constants/navigation';
 
@@ -76,13 +76,13 @@ export function Header() {
               );
             })}
             <Link
-              href="/cua-hang"
-              className={`flex items-center space-x-1 py-1 transition-colors ${
-                pathname === '/cua-hang' ? 'text-honey-600 font-bold' : 'text-charcoal-700 hover:text-honey-600'
+              href="/ve-chung-toi"
+              className={`flex items-center space-x-1.5 py-1 transition-colors ${
+                pathname === '/ve-chung-toi' ? 'text-honey-600 font-bold' : 'text-charcoal-700 hover:text-honey-600'
               }`}
             >
-              <MapPin className="w-3.5 h-3.5 text-sage-600" />
-              <span>Cửa Hàng</span>
+              <Heart className="w-3.5 h-3.5 text-blush-500" />
+              <span>Về Chúng Tôi</span>
             </Link>
           </nav>
 

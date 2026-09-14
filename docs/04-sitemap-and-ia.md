@@ -43,7 +43,7 @@ Tài liệu này định hình kiến trúc cây trang web (Sitemap) và sơ đ�
 ### Global Header (Sticky)
 - **Main Bar**:
   - Logo T'Petie (Logo nghệ thuật cách điệu T'petie kèm slogan).
-  - Navigation Menu Desktop (Trang chủ, Bé gái, BST Mới, Sale, Cửa hàng).
+  - Navigation Menu Desktop (Trang chủ, Bé gái, BST Mới, Sale, Về Chúng Tôi).
   - Search Icon & Drawer mở rộng.
   - Cart Icon có Badge đếm số lượng giỏ hàng thực tế.
 
