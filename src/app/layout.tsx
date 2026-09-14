@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Script from 'next/script';
+import { SessionProvider } from '@/components/providers/SessionProvider';
 import { CartProvider } from '@/context/CartContext';
 import { ToastProvider } from '@/context/ToastContext';
 import { AuthProvider } from '@/context/AuthContext';
@@ -81,26 +82,28 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-cream-50 text-charcoal-900 font-sans selection:bg-honey-100 selection:text-honey-700">
-        <AuthProvider>
-          <ToastProvider>
-            <CartProvider>
-              {/* Header Sticky */}
-              <Header />
+        <SessionProvider>
+          <AuthProvider>
+            <ToastProvider>
+              <CartProvider>
+                {/* Header Sticky */}
+                <Header />
 
-              {/* Main Content Area */}
-              <main className="flex-1 pb-16 md:pb-0">{children}</main>
+                {/* Main Content Area */}
+                <main className="flex-1 pb-16 md:pb-0">{children}</main>
 
-              {/* Mini Cart Slide-in Drawer */}
-              <MiniCart />
+                {/* Mini Cart Slide-in Drawer */}
+                <MiniCart />
 
-              {/* Mobile Bottom Navigation */}
-              <MobileBottomNav />
+                {/* Mobile Bottom Navigation */}
+                <MobileBottomNav />
 
-              {/* Footer */}
-              <Footer />
-            </CartProvider>
-          </ToastProvider>
-        </AuthProvider>
+                {/* Footer */}
+                <Footer />
+              </CartProvider>
+            </ToastProvider>
+          </AuthProvider>
+        </SessionProvider>
       </body>
     </html>
   );
