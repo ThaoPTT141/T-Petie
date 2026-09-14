@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { ShoppingBag, Search, Sparkles, MapPin, X } from 'lucide-react';
+import { ShoppingBag, Search, MapPin, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { MAIN_NAV_ITEMS } from '@/lib/constants/navigation';
 
@@ -28,14 +28,6 @@ export function Header() {
 
   return (
     <>
-      {/* Top Banner Thông Báo Khuyến Mãi */}
-      <div className="bg-gradient-to-r from-cream-100 via-honey-100 to-blush-50 px-4 py-1.5 text-center text-xs font-medium text-charcoal-700 border-b border-cream-200 flex items-center justify-center space-x-2">
-        <Sparkles className="w-3.5 h-3.5 text-honey-500 shrink-0" />
-        <span>
-          Chào mừng Mẹ đến với <strong>T&apos;Petie</strong> — Miễn phí vận chuyển cho đơn từ 399k!
-        </span>
-      </div>
-
       {/* Header Chính */}
       <motion.header
         variants={{

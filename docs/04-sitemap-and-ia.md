@@ -41,9 +41,8 @@ Tài liệu này định hình kiến trúc cây trang web (Sitemap) và sơ đ�
 ## 2. Cấu Trúc Thành Phần Giao Diện (Layout Structure)
 
 ### Global Header (Sticky)
-- **Top Bar**: Thông báo ưu đãi ("Miễn phí vận chuyển cho đơn từ 399k" / "Tặng kèm kẹp nơ xinh cho đơn đầu tiên").
 - **Main Bar**:
-   Logo T'Petie (Typography cách điệu dễ thương, màu vàng mật ong + xanh cốm).
+  - Logo T'Petie (Logo nghệ thuật cách điệu T'petie kèm slogan).
   - Navigation Menu Desktop (Trang chủ, Bé gái, BST Mới, Sale, Cửa hàng).
   - Search Icon & Drawer mở rộng.
   - Cart Icon có Badge đếm số lượng giỏ hàng thực tế.
