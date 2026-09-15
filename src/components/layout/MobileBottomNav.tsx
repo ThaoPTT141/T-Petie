@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, LayoutGrid, Sparkles, Percent, ShoppingBag } from 'lucide-react';
+import { Home, Heart, Sparkles, Percent, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 export function MobileBottomNav() {
@@ -12,9 +12,9 @@ export function MobileBottomNav() {
 
   const navItems = [
     { label: 'Trang Chủ', href: '/', icon: Home },
-    { label: 'Bé Gái', href: '/be-gai', icon: LayoutGrid },
-    { label: 'Bộ Sưu Tập', href: '/bo-suu-tap', icon: Sparkles },
-    { label: 'Sale', href: '/sale', icon: Percent, badge: 'Hot' },
+    { label: 'Về Chúng Tôi', href: '/ve-chung-toi', icon: Heart },
+    { label: 'Bộ Sưu Tập', href: '/bo-suu-tap', icon: Sparkles, badge: 'Mới' },
+    { label: 'Ưu Đãi', href: '/sale', icon: Percent, badge: 'Hot' },
   ];
 
   return (
@@ -35,7 +35,7 @@ export function MobileBottomNav() {
             <div className="relative">
               <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.5px]' : 'stroke-2'}`} />
               {item.badge && (
-                <span className="absolute -top-1.5 -right-2 bg-blush-500 text-white text-[8px] font-bold px-1 py-0.2 rounded-full">
+                <span className="absolute -top-1.5 -right-2 bg-honey-500 text-white text-[8px] font-bold px-1 py-0.2 rounded-full">
                   {item.badge}
                 </span>
               )}

@@ -12,7 +12,7 @@ export interface ProductSizeOption {
 }
 
 export type ProductSubcategory = 'ao' | 'quan' | 'vay' | 'set-do';
-export type SaleCampaign = 'dai-le-2-9' | 'sale-he' | 'sale-thu-dong';
+export type SaleCampaign = 'dai-le-2-9' | 'sale-he' | 'sale-thu-dong' | 'sale-ngay-doi';
 
 export interface Product {
   id: string;               // ID duy nhất (slug / SKU)

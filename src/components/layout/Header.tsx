@@ -1,10 +1,21 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { ShoppingBag, Search, Heart, X, User as UserIcon, Crown, LogOut, LayoutDashboard, ShieldCheck, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import {
+  ShoppingBag,
+  Search,
+  Heart,
+  X,
+  User as UserIcon,
+  Crown,
+  LogOut,
+  LayoutDashboard,
+  ShieldCheck,
+  ChevronDown,
+} from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
 import { MAIN_NAV_ITEMS } from '@/lib/constants/navigation';
@@ -16,8 +27,10 @@ export function Header() {
   const [hidden, setHidden] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [hoveredNavIndex, setHoveredNavIndex] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const { scrollY } = useScroll();
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Ẩn khi cuộn xuống, hiện khi cuộn lên
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -25,10 +38,25 @@ export function Header() {
     if (latest > previous && latest > 120) {
       setHidden(true);
       setIsUserMenuOpen(false);
+      setHoveredNavIndex(null);
     } else {
       setHidden(false);
     }
   });
+
+  const handleMouseEnter = (index: number) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setHoveredNavIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredNavIndex(null);
+    }, 150);
+  };
 
   return (
     <>
@@ -43,7 +71,7 @@ export function Header() {
         className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-cream-200 shadow-sm"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          {/* Logo Brand */}
+          {/* Logo Brand (Ngoài cùng bên trái) */}
           <Link href="/" className="flex items-center group py-1">
             <img
               src="/images/logo.png"
@@ -52,47 +80,114 @@ export function Header() {
             />
           </Link>
 
-          {/* Navigation Menu Desktop */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold">
-            {MAIN_NAV_ITEMS.map((item) => {
-              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+          {/* Navigation Menu Desktop (Thứ tự: Trang Chủ | Về Chúng Tôi | Bộ Sưu Tập | Ưu Đãi) */}
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-semibold">
+            {MAIN_NAV_ITEMS.map((item, index) => {
+              const isExactActive = pathname === item.href;
+              const isSubActive = item.href !== '/' && pathname.startsWith(item.href);
+              const isActive = isExactActive || isSubActive;
+              const hasChildren = Boolean(item.children && item.children.length > 0);
+              const isHovered = hoveredNavIndex === index;
+
               return (
-                <Link
+                <div
                   key={item.href}
-                  href={item.href}
-                  className={`relative py-1 transition-colors ${
-                    isActive ? 'text-honey-600 font-bold' : 'text-charcoal-700 hover:text-honey-600'
-                  }`}
+                  className="relative group py-2"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  <span>{item.label}</span>
-                  {item.badge && (
-                    <span className="absolute -top-2.5 -right-4 text-[9px] font-bold bg-honey-500 text-white px-1.5 py-0.2 rounded-full">
-                      {item.badge}
-                    </span>
+                  <Link
+                    href={item.href}
+                    onClick={() => setHoveredNavIndex(null)}
+                    className={`relative flex items-center space-x-1.5 py-1 transition-colors ${
+                      isActive ? 'text-honey-600 font-bold' : 'text-charcoal-700 hover:text-honey-600'
+                    }`}
+                  >
+                    {item.icon === 'Heart' && (
+                      <Heart className="w-3.5 h-3.5 text-blush-500 fill-blush-100" />
+                    )}
+                    <span>{item.label}</span>
+                    {item.badge && (
+                      <span
+                        className={`text-[9px] font-bold text-white px-1.5 py-0.2 rounded-full leading-tight shadow-2xs ${
+                          item.badgeColor || 'bg-honey-500'
+                        }`}
+                      >
+                        {item.badge}
+                      </span>
+                    )}
+                    {hasChildren && (
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 text-charcoal-400 transition-transform duration-200 ${
+                          isHovered ? 'rotate-180 text-honey-600' : 'group-hover:text-honey-600'
+                        }`}
+                      />
+                    )}
+
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-underline"
+                        className="absolute left-0 right-0 -bottom-1 h-0.5 bg-honey-500 rounded-full"
+                      />
+                    )}
+                  </Link>
+
+                  {/* Sub-menu (Dropdown) khi hover */}
+                  {hasChildren && (
+                    <AnimatePresence>
+                      {isHovered && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                          transition={{ duration: 0.16, ease: 'easeOut' }}
+                          className="absolute left-0 top-full pt-1 z-50 min-w-[240px] max-w-[280px]"
+                        >
+                          <div className="bg-white/98 backdrop-blur-md rounded-2xl shadow-xl border border-cream-200 p-2 space-y-1">
+                            {item.children?.map((sub) => {
+                              const isSubCurrent = pathname === sub.href;
+                              return (
+                                <Link
+                                  key={sub.href}
+                                  href={sub.href}
+                                  onClick={() => setHoveredNavIndex(null)}
+                                  className={`group/sub flex flex-col p-2.5 rounded-xl transition-all ${
+                                    isSubCurrent
+                                      ? 'bg-honey-50/80 text-honey-800 font-bold'
+                                      : 'hover:bg-cream-50 text-charcoal-700 hover:text-honey-600'
+                                  }`}
+                                >
+                                  <div className="flex items-center justify-between">
+                                    <span className="text-xs font-bold leading-tight">
+                                      {sub.label}
+                                    </span>
+                                    {sub.badge && (
+                                      <span className="text-[9px] font-bold bg-honey-100 text-honey-800 px-1.5 py-0.2 rounded-full">
+                                        {sub.badge}
+                                      </span>
+                                    )}
+                                  </div>
+                                  {sub.description && (
+                                    <span className="text-[10px] text-charcoal-400 group-hover/sub:text-charcoal-600 mt-0.5 leading-snug line-clamp-1">
+                                      {sub.description}
+                                    </span>
+                                  )}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   )}
-                  {isActive && (
-                    <motion.div
-                      layoutId="nav-underline"
-                      className="absolute left-0 right-0 bottom-0 h-0.5 bg-honey-500 rounded-full"
-                    />
-                  )}
-                </Link>
+                </div>
               );
             })}
-            <Link
-              href="/ve-chung-toi"
-              className={`flex items-center space-x-1.5 py-1 transition-colors ${
-                pathname === '/ve-chung-toi' ? 'text-honey-600 font-bold' : 'text-charcoal-700 hover:text-honey-600'
-              }`}
-            >
-              <Heart className="w-3.5 h-3.5 text-blush-500" />
-              <span>Về Chúng Tôi</span>
-            </Link>
           </nav>
 
-          {/* Action Icons */}
+          {/* Action Icons (Right Actions) */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            {/* Search Icon */}
+            {/* TÌM KIẾM: Giữ nguyên icon kính lúp */}
             <button
               onClick={() => setIsSearchOpen(true)}
               data-track="open-search"
@@ -102,7 +197,7 @@ export function Header() {
               <Search className="w-5 h-5" />
             </button>
 
-            {/* Auth Button / User Dropdown */}
+            {/* TÀI KHOẢN: Nút "Tài Khoản" (Giữ icon user và style) / User Dropdown */}
             {isAuthenticated && user ? (
               <div className="relative">
                 <button
@@ -127,7 +222,7 @@ export function Header() {
                   <ChevronDown className="w-3 h-3 text-charcoal-400" />
                 </button>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu Tài Khoản Đã Đăng Nhập */}
                 {isUserMenuOpen && (
                   <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-cream-200 py-2 z-50 animate-scale-up">
                     <div className="px-3.5 py-2 border-b border-cream-100">
@@ -194,11 +289,11 @@ export function Header() {
                 className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-cream-300 hover:border-honey-300 bg-white hover:bg-cream-50 text-xs font-bold text-charcoal-700 transition-all active:scale-95 shadow-2xs"
               >
                 <UserIcon className="w-3.5 h-3.5 text-honey-600" />
-                <span className="hidden sm:inline">Đăng Nhập</span>
+                <span className="hidden sm:inline">Tài Khoản</span>
               </Link>
             )}
 
-            {/* Cart Button với Bounce Animation */}
+            {/* GIỎ HÀNG: Giữ nguyên text "Giỏ hàng", icon và badge số lượng đếm */}
             <motion.button
               key={cartBounceTrigger}
               animate={cartBounceTrigger > 0 ? { scale: [1, 1.25, 0.95, 1.1, 1] } : {}}

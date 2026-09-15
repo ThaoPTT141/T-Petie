@@ -13,21 +13,19 @@ datasource db {
 
 model User {
   id            String    @id @default(cuid())
-  name          String?
   email         String?   @unique
+  password      String?   // Hashed with bcrypt (nullable cho Google OAuth)
+  role          String    @default("user") // "admin" | "user"
+  
+  // Thông tin mở rộng cho hồ sơ Mẹ & Bé
+  name          String?
   emailVerified DateTime?
   image         String?
-  password      String?   // Hashed with bcrypt (nullable for Google OAuth accounts)
-  
-  // Phân quyền & Quản lý trạng thái
-  role          String    @default("user")   // "admin" | "user"
   status        String    @default("active") // "active" | "blocked"
-  
-  // Thông tin liên hệ & Thành viên
   phone         String?
   address       String?
   city          String?
-  points        Int       @default(100)      // Điểm tích lũy thành viên (Tặng 100 điểm chào mừng)
+  points        Int       @default(100)      // Điểm tích lũy chào mừng
   
   // Hồ sơ Bé Yêu & Gợi ý Size tự động
   babyName        String?
@@ -47,6 +45,18 @@ model User {
   lastLoginAt   DateTime?
 
   @@map("users")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  price       Float
+  description String?  @db.Text
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("products")
 }
 
 model Account {

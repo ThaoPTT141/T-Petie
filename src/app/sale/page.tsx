@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { Flame, Clock, Tag, Sparkles } from 'lucide-react';
 import localProducts from '@/data/products.json';
@@ -8,10 +9,21 @@ import { Product, SaleCampaign } from '@/types/product';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { useToast } from '@/context/ToastContext';
 
-export default function SalePage() {
+function SaleContent() {
+  const searchParams = useSearchParams();
   const allProducts = localProducts as Product[];
   const [activeTab, setActiveTab] = useState<SaleCampaign>('dai-le-2-9');
   const { showToast } = useToast();
+
+  useEffect(() => {
+    const campaignParam = searchParams.get('campaign') as SaleCampaign | null;
+    if (
+      campaignParam &&
+      ['dai-le-2-9', 'sale-he', 'sale-thu-dong', 'sale-ngay-doi'].includes(campaignParam)
+    ) {
+      setActiveTab(campaignParam);
+    }
+  }, [searchParams]);
 
   const campaigns: { id: SaleCampaign; label: string; badge: string; desc: string }[] = [
     {
@@ -32,10 +44,20 @@ export default function SalePage() {
       badge: 'Deal Độc Quyền',
       desc: 'Ưu đãi sớm cho BST Thu Đông và phiên bản kết hợp cao cấp.',
     },
+    {
+      id: 'sale-ngay-doi',
+      label: '🎁 Sale Ngày Đôi 10/10 11/11',
+      badge: 'Siêu Voucher',
+      desc: 'Săn bão ưu đãi ngày đôi cùng voucher độc quyền và quà tặng xinh xắn.',
+    },
   ];
 
   const filteredProducts = useMemo(() => {
-    return allProducts.filter((p) => p.isSale && (p.saleCampaign === activeTab || !p.saleCampaign));
+    return allProducts.filter((p) => {
+      if (!p.isSale) return false;
+      if (activeTab === 'sale-ngay-doi') return true; // Tất cả sản phẩm sale trong ngày đôi
+      return p.saleCampaign === activeTab || !p.saleCampaign;
+    });
   }, [allProducts, activeTab]);
 
   const activeCampaignInfo = campaigns.find((c) => c.id === activeTab);
@@ -47,17 +69,17 @@ export default function SalePage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 space-y-6">
-      <Breadcrumb items={[{ label: 'Chương Trình Khuyến Mãi', href: '/sale' }]} />
+      <Breadcrumb items={[{ label: 'Chương Trình Ưu Đãi & Khuyến Mãi', href: '/sale' }]} />
 
       {/* Hero Sale Banner */}
       <div className="bg-gradient-to-r from-honey-500 via-blush-500 to-honey-600 rounded-3xl p-6 sm:p-8 text-white shadow-soft relative overflow-hidden">
         <div className="relative z-10 max-w-2xl space-y-3">
           <div className="inline-flex items-center space-x-1.5 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold">
             <Flame className="w-4 h-4 text-yellow-300" />
-            <span>Săn Sale Giờ Vàng</span>
+            <span>Săn Ưu Đãi Giờ Vàng</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold font-heading">
-            T&apos;Petie Sale Khủng — Đồ Xinh Cho Bé, Giá Mềm Cho Mẹ
+            T&apos;Petie Ưu Đãi Khủng — Đồ Xinh Cho Bé, Giá Mềm Cho Mẹ
           </h1>
           <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
             Hàng trăm mẫu váy áo thiết kế cao cấp đang có mức giá ưu đãi đặc biệt. Nhanh tay chọn size cho bé yêu kẻo hết size nhé mẹ ơi!
@@ -106,8 +128,8 @@ export default function SalePage() {
         ))}
       </div>
 
-      {/* 3 TAB SEGMENTED CONTROL */}
-      <div className="bg-cream-100 p-1.5 rounded-2xl flex flex-col sm:flex-row gap-1">
+      {/* TAB SEGMENTED CONTROL */}
+      <div className="bg-cream-100 p-1.5 rounded-2xl grid grid-cols-2 lg:grid-cols-4 gap-1">
         {campaigns.map((camp) => {
           const isActive = activeTab === camp.id;
           return (
@@ -115,15 +137,15 @@ export default function SalePage() {
               key={camp.id}
               onClick={() => setActiveTab(camp.id)}
               data-track={`sale-tab-${camp.id}`}
-              className={`flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center space-x-2 transition-all ${
+              className={`py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center space-x-1.5 transition-all ${
                 isActive
                   ? 'bg-white text-honey-600 shadow-sm'
                   : 'text-charcoal-600 hover:text-charcoal-900'
               }`}
             >
-              <span>{camp.label}</span>
+              <span className="truncate">{camp.label}</span>
               <span
-                className={`text-[10px] px-2 py-0.2 rounded-full font-semibold ${
+                className={`text-[10px] px-2 py-0.2 rounded-full font-semibold shrink-0 hidden sm:inline ${
                   isActive ? 'bg-honey-100 text-honey-700' : 'bg-cream-200 text-charcoal-600'
                 }`}
               >
@@ -147,5 +169,13 @@ export default function SalePage() {
       {/* Grid Sản Phẩm Khuyến Mãi */}
       <ProductGrid products={filteredProducts} />
     </div>
+  );
+}
+
+export default function SalePage() {
+  return (
+    <Suspense fallback={<div className="max-w-6xl mx-auto p-8 text-center text-charcoal-400">Đang tải ưu đãi...</div>}>
+      <SaleContent />
+    </Suspense>
   );
 }

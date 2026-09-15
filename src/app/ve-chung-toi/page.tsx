@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Sparkles, 
@@ -63,8 +64,16 @@ const ABOUT_TABS = [
   },
 ];
 
-export default function AboutPage() {
+function AboutContent() {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<string>('story');
+
+  useEffect(() => {
+    const tabParam = searchParams.get('tab');
+    if (tabParam && ABOUT_TABS.some((t) => t.id === tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, [searchParams]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-8 space-y-8 sm:space-y-12">
@@ -555,5 +564,13 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function AboutPage() {
+  return (
+    <Suspense fallback={<div className="max-w-6xl mx-auto p-8 text-center text-charcoal-400">Đang tải thông tin T&apos;Petie...</div>}>
+      <AboutContent />
+    </Suspense>
   );
 }
