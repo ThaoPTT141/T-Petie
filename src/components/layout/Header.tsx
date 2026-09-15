@@ -68,7 +68,7 @@ export function Header() {
         }}
         animate={hidden ? 'hidden' : 'visible'}
         transition={{ duration: 0.25, ease: 'easeInOut' }}
-        className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-cream-200 shadow-sm"
+        className="sticky top-0 z-50 bg-white border-b border-cream-200 shadow-sm"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo Brand (Ngoài cùng bên trái) */}
@@ -132,7 +132,7 @@ export function Header() {
                     )}
                   </Link>
 
-                  {/* Sub-menu (Dropdown) khi hover */}
+                  {/* Sub-menu (Dropdown) khi hover - 100% Solid White, Shadow Đậm, Z-index Cao, Độ Tương Phản Tốt */}
                   {hasChildren && (
                     <AnimatePresence>
                       {isHovered && (
@@ -141,9 +141,9 @@ export function Header() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 6, scale: 0.97 }}
                           transition={{ duration: 0.16, ease: 'easeOut' }}
-                          className="absolute left-0 top-full pt-1 z-50 min-w-[240px] max-w-[280px]"
+                          className="absolute left-0 top-full pt-1.5 z-50 min-w-[260px] max-w-[300px]"
                         >
-                          <div className="bg-white/98 backdrop-blur-md rounded-2xl shadow-xl border border-cream-200 p-2 space-y-1">
+                          <div className="bg-white rounded-2xl shadow-2xl border border-cream-300/90 ring-1 ring-black/5 p-2 space-y-1">
                             {item.children?.map((sub) => {
                               const isSubCurrent = pathname === sub.href;
                               return (
@@ -153,12 +153,12 @@ export function Header() {
                                   onClick={() => setHoveredNavIndex(null)}
                                   className={`group/sub flex flex-col p-2.5 rounded-xl transition-all ${
                                     isSubCurrent
-                                      ? 'bg-honey-50/80 text-honey-800 font-bold'
-                                      : 'hover:bg-cream-50 text-charcoal-700 hover:text-honey-600'
+                                      ? 'bg-honey-50 text-honey-900 font-bold'
+                                      : 'hover:bg-cream-100 text-charcoal-900 hover:text-honey-700'
                                   }`}
                                 >
                                   <div className="flex items-center justify-between">
-                                    <span className="text-xs font-bold leading-tight">
+                                    <span className="text-xs font-bold leading-tight text-charcoal-900 group-hover/sub:text-honey-700">
                                       {sub.label}
                                     </span>
                                     {sub.badge && (
@@ -168,7 +168,7 @@ export function Header() {
                                     )}
                                   </div>
                                   {sub.description && (
-                                    <span className="text-[10px] text-charcoal-400 group-hover/sub:text-charcoal-600 mt-0.5 leading-snug line-clamp-1">
+                                    <span className="text-[11px] text-charcoal-600 font-medium group-hover/sub:text-charcoal-800 mt-0.5 leading-snug line-clamp-1">
                                       {sub.description}
                                     </span>
                                   )}
@@ -224,10 +224,10 @@ export function Header() {
 
                 {/* Dropdown Menu Tài Khoản Đã Đăng Nhập */}
                 {isUserMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-cream-200 py-2 z-50 animate-scale-up">
+                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-cream-300/90 ring-1 ring-black/5 py-2 z-50 animate-scale-up">
                     <div className="px-3.5 py-2 border-b border-cream-100">
                       <p className="text-xs font-bold text-charcoal-900 truncate">{user.name}</p>
-                      <p className="text-[10px] text-charcoal-400 font-mono truncate">{user.email}</p>
+                      <p className="text-[10px] text-charcoal-500 font-mono truncate">{user.email}</p>
                       <span className={`inline-block mt-1 text-[9px] font-bold px-2 py-0.5 rounded-full ${
                         user.role === 'admin' ? 'bg-honey-100 text-honey-800' : 'bg-sage-100 text-sage-800'
                       }`}>
@@ -235,7 +235,7 @@ export function Header() {
                       </span>
                     </div>
 
-                    <div className="py-1 text-xs text-charcoal-700">
+                    <div className="py-1 text-xs text-charcoal-900">
                       {user.role === 'admin' ? (
                         <Link
                           href="/admin"
@@ -249,7 +249,7 @@ export function Header() {
                         <Link
                           href="/dashboard"
                           onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-50 font-medium"
+                          className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-100 font-semibold text-charcoal-900"
                         >
                           <LayoutDashboard className="w-4 h-4 text-honey-600" />
                           <span>Hồ Sơ &amp; Gợi Ý Size Bé</span>
@@ -260,7 +260,7 @@ export function Header() {
                         <Link
                           href="/dashboard"
                           onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-50"
+                          className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-100 font-semibold text-charcoal-900"
                         >
                           <ShoppingBag className="w-4 h-4 text-sage-600" />
                           <span>Đơn hàng của tôi</span>
@@ -274,7 +274,7 @@ export function Header() {
                           setIsUserMenuOpen(false);
                           logout();
                         }}
-                        className="w-full flex items-center space-x-2 px-3.5 py-2 text-xs font-semibold text-blush-600 hover:bg-blush-50 text-left transition-colors"
+                        className="w-full flex items-center space-x-2 px-3.5 py-2 text-xs font-bold text-blush-600 hover:bg-blush-50 text-left transition-colors"
                       >
                         <LogOut className="w-4 h-4" />
                         <span>Đăng xuất</span>
