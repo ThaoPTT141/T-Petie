@@ -74,7 +74,7 @@ export function Header() {
           {/* Logo Brand (Ngoài cùng bên trái) */}
           <Link href="/" className="flex items-center group py-1">
             <img
-              src="/images/logo.png"
+              src="/images/logo-red.png"
               alt="T'Petie - Made for little souls"
               className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
             />
