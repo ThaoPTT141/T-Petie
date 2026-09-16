@@ -3,16 +3,16 @@
     "id": "hoc-xinh-kem",
     "title": "Học Xinh Kem",
     "subtitle": "Nét trong sáng, tinh khôi cùng bé tựu trường rạng rỡ",
-    "story": "Lấy cảm hứng từ những ngày đầu tựu trường với tà váy xếp ly mềm, cổ sen thêu hoa tỉ mỉ và tone màu kem vani ấm áp. Bộ sưu tập mang lại vẻ đẹp thanh lịch nhưng vẫn vô cùng thoải mái cho bé vui chơi, vận động suốt cả ngày dài ở trường.",
-    "bannerImage": "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?q=80&w=1200&auto=format&fit=crop",
+    "story": "",
+    "bannerImage": "/images/hoc-xinh-kem.jpg",
     "lookbookImages": [
       "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1543332164-6e82f355badc?q=80&w=800&auto=format&fit=crop"
     ],
     "themeColor": "#FFF8EE",
     "accentColor": "#D97706",
-    "season": "Mùa Tựu Trường 2024",
-    "badge": "BST Tựu Trường",
+    "season": "",
+    "badge": "",
     "featuredProductIds": ["ao-so-mi-co-sen-hoc-xinh", "vay-yem-kem-hoc-xinh", "set-ao-vay-hoc-xinh"]
   },
   {
