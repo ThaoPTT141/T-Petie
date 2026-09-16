@@ -45,6 +45,9 @@ export interface Product {
   isSale?: boolean;         // Đang có chương trình Sale
   
   description: string;      // Mô tả chi tiết cho mẹ bỉm
+  promotion?: string;       // Ưu đãi: Tặng kẹp tóc, giảm 50k khi mua combo 3 món...
+  orderNote?: string;       // Lưu ý nhận đơn / bảo quản riêng
+  specifications?: string;  // Thông số đo chi tiết (chiều dài áo, váy, quần theo size)
   careInstructions: string[]; // Hướng dẫn giặt & bảo quản
   origin: string;           // Xuất xứ (VD: "Thiết kế & May đo tại Việt Nam")
   rating: number;           // Đánh giá trung bình (VD: 4.9)

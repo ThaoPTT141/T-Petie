@@ -13,7 +13,22 @@
     "accentColor": "#D97706",
     "season": "",
     "badge": "",
-    "featuredProductIds": ["ao-so-mi-co-sen-hoc-xinh", "vay-yem-kem-hoc-xinh", "set-ao-vay-hoc-xinh"]
+    "featuredProductIds": [
+      "ao-so-mi-trai-dat",
+      "chan-vay-jeans",
+      "ao-baby-blue",
+      "set-nhi-nhanh-3-items",
+      "vay-thi-ca",
+      "vay-nang-mai",
+      "set-tinh-khoi",
+      "ao-ghile-hoi-hoa",
+      "chan-vay-hoi-hoa",
+      "quan-baggy-be",
+      "ao-thanh-lam",
+      "ao-polo-trang-giay",
+      "sooc-jeans",
+      "vay-ghile-o-ly"
+    ]
   },
   {
     "id": "trung-thu-kem-com",

@@ -18,6 +18,8 @@ import {
   Minus,
   Sparkles,
   Share2,
+  Gift,
+  AlertTriangle,
 } from 'lucide-react';
 import localProducts from '@/data/products.json';
 import { Product, ProductSizeOption } from '@/types/product';
@@ -220,6 +222,14 @@ export default function ProductDetailPage({ params }: PageProps) {
             </span>
           </div>
 
+          {/* Ưu đãi đặc biệt */}
+          {product.promotion && (
+            <div className="flex items-center space-x-2.5 p-3 rounded-2xl bg-blush-50 border border-blush-200 text-blush-900 text-xs font-medium shadow-2xs">
+              <Gift className="w-4 h-4 text-blush-500 shrink-0" />
+              <span><strong className="font-bold text-blush-700">Ưu đãi:</strong> {product.promotion}</span>
+            </div>
+          )}
+
           {/* Chọn Size Cho Bé */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -325,6 +335,27 @@ export default function ProductDetailPage({ params }: PageProps) {
               <span>Miễn phí giao hàng toàn quốc cho đơn từ 399.000đ.</span>
             </div>
           </div>
+
+          {/* Thông số bổ sung & Lưu ý nhận đơn */}
+          {product.specifications && (
+            <div className="p-4 rounded-2xl bg-honey-50/60 border border-honey-200 text-xs text-charcoal-800 space-y-1">
+              <div className="flex items-center space-x-1.5 font-bold text-honey-800">
+                <Ruler className="w-4 h-4 text-honey-600 shrink-0" />
+                <span>Thông số chiều dài chi tiết:</span>
+              </div>
+              <p className="leading-relaxed text-charcoal-700">{product.specifications}</p>
+            </div>
+          )}
+
+          {product.orderNote && (
+            <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs text-charcoal-800 space-y-1">
+              <div className="flex items-center space-x-1.5 font-bold text-amber-800">
+                <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
+                <span>Lưu ý khi đặt / nhận đơn:</span>
+              </div>
+              <p className="leading-relaxed text-amber-900">{product.orderNote}</p>
+            </div>
+          )}
 
           {/* Mô tả chi tiết & Hướng dẫn giặt */}
           <div className="space-y-4 pt-4 border-t border-cream-200 text-xs sm:text-sm text-charcoal-700">

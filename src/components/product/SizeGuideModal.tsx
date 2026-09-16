@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Ruler, Sparkles, HelpCircle } from 'lucide-react';
-import { SIZE_CHART_BABY, SIZE_CHART_KIDS } from '@/lib/constants/sizeGuide';
+import { SIZE_CHART_HOC_XINH_KEM, SIZE_CHART_BABY, SIZE_SELECTION_TIPS } from '@/lib/constants/sizeGuide';
 
 interface SizeGuideModalProps {
   isOpen: boolean;
@@ -56,7 +56,7 @@ export function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps) {
                     : 'text-charcoal-600 hover:text-charcoal-900'
                 }`}
               >
-                Bé Gái (1 - 5 Tuổi)
+                Bảng Size Chuẩn (Size 90 - 150)
               </button>
               <button
                 onClick={() => setActiveTab('baby')}
@@ -71,39 +71,44 @@ export function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps) {
             </div>
 
             {/* Bảng Dữ Liệu Size */}
-            <div className="overflow-y-auto flex-1 border border-cream-200 rounded-2xl">
+            <div className="overflow-y-auto flex-1 border border-cream-200 rounded-2xl max-h-56">
               <table className="w-full text-xs text-left">
-                <thead className="bg-cream-50 text-charcoal-900 font-bold border-b border-cream-200">
+                <thead className="bg-cream-50 text-charcoal-900 font-bold border-b border-cream-200 sticky top-0">
                   <tr>
                     <th className="py-2.5 px-3">Size</th>
-                    <th className="py-2.5 px-3">Độ Tuổi</th>
                     <th className="py-2.5 px-3">Cân Nặng</th>
                     <th className="py-2.5 px-3">Chiều Cao</th>
+                    <th className="py-2.5 px-3">Độ Tuổi</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-cream-100">
-                  {(activeTab === 'kids' ? SIZE_CHART_KIDS : SIZE_CHART_BABY).map((row, idx) => (
+                  {(activeTab === 'kids' ? SIZE_CHART_HOC_XINH_KEM : SIZE_CHART_BABY).map((row, idx) => (
                     <tr key={idx} className="hover:bg-cream-50 transition-colors">
-                      <td className="py-2.5 px-3 font-bold text-honey-600">{row.size}</td>
-                      <td className="py-2.5 px-3 text-charcoal-700">{row.age}</td>
-                      <td className="py-2.5 px-3 font-semibold text-sage-700">{row.weight}</td>
-                      <td className="py-2.5 px-3 text-charcoal-600">{row.height}</td>
+                      <td className="py-2 px-3 font-bold text-honey-600">{row.size}</td>
+                      <td className="py-2 px-3 font-semibold text-sage-700">{row.weight}</td>
+                      <td className="py-2 px-3 text-charcoal-700">{row.height}</td>
+                      <td className="py-2 px-3 text-charcoal-500">{row.age}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            {/* Lời Khuyên Cho Mẹ Bỉm */}
-            <div className="mt-4 p-3 bg-sage-50 border border-sage-200 rounded-2xl text-[11px] text-sage-800 flex items-start space-x-2">
-              <Sparkles className="w-4 h-4 text-sage-600 shrink-0 mt-0.5" />
-              <p>
-                <strong>Mẹo cho mẹ:</strong> Nếu bé trộm vía bụ bẫm hoặc có bụng tròn, mẹ nên chọn tăng lên <strong>1 size</strong> để bé mặc thoải mái, dễ chịu nhất khi vận động nhé!
-              </p>
+            {/* Lưu ý khi chọn size */}
+            <div className="mt-3 p-3 bg-amber-50/70 border border-amber-200 rounded-2xl text-[11px] text-charcoal-700 space-y-1 overflow-y-auto max-h-32">
+              <div className="flex items-center space-x-1.5 font-bold text-amber-800 mb-1">
+                <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                <span>Lưu ý khi chọn size cho bé:</span>
+              </div>
+              <ul className="space-y-1 list-disc pl-4 text-charcoal-600 leading-relaxed text-[11px]">
+                {SIZE_SELECTION_TIPS.map((tip, idx) => (
+                  <li key={idx}>{tip}</li>
+                ))}
+              </ul>
             </div>
 
             {/* Nút Đóng */}
-            <div className="mt-4 pt-2">
+            <div className="mt-3 pt-1">
               <button
                 onClick={onClose}
                 className="w-full py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold shadow-md transition-all active:scale-95"
