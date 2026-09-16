@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "id":  "ao-so-mi-trai-dat",
         "sku":  "TP-HXK-001",
@@ -1854,66 +1854,66 @@
     {
         "id":  "vay-chanh-tay",
         "sku":  "TP-HM-001",
-        "name":  "VÃ¡y Chanh TÃ¢y ThÃ´ GiÃ³",
+        "name":  "Váy Chanh Tây Thô Gió",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "vay",
-        "subcategoryName":  "VÃ¡y Thiáº¿t Káº¿",
+        "subcategoryName":  "Váy Thiết Kế",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "ThÃ´ giÃ³ mÃ¡t may 2 lá»›p nháº¹ nhÃ ng, tháº¥m hÃºt tá»‘t, khÃ´ng gÃ¢y nÃ³ng bÃ­",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Thô gió mát may 2 lớp nhẹ nhàng, thấm hút tốt, không gây nóng bí",
         "materialFeatures":  [
-                                 "ThÃ´ giÃ³ mÃ¡t may 2 lá»›p nháº¹ nhÃ ng",
-                                 "Tháº¥m hÃºt tá»‘t, khÃ´ng gÃ¢y nÃ³ng bÃ­",
-                                 "Form rá»™ng thoáº£i mÃ¡i trÃªn gá»‘i"
+                                 "Thô gió mát may 2 lớp nhẹ nhàng",
+                                 "Thấm hút tốt, không gây nóng bí",
+                                 "Form rộng thoải mái trên gối"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  415000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  415000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  415000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  415000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  455000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  455000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  545000,
                           "stock":  10
                       }
@@ -1923,86 +1923,86 @@
                        "/images/products/ha-mat/vay-chanh-tay.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/vay-chanh-tay.jpg",
-        "colorName":  "VÃ ng Chanh TÃ¢y",
+        "colorName":  "Vàng Chanh Tây",
         "colorHex":  "#F6E05E",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "VÃ¡y Chanh TÃ¢y vá»›i cháº¥t liá»‡u thÃ´ giÃ³ mÃ¡t may 2 lá»›p nháº¹ nhÃ ng, kháº£ nÄƒng tháº¥m hÃºt má»“ hÃ´i tá»‘t khÃ´ng gÃ¢y nÃ³ng bÃ­ cho bÃ©. Thiáº¿t káº¿ cá»• sen tráº¯ng tinh khÃ´i Ä‘iá»ƒm xuyáº¿t vÃ²ng hoa thÃªu tay ngá»±c Ã¡o Ä‘á»™c quyá»n.",
-        "promotion":  "Freeship vÃ  táº·ng káº¹p tÃ³c má»—i Ä‘Æ¡n",
-        "orderNote":  "Nháº­n theo Ä‘Æ¡n - khÃ´ng cÃ³ sáºµn. Tráº£ Ä‘Æ¡n 5-7 ngÃ y (cÃ³ thá»ƒ sá»›m hÆ¡n náº¿u khÃ¡ch cáº§n).",
-        "specifications":  "Äá»™ dÃ i vÃ¡y: Size 90: 48cm, Size 100: 54cm, Size 110: 56cm, Size 120: 64cm, Size 130: 70cm, Size 140: 76cm, Size 150: 80cm",
+        "description":  "Váy Chanh Tây với chất liệu thô gió mát may 2 lớp nhẹ nhàng, khả năng thấm hút mồ hôi tốt không gây nóng bí cho bé. Thiết kế cổ sen trắng tinh khôi điểm xuyết vòng hoa thêu tay ngực áo độc quyền.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Nhận theo đơn - không có sẵn. Trả đơn 5-7 ngày (có thể sớm hơn nếu khách cần).",
+        "specifications":  "Độ dài váy: Size 90: 48cm, Size 100: 54cm, Size 110: 56cm, Size 120: 64cm, Size 130: 70cm, Size 140: 76cm, Size 150: 80cm",
         "careInstructions":  [
-                                 "Giáº·t tay hoáº·c giáº·t mÃ¡y cháº¿ Ä‘á»™ nháº¹",
-                                 "á»¦i hÆ¡i nÆ°á»›c nhiá»‡t Ä‘á»™ vá»«a"
+                                 "Giặt tay hoặc giặt máy chế độ nhẹ",
+                                 "Ủi hơi nước nhiệt độ vừa"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  28
     },
     {
         "id":  "vay-luu-ly",
         "sku":  "TP-HM-002",
-        "name":  "VÃ¡y LÆ°u Ly Phá»‘i Ren Xanh Pastel",
+        "name":  "Váy Lưu Ly Phối Ren Xanh Pastel",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "vay",
-        "subcategoryName":  "VÃ¡y Thiáº¿t Káº¿",
+        "subcategoryName":  "Váy Thiết Kế",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "ThÃ´ giÃ³ mÃ¡t may 2 lá»›p nháº¹ nhÃ ng, tháº¥m hÃºt tá»‘t, khÃ´ng gÃ¢y nÃ³ng bÃ­",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Thô gió mát may 2 lớp nhẹ nhàng, thấm hút tốt, không gây nóng bí",
         "materialFeatures":  [
-                                 "ThÃ´ giÃ³ may 2 lá»›p má»m máº¡i",
-                                 "Phá»‘i ren tráº¯ng thÃªu hoa cao cáº¥p",
-                                 "Form rá»™ng dÃ i qua gá»‘i thÆ°á»›t tha"
+                                 "Thô gió may 2 lớp mềm mại",
+                                 "Phối ren trắng thêu hoa cao cấp",
+                                 "Form rộng dài qua gối thướt tha"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  385000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  385000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  385000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  385000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  415000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  415000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  515000,
                           "stock":  10
                       }
@@ -2012,87 +2012,87 @@
                        "/images/products/ha-mat/vay-luu-ly.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/vay-luu-ly.jpg",
-        "colorName":  "Xanh LÆ°u Ly Pastel",
+        "colorName":  "Xanh Lưu Ly Pastel",
         "colorHex":  "#A0C4FF",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "VÃ¡y LÆ°u Ly tÃ´ng xanh pastel thanh nhÃ£, phá»‘i ren ngá»±c vÃ  chÃ¢n vÃ¡y ren dá»‡t tinh xáº£o. Form rá»™ng bá»“ng bá»nh, dÃ i tá»›i báº¯p chÃ¢n hoáº·c qua gá»‘i tÃ¹y chiá»u cao bÃ©.",
-        "promotion":  "Freeship vÃ  táº·ng káº¹p tÃ³c má»—i Ä‘Æ¡n",
-        "orderNote":  "Nháº­n theo Ä‘Æ¡n - khÃ´ng cÃ³ sáºµn. Tráº£ Ä‘Æ¡n 5-7 ngÃ y (cÃ³ thá»ƒ sá»›m hÆ¡n náº¿u khÃ¡ch cáº§n).",
-        "specifications":  "Äá»™ dÃ i vÃ¡y: Size 90: 56cm, Size 100: 62cm, Size 110: 72cm, Size 120: 78cm, Size 130: 86cm, Size 140: 93cm",
+        "description":  "Váy Lưu Ly tông xanh pastel thanh nhã, phối ren ngực và chân váy ren dệt tinh xảo. Form rộng bồng bềnh, dài tới bắp chân hoặc qua gối tùy chiều cao bé.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Nhận theo đơn - không có sẵn. Trả đơn 5-7 ngày (có thể sớm hơn nếu khách cần).",
+        "specifications":  "Độ dài váy: Size 90: 56cm, Size 100: 62cm, Size 110: 72cm, Size 120: 78cm, Size 130: 86cm, Size 140: 93cm",
         "careInstructions":  [
-                                 "Giáº·t tay nháº¹ nhÃ ng",
-                                 "KhÃ´ng váº¯t xoáº¯n máº¡nh",
-                                 "á»¦i máº·t trÃ¡i"
+                                 "Giặt tay nhẹ nhàng",
+                                 "Không vắt xoắn mạnh",
+                                 "Ủi mặt trái"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  35
     },
     {
         "id":  "vay-muoi-hong",
         "sku":  "TP-HM-003",
-        "name":  "VÃ¡y Muá»‘i Há»“ng ÄÃ­nh Kim Sa Láº¥p LÃ¡nh",
+        "name":  "Váy Muối Hồng Đính Kim Sa Lấp Lánh",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "vay",
-        "subcategoryName":  "VÃ¡y CÃ´ng ChÃºa",
+        "subcategoryName":  "Váy Công Chúa",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "TÆ¡ dá»‡t hoa ná»•i Ä‘Ã­nh kim sa cao cáº¥p, lÃ³t lá»¥a mÃ¡t bÃªn trong",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Tơ dệt hoa nổi đính kim sa cao cấp, lót lụa mát bên trong",
         "materialFeatures":  [
-                                 "TÆ¡ dá»‡t hoa Ä‘Ã­nh kim sa láº¥p lÃ¡nh",
-                                 "LÃ³t lá»¥a má»m mÃ¡t tiáº¿p xÃºc Ãªm Ã¡i da bÃ©",
-                                 "Form dÃ i qua báº¯p chÃ¢n trÃªn máº¯t cÃ¡"
+                                 "Tơ dệt hoa đính kim sa lấp lánh",
+                                 "Lót lụa mềm mát tiếp xúc êm ái da bé",
+                                 "Form dài qua bắp chân trên mắt cá"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  495000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  495000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  495000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  495000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  525000,
                           "stock":  12
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  525000,
                           "stock":  12
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  625000,
                           "stock":  10
                       }
@@ -2102,86 +2102,86 @@
                        "/images/products/ha-mat/vay-muoi-hong.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/vay-muoi-hong.jpg",
-        "colorName":  "Há»“ng Muá»‘i Pastel",
+        "colorName":  "Hồng Muối Pastel",
         "colorHex":  "#F8BBD0",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Máº«u vÃ¡y cÃ´ng chÃºa lá»™ng láº«y nháº¥t BST Háº¡ Máº­t. Cháº¥t liá»‡u tÆ¡ dá»‡t hoa ná»•i Ä‘Ã­nh kim sa báº¯t sÃ¡ng nháº¹ nhÃ ng, lÃ³t lá»¥a tá»± nhiÃªn siÃªu mÃ¡t, an toÃ n cho lÃ n da nháº¡y cáº£m cá»§a bÃ©.",
-        "promotion":  "Freeship vÃ  táº·ng káº¹p tÃ³c má»—i Ä‘Æ¡n",
-        "orderNote":  "Nháº­n theo Ä‘Æ¡n - khÃ´ng cÃ³ sáºµn. Tráº£ Ä‘Æ¡n 5-7 ngÃ y (cÃ³ thá»ƒ sá»›m hÆ¡n náº¿u khÃ¡ch cáº§n).",
+        "description":  "Mẫu váy công chúa lộng lẫy nhất BST Hạ Mật. Chất liệu tơ dệt hoa nổi đính kim sa bắt sáng nhẹ nhàng, lót lụa tự nhiên siêu mát, an toàn cho làn da nhạy cảm của bé.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Nhận theo đơn - không có sẵn. Trả đơn 5-7 ngày (có thể sớm hơn nếu khách cần).",
         "careInstructions":  [
-                                 "Giáº·t tay nháº¹ nhÃ ng",
-                                 "KhÃ´ng dÃ¹ng cháº¥t táº©y máº¡nh",
-                                 "á»¦i hÆ¡i nÆ°á»›c nhiá»‡t Ä‘á»™ tháº¥p"
+                                 "Giặt tay nhẹ nhàng",
+                                 "Không dùng chất tẩy mạnh",
+                                 "Ủi hơi nước nhiệt độ thấp"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  40
     },
     {
         "id":  "vay-sao-xanh",
         "sku":  "TP-HM-004",
-        "name":  "VÃ¡y Sao Xanh KÃ¨m Yáº¿m Cá»• ThÃªu Hoa Thá»§ CÃ´ng",
+        "name":  "Váy Sao Xanh Kèm Yếm Cổ Thêu Hoa Thủ Công",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "vay",
-        "subcategoryName":  "VÃ¡y Thiáº¿t Káº¿",
+        "subcategoryName":  "Váy Thiết Kế",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "Yáº¿m linen bá»™t premium thÃªu thá»§ cÃ´ng. VÃ¡y linen cotton má»m mÃ¡t, Ã­t nhÄƒn",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Yếm linen bột premium thêu thủ công. Váy linen cotton mềm mát, ít nhăn",
         "materialFeatures":  [
-                                 "Yáº¿m thÃªu tay hoa nhÃ­ thá»§ cÃ´ng",
-                                 "Linen cotton thoÃ¡ng mÃ¡t tá»± nhiÃªn, Ã­t nhÄƒn",
-                                 "Form rá»™ng dÃ i ngang báº¯p chÃ¢n / qua gá»‘i"
+                                 "Yếm thêu tay hoa nhí thủ công",
+                                 "Linen cotton thoáng mát tự nhiên, ít nhăn",
+                                 "Form rộng dài ngang bắp chân / qua gối"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  355000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  355000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  355000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  355000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  385000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  385000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  485000,
                           "stock":  10
                       }
@@ -2191,86 +2191,86 @@
                        "/images/products/ha-mat/vay-sao-xanh.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/vay-sao-xanh.jpg",
-        "colorName":  "Xanh Denim Hoa NhÃ­",
+        "colorName":  "Xanh Denim Hoa Nhí",
         "colorHex":  "#6B8EAE",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "VÃ¡y hoáº¡ tiáº¿t hoa tráº¯ng trÃªn ná»n xanh denim mÃ¡t dá»‹u, kÃ¨m yáº¿m cá»• rá»i cháº¥t liá»‡u linen bá»™t cao cáº¥p thÃªu hoa tay thá»§ cÃ´ng tinh táº¿ (khÃ´ng bÃ¡n láº» cá»•).",
-        "promotion":  "Freeship vÃ  táº·ng káº¹p tÃ³c má»—i Ä‘Æ¡n",
-        "orderNote":  "CÃ³ sáºµn hÃ ng vá» liÃªn tá»¥c - náº¿u dá»«ng restock sáº½ bÃ¡o trÆ°á»›c.",
-        "specifications":  "Äá»™ dÃ i vÃ¡y: Size 90: 56cm, Size 100: 62cm, Size 110: 68cm, Size 120: 70cm, Size 130: 73cm, Size 140: 78cm, Size 150: 90cm",
+        "description":  "Váy hoạ tiết hoa trắng trên nền xanh denim mát dịu, kèm yếm cổ rời chất liệu linen bột cao cấp thêu hoa tay thủ công tinh tế (không bán lẻ cổ).",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn hàng về liên tục - nếu dừng restock sẽ báo trước.",
+        "specifications":  "Độ dài váy: Size 90: 56cm, Size 100: 62cm, Size 110: 68cm, Size 120: 70cm, Size 130: 73cm, Size 140: 78cm, Size 150: 90cm",
         "careInstructions":  [
-                                 "Giáº·t tay hoáº·c giáº·t mÃ¡y tÃºi giáº·t",
-                                 "á»¦i hÆ¡i nÆ°á»›c"
+                                 "Giặt tay hoặc giặt máy túi giặt",
+                                 "Ủi hơi nước"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  52
     },
     {
         "id":  "set-bien-xanh",
         "sku":  "TP-HM-005",
-        "name":  "Set Biá»ƒn Xanh KÃ¨m Ghim Quáº£ Cam",
+        "name":  "Set Biển Xanh Kèm Ghim Quả Cam",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "set-do",
-        "subcategoryName":  "Set Trang Phá»¥c",
+        "subcategoryName":  "Set Trang Phục",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "Linen thÃªu hoa ná»•i cao cáº¥p",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Linen thêu hoa nổi cao cấp",
         "materialFeatures":  [
-                                 "Linen thÃªu hoa ná»•i thoÃ¡ng mÃ¡t",
-                                 "KÃ¨m ghim cÃ i quáº£ cam len mÃ³c xinh xáº¯n",
-                                 "Chá»‰ bÃ¡n theo set, khÃ´ng tÃ¡ch rá»i"
+                                 "Linen thêu hoa nổi thoáng mát",
+                                 "Kèm ghim cài quả cam len móc xinh xắn",
+                                 "Chỉ bán theo set, không tách rời"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  445000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  445000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  445000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  445000,
                           "stock":  18
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  475000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  475000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  575000,
                           "stock":  10
                       }
@@ -2280,85 +2280,85 @@
                        "/images/products/ha-mat/set-bien-xanh.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/set-bien-xanh.jpg",
-        "colorName":  "Xanh Káº» ThÃªu Hoa",
+        "colorName":  "Xanh Kẻ Thêu Hoa",
         "colorHex":  "#7CA1C4",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Set Ã¡o kiá»ƒu rÃºt dÃ¢y sÆ°á»n vÃ  quáº§n Ä‘á»“ng bá»™ tá»« cháº¥t váº£i linen sá»c xanh thÃªu hoa ná»•i. Äiá»ƒm nháº¥n lÃ  ghim cÃ i quáº£ cam len thá»§ cÃ´ng ngá»t ngÃ o. BÃ¡n theo set trá»n gÃ³i.",
-        "promotion":  "Freeship vÃ  táº·ng káº¹p tÃ³c má»—i Ä‘Æ¡n",
-        "orderNote":  "CÃ³ sáºµn hÃ ng vá» liÃªn tá»¥c. Chá»‰ bÃ¡n theo set, khÃ´ng tÆ° váº¥n lá»‡ch size Ã¡o quáº§n.",
+        "description":  "Set áo kiểu rút dây sườn và quần đồng bộ từ chất vải linen sọc xanh thêu hoa nổi. Điểm nhấn là ghim cài quả cam len thủ công ngọt ngào. Bán theo set trọn gói.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn hàng về liên tục. Chỉ bán theo set, không tư vấn lệch size áo quần.",
         "careInstructions":  [
-                                 "Giáº·t tay nháº¹ nhÃ ng",
-                                 "LÃ  á»§i máº·t trong nhiá»‡t Ä‘á»™ vá»«a"
+                                 "Giặt tay nhẹ nhàng",
+                                 "Là ủi mặt trong nhiệt độ vừa"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  46
     },
     {
         "id":  "ao-matcha-latte",
         "sku":  "TP-HM-006",
-        "name":  "Ão Matcha Latte KÃ¨m Ghim CÃ i Kem á»c Quáº¿",
+        "name":  "Áo Matcha Latte Kèm Ghim Cài Kem Ốc Quế",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "ao",
-        "subcategoryName":  "Ão Polo Kiá»ƒu",
+        "subcategoryName":  "Áo Polo Kiểu",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "ChÃ©o Ã cao cáº¥p khÃ´ng nhÄƒn, má»m má»ng, máº·c chÃ­nh hÃ¨ cá»±c mÃ¡t",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Chéo Ý cao cấp không nhăn, mềm mỏng, mặc chính hè cực mát",
         "materialFeatures":  [
-                                 "ChÃ©o Ã chá»‘ng nhÄƒn xuáº¥t sáº¯c",
-                                 "Phá»‘i 2 mÃ u kem - xanh matcha ngá»t ngÃ o",
-                                 "KÃ¨m ghim cÃ i kem á»‘c quáº¿ len thá»§ cÃ´ng"
+                                 "Chéo Ý chống nhăn xuất sắc",
+                                 "Phối 2 màu kem - xanh matcha ngọt ngào",
+                                 "Kèm ghim cài kem ốc quế len thủ công"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  285000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  285000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  285000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  285000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  315000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  315000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  415000,
                           "stock":  10
                       }
@@ -2373,80 +2373,80 @@
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Ão polo dÃ¡ng suÃ´ng xÃ²e nháº¹ tÃ´ng Matcha Latte thanh mÃ¡t, cá»• sen tráº¯ng Ä‘Ã¡ng yÃªu. Cháº¥t váº£i chÃ©o Ã siÃªu thoÃ¡ng, khÃ´ng nhÄƒn nhÃ u ká»ƒ cáº£ khi bÃ© váº­n Ä‘á»™ng cáº£ ngÃ y.",
-        "promotion":  "Táº·ng káº¹p tÃ³c. Mua kÃ¨m 1 quáº§n hoáº·c thÃªm 1 Ã¡o -\u003e Freeship toÃ n quá»‘c",
-        "orderNote":  "Nháº­n theo Ä‘Æ¡n - khÃ´ng cÃ³ sáºµn. Tráº£ Ä‘Æ¡n 5-7 ngÃ y. CÃ³ thá»ƒ tÆ° váº¥n chá»n lá»‡ch size khi phá»‘i vá»›i quáº§n bÃ­ nÃ¢u.",
+        "description":  "Áo polo dáng suông xòe nhẹ tông Matcha Latte thanh mát, cổ sen trắng đáng yêu. Chất vải chéo Ý siêu thoáng, không nhăn nhàu kể cả khi bé vận động cả ngày.",
+        "promotion":  "Tặng kẹp tóc. Mua kèm 1 quần hoặc thêm 1 áo -\u003e Freeship toàn quốc",
+        "orderNote":  "Nhận theo đơn - không có sẵn. Trả đơn 5-7 ngày. Có thể tư vấn chọn lệch size khi phối với quần bí nâu.",
         "careInstructions":  [
-                                 "Giáº·t mÃ¡y thoáº£i mÃ¡i",
-                                 "KhÃ´ng cáº§n á»§i hoáº·c á»§i nháº¹"
+                                 "Giặt máy thoải mái",
+                                 "Không cần ủi hoặc ủi nhẹ"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  38
     },
     {
         "id":  "quan-bi-nau",
         "sku":  "TP-HM-007",
-        "name":  "Quáº§n BÃ­ NÃ¢u Phá»“ng Xinh",
+        "name":  "Quần Bí Nâu Phồng Xinh",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "quan",
-        "subcategoryName":  "Quáº§n BÃ­ \u0026 Bloomer",
+        "subcategoryName":  "Quần Bí \u0026 Bloomer",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "ThÃ´ mÃ¡t tá»± nhiÃªn, Ä‘á»‹nh lÆ°á»£ng má»m Ãªm",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Thô mát tự nhiên, định lượng mềm êm",
         "materialFeatures":  [
-                                 "ThÃ´ mÃ¡t tá»± nhiÃªn",
-                                 "Form dÃ¡ng bÃ­ phá»“ng trÃ²n Ä‘Ã¡ng yÃªu",
-                                 "LÆ°ng chun má»m co giÃ£n thoáº£i mÃ¡i bá»¥ng bÃ©"
+                                 "Thô mát tự nhiên",
+                                 "Form dáng bí phồng tròn đáng yêu",
+                                 "Lưng chun mềm co giãn thoải mái bụng bé"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  135000,
                           "stock":  30
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  135000,
                           "stock":  30
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  135000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  135000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  135000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  135000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  235000,
                           "stock":  15
                       }
@@ -2456,85 +2456,85 @@
                        "/images/products/ha-mat/quan-bi-nau.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/quan-bi-nau.jpg",
-        "colorName":  "NÃ¢u Be Tráº§m áº¤m",
+        "colorName":  "Nâu Be Trầm Ấm",
         "colorHex":  "#CDB49B",
         "isBestSeller":  false,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Quáº§n bÃ­ mÃ u nÃ¢u be nháº¡t áº¥m Ã¡p, form phá»“ng trÃ²n cá»±c ká»³ dá»… thÆ°Æ¡ng khi phá»‘i cÃ¹ng Ão Matcha Latte hoáº·c cÃ¡c máº«u Ã¡o sÆ¡ mi hÃ¨ cá»§a T\u0027Petie.",
-        "promotion":  "Táº·ng káº¹p tÃ³c. Quáº§n mua kÃ¨m Ã¡o Ä‘Æ°á»£c Freeship",
-        "orderNote":  "Nháº­n theo Ä‘Æ¡n - khÃ´ng cÃ³ sáºµn. Tráº£ Ä‘Æ¡n 5-7 ngÃ y. CÃ³ thá»ƒ tÆ° váº¥n lá»‡ch size Ã¡o, quáº§n.",
+        "description":  "Quần bí màu nâu be nhạt ấm áp, form phồng tròn cực kỳ dễ thương khi phối cùng Áo Matcha Latte hoặc các mẫu áo sơ mi hè của T\u0027Petie.",
+        "promotion":  "Tặng kẹp tóc. Quần mua kèm áo được Freeship",
+        "orderNote":  "Nhận theo đơn - không có sẵn. Trả đơn 5-7 ngày. Có thể tư vấn lệch size áo, quần.",
         "careInstructions":  [
-                                 "Giáº·t mÃ¡y cháº¿ Ä‘á»™ thÆ°á»ng",
-                                 "LÃ  á»§i nhiá»‡t Ä‘á»™ vá»«a"
+                                 "Giặt máy chế độ thường",
+                                 "Là ủi nhiệt độ vừa"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  4.9,
         "reviewCount":  31
     },
     {
         "id":  "quan-vay-2-tang-navy",
         "sku":  "TP-HM-008",
-        "name":  "Quáº§n VÃ¡y 2 Táº§ng Linen Navy",
+        "name":  "Quần Váy 2 Tầng Linen Navy",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "quan",
-        "subcategoryName":  "Quáº§n Giáº£ VÃ¡y",
+        "subcategoryName":  "Quần Giả Váy",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "Linen bá»™t premium má»m mÃ¡t, rá»§ tá»± nhiÃªn",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Linen bột premium mềm mát, rủ tự nhiên",
         "materialFeatures":  [
-                                 "Linen bá»™t cao cáº¥p thoÃ¡ng mÃ¡t",
-                                 "Thiáº¿t káº¿ quáº§n vÃ¡y 2 táº§ng bá»“ng bá»nh",
-                                 "LÃ³t quáº§n tiá»‡n lá»£i cho bÃ© cháº¡y nháº£y"
+                                 "Linen bột cao cấp thoáng mát",
+                                 "Thiết kế quần váy 2 tầng bồng bềnh",
+                                 "Lót quần tiện lợi cho bé chạy nhảy"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  165000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  165000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  165000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  165000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  165000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  165000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  265000,
                           "stock":  10
                       }
@@ -2544,85 +2544,85 @@
                        "/images/products/ha-mat/quan-vay-2-tang-navy.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/quan-vay-2-tang-navy.jpg",
-        "colorName":  "Xanh Navy Äáº­m",
+        "colorName":  "Xanh Navy Đậm",
         "colorHex":  "#1E2A47",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Quáº§n vÃ¡y thiáº¿t káº¿ 2 táº§ng nhÃºn xÃ²e xinh xáº¯n, cháº¥t váº£i linen bá»™t mÃ¡t rÆ°á»£i. Phá»‘i hoÃ n háº£o vá»›i Ão SÃ² thá»§y thá»§ hoáº·c Ão Lam Tinh babydoll.",
-        "promotion":  "Táº·ng káº¹p tÃ³c. Quáº§n mua kÃ¨m Ã¡o Ä‘Æ°á»£c Freeship",
-        "orderNote":  "CÃ³ sáºµn hÃ ng vá» liÃªn tá»¥c - náº¿u dá»«ng restock sáº½ bÃ¡o trÆ°á»›c. CÃ³ thá»ƒ tÆ° váº¥n lá»‡ch size Ã¡o, quáº§n.",
+        "description":  "Quần váy thiết kế 2 tầng nhún xòe xinh xắn, chất vải linen bột mát rượi. Phối hoàn hảo với Áo Sò thủy thủ hoặc Áo Lam Tinh babydoll.",
+        "promotion":  "Tặng kẹp tóc. Quần mua kèm áo được Freeship",
+        "orderNote":  "Có sẵn hàng về liên tục - nếu dừng restock sẽ báo trước. Có thể tư vấn lệch size áo, quần.",
         "careInstructions":  [
-                                 "Giáº·t tay hoáº·c giáº·t mÃ¡y tÃºi giáº·t",
-                                 "á»¦i hÆ¡i nÆ°á»›c"
+                                 "Giặt tay hoặc giặt máy túi giặt",
+                                 "Ủi hơi nước"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  44
     },
     {
         "id":  "quan-bi-navy",
         "sku":  "TP-HM-009",
-        "name":  "Quáº§n BÃ­ Linen Navy Bo Gáº¥u",
+        "name":  "Quần Bí Linen Navy Bo Gấu",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "quan",
-        "subcategoryName":  "Quáº§n BÃ­ \u0026 Bloomer",
+        "subcategoryName":  "Quần Bí \u0026 Bloomer",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "Linen bá»™t premium má»m máº¡i",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Linen bột premium mềm mại",
         "materialFeatures":  [
-                                 "Linen bá»™t thoÃ¡ng khÃ­",
-                                 "Gáº¥u bo nhÃºn bÃ¨o má»m máº¡i",
-                                 "Cáº¡p chun Ãªm Ã¡i"
+                                 "Linen bột thoáng khí",
+                                 "Gấu bo nhún bèo mềm mại",
+                                 "Cạp chun êm ái"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  135000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  135000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  135000,
                           "stock":  25
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  135000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  135000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  135000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  235000,
                           "stock":  10
                       }
@@ -2637,80 +2637,80 @@
         "isBestSeller":  false,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Quáº§n dÃ¡ng bÃ­ mÃ u navy may tá»« linen bá»™t cao cáº¥p, gáº¥u quáº§n dÃºn bÃ¨o xinh xáº¯n giÃºp bÃ© dá»… dÃ ng váº­n Ä‘á»™ng vÃ  táº¡o Ä‘iá»ƒm nháº¥n khi máº·c.",
-        "promotion":  "Táº·ng káº¹p tÃ³c. Quáº§n mua kÃ¨m Ã¡o Ä‘Æ°á»£c Freeship",
-        "orderNote":  "CÃ³ sáºµn hÃ ng vá» liÃªn tá»¥c - náº¿u dá»«ng restock sáº½ bÃ¡o trÆ°á»›c.",
+        "description":  "Quần dáng bí màu navy may từ linen bột cao cấp, gấu quần dún bèo xinh xắn giúp bé dễ dàng vận động và tạo điểm nhấn khi mặc.",
+        "promotion":  "Tặng kẹp tóc. Quần mua kèm áo được Freeship",
+        "orderNote":  "Có sẵn hàng về liên tục - nếu dừng restock sẽ báo trước.",
         "careInstructions":  [
-                                 "Giáº·t tay hoáº·c giáº·t mÃ¡y tÃºi giáº·t",
-                                 "á»¦i nhiá»‡t Ä‘á»™ vá»«a"
+                                 "Giặt tay hoặc giặt máy túi giặt",
+                                 "Ủi nhiệt độ vừa"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  4.9,
         "reviewCount":  29
     },
     {
         "id":  "ao-so-kem-ghim",
         "sku":  "TP-HM-010",
-        "name":  "Ão SÃ² Thá»§y Thá»§ KÃ¨m Ghim CÃ i (ThÃªu Thá»§ CÃ´ng Sau LÆ°ng)",
+        "name":  "Áo Sò Thủy Thủ Kèm Ghim Cài (Thêu Thủ Công Sau Lưng)",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "ao",
-        "subcategoryName":  "Ão Kiá»ƒu Thiáº¿t Káº¿",
+        "subcategoryName":  "Áo Kiểu Thiết Kế",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "Linen bá»™t premium má»m mÃ¡t",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Linen bột premium mềm mát",
         "materialFeatures":  [
-                                 "Cá»• thá»§y thá»§ viá»n navy phong cÃ¡ch thá»§y thá»§ nhÃ­",
-                                 "KÃ¨m ghim sÃ² Ä‘an len thá»§ cÃ´ng",
-                                 "Sau lÆ°ng thÃªu tay há»a tiáº¿t san hÃ´ vÃ  sao biá»ƒn Ä‘á»"
+                                 "Cổ thủy thủ viền navy phong cách thủy thủ nhí",
+                                 "Kèm ghim sò đan len thủ công",
+                                 "Sau lưng thêu tay họa tiết san hô và sao biển đỏ"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  285000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  285000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  285000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  285000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  315000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  315000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  415000,
                           "stock":  10
                       }
@@ -2721,85 +2721,85 @@
                        "/images/products/ha-mat/ao-so-sau-lung.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/ao-so-kem-ghim.jpg",
-        "colorName":  "Tráº¯ng Kem Sá»¯a",
+        "colorName":  "Trắng Kem Sữa",
         "colorHex":  "#FFFDF7",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Ão SÃ² dÃ¡ng sÃ¡t nÃ¡ch cá»• thá»§y thá»§ thanh lá»‹ch, Ä‘Ã­nh ghim sÃ² len xanh pastel vÃ  lÆ°ng Ã¡o thÃªu tay san hÃ´ sao biá»ƒn Ä‘á»™c Ä‘Ã¡o. Form xÃ²e Ä‘uÃ´i cÃ¡ nháº¹ nhÃ ng, thoÃ¡ng mÃ¡t tá»‘i Ä‘a.",
-        "promotion":  "Táº·ng káº¹p tÃ³c. Mua kÃ¨m 1 quáº§n hoáº·c thÃªm 1 Ã¡o freeship",
-        "orderNote":  "CÃ³ sáºµn hÃ ng vá» liÃªn tá»¥c - náº¿u dá»«ng restock sáº½ bÃ¡o trÆ°á»›c. CÃ³ thá»ƒ tÆ° váº¥n lá»‡ch size Ã¡o, quáº§n.",
+        "description":  "Áo Sò dáng sát nách cổ thủy thủ thanh lịch, đính ghim sò len xanh pastel và lưng áo thêu tay san hô sao biển độc đáo. Form xòe đuôi cá nhẹ nhàng, thoáng mát tối đa.",
+        "promotion":  "Tặng kẹp tóc. Mua kèm 1 quần hoặc thêm 1 áo freeship",
+        "orderNote":  "Có sẵn hàng về liên tục - nếu dừng restock sẽ báo trước. Có thể tư vấn lệch size áo, quần.",
         "careInstructions":  [
-                                 "Giáº·t tay nháº¹ nhÃ ng",
-                                 "á»¦i hÆ¡i nÆ°á»›c nhiá»‡t Ä‘á»™ vá»«a"
+                                 "Giặt tay nhẹ nhàng",
+                                 "Ủi hơi nước nhiệt độ vừa"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  48
     },
     {
         "id":  "ao-lam-tinh-babydoll",
         "sku":  "TP-HM-011",
-        "name":  "Ão Lam Tinh Babydoll 2 Táº§ng Cháº¥m Bi Ná»•i",
+        "name":  "Áo Lam Tinh Babydoll 2 Tầng Chấm Bi Nổi",
         "category":  "be-gai",
-        "categoryName":  "Thá»i Trang BÃ© GÃ¡i",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "ao",
-        "subcategoryName":  "Ão Babydoll",
+        "subcategoryName":  "Áo Babydoll",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "ThÃ´ dá»‡t hoa ná»•i cháº¥m bi mÃ¡t má»ng, khÃ´ng xuyÃªn tháº¥u",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Thô dệt hoa nổi chấm bi mát mỏng, không xuyên thấu",
         "materialFeatures":  [
-                                 "ThÃ´ dá»‡t hoa ná»•i cháº¥m bi cao cáº¥p",
-                                 "Thiáº¿t káº¿ Babydoll 2 táº§ng tay phá»“ng cÃ´ng chÃºa",
-                                 "Cá»• trá»¥ tháº¯t nÆ¡ Ä‘iá»‡u Ä‘Ã "
+                                 "Thô dệt hoa nổi chấm bi cao cấp",
+                                 "Thiết kế Babydoll 2 tầng tay phồng công chúa",
+                                 "Cổ trụ thắt nơ điệu đà"
                              ],
         "sizes":  [
                       {
                           "size":  "Size 90",
                           "weightRange":  "10 - 12kg",
-                          "ageRange":  "1 - 2 tuá»•i",
+                          "ageRange":  "1 - 2 tuổi",
                           "price":  295000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 100",
                           "weightRange":  "13 - 15kg",
-                          "ageRange":  "2 - 4 tuá»•i",
+                          "ageRange":  "2 - 4 tuổi",
                           "price":  295000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 110",
                           "weightRange":  "16 - 20kg",
-                          "ageRange":  "4 - 5 tuá»•i",
+                          "ageRange":  "4 - 5 tuổi",
                           "price":  295000,
                           "stock":  20
                       },
                       {
                           "size":  "Size 120",
                           "weightRange":  "20 - 25kg",
-                          "ageRange":  "6 - 7 tuá»•i",
+                          "ageRange":  "6 - 7 tuổi",
                           "price":  295000,
                           "stock":  18
                       },
                       {
                           "size":  "Size 130",
                           "weightRange":  "25 - 30kg",
-                          "ageRange":  "8 - 9 tuá»•i",
+                          "ageRange":  "8 - 9 tuổi",
                           "price":  325000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 140",
                           "weightRange":  "30 - 35kg",
-                          "ageRange":  "10 - 11 tuá»•i",
+                          "ageRange":  "10 - 11 tuổi",
                           "price":  325000,
                           "stock":  15
                       },
                       {
                           "size":  "Size 150",
                           "weightRange":  "35 - 40kg",
-                          "ageRange":  "12 - 13 tuá»•i",
+                          "ageRange":  "12 - 13 tuổi",
                           "price":  425000,
                           "stock":  10
                       }
@@ -2809,43 +2809,43 @@
                        "/images/products/ha-mat/ao-lam-tinh-babydoll.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/ao-lam-tinh-babydoll.jpg",
-        "colorName":  "Tráº¯ng Bi Ná»•i",
+        "colorName":  "Trắng Bi Nổi",
         "colorHex":  "#FCFBF7",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Ão Babydoll Lam Tinh 2 táº§ng bá»“ng bá»nh nhÆ° mÃ¢y, may tá»« váº£i thÃ´ hoa dá»‡t ná»•i cháº¥m bi tinh khÃ´i. Tay Ã¡o phá»“ng nhÃºn nháº¹ vÃ  cá»• tháº¯t nÆ¡ thanh tÃº.",
-        "promotion":  "Táº·ng káº¹p tÃ³c. Mua kÃ¨m 1 quáº§n hoáº·c thÃªm 1 Ã¡o freeship",
-        "orderNote":  "CÃ³ sáºµn hÃ ng vá» liÃªn tá»¥c - náº¿u dá»«ng restock sáº½ bÃ¡o trÆ°á»›c. CÃ³ thá»ƒ tÆ° váº¥n lá»‡ch size Ã¡o, quáº§n.",
+        "description":  "Áo Babydoll Lam Tinh 2 tầng bồng bềnh như mây, may từ vải thô hoa dệt nổi chấm bi tinh khôi. Tay áo phồng nhún nhẹ và cổ thắt nơ thanh tú.",
+        "promotion":  "Tặng kẹp tóc. Mua kèm 1 quần hoặc thêm 1 áo freeship",
+        "orderNote":  "Có sẵn hàng về liên tục - nếu dừng restock sẽ báo trước. Có thể tư vấn lệch size áo, quần.",
         "careInstructions":  [
-                                 "Giáº·t tay hoáº·c giáº·t tÃºi mÃ¡y giáº·t",
-                                 "á»¦i hÆ¡i nÆ°á»›c"
+                                 "Giặt tay hoặc giặt túi máy giặt",
+                                 "Ủi hơi nước"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  39
     },
     {
         "id":  "mu-bucket-ha-mat",
         "sku":  "TP-HM-012",
-        "name":  "MÅ© Bucket Há»a Tiáº¿t Háº¡ Máº­t (KÃ¨m Set Káº¹p TÃ³c)",
+        "name":  "Mũ Bucket Họa Tiết Hạ Mật (Kèm Set Kẹp Tóc)",
         "category":  "phu-kien",
-        "categoryName":  "Phá»¥ Kiá»‡n Máº¹ \u0026 BÃ©",
+        "categoryName":  "Phụ Kiện Mẹ \u0026 Bé",
         "subcategory":  "ao",
-        "subcategoryName":  "MÅ© \u0026 Phá»¥ Kiá»‡n",
+        "subcategoryName":  "Mũ \u0026 Phụ Kiện",
         "collectionId":  "ha-mat",
-        "collectionName":  "Háº¡ Máº­t T6",
-        "material":  "Váº£i thÃ´ cotton tá»± nhiÃªn dá»‡t hoa ná»•i \u0026 sá»c xanh",
+        "collectionName":  "Hạ Mật T6",
+        "material":  "Vải thô cotton tự nhiên dệt hoa nổi \u0026 sọc xanh",
         "materialFeatures":  [
-                                 "ThÃ´ cotton 2 máº·t Ä‘á»™i Ä‘Æ°á»£c linh hoáº¡t",
-                                 "Há»a tiáº¿t hoa cÃºc vÃ  káº» sá»c xanh tÆ°Æ¡i táº¯n",
-                                 "VÃ nh rá»™ng che náº¯ng dá»‹u nháº¹ cho bÃ©"
+                                 "Thô cotton 2 mặt đội được linh hoạt",
+                                 "Họa tiết hoa cúc và kẻ sọc xanh tươi tắn",
+                                 "Vành rộng che nắng dịu nhẹ cho bé"
                              ],
         "sizes":  [
                       {
-                          "size":  "Freesize (1 - 6 tuá»•i)",
+                          "size":  "Freesize (1 - 6 tuổi)",
                           "weightRange":  "10 - 25kg",
-                          "ageRange":  "1 - 6 tuá»•i",
+                          "ageRange":  "1 - 6 tuổi",
                           "price":  165000,
                           "stock":  50
                       }
@@ -2855,19 +2855,19 @@
                        "/images/products/ha-mat/mu-bucket.jpg"
                    ],
         "thumbnail":  "/images/products/ha-mat/mu-bucket.jpg",
-        "colorName":  "Xanh Hoa CÃºc \u0026 Sá»c Biá»ƒn",
+        "colorName":  "Xanh Hoa Cúc \u0026 Sọc Biển",
         "colorHex":  "#90CAF9",
         "isBestSeller":  false,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "MÅ© bucket mÃ¹a hÃ¨ cho bÃ© gÃ¡i, há»a tiáº¿t hoa cÃºc tráº¯ng thÃªu ná»•i hoáº·c sá»c xanh biá»ƒn. Cháº¥t liá»‡u thÃ´ cotton Ãªm mÃ¡t, vÃ nh trÃ²n vá»«a váº·n che cháº¯n cho bÃ© khi dáº¡o chÆ¡i.",
-        "promotion":  "Táº·ng kÃ¨m káº¹p tÃ³c xinh xáº¯n",
-        "orderNote":  "Nháº­n theo Ä‘Æ¡n - khÃ´ng cÃ³ sáºµn. Tráº£ Ä‘Æ¡n 1-2 ngÃ y.",
+        "description":  "Mũ bucket mùa hè cho bé gái, họa tiết hoa cúc trắng thêu nổi hoặc sọc xanh biển. Chất liệu thô cotton êm mát, vành tròn vừa vặn che chắn cho bé khi dạo chơi.",
+        "promotion":  "Tặng kèm kẹp tóc xinh xắn",
+        "orderNote":  "Nhận theo đơn - không có sẵn. Trả đơn 1-2 ngày.",
         "careInstructions":  [
-                                 "Giáº·t tay nháº¹ nhÃ ng",
-                                 "PhÆ¡i nÆ¡i thoÃ¡ng giÃ³"
+                                 "Giặt tay nhẹ nhàng",
+                                 "Phơi nơi thoáng gió"
                              ],
-        "origin":  "Thiáº¿t káº¿ \u0026 May Ä‘o T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
         "reviewCount":  22
     }
