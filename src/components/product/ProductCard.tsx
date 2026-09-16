@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Star, ShoppingBag, Heart } from 'lucide-react';
+import { ShoppingBag, Heart } from 'lucide-react';
 import { Product } from '@/types/product';
 import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useCart } from '@/context/CartContext';
@@ -94,12 +94,6 @@ export function ProductCard({ product }: { product: Product }) {
 
         {/* Thông Tin Sản Phẩm */}
         <div className="p-3 sm:p-4">
-          <div className="flex items-center space-x-1 text-[11px] text-honey-600 mb-1">
-            <Star className="w-3 h-3 fill-honey-500 text-honey-500" />
-            <span className="font-bold">{product.rating}</span>
-            <span className="text-charcoal-400">({product.reviewCount})</span>
-          </div>
-
           <h3 className="text-xs sm:text-sm font-semibold text-charcoal-900 line-clamp-2 leading-snug mb-1.5 group-hover:text-honey-600 transition-colors">
             {product.name}
           </h3>
