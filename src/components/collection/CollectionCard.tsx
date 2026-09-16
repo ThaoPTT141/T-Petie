@@ -30,19 +30,23 @@ export function CollectionCard({ collection }: { collection: Collection }) {
             className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           />
           {/* Badge */}
-          <div className="absolute top-3 left-3 z-10">
-            <span className="inline-flex items-center space-x-1 text-[11px] font-bold px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-charcoal-900 shadow-sm border border-cream-200">
-              <Sparkles className="w-3 h-3 text-honey-500" />
-              <span>{collection.badge}</span>
-            </span>
-          </div>
+          {collection.badge && (
+            <div className="absolute top-3 left-3 z-10">
+              <span className="inline-flex items-center space-x-1 text-[11px] font-bold px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-charcoal-900 shadow-sm border border-cream-200">
+                <Sparkles className="w-3 h-3 text-honey-500" />
+                <span>{collection.badge}</span>
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Nội dung BST */}
         <div className="p-4 sm:p-5">
-          <span className="text-[11px] font-semibold text-honey-600 tracking-wider uppercase block mb-1">
-            {collection.season}
-          </span>
+          {collection.season && (
+            <span className="text-[11px] font-semibold text-honey-600 tracking-wider uppercase block mb-1">
+              {collection.season}
+            </span>
+          )}
           <h3 className="font-heading font-bold text-lg sm:text-xl text-charcoal-900 group-hover:text-honey-600 transition-colors mb-2">
             {collection.title}
           </h3>

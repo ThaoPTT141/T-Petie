@@ -44,24 +44,30 @@ export default function BoSuuTapPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
-                <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-charcoal-900 text-xs font-bold shadow-sm">
-                    {col.badge}
-                  </span>
-                </div>
+                {col.badge && (
+                  <div className="absolute top-3 left-3">
+                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-charcoal-900 text-xs font-bold shadow-sm">
+                      {col.badge}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Thông tin */}
               <div className="p-5 sm:p-6 space-y-2">
-                <span className="text-xs font-bold text-honey-600 uppercase tracking-wider block">
-                  {col.season}
-                </span>
+                {col.season && (
+                  <span className="text-xs font-bold text-honey-600 uppercase tracking-wider block">
+                    {col.season}
+                  </span>
+                )}
                 <h2 className="text-xl sm:text-2xl font-bold font-heading text-charcoal-900 group-hover:text-honey-600 transition-colors">
                   {col.title}
                 </h2>
-                <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-                  {col.story}
-                </p>
+                {col.story && (
+                  <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
+                    {col.story}
+                  </p>
+                )}
               </div>
             </div>
 

@@ -60,32 +60,39 @@ export default function CollectionDetailPage({ params }: PageProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/30 to-transparent flex items-end p-6 sm:p-10">
             <div className="text-white max-w-2xl">
-              <span className="inline-block px-3 py-1 rounded-full bg-honey-500 text-white text-xs font-bold uppercase tracking-wider mb-2">
-                {collection.season}
-              </span>
+              {collection.season && (
+                <span className="inline-block px-3 py-1 rounded-full bg-honey-500 text-white text-xs font-bold uppercase tracking-wider mb-2">
+                  {collection.season}
+                </span>
+              )}
               <h1 className="text-2xl sm:text-4xl font-extrabold font-heading mb-2">
                 {collection.title}
               </h1>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                {collection.subtitle}
-              </p>
+              {collection.subtitle && (
+                <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
+                  {collection.subtitle}
+                </p>
+              )}
             </div>
           </div>
         </div>
       </div>
 
       {/* Câu Chuyện Cảm Hứng (Storytelling Section) */}
-      <div className="bg-cream-100/60 rounded-3xl p-6 sm:p-8 border border-cream-200">
-        <div className="flex items-center space-x-2 text-xs font-bold text-honey-600 uppercase tracking-wider mb-2">
-          <Sparkles className="w-4 h-4 text-honey-500" />
-          <span>Cảm Hứng Thiết Kế</span>
-        </div>
-        <h2 className="text-lg sm:text-2xl font-bold font-heading text-charcoal-900 mb-3">
-          Câu chuyện đằng sau {collection.title}
-        </h2>
-        <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed max-w-3xl">
-          {collection.story}
-        </p>
+      {(collection.story || (collection.lookbookImages && collection.lookbookImages.length > 0)) && (
+        <div className="bg-cream-100/60 rounded-3xl p-6 sm:p-8 border border-cream-200">
+          <div className="flex items-center space-x-2 text-xs font-bold text-honey-600 uppercase tracking-wider mb-2">
+            <Sparkles className="w-4 h-4 text-honey-500" />
+            <span>Cảm Hứng Thiết Kế</span>
+          </div>
+          <h2 className="text-lg sm:text-2xl font-bold font-heading text-charcoal-900 mb-3">
+            Câu chuyện đằng sau {collection.title}
+          </h2>
+          {collection.story && (
+            <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed max-w-3xl">
+              {collection.story}
+            </p>
+          )}
 
         {/* Gallery Lookbook nếu có */}
         {collection.lookbookImages && collection.lookbookImages.length > 0 && (

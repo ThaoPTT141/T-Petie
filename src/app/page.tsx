@@ -30,7 +30,7 @@ export default function HomePage() {
             {/* Tag BST */}
             <div className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-honey-500 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>BST Tựu Trường: Học Xinh Kem</span>
+              <span>BST Học Xinh Kem</span>
             </div>
 
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-heading text-charcoal-900 leading-tight mb-4">
