@@ -94,28 +94,29 @@ export default function CollectionDetailPage({ params }: PageProps) {
             </p>
           )}
 
-        {/* Gallery Lookbook nếu có */}
-        {collection.lookbookImages && collection.lookbookImages.length > 0 && (
-          <div className="mt-6 pt-6 border-t border-cream-200">
-            <h3 className="text-xs font-bold text-charcoal-800 uppercase tracking-wider mb-3">
-              Khoảnh Khắc Lookbook Cùng Bé
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {collection.lookbookImages.map((img, idx) => (
-                <div key={idx} className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream-200">
-                  <Image
-                    src={img}
-                    alt={`${collection.title} lookbook ${idx + 1}`}
-                    fill
-                    sizes="(max-width: 640px) 50vw, 33vw"
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
+          {/* Gallery Lookbook nếu có */}
+          {collection.lookbookImages && collection.lookbookImages.length > 0 && (
+            <div className="mt-6 pt-6 border-t border-cream-200">
+              <h3 className="text-xs font-bold text-charcoal-800 uppercase tracking-wider mb-3">
+                Khoảnh Khắc Lookbook Cùng Bé
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {collection.lookbookImages.map((img, idx) => (
+                  <div key={idx} className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream-200">
+                    <Image
+                      src={img}
+                      alt={`${collection.title} lookbook ${idx + 1}`}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 33vw"
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
 
       {/* Danh Sách Sản Phẩm Thuộc BST */}
       <div>
