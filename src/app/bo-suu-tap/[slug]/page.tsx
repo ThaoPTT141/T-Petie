@@ -39,7 +39,7 @@ export default function CollectionDetailPage({ params }: PageProps) {
   );
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 space-y-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 pb-8 space-y-8">
       <Breadcrumb
         items={[
           { label: 'Bộ Sưu Tập', href: '/bo-suu-tap' },
