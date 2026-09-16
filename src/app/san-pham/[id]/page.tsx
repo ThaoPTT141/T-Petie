@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
-  Star,
   ShoppingBag,
   Heart,
   Ruler,
@@ -181,7 +180,7 @@ export default function ProductDetailPage({ params }: PageProps) {
         </div>
 
         {/* Cột 2: Thông Tin & Chọn Mua */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-5">
           <div>
             <div className="flex items-center space-x-2 text-xs text-honey-600 font-bold uppercase tracking-wider mb-2">
               <span className="bg-sage-100 text-sage-700 px-2.5 py-0.5 rounded-full border border-sage-200">
@@ -191,20 +190,9 @@ export default function ProductDetailPage({ params }: PageProps) {
               <span>SKU: {product.sku}</span>
             </div>
 
-            <h1 className="text-xl sm:text-3xl font-extrabold font-heading text-charcoal-900 leading-snug mb-3">
+            <h1 className="text-xl sm:text-3xl font-extrabold font-heading text-charcoal-900 leading-snug">
               {product.name}
             </h1>
-
-            {/* Đánh giá sao */}
-            <div className="flex items-center space-x-2 text-xs">
-              <div className="flex items-center text-honey-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-honey-500 text-honey-500" />
-                ))}
-              </div>
-              <span className="font-bold text-charcoal-900">{product.rating}</span>
-              <span className="text-charcoal-400">({product.reviewCount} đánh giá từ các mẹ)</span>
-            </div>
           </div>
 
           {/* Khối Giá Tiền Theo Size */}
