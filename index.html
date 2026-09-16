@@ -141,24 +141,34 @@
     <!-- ==================== 1. TRANG CHỦ ==================== -->
     <div id="page-home" class="page-view space-y-10 sm:space-y-14">
       <!-- Hero Banner -->
-      <section class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cream-100 via-blush-50 to-sage-50 border border-cream-200 shadow-soft p-6 sm:p-12">
-        <div class="relative z-10 max-w-2xl">
-          <div class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-honey-500 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <span>✨ BST Tựu Trường: Học Xinh Kem</span>
+      <section class="relative rounded-3xl overflow-hidden border border-cream-200 shadow-soft bg-cream-50 group">
+        <!-- Main Visual Banner -->
+        <a href="javascript:void(0)" onclick="navigateTo('be-gai', 'all')" class="block relative aspect-[16/9] w-full overflow-hidden">
+          <img
+            src="images/hero-banner.jpg"
+            alt="T'Petie - Ngọt ngào, trong trẻo & Nâng niu từng bước chạm của bé yêu"
+            class="w-full h-full object-cover object-center group-hover:scale-[1.015] transition-transform duration-500"
+          />
+        </a>
+
+        <!-- Quick Action & Info Bar under Banner -->
+        <div class="p-4 sm:p-5 bg-gradient-to-r from-cream-100 via-blush-50 to-sage-50 border-t border-cream-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="flex items-center space-x-2 text-xs sm:text-sm text-charcoal-700 text-center sm:text-left">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-honey-500 text-white text-[11px] font-bold shrink-0 shadow-sm">
+              ✨ BST Mới
+            </span>
+            <span>
+              <strong>BST Tựu Trường: Học Xinh Kem</strong> — Thô đũi organic &amp; voan tơ êm ái cho bé
+            </span>
           </div>
-          <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-heading text-charcoal-900 leading-tight mb-4">
-            Ngọt ngào, trong trẻo &amp; nâng niu từng bước chạm của bé yêu
-          </h1>
-          <p class="text-xs sm:text-base text-charcoal-700 leading-relaxed mb-6">
-            Dành tặng mẹ và bé những thiết kế từ <strong>thô đũi organic</strong> và <strong>voan tơ lụa mềm mại</strong>. Thoáng mát, thấm hút mồ hôi và an toàn tuyệt đối cho làn da bé non nớt.
-          </p>
-          <div class="flex flex-wrap items-center gap-3">
-            <button onclick="navigateTo('be-gai', 'all')" class="px-6 py-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center space-x-2">
-              <span>Mua Sắm Đồ Bé Gái</span>
+
+          <div class="flex items-center gap-2.5 w-full sm:w-auto justify-center">
+            <button onclick="navigateTo('be-gai', 'all')" class="flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center justify-center space-x-1.5">
+              <span>Mua Sắm Ngay</span>
               <span>→</span>
             </button>
-            <button onclick="navigateTo('bo-suu-tap')" class="px-6 py-3 rounded-full bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-300 text-xs sm:text-sm font-bold transition-all active:scale-95">
-              Khám Phá Lookbook
+            <button onclick="navigateTo('bo-suu-tap')" class="flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-300 text-xs sm:text-sm font-bold transition-all active:scale-95 text-center">
+              <span>Xem Lookbook</span>
             </button>
           </div>
         </div>
