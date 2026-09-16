@@ -103,7 +103,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/san-pham/vay-voan-hoa-nhi-mat-ong" className="hover:text-honey-600 transition-colors block">
+              <Link href="/san-pham/vay-chanh-tay" className="hover:text-honey-600 transition-colors block">
                 Hướng dẫn chọn size
               </Link>
             </li>

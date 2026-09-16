@@ -57,17 +57,35 @@
   {
     "id": "ha-mat",
     "title": "Hạ Mật T6",
-    "subtitle": "Chất liệu thô đũi và tơ tự nhiên đón làn gió mùa hè êm ái",
-    "story": "",
+    "subtitle": "Chất liệu thô đũi organic & linen thêu hoa đón làn gió mùa hè dịu mát",
+    "story": "BST Hạ Mật T6 2026 mang cảm hứng từ những ngày hè rực rỡ và ngọt ngào. Sử dụng chất liệu thô gió 2 lớp mềm nhẹ, tơ dệt hoa nổi đính kim sa và linen bột cao cấp thêu thủ công tỉ mỉ, mỗi thiết kế mang lại sự thoáng mát tuyệt đối và vẻ đẹp trong trẻo cho bé yêu.",
     "bannerImage": "/images/ha-mat.jpg",
     "lookbookImages": [
-      "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=800&auto=format&fit=crop"
+      "/images/products/ha-mat/vay-muoi-hong.jpg",
+      "/images/products/ha-mat/vay-sao-xanh.jpg",
+      "/images/products/ha-mat/set-bien-xanh.jpg",
+      "/images/products/ha-mat/ao-so-kem-ghim.jpg",
+      "/images/products/ha-mat/ao-lam-tinh-babydoll.jpg",
+      "/images/products/ha-mat/mu-bucket.jpg"
     ],
-    "themeColor": "#FFF2D6",
+    "themeColor": "#FFF8E7",
     "accentColor": "#F5A623",
-    "season": "",
-    "badge": "",
-    "featuredProductIds": ["vay-voan-hoa-nhi-mat-ong", "quan-bloomer-ha-mat", "set-ao-hai-day-ha-mat"]
+    "season": "BST Mùa Hè 2026",
+    "badge": "Mới Nhất",
+    "featuredProductIds": [
+      "vay-chanh-tay",
+      "vay-luu-ly",
+      "vay-muoi-hong",
+      "vay-sao-xanh",
+      "set-bien-xanh",
+      "ao-matcha-latte",
+      "quan-bi-nau",
+      "quan-vay-2-tang-navy",
+      "quan-bi-navy",
+      "ao-so-kem-ghim",
+      "ao-lam-tinh-babydoll",
+      "mu-bucket-ha-mat"
+    ]
   },
   {
     "id": "khanh-vy",
