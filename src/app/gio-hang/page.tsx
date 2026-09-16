@@ -18,9 +18,9 @@ import { useToast } from '@/context/ToastContext';
 import { trackBeginCheckout } from '@/lib/analytics/tracker';
 
 // Link nhúng Google Form đặt hàng T'Petie
-// Lưu ý: Thay FORM_ID bằng ID thực của form (phần sau /d/e/ trong link embed)
+// Form ID lấy từ link edit: https://docs.google.com/forms/d/1-OveB-NXwpsKmen341Zyx-G5nzOqzdfwLH9obB0_db4/edit
 const GOOGLE_FORM_EMBED_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSf1-OveB-NXwpsKmen341Zyx-G5nzOqzdfwLH9obB0_db4/viewform?embedded=true';
+  'https://docs.google.com/forms/d/1-OveB-NXwpsKmen341Zyx-G5nzOqzdfwLH9obB0_db4/viewform?embedded=true';
 
 export default function GioHangPage() {
   const { items, updateQuantity, removeFromCart, clearCart, totalPrice, totalItems } = useCart();
