@@ -48,17 +48,17 @@
   },
   {
     "id": "khanh-vy",
-    "title": "Khánh Vy x T'Petie",
+    "title": "Hè T3 Khánh",
     "subtitle": "Bộ sưu tập hợp tác đặc biệt — Tinh tế, ngọt ngào và cao cấp",
-    "story": "Bộ sưu tập giới hạn lấy cảm hứng từ phong cách hiện đại, thanh lịch và tràn đầy năng lượng tích cực của MC Khánh Vy. Từng thiết kế là sự kết hợp hoàn hảo giữa phom dáng công chúa bồng bềnh và chất liệu tơ lụa cao cấp thượng hạng.",
-    "bannerImage": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
+    "story": "",
+    "bannerImage": "/images/khanh-vy.jpg",
     "lookbookImages": [
       "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop"
     ],
     "themeColor": "#FFEBEB",
     "accentColor": "#E06D75",
-    "season": "Limited Edition",
-    "badge": "Độc Quyền Limited",
+    "season": "",
+    "badge": "",
     "featuredProductIds": ["vay-cong-chua-khanh-vy", "set-ao-khoac-nhe-khanh-vy", "dam-xoe-voan-khanh-vy"]
   }
 ]
