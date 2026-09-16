@@ -91,15 +91,30 @@
     "id": "khanh-vy",
     "title": "Hè T3 Khánh Vy",
     "subtitle": "Bộ sưu tập hợp tác đặc biệt — Tinh tế, ngọt ngào và cao cấp",
-    "story": "",
+    "story": "BST Hè T3 Khánh Vy là sự kết hợp độc quyền mang phong cách ngọt ngào, tinh tế với chất liệu tơ bướm organza, linen thô thêu hoa nổi và chéo Ý cao cấp. Từng thiết kế tôn vinh nét đẹp trong trẻo, tự nhiên và sự nâng niu tuyệt đối cho các bé gái.",
     "bannerImage": "/images/khanh-vy.jpg",
     "lookbookImages": [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop"
+      "/images/products/khanh-vy/vay-thi-tho-trang.jpg",
+      "/images/products/khanh-vy/vay-thi-tho-hong.jpg",
+      "/images/products/khanh-vy/vay-tuong-vi.jpg",
+      "/images/products/khanh-vy/vay-ha-lam.jpg",
+      "/images/products/khanh-vy/set-thanh-yen-caro.jpg",
+      "/images/products/khanh-vy/set-mut-cam-sooc-be.jpg"
     ],
     "themeColor": "#FFEBEB",
     "accentColor": "#E06D75",
-    "season": "",
-    "badge": "",
-    "featuredProductIds": ["vay-cong-chua-khanh-vy", "set-ao-khoac-nhe-khanh-vy", "dam-xoe-voan-khanh-vy"]
+    "season": "BST Hè 2026",
+    "badge": "Độc Quyền",
+    "featuredProductIds": [
+      "vay-thi-tho-trang",
+      "vay-thi-tho-hong",
+      "vay-tuong-vi",
+      "vay-ha-lam",
+      "set-thanh-yen-caro",
+      "set-mut-cam-sooc-be",
+      "set-chim-cau-jean-no",
+      "ao-hai-au-khan-quang",
+      "quan-jump-navy-ha-an"
+    ]
   }
 ]

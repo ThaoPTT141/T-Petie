@@ -1783,73 +1783,786 @@
         "reviewCount":  42
     },
     {
-        "id":  "vay-cong-chua-khanh-vy",
-        "sku":  "TP-VG-005",
-        "name":  "Đầm Xòe Công Chúa Tơ Lụa Cao Cấp Khánh Vy x T\u0027Petie",
+        "id":  "vay-thi-tho-trang",
+        "sku":  "TP-KV-001",
+        "name":  "Váy Thi Thơ Trắng Đính Bướm Organza",
         "category":  "be-gai",
-        "categoryName":  "Váy Bé Gái",
+        "categoryName":  "Thời Trang Bé Gái",
         "subcategory":  "vay",
-        "subcategoryName":  "Váy",
+        "subcategoryName":  "Váy Thiết Kế",
         "collectionId":  "khanh-vy",
         "collectionName":  "Hè T3 Khánh Vy",
-        "material":  "Tơ tằm Organza thượng hạng phối lụa satin ngọc trai",
+        "material":  "Tơ đính bướm organza thủ công, có lót lụa trong. Váy nhẹ, mát",
         "materialFeatures":  [
-                                 "Phom xòe 3 tầng lộng lẫy",
-                                 "Đính nơ lưng thủ công",
-                                 "Không châm chích ngứa ngáy"
+                                 "Tơ đính bướm organza thủ công",
+                                 "Lót lụa trong nhẹ mát",
+                                 "Form rộng dài tới bắp chân"
                              ],
         "sizes":  [
                       {
-                          "size":  "Size 1",
-                          "weightRange":  "8 - 10kg",
-                          "ageRange":  "9 - 18 tháng",
-                          "price":  385000,
-                          "stock":  10
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  435000,
+                          "stock":  20
                       },
                       {
-                          "size":  "Size 2",
-                          "weightRange":  "10 - 12kg",
-                          "ageRange":  "18 - 24 tháng",
-                          "price":  415000,
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  435000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  435000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  435000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  465000,
                           "stock":  15
                       },
                       {
-                          "size":  "Size 3",
-                          "weightRange":  "12 - 15kg",
-                          "ageRange":  "2 - 3 tuổi",
-                          "price":  445000,
-                          "stock":  8
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  465000,
+                          "stock":  15
                       },
                       {
-                          "size":  "Size 4",
-                          "weightRange":  "15 - 18kg",
-                          "ageRange":  "3 - 4 tuổi",
-                          "price":  475000,
-                          "stock":  5
+                          "size":  "Size 150",
+                          "weightRange":  "35 - 40kg",
+                          "ageRange":  "12 - 13 tuổi",
+                          "price":  565000,
+                          "stock":  10
                       }
                   ],
-        "basePrice":  385000,
-        "originalPrice":  490000,
-        "discountPercent":  21,
-        "saleCampaign":  "sale-thu-dong",
+        "basePrice":  435000,
         "images":  [
-                       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80\u0026w=800\u0026auto=format\u0026fit=crop",
-                       "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80\u0026w=800\u0026auto=format\u0026fit=crop"
+                       "/images/products/khanh-vy/vay-thi-tho-trang.jpg"
                    ],
-        "thumbnail":  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80\u0026w=800\u0026auto=format\u0026fit=crop",
-        "colorName":  "Hồng Phấn Cánh Sen",
-        "colorHex":  "#FFEBEB",
+        "thumbnail":  "/images/products/khanh-vy/vay-thi-tho-trang.jpg",
+        "colorName":  "Trắng Tinh Khôi",
+        "colorHex":  "#FFFFFF",
         "isBestSeller":  true,
         "isNewArrival":  true,
         "isSale":  false,
-        "description":  "Thiết kế vedette trong BST hợp tác cùng MC Khánh Vy. Chiếc đầm bồng xòe thần tiên biến bé thành nàng công chúa nhỏ lộng lẫy trong những bữa tiệc thôi nôi, sinh nhật đáng nhớ.",
+        "description":  "Váy Thi Thơ trắng với chất liệu tơ cao cấp đính bướm organza thủ công tinh xảo, có lớp lót lụa mềm mại bên trong thoáng mát cho bé. Thiết kế form dáng dài bồng bềnh tới bắp chân, mang lại vẻ đẹp trong trẻo, thuần khiết.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Sẵn hàng, còn vải, size nào hết báo 5-7 ngày về thêm.",
+        "specifications":  "Độ dài váy: Size 90: 56cm, Size 100: 64cm, Size 110: 72cm, Size 120: 76cm, Size 130: 82cm, Size 140: 90cm, Size 150: 103cm",
         "careInstructions":  [
-                                 "Giặt khô hoặc giặt tay nâng niu",
+                                 "Giặt tay nhẹ nhàng",
+                                 "Không vắt xoắn mạnh",
                                  "Ủi hơi nước mặt trong"
                              ],
-        "origin":  "Phiên bản Limited Edition T\u0027Petie",
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
         "rating":  5.0,
-        "reviewCount":  62
+        "reviewCount":  36
+    },
+    {
+        "id":  "vay-thi-tho-hong",
+        "sku":  "TP-KV-002",
+        "name":  "Váy Thi Thơ Hồng Đính Bướm Organza",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "vay",
+        "subcategoryName":  "Váy Thiết Kế",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Tơ đính bướm organza thủ công, có lót lụa trong. Váy nhẹ, mát",
+        "materialFeatures":  [
+                                 "Tơ đính bướm organza thủ công",
+                                 "Lót lụa trong nhẹ mát",
+                                 "Form rộng dài tới bắp chân"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  435000,
+                          "stock":  0
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  435000,
+                          "stock":  0
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  435000,
+                          "stock":  0
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  435000,
+                          "stock":  0
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  465000,
+                          "stock":  0
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  465000,
+                          "stock":  0
+                      },
+                      {
+                          "size":  "Size 150",
+                          "weightRange":  "35 - 40kg",
+                          "ageRange":  "12 - 13 tuổi",
+                          "price":  565000,
+                          "stock":  0
+                      }
+                  ],
+        "basePrice":  435000,
+        "images":  [
+                       "/images/products/khanh-vy/vay-thi-tho-hong.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/vay-thi-tho-hong.jpg",
+        "colorName":  "Hồng Phấn Pastel",
+        "colorHex":  "#FFD1DC",
+        "isBestSeller":  true,
+        "isNewArrival":  false,
+        "isSale":  false,
+        "description":  "Váy Thi Thơ tông hồng phấn ngọt ngào, chất liệu tơ đính bướm organza thủ công mềm mại, lót lụa mỏng mát êm ái cho làn da của bé. Form dáng dài thướt tha tới bắp chân.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "NGỪNG NHẬN ĐƠN (Phiên bản giới hạn đã hết vải).",
+        "specifications":  "Độ dài váy: Size 90: 56cm, Size 100: 64cm, Size 110: 72cm, Size 120: 76cm, Size 130: 82cm, Size 140: 90cm, Size 150: 103cm",
+        "careInstructions":  [
+                                 "Giặt tay nhẹ nhàng",
+                                 "Không vắt xoắn mạnh",
+                                 "Ủi hơi nước mặt trong"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  5.0,
+        "reviewCount":  42
+    },
+    {
+        "id":  "vay-tuong-vi",
+        "sku":  "TP-KV-003",
+        "name":  "Váy Tường Vi Thêu Hoa Thủ Công",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "vay",
+        "subcategoryName":  "Váy Thiết Kế",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Chất liệu Chéo Ý không nhăn, cao cấp, không bai xù vải, thêu hoa thủ công",
+        "materialFeatures":  [
+                                 "Thêu hoa thủ công tinh tế",
+                                 "Chất liệu Chéo Ý chống nhăn cao cấp",
+                                 "Form vừa người ngắn trên gối"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  415000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  415000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  415000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  415000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  455000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  455000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 150",
+                          "weightRange":  "35 - 40kg",
+                          "ageRange":  "12 - 13 tuổi",
+                          "price":  545000,
+                          "stock":  10
+                      }
+                  ],
+        "basePrice":  415000,
+        "images":  [
+                       "/images/products/khanh-vy/vay-tuong-vi.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/vay-tuong-vi.jpg",
+        "colorName":  "Vàng Hoa Tường Vi",
+        "colorHex":  "#FFE4A0",
+        "isBestSeller":  true,
+        "isNewArrival":  true,
+        "isSale":  false,
+        "description":  "Váy Tường Vi thêu hoa thủ công tỉ mỉ trên nền vải Chéo Ý cao cấp không nhăn, không bai xù. Vải đầm tay, mát mẻ mặc chính hè cực kỳ được ưa chuộng. Form vừa người ngắn trên gối năng động.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn hàng về liên tục - nếu dừng restock sẽ báo trước.",
+        "specifications":  "Độ dài váy: Size 90: 48cm, Size 100: 54cm, Size 110: 59cm, Size 120: 64cm, Size 130: 70cm, Size 140: 76cm, Size 150: 79cm",
+        "careInstructions":  [
+                                 "Giặt máy chế độ nhẹ hoặc giặt tay",
+                                 "Ủi nhiệt độ vừa"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  5.0,
+        "reviewCount":  29
+    },
+    {
+        "id":  "vay-ha-lam",
+        "sku":  "TP-KV-004",
+        "name":  "Váy Hạ Lam Linen Thêu Hoa Nổi",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "vay",
+        "subcategoryName":  "Váy Thiết Kế",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Linen thô thêu hoa nổi, có lót trong thấm hút tốt",
+        "materialFeatures":  [
+                                 "Linen thô thêu hoa nổi",
+                                 "Càng giặt càng mềm mát",
+                                 "Form rộng dài ngang bắp chân"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  495000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  495000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  495000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  495000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  525000,
+                          "stock":  10
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  525000,
+                          "stock":  10
+                      },
+                      {
+                          "size":  "Size 150",
+                          "weightRange":  "35 - 40kg",
+                          "ageRange":  "12 - 13 tuổi",
+                          "price":  625000,
+                          "stock":  5
+                      }
+                  ],
+        "basePrice":  495000,
+        "images":  [
+                       "/images/products/khanh-vy/vay-ha-lam.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/vay-ha-lam.jpg",
+        "colorName":  "Trắng Hoa Nổi",
+        "colorHex":  "#FDFEFE",
+        "isBestSeller":  true,
+        "isNewArrival":  true,
+        "isSale":  false,
+        "description":  "Váy Hạ Lam thiết kế từ chất liệu linen thô dệt thêu hoa nổi độc quyền, càng giặt càng mềm mát. Có lót trong thấm hút mồ hôi tối đa, form xòe rộng thướt tha dài ngang bắp chân cho bé gái.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Sẵn hàng, chỉ nhận theo tồn kho. Hết ko restock.",
+        "specifications":  "Độ dài váy: Size 100: 62cm, Size 110: 72cm, Size 120: 76cm, Size 130: 82cm, Size 140: 88cm, Size 150: 103cm",
+        "careInstructions":  [
+                                 "Giặt tay hoặc giặt máy túi giặt",
+                                 "Ủi hơi nước mặt trong"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  5.0,
+        "reviewCount":  38
+    },
+    {
+        "id":  "set-thanh-yen-caro",
+        "sku":  "TP-KV-005",
+        "name":  "Set Áo Thanh Yên Phối Chân Váy Caro Xanh",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "set-do",
+        "subcategoryName":  "Set Trang Phục",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Chéo Ý cao cấp, ít nhăn, vải mỏng mát chính hè",
+        "materialFeatures":  [
+                                 "Chéo Ý mỏng nhẹ ít nhăn",
+                                 "Set áo kiểu phối chân váy caro xinh xắn",
+                                 "Chỉ bán theo set đồng bộ"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  480000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  480000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  480000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  480000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  510000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  510000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 150",
+                          "weightRange":  "35 - 40kg",
+                          "ageRange":  "12 - 13 tuổi",
+                          "price":  610000,
+                          "stock":  10
+                      }
+                  ],
+        "basePrice":  480000,
+        "images":  [
+                       "/images/products/khanh-vy/set-thanh-yen-caro.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/set-thanh-yen-caro.jpg",
+        "colorName":  "Vàng Bơ \u0026 Caro Xanh",
+        "colorHex":  "#FFF3B0",
+        "isBestSeller":  true,
+        "isNewArrival":  true,
+        "isSale":  false,
+        "description":  "Set Áo Thanh Yên và chân váy caro xanh mang phong cách tiểu thư cổ điển. Chất liệu Chéo Ý mỏng nhẹ, ít nhăn, thoáng mát cho bé thoải mái vận động cả ngày hè.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn. Hiện chỉ bán theo set áo + chân váy. Lên đơn kèm áo và chân váy.",
+        "specifications":  "Set gồm: Áo kiểu Thanh Yên tay bồng + Chân váy xếp ly caro xanh",
+        "careInstructions":  [
+                                 "Giặt máy nhẹ nhàng",
+                                 "Là ủi nhiệt độ vừa"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  5.0,
+        "reviewCount":  34
+    },
+    {
+        "id":  "set-mut-cam-sooc-be",
+        "sku":  "TP-KV-006",
+        "name":  "Set Áo Mứt Cam Thêu Thủ Công \u0026 Quần Sooc Be",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "set-do",
+        "subcategoryName":  "Set Trang Phục",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Linen bột premium thêu thủ công, mát, vải mềm",
+        "materialFeatures":  [
+                                 "Linen bột premium thêu tay",
+                                 "Vải mềm mát tự nhiên",
+                                 "Có thể mua tách set hoặc lệch size"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  360000,
+                          "stock":  25
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  360000,
+                          "stock":  25
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  360000,
+                          "stock":  25
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  360000,
+                          "stock":  25
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  390000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  390000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 150",
+                          "weightRange":  "35 - 40kg",
+                          "ageRange":  "12 - 13 tuổi",
+                          "price":  490000,
+                          "stock":  10
+                      }
+                  ],
+        "basePrice":  360000,
+        "images":  [
+                       "/images/products/khanh-vy/set-mut-cam-sooc-be.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/set-mut-cam-sooc-be.jpg",
+        "colorName":  "Cam Đào \u0026 Be Sữa",
+        "colorHex":  "#FF8A65",
+        "isBestSeller":  false,
+        "isNewArrival":  true,
+        "isSale":  false,
+        "description":  "Set Áo Mứt Cam phối quần sooc be năng động. Áo may từ chất vải linen bột cao cấp thêu họa tiết thủ công tỉ mỉ, kết hợp quần sooc be thoải mái chạy nhảy.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn. Bán tách set áo, quần, có thể tư vấn lệch size áo quần. Còn vải, size nào hết báo về hàng sau 5-7 ngày.",
+        "specifications":  "Giá lẻ: Áo size 90-120 (235k), size 130-140 (265k), size 150 (365k). Quần sooc đồng giá 125k",
+        "careInstructions":  [
+                                 "Giặt tay nhẹ hoặc giặt túi máy",
+                                 "Ủi hơi nước"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  4.9,
+        "reviewCount":  27
+    },
+    {
+        "id":  "set-chim-cau-jean-no",
+        "sku":  "TP-KV-007",
+        "name":  "Set Áo Chim Câu Trắng \u0026 Quần Bom Jean Xanh Nơ",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "set-do",
+        "subcategoryName":  "Set Trang Phục",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Áo thô cotton Hàn thêu hoa nổi may 2 lớp. Quần jean thô mềm mát",
+        "materialFeatures":  [
+                                 "Áo thô cotton Hàn 2 lớp thêu hoa",
+                                 "Quần bom jean thô đính nơ mềm mát",
+                                 "Bán tách set linh hoạt"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  530000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  530000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  530000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  530000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  560000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  560000,
+                          "stock":  15
+                      }
+                  ],
+        "basePrice":  530000,
+        "images":  [
+                       "/images/products/khanh-vy/set-chim-cau-jean-no.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/set-chim-cau-jean-no.jpg",
+        "colorName":  "Trắng \u0026 Xanh Jean",
+        "colorHex":  "#4A90E2",
+        "isBestSeller":  true,
+        "isNewArrival":  true,
+        "isSale":  false,
+        "description":  "Set Áo Chim Câu Trắng may 2 lớp từ thô cotton Hàn thêu hoa nổi tinh tế, phối cùng Quần bom jean xanh đính nơ mềm mát, phong cách cá tính nhưng không kém phần đáng yêu.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn. Số lượng chỉ bán theo tồn kho. Bán tách set áo, quần, có thể tư vấn lệch size áo quần.",
+        "specifications":  "Giá lẻ: Áo size 90-120 (365k), size 130-140 (395k). Quần bom jean đồng giá 165k",
+        "careInstructions":  [
+                                 "Giặt máy chế độ thường",
+                                 "Ủi mặt trái quần jean"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  5.0,
+        "reviewCount":  31
+    },
+    {
+        "id":  "ao-hai-au-khan-quang",
+        "sku":  "TP-KV-008",
+        "name":  "Áo Hải Âu Kèm Khăn Quàng Cổ Phong Cách Vintage",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "ao",
+        "subcategoryName":  "Áo Sơ Mi",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Linen thô Hàn. Mát, càng giặt càng mềm mát",
+        "materialFeatures":  [
+                                 "Linen thô Hàn tự nhiên",
+                                 "Kèm khăn quàng cổ rời vintage",
+                                 "Càng giặt càng mềm mại"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  255000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  255000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  255000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  255000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  285000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  285000,
+                          "stock":  15
+                      }
+                  ],
+        "basePrice":  255000,
+        "images":  [
+                       "/images/products/khanh-vy/ao-hai-au-khan-quang.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/ao-hai-au-khan-quang.jpg",
+        "colorName":  "Trắng Sữa Vintage",
+        "colorHex":  "#F5F5DC",
+        "isBestSeller":  false,
+        "isNewArrival":  true,
+        "isSale":  false,
+        "description":  "Áo sơ mi Hải Âu kèm khăn quàng cổ xinh xắn, may từ vải linen thô Hàn cao cấp thấm hút tốt, thoáng mát, càng giặt càng êm ái cho bé gái diện đi chơi, dã ngoại.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn. Số lượng chỉ bán theo tồn kho.",
+        "specifications":  "Kèm khăn tam giác quàng cổ ton-sur-ton",
+        "careInstructions":  [
+                                 "Giặt tay nhẹ nhàng",
+                                 "Ủi hơi nước"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  4.9,
+        "reviewCount":  25
+    },
+    {
+        "id":  "quan-jump-navy-ha-an",
+        "sku":  "TP-KV-009",
+        "name":  "Quần Jump Yếm Navy Hạ An Khóa Sau Lưng",
+        "category":  "be-gai",
+        "categoryName":  "Thời Trang Bé Gái",
+        "subcategory":  "quan",
+        "subcategoryName":  "Quần Bloomer \u0026 Yếm",
+        "collectionId":  "khanh-vy",
+        "collectionName":  "Hè T3 Khánh Vy",
+        "material":  "Chéo Ý cao cấp, ít nhăn, vải mỏng, mặc chính hè thoải mái, khóa sau lưng có lót trong",
+        "materialFeatures":  [
+                                 "Chéo Ý cao cấp chống nhăn",
+                                 "Khóa kéo sau lưng tiện lợi",
+                                 "Có lớp lót trong mềm mát"
+                             ],
+        "sizes":  [
+                      {
+                          "size":  "Size 90",
+                          "weightRange":  "10 - 12kg",
+                          "ageRange":  "1 - 2 tuổi",
+                          "price":  365000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 100",
+                          "weightRange":  "13 - 15kg",
+                          "ageRange":  "2 - 4 tuổi",
+                          "price":  365000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 110",
+                          "weightRange":  "16 - 20kg",
+                          "ageRange":  "4 - 5 tuổi",
+                          "price":  365000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 120",
+                          "weightRange":  "20 - 25kg",
+                          "ageRange":  "6 - 7 tuổi",
+                          "price":  365000,
+                          "stock":  20
+                      },
+                      {
+                          "size":  "Size 130",
+                          "weightRange":  "25 - 30kg",
+                          "ageRange":  "8 - 9 tuổi",
+                          "price":  395000,
+                          "stock":  15
+                      },
+                      {
+                          "size":  "Size 140",
+                          "weightRange":  "30 - 35kg",
+                          "ageRange":  "10 - 11 tuổi",
+                          "price":  395000,
+                          "stock":  15
+                      }
+                  ],
+        "basePrice":  365000,
+        "images":  [
+                       "/images/products/khanh-vy/quan-jump-navy-ha-an.jpg"
+                   ],
+        "thumbnail":  "/images/products/khanh-vy/quan-jump-navy-ha-an.jpg",
+        "colorName":  "Xanh Navy Cổ Điển",
+        "colorHex":  "#1B2A4A",
+        "isBestSeller":  true,
+        "isNewArrival":  true,
+        "isSale":  false,
+        "description":  "Quần Jump yếm navy Hạ An thiết kế thời thượng từ chất liệu Chéo Ý cao cấp ít nhăn, mềm mỏng mát rượi. Khóa kéo sau lưng và lót trong cao cấp mang lại sự thoải mái tối đa cho bé.",
+        "promotion":  "Freeship và tặng kẹp tóc mỗi đơn",
+        "orderNote":  "Có sẵn. Số lượng chỉ bán theo tồn kho.",
+        "specifications":  "Quần Jump dáng dài yếm, khóa kéo giọt lệ sau lưng có lót êm ái",
+        "careInstructions":  [
+                                 "Giặt máy nhẹ nhàng",
+                                 "Ủi nhiệt độ vừa"
+                             ],
+        "origin":  "Thiết kế \u0026 May đo T\u0027Petie",
+        "rating":  5.0,
+        "reviewCount":  33
     },
     {
         "id":  "vay-chanh-tay",
