@@ -78,25 +78,27 @@ export default function CollectionDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Câu Chuyện Cảm Hứng (Storytelling Section) */}
-      {(collection.story || (collection.lookbookImages && collection.lookbookImages.length > 0)) && (
+      {/* Câu Chuyện Cảm Hứng & Lookbook */}
+      {(Boolean(collection.story) || (Boolean(collection.lookbookImages) && collection.lookbookImages.length > 0)) && (
         <div className="bg-cream-100/60 rounded-3xl p-6 sm:p-8 border border-cream-200">
-          <div className="flex items-center space-x-2 text-xs font-bold text-honey-600 uppercase tracking-wider mb-2">
-            <Sparkles className="w-4 h-4 text-honey-500" />
-            <span>Cảm Hứng Thiết Kế</span>
-          </div>
-          <h2 className="text-lg sm:text-2xl font-bold font-heading text-charcoal-900 mb-3">
-            Câu chuyện đằng sau {collection.title}
-          </h2>
           {collection.story && (
-            <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed max-w-3xl">
-              {collection.story}
-            </p>
+            <div>
+              <div className="flex items-center space-x-2 text-xs font-bold text-honey-600 uppercase tracking-wider mb-2">
+                <Sparkles className="w-4 h-4 text-honey-500" />
+                <span>Cảm Hứng Thiết Kế</span>
+              </div>
+              <h2 className="text-lg sm:text-2xl font-bold font-heading text-charcoal-900 mb-3">
+                Câu chuyện đằng sau {collection.title}
+              </h2>
+              <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed max-w-3xl">
+                {collection.story}
+              </p>
+            </div>
           )}
 
           {/* Gallery Lookbook nếu có */}
           {collection.lookbookImages && collection.lookbookImages.length > 0 && (
-            <div className="mt-6 pt-6 border-t border-cream-200">
+            <div className={collection.story ? 'mt-6 pt-6 border-t border-cream-200' : ''}>
               <h3 className="text-xs font-bold text-charcoal-800 uppercase tracking-wider mb-3">
                 Khoảnh Khắc Lookbook Cùng Bé
               </h3>
