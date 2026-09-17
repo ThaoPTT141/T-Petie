@@ -1647,32 +1647,32 @@
         id: "hoc-xinh-kem",
         title: "Học Xinh Kem",
         subtitle: "Nét trong sáng, tinh khôi cùng bé tựu trường rạng rỡ",
-        story: "",
-        badge: "",
+        story: "BST Học Xinh Kem mang phong cách học đường ngọt ngào và thanh lịch, kết hợp hoàn hảo giữa chất liệu thô đũi organic và voan tơ êm ái thoáng mát, giúp bé luôn rạng rỡ, tự tin và thoải mái vận động trong từng ngày tựu trường tươi vui.",
+        badge: "BST BACK TO SCHOOL 2026",
         image: "/images/hoc-xinh-kem.jpg"
       },
       {
         id: "trung-thu-kem-com",
         title: "Trung Thu Kem & Cốm",
         subtitle: "Hương cốm non dịu ngọt và ánh trăng rằm ấm áp cho bé",
-        story: "",
-        badge: "",
+        story: "BST Trung Thu Kem & Cốm kết hợp hoàn hảo giữa chất liệu linen tự nhiên thoáng mát và các họa tiết thêu móc thủ công hình đầu lân, trăng rằm, thỏ ngọc ngộ nghĩnh mang lại nét đẹp trong trẻo, rạng rỡ cho bé trong đêm hội Trăng Rằm.",
+        badge: "BST TRUNG THU 2026",
         image: "/images/trung-thu-kem-com.jpg"
       },
       {
         id: "ha-mat",
         title: "Hạ Mật T6",
         subtitle: "Chất liệu thô đũi và tơ tự nhiên đón làn gió mùa hè êm ái",
-        story: "",
-        badge: "",
+        story: "BST Hạ Mật T6 mang cảm hứng từ những ngày hè rực rỡ và ngọt ngào. Sử dụng chất liệu thô gió 2 lớp mềm nhẹ, tơ dệt hoa nổi đính kim sa và linen bột cao cấp thêu thủ công tỉ mỉ, mỗi thiết kế mang lại sự thoáng mát tuyệt đối và vẻ đẹp trong trẻo cho bé yêu.",
+        badge: "BST MÙA HÈ 2026",
         image: "/images/ha-mat.jpg"
       },
       {
         id: "khanh-vy",
         title: "Hè T3 Khánh Vy",
         subtitle: "Bộ sưu tập hợp tác đặc biệt — Tinh tế, ngọt ngào và cao cấp",
-        story: "",
-        badge: "",
+        story: "BST Hè T3 Khánh Vy là sự kết hợp độc quyền mang phong cách ngọt ngào, tinh tế với chất liệu tơ bướm organza, linen thô thêu hoa nổi và chéo Ý cao cấp. Từng thiết kế tôn vinh nét đẹp trong trẻo, tự nhiên và sự nâng niu tuyệt đối cho các bé gái.",
+        badge: "BST ĐỘC QUYỀN LIMITED",
         image: "/images/khanh-vy.jpg"
       }
     ];
@@ -2576,12 +2576,14 @@
 
       // Collections Page list
       document.getElementById('collections-list-grid').innerHTML = COLLECTIONS.map(col => `
-        <div class="bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-card p-5 space-y-3">
-          <img src="${col.image}" class="w-full aspect-[16/9] object-cover rounded-2xl" />
-          ${col.badge ? `<span class="px-3 py-1 rounded-full bg-honey-100 text-honey-700 text-xs font-bold inline-block">${col.badge}</span>` : ''}
-          <h3 class="font-heading font-bold text-xl text-charcoal-900">${col.title}</h3>
-          ${col.story ? `<p class="text-xs text-charcoal-600 leading-relaxed">${col.story}</p>` : ''}
-          <button onclick="navigateTo('be-gai', 'all')" class="w-full py-2.5 rounded-full bg-honey-500 text-white text-xs font-bold shadow-md">Xem Sản Phẩm Thuộc BST</button>
+        <div class="bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-card p-5 space-y-3 flex flex-col justify-between h-full">
+          <div>
+            <img src="${col.image}" class="w-full aspect-[16/9] object-cover rounded-2xl mb-3" />
+            ${col.badge ? `<span class="px-3 py-1 rounded-full bg-honey-100 text-honey-700 text-xs font-bold inline-block mb-1">${col.badge}</span>` : ''}
+            <h3 class="font-heading font-bold text-xl text-charcoal-900 mb-1">${col.title}</h3>
+            ${col.story ? `<p class="text-xs text-charcoal-600 leading-relaxed">${col.story}</p>` : ''}
+          </div>
+          <button onclick="navigateTo('be-gai', 'all')" class="w-full py-2.5 rounded-full bg-honey-500 text-white text-xs font-bold shadow-md mt-4">Xem Sản Phẩm Thuộc BST</button>
         </div>
       `).join('');
 
