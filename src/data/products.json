@@ -1853,9 +1853,9 @@
                   ],
         "basePrice":  435000,
         "images":  [
-                       "/images/products/khanh-vy/vay-thi-tho-trang.jpg"
+                       "/images/vay-thi-tho-trang.jpg"
                    ],
-        "thumbnail":  "/images/products/khanh-vy/vay-thi-tho-trang.jpg",
+        "thumbnail":  "/images/vay-thi-tho-trang.jpg",
         "colorName":  "Trắng Tinh Khôi",
         "colorHex":  "#FFFFFF",
         "isBestSeller":  true,
@@ -1943,9 +1943,9 @@
                   ],
         "basePrice":  435000,
         "images":  [
-                       "/images/products/khanh-vy/vay-thi-tho-hong.jpg"
+                       "/images/vay-thi-tho-hong.jpg"
                    ],
-        "thumbnail":  "/images/products/khanh-vy/vay-thi-tho-hong.jpg",
+        "thumbnail":  "/images/vay-thi-tho-hong.jpg",
         "colorName":  "Hồng Phấn Pastel",
         "colorHex":  "#FFD1DC",
         "isBestSeller":  true,
@@ -2033,9 +2033,9 @@
                   ],
         "basePrice":  415000,
         "images":  [
-                       "/images/products/khanh-vy/vay-tuong-vi.jpg"
+                       "/images/vay-tuong-vi.jpg"
                    ],
-        "thumbnail":  "/images/products/khanh-vy/vay-tuong-vi.jpg",
+        "thumbnail":  "/images/vay-tuong-vi.jpg",
         "colorName":  "Vàng Hoa Tường Vi",
         "colorHex":  "#FFE4A0",
         "isBestSeller":  true,
@@ -2122,9 +2122,9 @@
                   ],
         "basePrice":  495000,
         "images":  [
-                       "/images/products/khanh-vy/vay-ha-lam.jpg"
+                       "/images/vay-ha-lam.jpg"
                    ],
-        "thumbnail":  "/images/products/khanh-vy/vay-ha-lam.jpg",
+        "thumbnail":  "/images/vay-ha-lam.jpg",
         "colorName":  "Trắng Hoa Nổi",
         "colorHex":  "#FDFEFE",
         "isBestSeller":  true,
@@ -2211,9 +2211,9 @@
                   ],
         "basePrice":  480000,
         "images":  [
-                       "/images/products/khanh-vy/set-thanh-yen-caro.jpg"
+                       "/images/set-ao-thanh-yen-phoi-chan-vay-caro-xanh.jpg"
                    ],
-        "thumbnail":  "/images/products/khanh-vy/set-thanh-yen-caro.jpg",
+        "thumbnail":  "/images/set-ao-thanh-yen-phoi-chan-vay-caro-xanh.jpg",
         "colorName":  "Vàng Bơ \u0026 Caro Xanh",
         "colorHex":  "#FFF3B0",
         "isBestSeller":  true,
