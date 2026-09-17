@@ -336,9 +336,9 @@
                   ],
         "basePrice":  145000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/quan-baggy-be.jpg"
+                       "/images/quan-baggy-be.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/quan-baggy-be.jpg",
+        "thumbnail":  "/images/quan-baggy-be.jpg",
         "colorName":  "Be Sữa",
         "colorHex":  "#F5EFE6",
         "isBestSeller":  false,
