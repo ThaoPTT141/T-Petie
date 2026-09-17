@@ -513,9 +513,9 @@
                   ],
         "basePrice":  215000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/chan-vay-hoi-hoa.jpg"
+                       "/images/chan-vay-hoi-hoa.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/chan-vay-hoi-hoa.jpg",
+        "thumbnail":  "/images/chan-vay-hoi-hoa.jpg",
         "colorName":  "Xám Ghi Vintage",
         "colorHex":  "#9E9E9E",
         "isBestSeller":  false,
