@@ -246,9 +246,10 @@
                   ],
         "basePrice":  195000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/ao-baby-blue.jpg"
+                       "/images/ao-baby-blue-mat-truoc.jpg",
+                       "/images/ao-baby-blue-mat-sau.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/ao-baby-blue.jpg",
+        "thumbnail":  "/images/ao-baby-blue-mat-truoc.jpg",
         "colorName":  "Xanh Pastel",
         "colorHex":  "#E0F2FE",
         "isBestSeller":  false,

@@ -746,6 +746,8 @@
             <img id="pdetail-main-img" src="" alt="" class="w-full h-full object-cover" />
             <div id="pdetail-badge" class="absolute top-3 left-3 bg-blush-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Sale</div>
           </div>
+          <!-- Thumbnails switcher -->
+          <div id="pdetail-thumbnails" class="flex items-center space-x-3 overflow-x-auto no-scrollbar py-1"></div>
         </div>
 
         <!-- Details -->
@@ -1360,6 +1362,38 @@
         isBestSeller: true,
         isSale: false,
         description: "Áo sơ mi thô cotton mềm mát thấm hút mồ hôi. Họa tiết Trái Đất thêu tay tỉ mỉ độc quyền. Form vừa người, ưu tiên chọn size theo chiều cao bé."
+      },
+      {
+        id: "ao-baby-blue",
+        sku: "TP-HXK-003",
+        name: "Áo Baby Blue",
+        category: "be-gai",
+        subcategory: "ao",
+        collectionId: "hoc-xinh-kem",
+        material: "Thô cotton mềm, thấm hút, màu xanh pastel nhẹ. Định lượng vải dày hơn áo Trái Đất",
+        materialFeature: "Thô cotton dày dặn, xanh pastel",
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 195000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 195000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 195000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 195000 },
+          { size: "Size 130", weight: "25 - 30kg", age: "8 - 9 tuổi", price: 195000 },
+          { size: "Size 140", weight: "30 - 35kg", age: "10 - 11 tuổi", price: 195000 },
+          { size: "Size 150", weight: "35 - 40kg", age: "12 - 13 tuổi", price: 245000 }
+        ],
+        basePrice: 195000,
+        originalPrice: 245000,
+        discountPercent: 0,
+        saleCampaign: "",
+        image: "/images/ao-baby-blue-mat-truoc.jpg",
+        images: [
+          "/images/ao-baby-blue-mat-truoc.jpg",
+          "/images/ao-baby-blue-mat-sau.jpg"
+        ],
+        isBestSeller: false,
+        isNewArrival: true,
+        isSale: false,
+        description: "Áo kiểu tone xanh baby blue thanh thuần, chất thô cotton mềm và thấm hút cực tốt, định lượng vải dệt dày dặn dập phom đẹp."
       },
       {
         id: "quan-bloomer-ha-mat",
@@ -1980,13 +2014,28 @@
       currentSelectedProduct = product;
       currentSelectedSize = product.sizes[0];
 
-      document.getElementById('pdetail-main-img').src = product.image;
+      const imgList = (product.images && product.images.length > 0) ? product.images : [product.image];
+
+      document.getElementById('pdetail-main-img').src = imgList[0];
       document.getElementById('pdetail-title').innerText = product.name;
-      document.getElementById('pdetail-category').innerText = product.subcategory.toUpperCase();
+      document.getElementById('pdetail-category').innerText = product.subcategory ? product.subcategory.toUpperCase() : 'BÉ GÁI';
       document.getElementById('pdetail-price').innerText = formatVND(currentSelectedSize.price);
       document.getElementById('pdetail-orig-price').innerText = product.originalPrice ? formatVND(product.originalPrice) : '';
       document.getElementById('pdetail-description').innerText = product.description;
       document.getElementById('pdetail-breadcrumb').innerText = product.name;
+
+      // Render thumbnails if multiple images exist
+      const thumbContainer = document.getElementById('pdetail-thumbnails');
+      if (imgList.length > 1) {
+        thumbContainer.innerHTML = imgList.map((img, idx) => `
+          <button type="button" onclick="selectProductImage('${img}', this)" class="pdetail-thumb-btn relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 transition-all shrink-0 ${idx === 0 ? 'border-honey-500 ring-2 ring-honey-400/40 scale-105' : 'border-cream-200 opacity-70 hover:opacity-100'}">
+            <img src="${img}" class="w-full h-full object-cover" />
+            ${imgList.length === 2 ? `<span class="absolute bottom-1 inset-x-1 text-[8px] font-bold text-center bg-black/60 text-white rounded py-0.5">${idx === 0 ? 'Mặt trước' : 'Mặt sau'}</span>` : ''}
+          </button>
+        `).join('');
+      } else {
+        thumbContainer.innerHTML = '';
+      }
 
       // Render size buttons
       const sizeContainer = document.getElementById('pdetail-sizes-container');
@@ -1999,6 +2048,16 @@
       `).join('');
 
       navigateTo('product-detail');
+    }
+
+    function selectProductImage(imgUrl, clickedBtn) {
+      document.getElementById('pdetail-main-img').src = imgUrl;
+      document.querySelectorAll('.pdetail-thumb-btn').forEach(btn => {
+        btn.className = 'pdetail-thumb-btn relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 transition-all shrink-0 border-cream-200 opacity-70 hover:opacity-100';
+      });
+      if (clickedBtn) {
+        clickedBtn.className = 'pdetail-thumb-btn relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 transition-all shrink-0 border-honey-500 ring-2 ring-honey-400/40 scale-105';
+      }
     }
 
     function selectProductSize(idx) {

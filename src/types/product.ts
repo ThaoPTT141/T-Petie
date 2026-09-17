@@ -35,8 +35,10 @@ export interface Product {
   discountPercent?: number; // % giảm giá nếu có Sale
   saleCampaign?: SaleCampaign; // Đợt sale: dai-le-2-9, sale-he, sale-thu-dong
   
-  images: string[];         // Danh sách URL ảnh sản phẩm
-  thumbnail: string;        // Ảnh đại diện chính
+  images: string[];         // Danh sách URL ảnh sản phẩm (hỗ trợ nhiều ảnh gallery)
+  thumbnail: string;        // Ảnh đại diện chính (mặt trước)
+  image?: string;           // Ảnh đại diện phụ/fallback
+  gallery?: string[];       // Danh sách ảnh phụ/chi tiết
   colorName?: string;       // Tên màu: Vàng Mật Ong, Xanh Cốm, Trắng Kem, Hồng Phấn
   colorHex?: string;        // Mã hex màu sản phẩm
   

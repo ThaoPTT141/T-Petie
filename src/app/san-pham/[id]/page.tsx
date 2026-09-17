@@ -46,8 +46,20 @@ export default function ProductDetailPage({ params }: PageProps) {
   const [quantity, setQuantity] = useState(1);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
 
+  const productImages = product.images && product.images.length > 0
+    ? product.images
+    : [product.thumbnail || product.image || '/images/hero-banner.jpg'];
+
   const { addToCart } = useCart();
   const { showToast } = useToast();
+
+  // Reset image and size when route params change
+  useEffect(() => {
+    setSelectedImageIndex(0);
+    if (product?.sizes && product.sizes.length > 0) {
+      setSelectedSize(product.sizes[0]);
+    }
+  }, [params.id, product]);
 
   // Track view item on mount
   useEffect(() => {
@@ -116,12 +128,12 @@ export default function ProductDetailPage({ params }: PageProps) {
               className="w-full h-full relative"
             >
               <Image
-                src={product.images[selectedImageIndex] || product.thumbnail}
-                alt={product.name}
+                src={productImages[selectedImageIndex] || productImages[0]}
+                alt={`${product.name} - Ảnh ${selectedImageIndex + 1}`}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover transition-all duration-300"
               />
             </motion.div>
 
@@ -138,6 +150,15 @@ export default function ProductDetailPage({ params }: PageProps) {
                 </span>
               )}
             </div>
+
+            {/* Indicator tổng số ảnh */}
+            {productImages.length > 1 && (
+              <div className="absolute bottom-3 right-3 z-10">
+                <span className="px-2.5 py-1 rounded-full bg-charcoal-900/70 backdrop-blur-md text-white text-[11px] font-medium shadow-sm">
+                  {selectedImageIndex + 1} / {productImages.length}
+                </span>
+              </div>
+            )}
 
             {/* Nút Chia Sẻ / Yêu Thích */}
             <div className="absolute top-3 right-3 flex space-x-2 z-10">
@@ -161,18 +182,34 @@ export default function ProductDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Thumbnails list */}
-          {product.images.length > 1 && (
-            <div className="flex space-x-3 overflow-x-auto no-scrollbar py-1">
-              {product.images.map((img, idx) => (
+          {/* Thumbnails list chuyển đổi ảnh */}
+          {productImages.length > 1 && (
+            <div className="flex items-center space-x-3 overflow-x-auto no-scrollbar py-1">
+              {productImages.map((img, idx) => (
                 <button
                   key={idx}
+                  type="button"
                   onClick={() => setSelectedImageIndex(idx)}
-                  className={`relative w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all shrink-0 ${
-                    selectedImageIndex === idx ? 'border-honey-500 scale-105 shadow-sm' : 'border-cream-200 opacity-70 hover:opacity-100'
+                  className={`relative w-20 h-20 sm:w-22 sm:h-22 rounded-2xl overflow-hidden border-2 transition-all shrink-0 focus:outline-none ${
+                    selectedImageIndex === idx
+                      ? 'border-honey-500 ring-2 ring-honey-400/50 scale-105 shadow-sm'
+                      : 'border-cream-200 opacity-70 hover:opacity-100 hover:border-honey-300'
                   }`}
+                  aria-label={`Xem ảnh ${idx + 1}`}
                 >
-                  <Image src={img} alt="" fill sizes="80px" className="object-cover" />
+                  <Image
+                    src={img}
+                    alt={`${product.name} thumbnail ${idx + 1}`}
+                    fill
+                    sizes="88px"
+                    className="object-cover"
+                  />
+                  {/* Nhãn mặt trước / mặt sau nếu có 2 ảnh */}
+                  {productImages.length === 2 && (
+                    <span className="absolute bottom-1 inset-x-1 text-[9px] font-bold text-center bg-black/60 text-white rounded py-0.5 leading-none">
+                      {idx === 0 ? 'Mặt trước' : 'Mặt sau'}
+                    </span>
+                  )}
                 </button>
               ))}
             </div>
