@@ -951,9 +951,9 @@
                   ],
         "basePrice":  255000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/ao-polo-trang-giay.jpg"
+                       "/images/ao-polo-trang-giay.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/ao-polo-trang-giay.jpg",
+        "thumbnail":  "/images/ao-polo-trang-giay.jpg",
         "colorName":  "Trắng Giấy",
         "colorHex":  "#F8FAFC",
         "isBestSeller":  false,
