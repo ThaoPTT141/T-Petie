@@ -424,9 +424,10 @@
                   ],
         "basePrice":  245000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/ao-ghile-hoi-hoa.jpg"
+                       "/images/ao-ghile-hoi-hoa-xep-ly-mat-truoc.jpg",
+                       "/images/ao-ghile-hoi-hoa-xep-ly-mat-sau.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/ao-ghile-hoi-hoa.jpg",
+        "thumbnail":  "/images/ao-ghile-hoi-hoa-xep-ly-mat-truoc.jpg",
         "colorName":  "Nâu Nhạt Vintage",
         "colorHex":  "#D7CCC8",
         "isBestSeller":  true,
