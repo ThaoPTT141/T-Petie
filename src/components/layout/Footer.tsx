@@ -55,7 +55,7 @@ export function Footer() {
         <div className="space-y-3">
           <Link href="/" className="inline-block group">
             <img
-              src="/images/logo-red.png"
+              src="/images/logo.png"
               alt="T'Petie - Made for little souls"
               className="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
             />

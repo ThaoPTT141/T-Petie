@@ -115,7 +115,7 @@ function LoginContent() {
           <div className="relative z-10 space-y-4">
             <Link href="/" className="inline-block">
               <img
-                src="/images/logo-red.png"
+                src="/images/logo.png"
                 alt="T'Petie Logo"
                 className="h-11 w-auto object-contain hover:scale-105 transition-transform"
               />
