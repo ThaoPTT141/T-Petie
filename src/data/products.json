@@ -689,9 +689,9 @@
                   ],
         "basePrice":  350000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/set-nhi-nhanh-3-items.jpg"
+                       "/images/set-nhi-nhanh-3-items.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/set-nhi-nhanh-3-items.jpg",
+        "thumbnail":  "/images/set-nhi-nhanh-3-items.jpg",
         "colorName":  "Kem Sữa Phối Xanh",
         "colorHex":  "#FFFBEB",
         "isBestSeller":  true,
@@ -864,9 +864,9 @@
                   ],
         "basePrice":  395000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/vay-nang-mai.jpg"
+                       "/images/vay-nang-mai.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/vay-nang-mai.jpg",
+        "thumbnail":  "/images/vay-nang-mai.jpg",
         "colorName":  "Vàng Gà Con",
         "colorHex":  "#FEF08A",
         "isBestSeller":  false,
@@ -1038,9 +1038,9 @@
                   ],
         "basePrice":  135000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/sooc-jeans.jpg"
+                       "/images/sooc-jeans.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/sooc-jeans.jpg",
+        "thumbnail":  "/images/sooc-jeans.jpg",
         "colorName":  "Xanh Denim",
         "colorHex":  "#334155",
         "isBestSeller":  false,
@@ -1125,9 +1125,9 @@
                   ],
         "basePrice":  255000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/vay-ghile-o-ly.jpg"
+                       "/images/vay-ghile-o-ly.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/vay-ghile-o-ly.jpg",
+        "thumbnail":  "/images/vay-ghile-o-ly.jpg",
         "colorName":  "Kẻ Ô Ly Vintage",
         "colorHex":  "#A1887F",
         "isBestSeller":  false,
@@ -1212,9 +1212,9 @@
                   ],
         "basePrice":  465000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/set-tinh-khoi.jpg"
+                       "/images/set-tinh-khoi.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/set-tinh-khoi.jpg",
+        "thumbnail":  "/images/set-tinh-khoi.jpg",
         "colorName":  "Trắng Tinh Khôi",
         "colorHex":  "#FFFFFF",
         "isBestSeller":  true,
