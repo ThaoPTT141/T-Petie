@@ -777,9 +777,9 @@
                   ],
         "basePrice":  385000,
         "images":  [
-                       "/images/products/hoc-xinh-kem/vay-thi-ca.jpg"
+                       "/images/vay-thi-ca.jpg"
                    ],
-        "thumbnail":  "/images/products/hoc-xinh-kem/vay-thi-ca.jpg",
+        "thumbnail":  "/images/vay-thi-ca.jpg",
         "colorName":  "Hồng Pastel",
         "colorHex":  "#FCE7F3",
         "isBestSeller":  true,
