@@ -47,13 +47,13 @@ export function HeroCarousel() {
   return (
     <div className="relative rounded-3xl overflow-hidden border border-cream-200 shadow-soft bg-cream-50 group">
       {/* Banner Container */}
-      <div className="relative w-full aspect-[16/9] overflow-hidden">
+      <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-[2.5/1] overflow-hidden bg-cream-50 flex items-center justify-center">
         {banners.map((banner, index) => (
           <Link
             key={banner.id}
             href={banner.href}
             data-track={`click_hero_banner_${banner.id}`}
-            className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
+            className={`absolute inset-0 transition-transform duration-700 ease-in-out flex items-center justify-center ${
               index === currentIndex ? 'translate-x-0' : index < currentIndex ? '-translate-x-full' : 'translate-x-full'
             }`}
           >
@@ -62,8 +62,9 @@ export function HeroCarousel() {
               alt={banner.alt}
               fill
               priority={index === 0}
-              sizes="(max-width: 768px) 100vw, 1152px"
-              className="object-cover object-center group-hover:scale-[1.015] transition-transform duration-500"
+              quality={100}
+              sizes="(max-width: 768px) 100vw, 1200px"
+              className="object-contain object-center group-hover:scale-[1.015] transition-transform duration-500"
             />
           </Link>
         ))}
