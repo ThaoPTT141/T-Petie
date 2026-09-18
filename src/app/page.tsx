@@ -8,6 +8,7 @@ import { Product } from '@/types/product';
 import { Collection } from '@/types/collection';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { LookbookCarousel } from '@/components/collection/LookbookCarousel';
+import { HeroCarousel } from '@/components/home/HeroCarousel';
 
 export default function HomePage() {
   const products = localProducts as Product[];
@@ -21,54 +22,7 @@ export default function HomePage() {
     <div className="space-y-10 sm:space-y-14">
       {/* 1. HERO BANNER SECTION */}
       <section className="relative px-4 sm:px-6 pt-4 max-w-6xl mx-auto">
-        <div className="relative rounded-3xl overflow-hidden border border-cream-200 shadow-soft bg-cream-50 group">
-          {/* Main Visual Banner */}
-          <Link
-            href="/be-gai"
-            data-track="click_hero_banner"
-            className="block relative w-full aspect-[16/9] overflow-hidden"
-          >
-            <Image
-              src="/images/hero-banner.jpg"
-              alt="T'Petie - Ngọt ngào, trong trẻo & Nâng niu từng bước chạm của bé yêu"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 1152px"
-              className="object-cover object-center group-hover:scale-[1.015] transition-transform duration-500"
-            />
-          </Link>
-
-          {/* Quick Action & Info Bar under Banner */}
-          <div className="p-4 sm:p-5 bg-gradient-to-r from-cream-100 via-blush-50 to-sage-50 border-t border-cream-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center space-x-2 text-xs sm:text-sm text-charcoal-700 text-center sm:text-left">
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-honey-500 text-white text-[11px] font-bold shrink-0 shadow-sm">
-                <Sparkles className="w-3 h-3 mr-1" />
-                BST Mới
-              </span>
-              <span>
-                <strong>BST Tựu Trường: Học Xinh Kem</strong> — Thô đũi organic &amp; voan tơ êm ái cho bé
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2.5 w-full sm:w-auto justify-center">
-              <Link
-                href="/be-gai"
-                data-track="hero-cta-shop-girls"
-                className="flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center justify-center space-x-1.5"
-              >
-                <span>Mua Sắm Ngay</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/bo-suu-tap/hoc-xinh-kem"
-                data-track="hero-cta-view-lookbook"
-                className="flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-300 text-xs sm:text-sm font-bold transition-all active:scale-95 text-center"
-              >
-                <span>Xem Lookbook</span>
-              </Link>
-            </div>
-          </div>
-        </div>
+        <HeroCarousel />
       </section>
 
       {/* 2. BỐN CATEGORY CARDS — Client Navigation Trực Tiếp */}
