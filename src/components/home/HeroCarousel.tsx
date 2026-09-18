@@ -8,21 +8,21 @@ import { ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 const banners = [
   {
     id: 1,
-    src: '/images/hero-banner.png',
+    src: '/images/banner-2.png',
     alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
     href: '/be-gai',
     collection: 'BST Tựu Trường: Học Xinh Kem'
   },
   {
     id: 2,
-    src: '/images/trung-thu-kem-com.jpg',
+    src: '/images/banner-1.jpg',
     alt: 'Trung Thu Collection',
     href: '/be-gai',
     collection: 'BST Trung Thu: Ánh Trăng Của Bé'
   },
   {
     id: 3,
-    src: '/images/ha-mat.jpg',
+    src: '/images/banner-3.jpg',
     alt: 'Hè yêu nhẹ nhàng của bé',
     href: '/be-gai',
     collection: 'BST Hạ Mát: Hè Yêu Nhẹ Nhàng'
