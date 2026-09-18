@@ -1,19 +1,30 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { FilterBar } from '@/components/filter/FilterBar';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import localProducts from '@/data/products.json';
 import { Product } from '@/types/product';
 
-export default function BeGaiAllPage() {
+function BeGaiContent() {
   const allProducts = localProducts as Product[];
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get('q')?.toLowerCase() || '';
+
   const [sortBy, setSortBy] = useState('newest');
   const [priceRange, setPriceRange] = useState('all');
 
   const filteredProducts = useMemo(() => {
     let list = allProducts.filter((p) => p.category === 'be-gai');
+
+    if (searchQuery) {
+      list = allProducts.filter((p) => 
+        p.name.toLowerCase().includes(searchQuery) ||
+        (p.description && p.description.toLowerCase().includes(searchQuery))
+      );
+    }
 
     if (priceRange === 'under-200') {
       list = list.filter((p) => p.basePrice < 200000);
@@ -32,7 +43,7 @@ export default function BeGaiAllPage() {
     }
 
     return list;
-  }, [allProducts, sortBy, priceRange]);
+  }, [allProducts, sortBy, priceRange, searchQuery]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
@@ -42,10 +53,12 @@ export default function BeGaiAllPage() {
       {/* Tiêu đề & Giới thiệu */}
       <div className="mb-6">
         <h1 className="text-2xl sm:text-3xl font-extrabold font-heading text-charcoal-900 mb-2">
-          Thời Trang Bé Gái Ngọt Ngào 🌸
+          {searchQuery ? `Kết quả tìm kiếm cho "${searchParams.get('q')}"` : 'Thời Trang Bé Gái Ngọt Ngào 🌸'}
         </h1>
         <p className="text-xs sm:text-sm text-charcoal-600 max-w-2xl leading-relaxed">
-          Tổng hợp tất cả các mẫu váy công chúa voan tơ, áo sơ mi cổ sen thêu tay và set bộ thô đũi organic cao cấp cho bé gái từ 1 đến 5 tuổi.
+          {searchQuery 
+            ? `Tìm thấy ${filteredProducts.length} sản phẩm phù hợp với tìm kiếm của bạn.` 
+            : 'Tổng hợp tất cả các mẫu váy công chúa voan tơ, áo sơ mi cổ sen thêu tay và set bộ thô đũi organic cao cấp cho bé gái từ 1 đến 5 tuổi.'}
         </p>
       </div>
 
@@ -62,5 +75,17 @@ export default function BeGaiAllPage() {
       {/* Product Grid */}
       <ProductGrid products={filteredProducts} />
     </div>
+  );
+}
+
+export default function BeGaiAllPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-honey-500"></div>
+      </div>
+    }>
+      <BeGaiContent />
+    </Suspense>
   );
 }

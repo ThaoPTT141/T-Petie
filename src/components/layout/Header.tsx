@@ -331,7 +331,16 @@ export function Header() {
                 <X className="w-4 h-4" />
               </button>
             </div>
-            <div className="mt-4 relative">
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (searchQuery.trim()) {
+                  setIsSearchOpen(false);
+                  window.location.href = `/be-gai?q=${encodeURIComponent(searchQuery.trim())}`;
+                }
+              }}
+              className="mt-4 relative"
+            >
               <input
                 type="text"
                 placeholder="Nhập tên váy, áo sơ mi, chất vải organic..."
@@ -340,8 +349,10 @@ export function Header() {
                 autoFocus
                 className="w-full pl-10 pr-4 py-3 rounded-2xl bg-cream-50 border border-cream-300 text-sm focus:outline-none focus:border-honey-500"
               />
-              <Search className="w-4 h-4 text-charcoal-400 absolute left-3.5 top-3.5" />
-            </div>
+              <button type="submit" aria-label="Thực hiện tìm kiếm" className="absolute left-3.5 top-3.5 hover:text-honey-600 transition-colors">
+                <Search className="w-4 h-4 text-charcoal-400 hover:text-honey-600" />
+              </button>
+            </form>
             <div className="mt-4">
               <span className="text-xs font-semibold text-charcoal-600 block mb-2">Gợi ý tìm kiếm phổ biến:</span>
               <div className="flex flex-wrap gap-2">
