@@ -346,7 +346,7 @@ function AboutContent() {
                         ].map((item, idx) => (
                           <div
                             key={item.name}
-                            className="p-4 bg-blush-100 rounded-2xl border border-blush-200 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-2 group"
+                            className="p-4 bg-cream-100 rounded-2xl border border-cream-200 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-2 group"
                           >
                             <span className="w-8 h-8 rounded-full bg-honey-100 text-honey-700 font-serif font-bold text-xs flex items-center justify-center mx-auto transition-transform group-hover:scale-110 mb-1">
                               {item.step}
@@ -360,7 +360,7 @@ function AboutContent() {
                       </div>
 
                       {/* Flow summary bar */}
-                      <div className="p-3 bg-sage-100 rounded-2xl border border-sage-200 text-center text-xs text-sage-800 font-medium">
+                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 text-center text-xs text-charcoal-700 font-medium">
                         Clothing ➔ Accessories ➔ Objects ➔ Visuals ➔ Stories ➔ Childhood Experiences
                       </div>
                     </div>
