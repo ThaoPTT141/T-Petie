@@ -53,14 +53,18 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [items, isHydrated]);
 
   const addToCart = (product: Product, selectedSize: ProductSizeOption, quantity = 1) => {
+    const formattedSize = `${selectedSize.size} (${selectedSize.weightRange})`;
     setItems((prevItems) => {
       const existingIndex = prevItems.findIndex(
-        (i) => i.productId === product.id && i.selectedSize === selectedSize.size
+        (i) => i.productId === product.id && i.selectedSize === formattedSize
       );
 
       if (existingIndex > -1) {
         const updated = [...prevItems];
-        updated[existingIndex].quantity += quantity;
+        updated[existingIndex] = {
+          ...updated[existingIndex],
+          quantity: updated[existingIndex].quantity + quantity,
+        };
         return updated;
       } else {
         const newItem: CartItem = {
@@ -69,7 +73,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           sku: product.sku,
           thumbnail: product.thumbnail,
           category: product.categoryName,
-          selectedSize: `${selectedSize.size} (${selectedSize.weightRange})`,
+          selectedSize: formattedSize,
           price: selectedSize.price,
           quantity,
         };
