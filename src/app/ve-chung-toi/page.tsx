@@ -191,34 +191,31 @@ function AboutContent() {
 
                   {/* Body Story Paragraphs */}
                   <div className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
-                    <p>
-                      <strong>T&apos;Petie</strong> được hình thành từ năm 2021, bắt đầu bằng một tình yêu giản dị dành cho thời trang trẻ em và những điều nhỏ bé tạo nên một tuổi thơ đẹp.
-                    </p>
-                    <p className="text-charcoal-800 font-medium">
-                      Chúng tôi tin rằng quần áo không chỉ là thứ trẻ mặc trên người.
+                    <p className="text-charcoal-800">
+                      <strong>T&apos;Petie</strong> được hình thành từ năm 2021, bắt đầu bằng một tình yêu giản dị dành cho thời trang trẻ em và những điều nhỏ bé tạo nên một tuổi thơ đẹp. Chúng tôi tin rằng quần áo không chỉ là thứ trẻ mặc trên người.
                     </p>
 
                     {/* 4 Emotional Memory Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 py-2">
-                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
                         <span className="text-lg">👗</span>
                         <span className="text-xs text-charcoal-800">Một chiếc váy trong ngày đặc biệt.</span>
                       </div>
-                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
                         <span className="text-lg">🎒</span>
                         <span className="text-xs text-charcoal-800">Một chiếc áo mặc đến trường.</span>
                       </div>
-                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
                         <span className="text-lg">🚗</span>
                         <span className="text-xs text-charcoal-800">Một bộ đồ trong chuyến đi cùng gia đình.</span>
                       </div>
-                      <div className="p-3 bg-cream-50/80 rounded-2xl border border-cream-200/80 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
                         <span className="text-lg">🧸</span>
                         <span className="text-xs text-charcoal-800">Hay một bộ quần áo được mặc đi mặc lại vì đó là món đồ mà bé yêu thích.</span>
                       </div>
                     </div>
 
-                    <p className="italic text-charcoal-600 font-serif">
+                    <p className="italic text-charcoal-800">
                       Những điều rất nhỏ ấy, theo thời gian, có thể trở thành những ký ức rất lớn.
                     </p>
 
@@ -238,7 +235,7 @@ function AboutContent() {
                       Từ cách lựa chọn chất liệu, phom dáng, màu sắc đến từng chi tiết nhỏ, T&apos;Petie luôn cố gắng tạo nên những sản phẩm không chỉ đẹp trong một khoảnh khắc, mà có thể đồng hành cùng những ngày tháng rất thật của một đứa trẻ.
                     </p>
 
-                    <p className="font-serif italic text-honey-800 font-medium pt-1">
+                    <p className="italic text-honey-800 font-medium pt-1">
                       Bởi cuối cùng, điều chúng tôi muốn giữ lại không chỉ là một bộ quần áo đẹp. Mà là cảm giác của một tuổi thơ đẹp.
                     </p>
                   </div>
