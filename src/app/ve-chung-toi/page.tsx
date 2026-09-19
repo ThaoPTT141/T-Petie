@@ -337,28 +337,31 @@ function AboutContent() {
                       {/* Interactive Visual Ecosystem Roadmap Flow */}
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
                         {[
-                          { step: '01', name: 'Clothing', desc: 'Trang phục hữu cơ', icon: '👗' },
-                          { step: '02', name: 'Accessories', desc: 'Phụ kiện dịu ngọt', icon: '🎀' },
-                          { step: '03', name: 'Objects', desc: 'Đồ dùng nâng niu', icon: '🧸' },
-                          { step: '04', name: 'Visuals', desc: 'Hình ảnh trong trẻo', icon: '🎨' },
-                          { step: '05', name: 'Stories', desc: 'Câu chuyện nuôi dưỡng', icon: '📖' },
-                          { step: '06', name: 'Childhood experiences', desc: 'Trải nghiệm tuổi thơ', icon: '✨' },
+                          { step: '01', name: 'Clothing', desc: 'Trang phục hữu cơ' },
+                          { step: '02', name: 'Accessories', desc: 'Phụ kiện dịu ngọt' },
+                          { step: '03', name: 'Objects', desc: 'Đồ dùng nâng niu' },
+                          { step: '04', name: 'Visuals', desc: 'Hình ảnh trong trẻo' },
+                          { step: '05', name: 'Stories', desc: 'Câu chuyện nuôi dưỡng' },
+                          { step: '06', name: 'Childhood Experiences', desc: 'Trải nghiệm tuổi thơ' },
                         ].map((item, idx) => (
                           <div
                             key={item.name}
-                            className="p-3.5 bg-cream-100 rounded-2xl border border-cream-200 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-1 group"
+                            className="p-4 bg-cream-200 rounded-2xl border border-cream-300 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-2 group"
                           >
-                            <span className="text-xl block group-hover:scale-110 transition-transform">{item.icon}</span>
-                            <span className="text-[10px] font-mono text-honey-600 font-bold block">{item.step}</span>
-                            <h5 className="font-bold text-xs text-charcoal-900">{item.name}</h5>
-                            <p className="text-[10px] text-charcoal-400">{item.desc}</p>
+                            <span className="w-8 h-8 rounded-full bg-honey-100 text-honey-700 font-serif font-bold text-xs flex items-center justify-center mx-auto transition-transform group-hover:scale-110 mb-1">
+                              {item.step}
+                            </span>
+                            <div className="space-y-0.5">
+                              <h5 className="font-bold text-xs text-charcoal-900">{item.name}</h5>
+                              <p className="text-[10px] text-charcoal-500">{item.desc}</p>
+                            </div>
                           </div>
                         ))}
                       </div>
 
                       {/* Flow summary bar */}
                       <div className="p-3 bg-sage-50/70 rounded-2xl border border-sage-200 text-center text-xs text-sage-800 font-medium">
-                        Clothing ➔ Accessories ➔ Objects ➔ Visuals ➔ Stories ➔ Childhood experiences
+                        Clothing ➔ Accessories ➔ Objects ➔ Visuals ➔ Stories ➔ Childhood Experiences
                       </div>
                     </div>
                   </div>
