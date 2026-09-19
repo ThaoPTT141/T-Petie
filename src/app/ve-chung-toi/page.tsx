@@ -110,10 +110,10 @@ function AboutContent() {
         
         {/* LEFT COLUMN: Navigation Tabs (Vertical on Desktop, Horizontal Scroll on Mobile) */}
         <div className="lg:col-span-4 space-y-2 lg:sticky lg:top-28 lg:z-10">
-          <div className="hidden lg:block mb-3 px-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-charcoal-400">
+          <div className="hidden lg:block mb-4 text-center">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-blush-600 tracking-wide drop-shadow-sm">
               Khám Phá T&apos;Petie
-            </span>
+            </h2>
           </div>
 
           {/* Desktop Vertical List / Mobile Scrollable Pill Row */}
