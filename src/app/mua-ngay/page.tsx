@@ -228,9 +228,7 @@ export default function MuaNgayPage() {
             <ArrowRight className="w-4 h-4" />
           </button>
 
-          <p className="text-[11px] text-charcoal-400 text-center leading-relaxed">
-            Sau khi gửi form, T&apos;Petie sẽ liên hệ xác nhận đơn trong vòng 30 phút ⏰
-          </p>
+
         </div>
       </div>
     </div>
