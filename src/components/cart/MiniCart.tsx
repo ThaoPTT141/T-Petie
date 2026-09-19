@@ -93,7 +93,7 @@ export function MiniCart() {
               ) : (
                 items.map((item) => (
                   <div key={`${item.productId}-${item.selectedSize}`} className="pt-3 first:pt-0 flex space-x-3">
-                    <div className="relative w-18 h-18 rounded-xl overflow-hidden bg-cream-100 border border-cream-200 shrink-0">
+                    <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-cream-100 border border-cream-200 shrink-0">
                       <Image
                         src={item.thumbnail}
                         alt={item.productName}
