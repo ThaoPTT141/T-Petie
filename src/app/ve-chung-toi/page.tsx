@@ -178,7 +178,7 @@ function AboutContent() {
                 >
                   {/* Title Header */}
                   <div className="border-b border-cream-200 pb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-honey-600 bg-honey-50 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-honey-700 bg-honey-100 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
                       Khởi Nguồn
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
@@ -256,7 +256,7 @@ function AboutContent() {
                   className="space-y-6"
                 >
                   <div className="border-b border-cream-200 pb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-blush-600 bg-blush-50 px-2.5 py-1 rounded-full border border-blush-200 inline-block mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blush-700 bg-blush-100 px-2.5 py-1 rounded-full border border-blush-200 inline-block mb-2">
                       Triết Lý
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
@@ -330,7 +330,7 @@ function AboutContent() {
                   className="space-y-6"
                 >
                   <div className="border-b border-cream-200 pb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 inline-block mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-sage-800 bg-sage-100 px-2.5 py-1 rounded-full border border-sage-200 inline-block mb-2">
                       Tương Lai
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
@@ -394,7 +394,7 @@ function AboutContent() {
                   className="space-y-6"
                 >
                   <div className="border-b border-cream-200 pb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-honey-600 bg-honey-50 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-honey-700 bg-honey-100 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
                       Trọng Trách
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
@@ -429,7 +429,7 @@ function AboutContent() {
                   className="space-y-6"
                 >
                   <div className="border-b border-cream-200 pb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-charcoal-600 bg-cream-100 px-2.5 py-1 rounded-full border border-cream-300 inline-block mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-charcoal-700 bg-cream-200 px-2.5 py-1 rounded-full border border-cream-300 inline-block mb-2">
                       Kim Chỉ Nam
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
