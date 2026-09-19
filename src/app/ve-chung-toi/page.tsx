@@ -197,30 +197,26 @@ function AboutContent() {
 
                     {/* 4 Emotional Memory Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 py-2">
-                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
                         <span className="text-lg">👗</span>
                         <span className="text-xs text-charcoal-800">Một chiếc váy trong ngày đặc biệt.</span>
                       </div>
-                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
                         <span className="text-lg">🎒</span>
                         <span className="text-xs text-charcoal-800">Một chiếc áo mặc đến trường.</span>
                       </div>
-                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
                         <span className="text-lg">🚗</span>
                         <span className="text-xs text-charcoal-800">Một bộ đồ trong chuyến đi cùng gia đình.</span>
                       </div>
-                      <div className="p-3 bg-cream-100 rounded-2xl border border-cream-200 flex items-center space-x-2.5">
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
                         <span className="text-lg">🧸</span>
                         <span className="text-xs text-charcoal-800">Hay một bộ quần áo được mặc đi mặc lại vì đó là món đồ mà bé yêu thích.</span>
                       </div>
                     </div>
 
-                    <p className="italic text-charcoal-800">
-                      Những điều rất nhỏ ấy, theo thời gian, có thể trở thành những ký ức rất lớn.
-                    </p>
-
-                    <p>
-                      Vì vậy, T&apos;Petie tạo ra những thiết kế dành cho trẻ nhỏ với tinh thần nhẹ nhàng, tinh tế và tự nhiên — những món đồ đủ đẹp để người lớn yêu thích, nhưng đủ thoải mái để trẻ được tự do vui chơi, khám phá và lớn lên.
+                    <p className="text-charcoal-800">
+                      Những điều rất nhỏ ấy, theo thời gian, có thể trở thành những ký ức rất lớn. Vì vậy, T&apos;Petie tạo ra những thiết kế dành cho trẻ nhỏ với tinh thần nhẹ nhàng, tinh tế và tự nhiên — những món đồ đủ đẹp để người lớn yêu thích, nhưng đủ thoải mái để trẻ được tự do vui chơi, khám phá và lớn lên.
                     </p>
 
                     {/* Highlighted Quote Callout */}
@@ -233,10 +229,6 @@ function AboutContent() {
 
                     <p>
                       Từ cách lựa chọn chất liệu, phom dáng, màu sắc đến từng chi tiết nhỏ, T&apos;Petie luôn cố gắng tạo nên những sản phẩm không chỉ đẹp trong một khoảnh khắc, mà có thể đồng hành cùng những ngày tháng rất thật của một đứa trẻ.
-                    </p>
-
-                    <p className="italic text-honey-800 font-medium pt-1">
-                      Bởi cuối cùng, điều chúng tôi muốn giữ lại không chỉ là một bộ quần áo đẹp. Mà là cảm giác của một tuổi thơ đẹp.
                     </p>
                   </div>
                 </motion.div>
