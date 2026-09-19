@@ -262,7 +262,7 @@ function AboutContent() {
                       </blockquote>
                     </div>
 
-                    <p>
+                    <p className="text-justify">
                       Trẻ em không cần những bộ quần áo khiến chúng trở thành một <em>&ldquo;phiên bản hoàn hảo&rdquo;</em> trong mắt người lớn. Các em cần được thoải mái chạy nhảy, nghịch ngợm, khám phá, đến trường, đi chơi và lớn lên theo cách của riêng mình.
                     </p>
 
@@ -298,7 +298,7 @@ function AboutContent() {
                       </div>
                     </div>
 
-                    <p className="pt-2 text-charcoal-800 text-center sm:text-left">
+                    <p className="pt-2 text-charcoal-800 text-justify">
                       Vì vậy, T&apos;Petie theo đuổi những thiết kế đẹp vừa đủ, thoải mái vừa đủ và có cá tính vừa đủ — để quần áo trở thành một phần của tuổi thơ, thay vì che lấp nó.
                     </p>
                   </div>
@@ -325,7 +325,7 @@ function AboutContent() {
                   </div>
 
                   <div className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
-                    <p className="text-charcoal-800">
+                    <p className="text-charcoal-800 text-justify">
                       Trở thành một thương hiệu thời trang trẻ em Việt Nam có dấu ấn riêng, được nhớ đến bởi vẻ đẹp tinh tế, chất lượng và cách trân trọng những năm tháng tuổi thơ. Về dài hạn, T&apos;Petie có thể phát triển thành một thương hiệu lifestyle dành cho trẻ nhỏ, không chỉ giới hạn ở quần áo.
                     </p>
 
