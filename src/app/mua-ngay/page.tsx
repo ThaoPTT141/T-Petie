@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Minus, Plus, ShoppingBag } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Minus, Plus } from 'lucide-react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useToast } from '@/context/ToastContext';
@@ -28,6 +28,8 @@ export default function MuaNgayPage() {
   const { showToast } = useToast();
   const [item, setItem] = useState<BuyNowItem | null>(null);
   const [quantity, setQuantity] = useState(1);
+  const [couponCode, setCouponCode] = useState('');
+  const [discountAmount, setDiscountAmount] = useState(0);
 
   useEffect(() => {
     const raw = sessionStorage.getItem('tpetie_buy_now');
@@ -48,7 +50,19 @@ export default function MuaNgayPage() {
 
   const subtotal = item.price * quantity;
   const shippingFee = subtotal >= 399000 ? 0 : 30000;
-  const total = subtotal + shippingFee;
+  const total = Math.max(0, subtotal + shippingFee - discountAmount);
+
+  const applyCoupon = () => {
+    if (couponCode.toUpperCase() === 'TPETIE20') {
+      setDiscountAmount(20000);
+      showToast('Đã áp dụng mã giảm giá 20.000đ!', 'success');
+    } else if (couponCode.toUpperCase() === 'MEMBERVIP') {
+      setDiscountAmount(Math.round(subtotal * 0.1));
+      showToast('Đã áp dụng mã giảm 10% thành viên mới!', 'success');
+    } else {
+      showToast('Mã giảm giá không hợp lệ hoặc đã hết hạn', 'info');
+    }
+  };
 
   const handleCheckout = () => {
     trackBeginCheckout(
@@ -68,14 +82,9 @@ export default function MuaNgayPage() {
 
       {/* Tiêu đề */}
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold font-heading text-charcoal-900">
-            Đặt Hàng Nhanh
-          </h1>
-          <p className="text-xs text-charcoal-500 mt-0.5">
-            Kiểm tra lại thông tin trước khi gửi đơn cho T&apos;Petie nhé Mẹ 🌸
-          </p>
-        </div>
+        <h1 className="text-2xl sm:text-3xl font-extrabold font-heading text-charcoal-900">
+          Đặt Hàng Nhanh
+        </h1>
         <button
           onClick={() => router.back()}
           className="flex items-center space-x-1 text-xs text-charcoal-500 hover:text-honey-600 font-medium transition-colors"
@@ -88,14 +97,6 @@ export default function MuaNgayPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Sản phẩm */}
         <div className="lg:col-span-2 space-y-3">
-          {/* Badge mua ngay */}
-          <div className="flex items-center space-x-2 bg-honey-50 border border-honey-200 rounded-2xl px-4 py-2.5">
-            <ShoppingBag className="w-4 h-4 text-honey-600 shrink-0" />
-            <span className="text-xs font-semibold text-honey-700">
-              Đặt hàng nhanh — Chỉ sản phẩm Mẹ vừa chọn
-            </span>
-          </div>
-
           {/* Card sản phẩm */}
           <div className="bg-white p-4 rounded-2xl border border-honey-400 ring-1 ring-honey-300 shadow-card flex space-x-4 items-center">
             {/* Ảnh */}
@@ -160,7 +161,27 @@ export default function MuaNgayPage() {
             Tóm Tắt Đơn Hàng
           </h2>
 
-          <div className="space-y-2 text-xs text-charcoal-700">
+          {/* Mã Khuyến Mãi */}
+          <div className="space-y-1.5">
+            <span className="text-xs font-semibold text-charcoal-700">Mã Khuyến Mãi:</span>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Nhập TPETIE20..."
+                value={couponCode}
+                onChange={(e) => setCouponCode(e.target.value)}
+                className="flex-1 px-3 py-2 text-xs rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:border-honey-500 uppercase"
+              />
+              <button
+                onClick={applyCoupon}
+                className="px-3 py-2 rounded-xl bg-charcoal-900 text-white text-xs font-bold hover:bg-charcoal-800"
+              >
+                Áp Dụng
+              </button>
+            </div>
+          </div>
+
+          <div className="space-y-2 text-xs text-charcoal-700 pt-2 border-t border-cream-100">
             <div className="flex justify-between">
               <span>Tạm tính (1 sản phẩm):</span>
               <span className="font-semibold">{formatPriceCompact(subtotal)}</span>
@@ -183,6 +204,12 @@ export default function MuaNgayPage() {
                 </strong>{' '}
                 để được Freeship!
               </p>
+            )}
+            {discountAmount > 0 && (
+              <div className="flex justify-between text-blush-600 font-semibold">
+                <span>Mã giảm giá:</span>
+                <span>-{formatPriceCompact(discountAmount)}</span>
+              </div>
             )}
             <div className="flex justify-between text-sm font-bold text-charcoal-900 pt-2 border-t border-cream-200">
               <span>Tổng thanh toán:</span>
