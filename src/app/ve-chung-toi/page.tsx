@@ -84,24 +84,16 @@ function AboutContent() {
       <Breadcrumb items={[{ label: 'Về Chúng Tôi', href: '/ve-chung-toi' }]} />
 
       {/* 1. HERO HEADER BANNER (Soft & Poetic) */}
-      <section className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cream-100 via-blush-50/60 to-sage-50/70 border border-cream-200/80 p-6 sm:p-12 text-center shadow-soft">
-        {/* Subtle blur orbs */}
-        <div className="absolute -top-16 -right-16 w-60 h-60 rounded-full bg-honey-100/50 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-16 -left-16 w-60 h-60 rounded-full bg-blush-100/50 blur-3xl pointer-events-none" />
-
-        <div className="relative z-10 max-w-3xl mx-auto space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-cream-300 shadow-xs text-xs font-semibold text-charcoal-700">
-            <span className="w-2 h-2 rounded-full bg-honey-500 animate-pulse" />
-            <span className="font-serif italic text-honey-700">T&apos;Petie — Est. 2021</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-charcoal-900 tracking-tight">
-            Made for little souls.
-          </h1>
-
-          <p className="text-sm sm:text-base font-sans text-charcoal-600 max-w-xl mx-auto leading-relaxed">
-            Chúng tôi tạo ra những thiết kế nhẹ nhàng, tinh tế và tự nhiên — nơi quần áo đồng hành cùng những ngày tháng rất thật của một đứa trẻ.
-          </p>
+      <section className="relative rounded-3xl overflow-hidden shadow-soft w-full aspect-[2/1] sm:aspect-[21/9] lg:aspect-[3/1]">
+        <img 
+          src="/images/hoc-xinh-kem.jpg" 
+          alt="Học Xinh - T'Petie" 
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        {/* Ẩn text đi để giữ SEO nhưng không hiển thị chồng chéo lên ảnh vì ảnh đã có chữ */}
+        <div className="sr-only">
+          <h1>Made for little souls.</h1>
+          <p>Chúng tôi tạo ra những thiết kế nhẹ nhàng, tinh tế và tự nhiên — nơi quần áo đồng hành cùng những ngày tháng rất thật của một đứa trẻ.</p>
         </div>
       </section>
 
