@@ -105,7 +105,7 @@ function AboutContent() {
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* LEFT COLUMN: Navigation Tabs (Vertical on Desktop, Horizontal Scroll on Mobile) */}
-        <div className="lg:col-span-4 space-y-2 lg:sticky lg:top-32 lg:z-10">
+        <div className="lg:col-span-4 space-y-2">
           <div className="hidden lg:block mb-5 text-center">
             <h2 className="text-3xl lg:text-4xl font-serif font-bold text-blush-600 tracking-wide drop-shadow-sm">
               Khám Phá T&apos;Petie
@@ -164,8 +164,8 @@ function AboutContent() {
 
         {/* RIGHT COLUMN: Dynamic Animated Content Panel */}
         <div className="lg:col-span-8">
-          <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 shadow-card min-h-[500px] lg:min-h-[600px] flex flex-col">
-            <div className="flex-1 pb-4">
+          <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 shadow-card h-[500px] lg:h-[600px] flex flex-col">
+            <div className="flex-1 overflow-y-auto pr-2 sm:pr-4 pb-4 styled-scrollbar">
               <AnimatePresence mode="wait">
               
               {/* ==================== TAB 1: CÂU CHUYỆN THƯƠNG HIỆU ==================== */}
