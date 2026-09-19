@@ -157,25 +157,14 @@ export function MiniCart() {
                     {formatPriceCompact(totalPrice)}
                   </span>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <Link
+                <Link
                     href="/gio-hang"
                     onClick={closeMiniCart}
                     data-track="view-full-cart"
-                    className="w-full py-2.5 px-3 rounded-full border border-cream-300 bg-white hover:bg-cream-100 text-charcoal-900 text-xs font-bold text-center flex items-center justify-center space-x-1 transition-all active:scale-95"
+                    className="w-full py-2.5 px-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold text-center flex items-center justify-center space-x-1 shadow-md transition-all active:scale-95"
                   >
                     <span>Xem Giỏ Hàng</span>
                   </Link>
-                  <Link
-                    href="/gio-hang?step=checkout"
-                    onClick={closeMiniCart}
-                    data-track="mini-cart-checkout"
-                    className="w-full py-2.5 px-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold text-center flex items-center justify-center space-x-1 shadow-md transition-all active:scale-95"
-                  >
-                    <span>Thanh Toán</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
               </div>
             )}
           </motion.div>
