@@ -31,7 +31,7 @@ const ABOUT_TABS = [
     title: 'Câu chuyện thương hiệu',
     subtitle: 'Hành trình từ năm 2021',
     icon: Sparkles,
-    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-100',
   },
   {
     id: 'belief',
@@ -39,7 +39,7 @@ const ABOUT_TABS = [
     title: 'Niềm Tin',
     subtitle: 'Tuổi thơ chỉ cần được nâng niu',
     icon: Heart,
-    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-100',
   },
   {
     id: 'vision',
@@ -47,7 +47,7 @@ const ABOUT_TABS = [
     title: 'Tầm nhìn',
     subtitle: 'Hệ sinh thái Lifestyle cho bé',
     icon: Flower,
-    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-100',
   },
   {
     id: 'mission',
@@ -55,7 +55,7 @@ const ABOUT_TABS = [
     title: 'Sứ mệnh',
     subtitle: 'Cùng tâm hồn nhỏ bé lớn lên',
     icon: Gift,
-    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-100',
   },
   {
     id: 'values',
@@ -63,7 +63,7 @@ const ABOUT_TABS = [
     title: 'Giá trị cốt lõi',
     subtitle: '4 nguyên tắc bất biến',
     icon: Star,
-    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-100',
   },
 ];
 
@@ -128,15 +128,15 @@ function AboutContent() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 lg:w-full min-w-[200px] lg:min-w-0 text-left p-3.5 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-between group border relative ${
                     isCurrent
-                      ? 'bg-white border-blush-300 shadow-md ring-2 ring-blush-200/50'
-                      : 'bg-cream-50/70 hover:bg-white border-cream-200 text-charcoal-700 hover:border-blush-200'
+                      ? 'bg-white border-blush-500/50 shadow-md ring-2 ring-blush-500/30'
+                      : 'bg-cream-50/70 hover:bg-white border-cream-200 text-charcoal-700 hover:border-blush-500/50'
                   }`}
                 >
                   <div className="flex items-center space-x-3">
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
                         isCurrent
-                          ? 'bg-gradient-to-br from-blush-400 to-sage-400 text-white shadow-xs'
+                          ? 'bg-gradient-to-br from-blush-500 to-sage-500 text-white shadow-xs'
                           : 'bg-cream-200 text-charcoal-600'
                       }`}
                     >
@@ -162,7 +162,7 @@ function AboutContent() {
                     className={`w-4 h-4 shrink-0 transition-transform ${
                       isCurrent
                         ? 'text-blush-500 translate-x-0.5'
-                        : 'text-charcoal-300 group-hover:text-blush-400 group-hover:translate-x-0.5'
+                        : 'text-charcoal-300 group-hover:text-blush-500 group-hover:translate-x-0.5'
                     }`}
                   />
                 </button>
