@@ -16,7 +16,10 @@ import {
   Smile, 
   Camera, 
   Feather, 
-  CheckCircle2 
+  CheckCircle2,
+  Flower,
+  Gift,
+  Star
 } from 'lucide-react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
@@ -28,7 +31,7 @@ const ABOUT_TABS = [
     title: 'Câu chuyện thương hiệu',
     subtitle: 'Hành trình từ năm 2021',
     icon: Sparkles,
-    color: 'from-honey-100 to-cream-100 text-honey-700 border-honey-200',
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
   },
   {
     id: 'belief',
@@ -36,31 +39,31 @@ const ABOUT_TABS = [
     title: 'Niềm Tin',
     subtitle: 'Tuổi thơ chỉ cần được nâng niu',
     icon: Heart,
-    color: 'from-blush-100 to-cream-100 text-blush-600 border-blush-200',
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
   },
   {
     id: 'vision',
     number: '03',
     title: 'Tầm nhìn',
     subtitle: 'Hệ sinh thái Lifestyle cho bé',
-    icon: Compass,
-    color: 'from-sage-100 to-cream-100 text-sage-700 border-sage-200',
+    icon: Flower,
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
   },
   {
     id: 'mission',
     number: '04',
     title: 'Sứ mệnh',
     subtitle: 'Cùng tâm hồn nhỏ bé lớn lên',
-    icon: Target,
-    color: 'from-honey-100 to-blush-50 text-honey-700 border-honey-200',
+    icon: Gift,
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
   },
   {
     id: 'values',
     number: '05',
     title: 'Giá trị cốt lõi',
     subtitle: '4 nguyên tắc bất biến',
-    icon: Award,
-    color: 'from-cream-200 to-cream-100 text-charcoal-800 border-cream-300',
+    icon: Star,
+    color: 'from-blush-100 to-sage-100 text-blush-600 border-blush-200',
   },
 ];
 
@@ -106,7 +109,7 @@ function AboutContent() {
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* LEFT COLUMN: Navigation Tabs (Vertical on Desktop, Horizontal Scroll on Mobile) */}
-        <div className="lg:col-span-4 space-y-2">
+        <div className="lg:col-span-4 space-y-2 lg:sticky lg:top-28 lg:z-10">
           <div className="hidden lg:block mb-3 px-2">
             <span className="text-xs font-bold uppercase tracking-wider text-charcoal-400">
               Khám Phá T&apos;Petie
@@ -125,15 +128,15 @@ function AboutContent() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 lg:w-full min-w-[200px] lg:min-w-0 text-left p-3.5 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-between group border relative ${
                     isCurrent
-                      ? 'bg-white border-honey-300 shadow-md ring-2 ring-honey-200/50'
-                      : 'bg-cream-50/70 hover:bg-white border-cream-200 text-charcoal-700 hover:border-cream-300'
+                      ? 'bg-white border-blush-300 shadow-md ring-2 ring-blush-200/50'
+                      : 'bg-cream-50/70 hover:bg-white border-cream-200 text-charcoal-700 hover:border-blush-200'
                   }`}
                 >
                   <div className="flex items-center space-x-3">
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
                         isCurrent
-                          ? 'bg-honey-500 text-white shadow-xs'
+                          ? 'bg-gradient-to-br from-blush-400 to-sage-400 text-white shadow-xs'
                           : 'bg-cream-200 text-charcoal-600'
                       }`}
                     >
@@ -142,7 +145,7 @@ function AboutContent() {
 
                     <div>
                       <div className="flex items-center space-x-1.5">
-                        <span className={`text-[10px] font-mono font-bold ${isCurrent ? 'text-honey-600' : 'text-charcoal-400'}`}>
+                        <span className={`text-[10px] font-mono font-bold ${isCurrent ? 'text-blush-500' : 'text-charcoal-400'}`}>
                           {tab.number}
                         </span>
                         <h3 className={`text-xs sm:text-sm font-bold tracking-tight ${isCurrent ? 'text-charcoal-900' : 'text-charcoal-700'}`}>
@@ -158,8 +161,8 @@ function AboutContent() {
                   <ChevronRight
                     className={`w-4 h-4 shrink-0 transition-transform ${
                       isCurrent
-                        ? 'text-honey-600 translate-x-0.5'
-                        : 'text-charcoal-300 group-hover:text-charcoal-500 group-hover:translate-x-0.5'
+                        ? 'text-blush-500 translate-x-0.5'
+                        : 'text-charcoal-300 group-hover:text-blush-400 group-hover:translate-x-0.5'
                     }`}
                   />
                 </button>
