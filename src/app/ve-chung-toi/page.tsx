@@ -4,6 +4,10 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Dancing_Script } from 'next/font/google';
+
+const dancingScript = Dancing_Script({ subsets: ['latin', 'vietnamese'], weight: ['600', '700'] });
+
 import { 
   Sparkles, 
   Heart, 
@@ -91,13 +95,13 @@ function AboutContent() {
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         
-        {/* Overlay text on the right side */}
-        <div className="absolute inset-0 flex items-center justify-end pr-8 sm:pr-12 md:pr-24 lg:pr-32 pointer-events-none">
-          <div className="text-right space-y-1 sm:space-y-2 bg-white/40 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/50 shadow-sm lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:border-none lg:shadow-none">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-blush-600 drop-shadow-sm">
+        {/* Overlay text - positioned more towards the center-right empty space */}
+        <div className="absolute inset-0 flex items-center justify-center pl-20 sm:pl-40 lg:pl-64 xl:pl-80 pointer-events-none">
+          <div className="text-center space-y-1 sm:space-y-2 bg-white/30 backdrop-blur-sm p-4 sm:p-6 rounded-3xl border border-white/40 shadow-sm lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:border-none lg:shadow-none translate-y-[-10%]">
+            <h2 className={`${dancingScript.className} text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-blush-500 drop-shadow-md tracking-wide`}>
               T&apos;Petie
             </h2>
-            <p className="text-base sm:text-lg md:text-xl font-serif italic text-charcoal-700">
+            <p className="text-sm sm:text-lg md:text-xl font-serif italic text-charcoal-700 font-medium tracking-wider">
               Made for little souls.
             </p>
           </div>
