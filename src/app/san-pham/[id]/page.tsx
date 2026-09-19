@@ -79,8 +79,19 @@ export default function ProductDetailPage({ params }: PageProps) {
   };
 
   const handleBuyNow = () => {
-    addToCart(product, selectedSize, quantity);
-    router.push('/gio-hang?step=checkout');
+    const formattedSize = `${selectedSize.size} (${selectedSize.weightRange})`;
+    const buyNowItem = {
+      productId: product.id,
+      productName: product.name,
+      sku: product.sku,
+      thumbnail: product.thumbnail,
+      category: product.categoryName,
+      selectedSize: formattedSize,
+      price: selectedSize.price,
+      quantity,
+    };
+    sessionStorage.setItem('tpetie_buy_now', JSON.stringify(buyNowItem));
+    router.push('/mua-ngay');
   };
 
   const handleBack = () => {
