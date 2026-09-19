@@ -5,6 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import {
+  Trash2,
+  Plus,
+  Minus,
   ArrowRight,
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
