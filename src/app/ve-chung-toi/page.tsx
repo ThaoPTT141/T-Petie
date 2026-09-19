@@ -337,21 +337,24 @@ function AboutContent() {
                       {/* Interactive Visual Ecosystem Roadmap Flow */}
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
                         {[
-                          { step: '01', name: 'Clothing', desc: 'Trang phục hữu cơ', colorClass: 'bg-honey-100 text-honey-700' },
-                          { step: '02', name: 'Accessories', desc: 'Phụ kiện dịu ngọt', colorClass: 'bg-sage-100 text-sage-700' },
-                          { step: '03', name: 'Objects', desc: 'Đồ dùng nâng niu', colorClass: 'bg-blush-100 text-blush-700' },
-                          { step: '04', name: 'Visuals', desc: 'Hình ảnh trong trẻo', colorClass: 'bg-honey-100 text-honey-700' },
-                          { step: '05', name: 'Stories', desc: 'Câu chuyện nuôi dưỡng', colorClass: 'bg-sage-100 text-sage-700' },
-                          { step: '06', name: 'Childhood Experiences', desc: 'Trải nghiệm tuổi thơ', colorClass: 'bg-blush-100 text-blush-700' },
+                          { step: '01', name: 'Clothing', desc: 'Trang phục hữu cơ', colorClass: 'bg-honey-100 text-honey-700', icon: <Shirt className="w-5 h-5 text-honey-500 group-hover:scale-110 transition-transform" /> },
+                          { step: '02', name: 'Accessories', desc: 'Phụ kiện dịu ngọt', colorClass: 'bg-sage-100 text-sage-700', icon: <Flower className="w-5 h-5 text-sage-500 group-hover:scale-110 transition-transform" /> },
+                          { step: '03', name: 'Objects', desc: 'Đồ dùng nâng niu', colorClass: 'bg-blush-100 text-blush-700', icon: <Star className="w-5 h-5 text-blush-500 group-hover:scale-110 transition-transform" /> },
+                          { step: '04', name: 'Visuals', desc: 'Hình ảnh trong trẻo', colorClass: 'bg-honey-100 text-honey-700', icon: <Camera className="w-5 h-5 text-honey-500 group-hover:scale-110 transition-transform" /> },
+                          { step: '05', name: 'Stories', desc: 'Câu chuyện nuôi dưỡng', colorClass: 'bg-sage-100 text-sage-700', icon: <Feather className="w-5 h-5 text-sage-500 group-hover:scale-110 transition-transform" /> },
+                          { step: '06', name: 'Childhood Experiences', desc: 'Trải nghiệm tuổi thơ', colorClass: 'bg-blush-100 text-blush-700', icon: <Smile className="w-5 h-5 text-blush-500 group-hover:scale-110 transition-transform" /> },
                         ].map((item, idx) => (
                           <div
                             key={item.name}
-                            className="p-4 bg-cream-100 rounded-2xl border border-cream-200 text-center space-y-1.5 transition-all group"
+                            className="p-4 bg-cream-100 rounded-2xl border border-cream-200 transition-all group"
                           >
-                            <span className={`w-8 h-8 rounded-full ${item.colorClass} font-serif font-bold text-xs flex items-center justify-center mx-auto transition-transform group-hover:scale-110`}>
-                              {item.step}
-                            </span>
-                            <div className="pt-1">
+                            <div className="flex items-center justify-between mb-2">
+                              <span className={`w-8 h-8 rounded-full ${item.colorClass} font-serif font-bold text-xs flex items-center justify-center`}>
+                                {item.step}
+                              </span>
+                              {item.icon}
+                            </div>
+                            <div className="text-center pt-1">
                               <h5 className="font-bold text-xs text-charcoal-900">{item.name}</h5>
                               <p className="text-[11px] text-charcoal-500">{item.desc}</p>
                             </div>
