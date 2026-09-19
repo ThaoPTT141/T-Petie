@@ -325,18 +325,14 @@ function AboutContent() {
                   </div>
 
                   <div className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
-                    <p className="text-sm sm:text-base text-charcoal-900 font-medium">
-                      Trở thành một thương hiệu thời trang trẻ em Việt Nam có dấu ấn riêng, được nhớ đến bởi vẻ đẹp tinh tế, chất lượng và cách trân trọng những năm tháng tuổi thơ.
-                    </p>
-
-                    <p>
-                      Về dài hạn, T&apos;Petie có thể phát triển thành một thương hiệu lifestyle dành cho trẻ nhỏ, không chỉ giới hạn ở quần áo.
+                    <p className="text-charcoal-800">
+                      Trở thành một thương hiệu thời trang trẻ em Việt Nam có dấu ấn riêng, được nhớ đến bởi vẻ đẹp tinh tế, chất lượng và cách trân trọng những năm tháng tuổi thơ. Về dài hạn, T&apos;Petie có thể phát triển thành một thương hiệu lifestyle dành cho trẻ nhỏ, không chỉ giới hạn ở quần áo.
                     </p>
 
                     <div className="pt-2 space-y-3">
-                      <p className="text-xs font-bold text-charcoal-800">
+                      <h4 className="font-serif italic font-bold text-lg sm:text-xl text-charcoal-900 text-center mb-4">
                         Tức là T&apos;Petie có thể sở hữu một thế giới riêng gồm:
-                      </p>
+                      </h4>
 
                       {/* Interactive Visual Ecosystem Roadmap Flow */}
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
@@ -350,7 +346,7 @@ function AboutContent() {
                         ].map((item, idx) => (
                           <div
                             key={item.name}
-                            className="p-3.5 bg-gradient-to-b from-cream-50 to-white rounded-2xl border border-cream-200 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-1 group"
+                            className="p-3.5 bg-cream-100 rounded-2xl border border-cream-200 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-1 group"
                           >
                             <span className="text-xl block group-hover:scale-110 transition-transform">{item.icon}</span>
                             <span className="text-[10px] font-mono text-honey-600 font-bold block">{item.step}</span>
