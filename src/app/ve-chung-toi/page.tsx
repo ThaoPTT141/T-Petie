@@ -137,7 +137,7 @@ function AboutContent() {
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
                         isCurrent
                           ? 'bg-gradient-to-br from-blush-500 to-sage-500 text-white shadow-xs'
-                          : 'bg-cream-200 text-charcoal-600'
+                          : 'bg-gradient-to-br from-blush-100 to-sage-100 text-blush-500'
                       }`}
                     >
                       <Icon className="w-4 h-4" />
