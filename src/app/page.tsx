@@ -137,7 +137,9 @@ export default function HomePage() {
             src="https://i.ibb.co/r2z85170/banner-uu-dai-png.png"
             alt="Ưu đãi độc quyền - Giảm đến 30%"
             fill
-            sizes="(max-width: 768px) 100vw, 1200px"
+            priority
+            quality={100}
+            sizes="100vw"
             className="object-contain"
           />
         </Link>
