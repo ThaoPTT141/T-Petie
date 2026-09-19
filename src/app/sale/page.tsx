@@ -12,37 +12,44 @@ import { useToast } from '@/context/ToastContext';
 function SaleContent() {
   const searchParams = useSearchParams();
   const allProducts = localProducts as Product[];
-  const [activeTab, setActiveTab] = useState<SaleCampaign>('dai-le-2-9');
+  type CampaignFilter = 'all' | SaleCampaign | 'le2-9';
+  const [activeTab, setActiveTab] = useState<CampaignFilter>('all');
   const { showToast } = useToast();
 
   useEffect(() => {
-    const campaignParam = searchParams.get('campaign') as SaleCampaign | null;
+    const campaignParam = searchParams.get('campaign') as CampaignFilter | null;
     if (
       campaignParam &&
-      ['dai-le-2-9', 'sale-he', 'sale-thu-dong', 'sale-ngay-doi'].includes(campaignParam)
+      ['all', 'le2-9', 'dai-le-2-9', 'sale-he', 'sale-thu-dong', 'sale-ngay-doi'].includes(campaignParam)
     ) {
       setActiveTab(campaignParam);
     }
   }, [searchParams]);
 
-  const campaigns: { id: SaleCampaign; label: string; badge: string; desc: string }[] = [
+  const campaigns: { id: CampaignFilter; label: string; badge: string; desc: string }[] = [
+    {
+      id: 'all',
+      label: '✨ Tất Cả',
+      badge: 'Toàn Bộ Deal',
+      desc: 'Toàn bộ sản phẩm ưu đãi hấp dẫn nhất từ thương hiệu thời trang thiết kế trẻ em T\'Petie.',
+    },
     {
       id: 'dai-le-2-9',
-      label: '🎉 Đại Lễ 2/9',
+      label: '🎉 Mừng Đại Lễ 2/9',
       badge: 'Giảm Đến 30%',
-      desc: 'Mừng Quốc Khánh — Đồng loạt giảm giá các mẫu áo sơ mi & set bộ tựu trường.',
+      desc: 'Mừng Quốc Khánh & Tựu Trường — Đồng loạt giảm giá các mẫu áo sơ mi & set bộ thanh lịch.',
     },
     {
       id: 'sale-he',
-      label: '☀️ Xả Kho Hè',
+      label: '☀️ Sale Hè',
       badge: 'Đồng Giá Từ 145k',
-      desc: 'Thanh lý các mẫu váy voan tơ, quần bloomer thô đũi mát mẻ cho bé.',
+      desc: 'Thanh lý các mẫu váy voan tơ, quần bloomer thô đũi mát mẻ cho bé giải nhiệt.',
     },
     {
       id: 'sale-thu-dong',
-      label: '🍂 Đón Thu Đông',
+      label: '🍂 Sale Thu - Đông',
       badge: 'Deal Độc Quyền',
-      desc: 'Ưu đãi sớm cho BST Thu Đông và phiên bản kết hợp cao cấp.',
+      desc: 'Ưu đãi sớm cho BST Thu Đông và phiên bản Trung Thu Kèm Cốm cao cấp.',
     },
     {
       id: 'sale-ngay-doi',
@@ -55,6 +62,10 @@ function SaleContent() {
   const filteredProducts = useMemo(() => {
     return allProducts.filter((p) => {
       if (!p.isSale) return false;
+      if (activeTab === 'all') return true;
+      if (activeTab === 'dai-le-2-9' || activeTab === 'le2-9') {
+        return p.saleCampaign === 'dai-le-2-9';
+      }
       if (activeTab === 'sale-ngay-doi') return true; // Tất cả sản phẩm sale trong ngày đôi
       return p.saleCampaign === activeTab || !p.saleCampaign;
     });
@@ -129,14 +140,15 @@ function SaleContent() {
       </div>
 
       {/* TAB SEGMENTED CONTROL */}
-      <div className="bg-cream-100 p-1.5 rounded-2xl grid grid-cols-2 lg:grid-cols-4 gap-1">
+      <div className="bg-cream-100 p-1.5 rounded-2xl grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1">
         {campaigns.map((camp) => {
           const isActive = activeTab === camp.id;
           return (
             <button
               key={camp.id}
               onClick={() => setActiveTab(camp.id)}
-              data-track={`sale-tab-${camp.id}`}
+              data-track="promotion-click"
+              data-campaign={camp.id}
               className={`py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center space-x-1.5 transition-all ${
                 isActive
                   ? 'bg-white text-honey-600 shadow-sm'

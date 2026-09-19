@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>T'Petie | Ưu Đãi & Khuyến Mãi — Đồ Xinh Cho Bé, Giá Mềm Cho Mẹ</title>
+  <meta name="description" content="Chương trình ưu đãi thời trang thiết kế trẻ em T'Petie. Khám phá deal hời mừng Đại Lễ 2/9, Sale Hè, Sale Thu - Đông và Sale Ngày Đôi 10/10 11/11." />
+
+  <!-- Google Fonts: Quicksand, Be Vietnam Pro & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Quicksand', 'sans-serif'],
+            sans: ['Be Vietnam Pro', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            cream: {
+              50: '#FFFDF9',
+              100: '#FFF8EE',
+              200: '#F5EBE1',
+              300: '#EADCCF',
+            },
+            sage: {
+              50: '#F4FAF5',
+              100: '#EAF4EC',
+              500: '#77B77A',
+              700: '#4B834E',
+            },
+            honey: {
+              50: '#FFFBF0',
+              100: '#FFF2D6',
+              500: '#F5A623',
+              600: '#D97706',
+              700: '#B45309',
+            },
+            blush: {
+              50: '#FFF5F5',
+              100: '#FFEBEB',
+              500: '#F2828D',
+              600: '#E06D75',
+            },
+            charcoal: {
+              400: '#98A1B0',
+              600: '#6C727F',
+              700: '#4F5D75',
+              900: '#2D3142',
+            },
+          },
+          boxShadow: {
+            soft: '0 4px 20px -2px rgba(220, 190, 160, 0.18)',
+            card: '0 2px 12px rgba(0, 0, 0, 0.04)',
+            glow: '0 0 15px rgba(242, 130, 141, 0.35)',
+          },
+          borderRadius: {
+            '2xl': '1rem',
+            '3xl': '1.5rem',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #2D3142;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Quicksand', sans-serif;
+    }
+    /* Hide scrollbar */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    @keyframes bounce-short {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px) scale(1.15); }
+    }
+    .animate-bounce-cart {
+      animation: bounce-short 0.4s ease-in-out;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.92; transform: scale(1.02); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-honey-100 selection:text-honey-700 pb-20 md:pb-0">
+
+  <!-- ==================== STICKY HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-cream-200 shadow-sm transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center group py-1" title="Về trang chủ T'Petie">
+        <img src="images/logo.png" alt="T'Petie - Made for little souls" class="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+        <a href="index.html" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Trang Chủ</a>
+        <a href="index.html#page-be-gai" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Bé Gái</a>
+        <a href="index.html#page-bo-suu-tap" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 flex items-center space-x-1 transition-colors">
+          <span>Bộ Sưu Tập</span>
+          <span class="text-[9px] font-bold bg-honey-500 text-white px-1.5 py-0.2 rounded-full">Mới</span>
+        </a>
+        <a href="uu-dai.html" class="nav-btn text-honey-600 font-bold py-1 flex items-center space-x-1 border-b-2 border-honey-500">
+          <span>Ưu Đãi &amp; Sale</span>
+          <span class="text-[9px] font-bold bg-blush-500 text-white px-1.5 py-0.2 rounded-full animate-pulse">Hot</span>
+        </a>
+        <a href="index.html#page-ve-chung-toi" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Về Chúng Tôi</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <button onclick="openSearchModal()" class="p-2 rounded-full hover:bg-cream-100 text-charcoal-700 transition-colors" title="Tìm kiếm">
+          🔍
+        </button>
+        <!-- Auth Button / Profile -->
+        <a href="index.html#page-dang-nhap" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800" title="Tài khoản">
+          <span>👤</span>
+          <span class="hidden sm:inline">Tài Khoản</span>
+        </a>
+        <!-- Cart Button -->
+        <button id="header-cart-btn" onclick="openMiniCart()" class="relative flex items-center space-x-1.5 bg-cream-100 hover:bg-honey-100 border border-cream-300 px-3 py-1.5 rounded-full transition-all active:scale-95">
+          <span>🛍️</span>
+          <span class="text-xs font-bold text-charcoal-800 hidden sm:inline">Giỏ hàng</span>
+          <span id="cart-badge-count" class="bg-honey-500 text-white rounded-full min-w-5 h-5 px-1.5 text-[11px] font-bold flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-4 space-y-6 sm:space-y-8">
+
+    <!-- BREADCRUMB -->
+    <nav class="flex items-center space-x-2 text-xs text-charcoal-400">
+      <a href="index.html" class="hover:text-honey-600 transition-colors">Trang Chủ</a>
+      <span>/</span>
+      <span class="text-honey-600 font-bold">Chương Trình Ưu Đãi &amp; Khuyến Mãi</span>
+    </nav>
+
+    <!-- ==================== HERO SALE BANNER & COUNTDOWN ==================== -->
+    <section class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-honey-500 via-blush-500 to-rose-500 p-6 sm:p-10 text-white shadow-soft">
+      <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -left-10 -top-10 w-48 h-48 bg-yellow-300/15 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-2xl space-y-3 sm:space-y-4">
+        <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-bold shadow-xs">
+          <span>🔥</span>
+          <span class="tracking-wide">SĂN DEAL HỜI CHO BÉ — GIÁ MỀM CHO MẸ</span>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight leading-tight">
+          Ưu Đãi Độc Quyền T'Petie <br class="hidden sm:inline" />
+          <span class="text-yellow-200">Giảm Sâu Đến 50%</span>
+        </h1>
+
+        <p class="text-xs sm:text-sm text-white/95 leading-relaxed max-w-xl">
+          Thời trang thiết kế cho bé gái &amp; sơ sinh organic cao cấp. Váy voan tơ bồng bềnh, áo thô đũi mát mịn và set bộ lễ hội đang có mức giá trợ giá tốt nhất mùa!
+        </p>
+
+        <!-- Realtime Flash Sale Countdown -->
+        <div class="pt-1 flex flex-wrap items-center gap-3">
+          <div class="flex items-center space-x-2 bg-black/20 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-white/20 text-xs">
+            <span class="animate-pulse">⏰</span>
+            <span class="font-semibold text-white/90">Flash Sale kết thúc sau:</span>
+            <div class="flex items-center space-x-1 font-mono font-bold text-xs sm:text-sm">
+              <span id="countdown-hours" class="bg-white/25 px-2 py-0.5 rounded-lg">02</span>
+              <span>:</span>
+              <span id="countdown-minutes" class="bg-white/25 px-2 py-0.5 rounded-lg">18</span>
+              <span>:</span>
+              <span id="countdown-seconds" class="bg-white/25 px-2 py-0.5 rounded-lg">45</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-white/90 bg-white/15 px-3 py-1.5 rounded-xl hidden sm:inline-block">
+            ✨ Áp dụng đồng thời mã giảm giá &amp; Freeship toàn quốc!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VOUCHER KHUYẾN MÃI NHANH ==================== -->
+    <section class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <!-- Voucher 1 -->
+      <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-cream-200 flex items-center justify-between shadow-card hover:border-honey-300 transition-all">
+        <div class="space-y-0.5">
+          <div class="text-honey-600 font-bold text-xs sm:text-sm flex items-center space-x-1">
+            <span>🏷️</span>
+            <span>Giảm 20.000 VNĐ</span>
+          </div>
+          <p class="text-[11px] text-charcoal-400">Đơn từ 250k • Code: <strong class="text-charcoal-700">TPETIE20</strong></p>
+        </div>
+        <button onclick="copyVoucher('TPETIE20')" class="px-3 py-1.5 rounded-full bg-honey-100 text-honey-700 text-xs font-bold hover:bg-honey-500 hover:text-white transition-all active:scale-95 shrink-0">
+          Lưu Mã
+        </button>
+      </div>
+
+      <!-- Voucher 2 -->
+      <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-cream-200 flex items-center justify-between shadow-card hover:border-sage-300 transition-all">
+        <div class="space-y-0.5">
+          <div class="text-sage-700 font-bold text-xs sm:text-sm flex items-center space-x-1">
+            <span>🚚</span>
+            <span>Freeship Toàn Quốc 0đ</span>
+          </div>
+          <p class="text-[11px] text-charcoal-400">Đơn từ 399k • Tự động áp dụng</p>
+        </div>
+        <span class="text-xs font-bold text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200">
+          Tự Áp Dụng
+        </span>
+      </div>
+
+      <!-- Voucher 3 -->
+      <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-cream-200 flex items-center justify-between shadow-card hover:border-blush-300 transition-all">
+        <div class="space-y-0.5">
+          <div class="text-blush-600 font-bold text-xs sm:text-sm flex items-center space-x-1">
+            <span>🎁</span>
+            <span>Giảm 10% Tối Đa 50k</span>
+          </div>
+          <p class="text-[11px] text-charcoal-400">Mẹ mua lần đầu • Code: <strong class="text-charcoal-700">MEMBERVIP</strong></p>
+        </div>
+        <button onclick="copyVoucher('MEMBERVIP')" class="px-3 py-1.5 rounded-full bg-blush-100 text-blush-600 text-xs font-bold hover:bg-blush-500 hover:text-white transition-all active:scale-95 shrink-0">
+          Lưu Mã
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== 5 CAMPAIGN FILTER TABS ==================== -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-lg sm:text-2xl font-bold font-heading text-charcoal-900 flex items-center space-x-2">
+            <span>Danh Sách Ưu Đãi Theo Chiến Dịch</span>
+            <span id="campaign-count-badge" class="text-xs font-bold px-2 py-0.5 rounded-full bg-cream-200 text-charcoal-700">16 sản phẩm</span>
+          </h2>
+          <p class="text-xs text-charcoal-400">Bấm chọn chiến dịch để lọc nhanh các mẫu thiết kế đang trợ giá sâu</p>
+        </div>
+      </div>
+
+      <!-- Segmented Horizontal Filter Tabs -->
+      <div class="bg-cream-100/90 p-1.5 rounded-2xl overflow-x-auto no-scrollbar flex items-center gap-1 sm:gap-1.5 border border-cream-200 shadow-sm">
+        <!-- 1. Tất Cả -->
+        <button
+          onclick="filterCampaign('all')"
+          id="tab-all"
+          data-track="promotion-click"
+          data-campaign="all"
+          class="campaign-tab flex-1 min-w-[110px] sm:min-w-0 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center space-x-1.5 bg-white text-honey-600 shadow-sm"
+        >
+          <span>✨</span>
+          <span>Tất Cả</span>
+        </button>
+
+        <!-- 2. Mừng Đại Lễ 2/9 -->
+        <button
+          onclick="filterCampaign('le2-9')"
+          id="tab-le2-9"
+          data-track="promotion-click"
+          data-campaign="le2-9"
+          class="campaign-tab flex-1 min-w-[130px] sm:min-w-0 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center space-x-1.5 text-charcoal-600 hover:text-charcoal-900"
+        >
+          <span>🎉</span>
+          <span class="truncate">Mừng Đại Lễ 2/9</span>
+        </button>
+
+        <!-- 3. Sale Hè -->
+        <button
+          onclick="filterCampaign('sale-he')"
+          id="tab-sale-he"
+          data-track="promotion-click"
+          data-campaign="sale-he"
+          class="campaign-tab flex-1 min-w-[110px] sm:min-w-0 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center space-x-1.5 text-charcoal-600 hover:text-charcoal-900"
+        >
+          <span>☀️</span>
+          <span class="truncate">Sale Hè</span>
+        </button>
+
+        <!-- 4. Sale Thu - Đông -->
+        <button
+          onclick="filterCampaign('sale-thu-dong')"
+          id="tab-sale-thu-dong"
+          data-track="promotion-click"
+          data-campaign="sale-thu-dong"
+          class="campaign-tab flex-1 min-w-[135px] sm:min-w-0 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center space-x-1.5 text-charcoal-600 hover:text-charcoal-900"
+        >
+          <span>🍂</span>
+          <span class="truncate">Sale Thu - Đông</span>
+        </button>
+
+        <!-- 5. Sale Ngày Đôi 10/10 11/11 -->
+        <button
+          onclick="filterCampaign('sale-ngay-doi')"
+          id="tab-sale-ngay-doi"
+          data-track="promotion-click"
+          data-campaign="sale-ngay-doi"
+          class="campaign-tab flex-1 min-w-[145px] sm:min-w-0 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center space-x-1.5 text-charcoal-600 hover:text-charcoal-900"
+        >
+          <span>🎁</span>
+          <span class="truncate">Sale Ngày Đôi</span>
+        </button>
+      </div>
+
+      <!-- Campaign Banner Info Description -->
+      <div id="campaign-banner-desc" class="p-3 sm:p-4 rounded-2xl bg-cream-50 border border-cream-200 text-xs text-charcoal-700 flex items-center justify-between gap-2">
+        <div class="flex items-center space-x-2">
+          <span class="text-base" id="campaign-desc-icon">✨</span>
+          <span id="campaign-desc-text">Toàn bộ sản phẩm ưu đãi hấp dẫn nhất mùa từ thương hiệu thời trang cao cấp T'Petie.</span>
+        </div>
+        <span id="campaign-desc-tag" class="hidden sm:inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-honey-100 text-honey-700 shrink-0">
+          Chính sách đổi size 7 ngày
+        </span>
+      </div>
+    </section>
+
+    <!-- ==================== RESPONSIVE PROMOTION PRODUCT GRID ==================== -->
+    <section>
+      <div id="promo-products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+      <!-- Empty State Fallback -->
+      <div id="promo-empty-state" class="hidden text-center py-16 space-y-3 bg-white rounded-3xl border border-cream-200 p-8 shadow-card">
+        <div class="text-4xl">🧸</div>
+        <h3 class="font-heading font-bold text-base text-charcoal-900">Chiến dịch này đang được chuẩn bị thêm sản phẩm</h3>
+        <p class="text-xs text-charcoal-400">Mẹ hãy xem qua các chiến dịch ưu đãi khác hoặc bấm "Tất Cả" nhé!</p>
+        <button onclick="filterCampaign('all')" class="px-5 py-2 rounded-full bg-honey-500 text-white text-xs font-bold hover:bg-honey-600 transition-all">
+          Xem Tất Cả Ưu Đãi
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== PSYCHOLOGY ASSURANCE SECTION ==================== -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+      <div class="p-3.5 rounded-2xl bg-white border border-cream-200 text-center space-y-1 shadow-xs">
+        <span class="text-2xl">🌿</span>
+        <h4 class="font-heading font-bold text-xs text-charcoal-900">Vải Thô &amp; Voan An Toàn</h4>
+        <p class="text-[10px] text-charcoal-400">100% mềm mát dịu nhẹ cho da bé</p>
+      </div>
+      <div class="p-3.5 rounded-2xl bg-white border border-cream-200 text-center space-y-1 shadow-xs">
+        <span class="text-2xl">📐</span>
+        <h4 class="font-heading font-bold text-xs text-charcoal-900">Chuẩn Form Dáng Bé Việt</h4>
+        <p class="text-[10px] text-charcoal-400">May đo theo cân nặng &amp; tháng tuổi</p>
+      </div>
+      <div class="p-3.5 rounded-2xl bg-white border border-cream-200 text-center space-y-1 shadow-xs">
+        <span class="text-2xl">🔄</span>
+        <h4 class="font-heading font-bold text-xs text-charcoal-900">Đổi Size Miễn Phí 7 Ngày</h4>
+        <p class="text-[10px] text-charcoal-400">Tận nhà nếu bé mặc chưa vừa</p>
+      </div>
+      <div class="p-3.5 rounded-2xl bg-white border border-cream-200 text-center space-y-1 shadow-xs">
+        <span class="text-2xl">🎁</span>
+        <h4 class="font-heading font-bold text-xs text-charcoal-900">Đóng Hộp Quà Chu Đáo</h4>
+        <p class="text-[10px] text-charcoal-400">Tặng kèm thiệp viết tay xinh xắn</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER 4 CỘT CHUẨN T'PETIE ==================== -->
+  <footer class="bg-cream-100 border-t border-cream-200 pt-10 pb-24 md:pb-12 text-charcoal-700 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Cột 1: Logo & Lời Cam Kết -->
+      <div class="space-y-3">
+        <a href="index.html" class="inline-block group">
+          <img src="images/logo.png" alt="T'Petie - Made for little souls" class="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
+        </a>
+        <p class="text-xs leading-relaxed text-charcoal-600">
+          <strong class="font-bold text-charcoal-900 uppercase">LỜI CAM KẾT:</strong> Thương hiệu thời trang thiết kế trẻ em, nâng niu từng bước chạm đầu đời của bé yêu.
+        </p>
+        <div class="pt-1">
+          <span class="text-[11px] font-semibold text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 inline-block">
+            🌿 Thiết kế &amp; May đo tại Việt Nam
+          </span>
+        </div>
+      </div>
+
+      <!-- Cột 2: Chính Sách -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">CHÍNH SÁCH</h4>
+        <ul class="space-y-2 text-xs text-charcoal-600">
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách bảo mật thông tin khách hàng T\'Petie')" class="hover:text-honey-600 block">Chính sách bảo mật</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách đổi trả miễn phí trong 7 ngày')" class="hover:text-honey-600 block">Chính sách đổi trả</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách giao hàng toàn quốc 2-3 ngày')" class="hover:text-honey-600 block">Chính sách giao hàng</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách thanh toán an toàn COD & QR')" class="hover:text-honey-600 block">Chính sách thanh toán</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: Chăm Sóc Khách Hàng -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">CHĂM SÓC KHÁCH HÀNG</h4>
+        <ul class="space-y-2 text-xs text-charcoal-600">
+          <li><a href="index.html#page-dang-nhap" class="hover:text-honey-600 block">Tra cứu đơn hàng</a></li>
+          <li><a href="javascript:void(0)" onclick="openGeneralSizeGuideModal()" class="hover:text-honey-600 block">Hướng dẫn chọn size</a></li>
+          <li><a href="index.html" class="hover:text-honey-600 block">Hệ thống Showroom offline</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4: Kết Nối Với T'Petie -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">KẾT NỐI VỚI T'PETIE</h4>
+        <div class="space-y-2 text-xs">
+          <a href="tel:0988123456" class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
+            <span>📞</span>
+            <span>Hotline: 0988.123.456 (8h - 22h)</span>
+          </a>
+          <a href="https://zalo.me" target="_blank" class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
+            <span>💬</span>
+            <span>Zalo Official: T'Petie Baby &amp; Mom</span>
+          </a>
+        </div>
+        <div class="pt-2">
+          <span class="text-[11px] font-semibold text-charcoal-400 block mb-2">Mạng xã hội:</span>
+          <div class="flex items-center space-x-2.5">
+            <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-blue-50">📘</a>
+            <a href="https://tiktok.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-cream-200">🎵</a>
+            <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-pink-50">📷</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 pt-6 border-t border-cream-200 text-center text-xs text-charcoal-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2024 T'Petie Vietnam. All rights reserved.</p>
+      <p>Made with love for Mom &amp; Baby ❤️</p>
+    </div>
+  </footer>
+
+  <!-- ==================== MINI-CART DRAWER TRƯỢT BÊN PHẢI ==================== -->
+  <div id="minicart-backdrop" onclick="closeMiniCart()" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="minicart-drawer" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between">
+    <!-- Header -->
+    <div class="p-4 border-b border-cream-200 flex items-center justify-between bg-cream-50">
+      <div class="flex items-center space-x-2">
+        <span>🛍️</span>
+        <h3 class="font-heading font-bold text-base text-charcoal-900">Giỏ Hàng Của Mẹ</h3>
+      </div>
+      <button onclick="closeMiniCart()" class="p-1.5 rounded-full hover:bg-cream-200 text-charcoal-600 transition-colors">✕</button>
+    </div>
+
+    <!-- Freeship Progress Bar -->
+    <div class="px-4 py-2.5 bg-honey-50 border-b border-cream-200 text-xs text-honey-700">
+      <div id="minicart-freeship-text">Mua thêm để nhận <strong>Freeship toàn quốc 399k</strong>!</div>
+      <div class="w-full bg-cream-200 rounded-full h-1.5 mt-2 overflow-hidden">
+        <div id="minicart-freeship-bar" class="bg-honey-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div id="minicart-items-container" class="flex-1 overflow-y-auto p-4 space-y-3 divide-y divide-cream-100">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Footer -->
+    <div class="p-4 border-t border-cream-200 bg-cream-50 space-y-3">
+      <div class="flex justify-between items-baseline">
+        <span class="text-xs text-charcoal-600 font-medium">Tạm tính:</span>
+        <span id="minicart-total" class="text-lg font-bold text-rose-600 font-heading">0 VNĐ</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html#page-gio-hang" class="w-full py-2.5 rounded-full border border-cream-300 bg-white hover:bg-cream-100 text-charcoal-900 text-xs font-bold text-center block transition-colors">
+          Xem Giỏ Hàng
+        </a>
+        <a href="index.html#page-gio-hang" class="w-full py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold text-center block shadow-md transition-all active:scale-95">
+          Thanh Toán →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== QUICK SIZE SELECTOR MODAL (Xem Size) ==================== -->
+  <div id="quicksize-modal" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-cream-200 space-y-4 animate-scale-up">
+      <!-- Header -->
+      <div class="flex justify-between items-start pb-2 border-b border-cream-200">
+        <div class="space-y-0.5">
+          <div class="flex items-center space-x-1.5">
+            <span class="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full" id="qs-badge">-35%</span>
+            <span class="text-[11px] text-charcoal-400 font-mono" id="qs-sku">TP-SKU</span>
+          </div>
+          <h3 class="font-heading font-bold text-base text-charcoal-900 line-clamp-1" id="qs-name">Tên Sản Phẩm</h3>
+        </div>
+        <button onclick="closeQuickSizeModal()" class="p-1 rounded-full text-charcoal-400 hover:bg-cream-100 hover:text-charcoal-700 transition-colors">✕</button>
+      </div>
+
+      <!-- Price & Image Summary -->
+      <div class="flex items-center space-x-3 bg-cream-50 p-3 rounded-2xl border border-cream-200">
+        <img id="qs-img" src="" alt="" class="w-16 h-16 rounded-xl object-cover bg-white shrink-0 border border-cream-200" />
+        <div>
+          <div class="flex items-baseline space-x-2">
+            <span class="text-lg font-bold text-rose-600 font-heading" id="qs-price">245.000 VNĐ</span>
+            <span class="text-xs text-charcoal-400 line-through" id="qs-orig-price">350.000 VNĐ</span>
+          </div>
+          <p class="text-[11px] text-sage-700 font-medium" id="qs-material">Thô cotton 100% mềm mát</p>
+          <span class="text-[10px] text-blush-600 font-semibold" id="qs-savings">Tiết kiệm 105.000 VNĐ</span>
+        </div>
+      </div>
+
+      <!-- Size Selection Buttons -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-bold text-charcoal-800">Chọn kích cỡ bé mặc vừa vặn:</span>
+          <button type="button" onclick="openGeneralSizeGuideModal()" class="text-honey-600 font-semibold hover:underline">📏 Xem bảng đo</button>
+        </div>
+        <div id="qs-sizes-grid" class="grid grid-cols-2 gap-2">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Advice Note -->
+      <div class="text-[11px] text-charcoal-600 bg-sage-50 border border-sage-200/80 p-2.5 rounded-xl flex items-start space-x-2">
+        <span>💡</span>
+        <span>Mẹo nhỏ: Nếu bé tròn bụng hoặc mẹ muốn bé mặc lâu hơn một chút, hãy tăng <strong>1 size</strong> nhé!</span>
+      </div>
+
+      <!-- Action Button -->
+      <button
+        id="qs-add-cart-btn"
+        data-track="promotion-click"
+        data-campaign=""
+        data-action="add-to-cart-from-modal"
+        onclick="confirmQuickAddFromModal()"
+        class="w-full py-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center justify-center space-x-2"
+      >
+        <span>🛍️ Thêm Vào Giỏ Hàng</span>
+        <span id="qs-btn-price"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== GENERAL SIZE GUIDE MODAL ==================== -->
+  <div id="sizeguide-modal" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="w-full max-w-lg bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-cream-200 space-y-4">
+      <div class="flex justify-between items-center pb-2 border-b border-cream-200">
+        <h3 class="font-heading font-bold text-base text-charcoal-900 flex items-center space-x-2">
+          <span>📏</span>
+          <span>Bảng Hướng Dẫn Chọn Size Bé T'Petie</span>
+        </h3>
+        <button onclick="closeGeneralSizeGuideModal()" class="p-1 text-charcoal-400 hover:text-charcoal-700">✕</button>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-cream-200">
+        <table class="w-full text-xs text-left">
+          <thead class="bg-cream-100 font-bold text-charcoal-800">
+            <tr>
+              <th class="p-2.5">Size</th>
+              <th class="p-2.5">Độ Tuổi</th>
+              <th class="p-2.5">Cân Nặng</th>
+              <th class="p-2.5">Chiều Cao</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-cream-100">
+            <tr>
+              <td class="p-2.5 font-bold text-honey-600">Size 90 (Size 1)</td>
+              <td class="p-2.5">1 - 2 tuổi (9-18M)</td>
+              <td class="p-2.5 font-semibold text-sage-700">10 - 12 kg</td>
+              <td class="p-2.5">75 - 85 cm</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-honey-600">Size 100 (Size 2)</td>
+              <td class="p-2.5">2 - 4 tuổi (18-36M)</td>
+              <td class="p-2.5 font-semibold text-sage-700">13 - 15 kg</td>
+              <td class="p-2.5">86 - 95 cm</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-honey-600">Size 110 (Size 3)</td>
+              <td class="p-2.5">4 - 5 tuổi</td>
+              <td class="p-2.5 font-semibold text-sage-700">16 - 20 kg</td>
+              <td class="p-2.5">96 - 105 cm</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-honey-600">Size 120 (Size 4)</td>
+              <td class="p-2.5">6 - 7 tuổi</td>
+              <td class="p-2.5 font-semibold text-sage-700">20 - 25 kg</td>
+              <td class="p-2.5">106 - 115 cm</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-honey-600">Size 130</td>
+              <td class="p-2.5">8 - 9 tuổi</td>
+              <td class="p-2.5 font-semibold text-sage-700">25 - 30 kg</td>
+              <td class="p-2.5">116 - 125 cm</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-honey-600">Size 140</td>
+              <td class="p-2.5">10 - 11 tuổi</td>
+              <td class="p-2.5 font-semibold text-sage-700">30 - 35 kg</td>
+              <td class="p-2.5">126 - 135 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-xs text-sage-800 bg-sage-50 p-3 rounded-xl space-y-1">
+        <p>💡 <strong>Gợi ý từ T'Petie:</strong></p>
+        <p>Các bé cùng độ tuổi có thể có vóc dáng khác nhau. Mẹ nên ưu tiên chọn size theo <strong>chiều cao và cân nặng thực tế</strong> của bé thay vì độ tuổi nhé!</p>
+      </div>
+
+      <button onclick="closeGeneralSizeGuideModal()" class="w-full py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold shadow-md transition-colors">
+        Đã Hiểu, Cảm Ơn T'Petie
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== SEARCH MODAL ==================== -->
+  <div id="search-modal" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden items-start justify-center pt-20 p-4">
+    <div class="w-full max-w-lg bg-white rounded-3xl p-5 shadow-2xl border border-cream-200 space-y-4">
+      <div class="flex justify-between items-center">
+        <h3 class="font-heading font-bold text-sm text-charcoal-900">🔍 Tìm Kiếm Đồ Ưu Đãi Cho Bé</h3>
+        <button onclick="closeSearchModal()" class="p-1 text-charcoal-400 hover:text-charcoal-700">✕</button>
+      </div>
+      <input type="text" id="search-input" onkeyup="handleSearchInput(event)" placeholder="Nhập váy hoa nhí, áo sơ mi, thô đũi organic..." class="w-full p-3 rounded-2xl bg-cream-50 border border-cream-300 text-xs focus:outline-none focus:border-honey-500" />
+      <div class="flex flex-wrap gap-2 text-xs">
+        <button onclick="searchKeyword('Váy')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">👗 Váy công chúa</button>
+        <button onclick="searchKeyword('Áo')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">👚 Áo sơ mi</button>
+        <button onclick="searchKeyword('Set')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">✨ Set bộ lễ hội</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="toast-container" class="fixed bottom-20 sm:bottom-6 right-4 z-50 flex flex-col space-y-2 pointer-events-none max-w-sm w-full px-2"></div>
+
+  <!-- ==================== MOBILE BOTTOM NAVIGATION ==================== -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-cream-200 px-2 py-1.5 md:hidden flex justify-around items-center shadow-lg">
+    <a href="index.html" class="flex flex-col items-center py-1 px-2 text-charcoal-600 font-medium text-[10px] hover:text-honey-600">
+      <span class="text-base">🏠</span>
+      <span>Trang Chủ</span>
+    </a>
+    <a href="index.html#page-be-gai" class="flex flex-col items-center py-1 px-2 text-charcoal-600 font-medium text-[10px] hover:text-honey-600">
+      <span class="text-base">👗</span>
+      <span>Bé Gái</span>
+    </a>
+    <a href="index.html#page-bo-suu-tap" class="flex flex-col items-center py-1 px-2 text-charcoal-600 font-medium text-[10px] hover:text-honey-600">
+      <span class="text-base">✨</span>
+      <span>BST</span>
+    </a>
+    <a href="uu-dai.html" class="flex flex-col items-center py-1 px-2 text-honey-600 font-bold text-[10px]">
+      <span class="text-base">🏷️</span>
+      <span>Ưu Đãi</span>
+    </a>
+    <button onclick="openMiniCart()" class="flex flex-col items-center py-1 px-2 text-charcoal-600 font-medium text-[10px] relative hover:text-honey-600">
+      <span class="text-base">🛍️</span>
+      <span id="mobile-cart-badge" class="absolute top-0 right-1 bg-honey-500 text-white text-[8px] font-bold px-1 rounded-full">0</span>
+      <span>Giỏ Hàng</span>
+    </button>
+    <a href="index.html#page-dang-nhap" class="flex flex-col items-center py-1 px-2 text-charcoal-600 font-medium text-[10px] hover:text-honey-600">
+      <span class="text-base">👤</span>
+      <span>Tài Khoản</span>
+    </a>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC & STATE ==================== -->
+  <script>
+    // Dữ liệu sản phẩm ưu đãi phong phú theo chuẩn Psychology Pricing (Mỏ neo giá)
+    const PROMO_PRODUCTS = [
+      // 1. Mừng Đại Lễ 2/9 (le2-9)
+      {
+        id: "set-ao-vay-hoc-xinh",
+        sku: "TP-HXK-007",
+        name: "Set Áo Sơ Mi Phối Chân Váy Xếp Ly Học Xinh",
+        campaign: "le2-9",
+        campaignName: "Mừng Đại Lễ 2/9",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Thô cotton hữu cơ & Voan xếp ly cao cấp",
+        materialFeature: "Thô cotton mềm mát, cổ sen bồng xòe",
+        originalPrice: 420000,
+        basePrice: 295000,
+        discountPercent: 30,
+        image: "images/products/hoc-xinh-kem/set-tinh-khoi.jpg",
+        soldCount: 38,
+        totalStock: 50,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 295000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 295000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 295000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 295000 },
+          { size: "Size 130", weight: "25 - 30kg", age: "8 - 9 tuổi", price: 315000 }
+        ]
+      },
+      {
+        id: "ao-so-mi-trai-dat",
+        sku: "TP-HXK-001",
+        name: "Áo Sơ Mi Trái Đất Thêu Tay Tựu Trường",
+        campaign: "le2-9",
+        campaignName: "Mừng Đại Lễ 2/9",
+        category: "be-gai",
+        subcategory: "ao",
+        material: "Thô cotton mềm, thấm hút mồ hôi tối đa",
+        materialFeature: "Thêu Trái Đất thủ công tinh tế",
+        originalPrice: 320000,
+        basePrice: 225000,
+        discountPercent: 30,
+        image: "images/ao-so-mi-trai-dat.jpg",
+        soldCount: 42,
+        totalStock: 60,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 225000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 225000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 225000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 225000 },
+          { size: "Size 130", weight: "25 - 30kg", age: "8 - 9 tuổi", price: 225000 },
+          { size: "Size 140", weight: "30 - 35kg", age: "10 - 11 tuổi", price: 245000 }
+        ]
+      },
+      {
+        id: "ao-baby-blue",
+        sku: "TP-HXK-003",
+        name: "Áo Kiểu Baby Blue Pastel Cúc Gỗ",
+        campaign: "le2-9",
+        campaignName: "Mừng Đại Lễ 2/9",
+        category: "be-gai",
+        subcategory: "ao",
+        material: "Thô cotton mềm dày dặn, màu xanh pastel",
+        materialFeature: "Cúc gỗ dừa tự nhiên, đường may êm",
+        originalPrice: 290000,
+        basePrice: 195000,
+        discountPercent: 33,
+        image: "images/products/hoc-xinh-kem/ao-baby-blue.jpg",
+        soldCount: 26,
+        totalStock: 35,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 195000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 195000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 195000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 195000 }
+        ]
+      },
+      {
+        id: "vay-ghile-o-ly",
+        sku: "TP-HXK-005",
+        name: "Váy Ghile Xếp Ô Ly Phong Cách Preppy",
+        campaign: "le2-9",
+        campaignName: "Mừng Đại Lễ 2/9",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Kaki mềm phối voan tơ cao cấp",
+        materialFeature: "Form váy chuẩn học đường, thanh lịch",
+        originalPrice: 460000,
+        basePrice: 299000,
+        discountPercent: 35,
+        image: "images/products/hoc-xinh-kem/vay-ghile-o-ly.jpg",
+        soldCount: 19,
+        totalStock: 25,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 299000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 299000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 299000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 319000 }
+        ]
+      },
+
+      // 2. Sale Hè (sale-he)
+      {
+        id: "vay-voan-hoa-nhi-mat-ong",
+        sku: "TP-VG-001",
+        name: "Váy Công Chúa Voan Tơ Hoa Nhí Nắng Mật Ong",
+        campaign: "sale-he",
+        campaignName: "Sale Hè",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Voan tơ tằm lót lụa Habutai 100% mềm mát",
+        materialFeature: "Thấm hút mồ hôi, lót lụa êm ái",
+        originalPrice: 530000,
+        basePrice: 265000,
+        discountPercent: 50,
+        image: "images/ha-mat.jpg",
+        soldCount: 45,
+        totalStock: 50,
+        sizes: [
+          { size: "Size 1 (90)", weight: "8 - 10kg", age: "9 - 18M", price: 265000 },
+          { size: "Size 2 (100)", weight: "10 - 12kg", age: "18 - 24M", price: 285000 },
+          { size: "Size 3 (110)", weight: "12 - 15kg", age: "2 - 3T", price: 305000 },
+          { size: "Size 4 (120)", weight: "15 - 18kg", age: "3 - 4T", price: 325000 }
+        ]
+      },
+      {
+        id: "quan-bloomer-ha-mat",
+        sku: "TP-QB-002",
+        name: "Quần Bloomer Hạ Mát Lưng Chun Mềm",
+        campaign: "sale-he",
+        campaignName: "Sale Hè",
+        category: "be-gai",
+        subcategory: "quan",
+        material: "Thô đũi 100% tự nhiên mềm xốp",
+        materialFeature: "Lưng thun co giãn không hằn bụng",
+        originalPrice: 290000,
+        basePrice: 145000,
+        discountPercent: 50,
+        image: "images/products/ha-mat/quan-bi-nau.jpg",
+        soldCount: 52,
+        totalStock: 60,
+        sizes: [
+          { size: "Size 1 (90)", weight: "8 - 10kg", age: "9 - 18M", price: 145000 },
+          { size: "Size 2 (100)", weight: "10 - 12kg", age: "18 - 24M", price: 145000 },
+          { size: "Size 3 (110)", weight: "12 - 15kg", age: "2 - 3T", price: 145000 }
+        ]
+      },
+      {
+        id: "vay-luu-ly",
+        sku: "TP-HM-008",
+        name: "Váy Lưu Ly Xanh Mát Cổ Yếm Thêu",
+        campaign: "sale-he",
+        campaignName: "Sale Hè",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Lụa tơ mát rượi, xòe bồng nhẹ",
+        materialFeature: "Thiết kế thoáng nách hè sảng khoái",
+        originalPrice: 450000,
+        basePrice: 289000,
+        discountPercent: 36,
+        image: "images/products/ha-mat/vay-luu-ly.jpg",
+        soldCount: 31,
+        totalStock: 40,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 289000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 289000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 289000 }
+        ]
+      },
+      {
+        id: "ao-matcha-latte",
+        sku: "TP-HM-004",
+        name: "Áo Bèo Cổ Sen Xanh Matcha Latte",
+        campaign: "sale-he",
+        campaignName: "Sale Hè",
+        category: "be-gai",
+        subcategory: "ao",
+        material: "Thô đũi organic dệt thưa thoáng khí",
+        materialFeature: "Tông màu dịu mát bảo vệ mắt bé",
+        originalPrice: 310000,
+        basePrice: 199000,
+        discountPercent: 36,
+        image: "images/products/ha-mat/ao-matcha-latte.jpg",
+        soldCount: 22,
+        totalStock: 30,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 199000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 199000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 199000 }
+        ]
+      },
+
+      // 3. Sale Thu - Đông (sale-thu-dong)
+      {
+        id: "set-lan-cat",
+        sku: "TP-TT-001",
+        name: "Set Lân Cát Thêu Chỉ Vàng Cung Đình",
+        campaign: "sale-thu-dong",
+        campaignName: "Sale Thu - Đông",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Gấm tơ tằm dệt nổi hoa văn truyền thống",
+        materialFeature: "Lót Habutai chống ngứa, ấm áp dịu êm",
+        originalPrice: 495000,
+        basePrice: 356000,
+        discountPercent: 28,
+        image: "images/products/trung-thu-kem-com/set-lan-cat.jpg",
+        soldCount: 27,
+        totalStock: 35,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 356000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 356000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 356000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 376000 }
+        ]
+      },
+      {
+        id: "set-lan-tuong",
+        sku: "TP-TT-002",
+        name: "Set Lân Tường Xanh Cốm Non Đón Gió",
+        campaign: "sale-thu-dong",
+        campaignName: "Sale Thu - Đông",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Tơ nến cao cấp dệt sợi tự nhiên",
+        materialFeature: "Phối chân váy bồng bềnh công chúa",
+        originalPrice: 480000,
+        basePrice: 338000,
+        discountPercent: 30,
+        image: "images/products/trung-thu-kem-com/set-lan-tuong.jpg",
+        soldCount: 18,
+        totalStock: 25,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 338000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 338000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 338000 }
+        ]
+      },
+      {
+        id: "set-ao-dai-dan-nguyet",
+        sku: "TP-TT-003",
+        name: "Set Áo Dài Đàn Nguyệt Đón Trăng Rằm",
+        campaign: "sale-thu-dong",
+        campaignName: "Sale Thu - Đông",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Nhung tơ mịn màng kết hợp lụa",
+        materialFeature: "Đính ngọc trai thủ công cao cấp",
+        originalPrice: 590000,
+        basePrice: 446000,
+        discountPercent: 25,
+        image: "images/products/trung-thu-kem-com/set-ao-dai-dan-nguyet.jpg",
+        soldCount: 14,
+        totalStock: 20,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 446000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 446000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 446000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 466000 }
+        ]
+      },
+      {
+        id: "set-mut-tao",
+        sku: "TP-TT-004",
+        name: "Set Mứt Táo Đỏ Hồng Đào Nơ Lụa",
+        campaign: "sale-thu-dong",
+        campaignName: "Sale Thu - Đông",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Voan tơ 2 lớp giữ ấm dịu nhẹ",
+        materialFeature: "Sắc hồng đào ngọt lịm cho bé",
+        originalPrice: 490000,
+        basePrice: 351000,
+        discountPercent: 28,
+        image: "images/products/trung-thu-kem-com/set-mut-tao.jpg",
+        soldCount: 20,
+        totalStock: 28,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 351000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 351000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 351000 }
+        ]
+      },
+
+      // 4. Sale Ngày Đôi 10/10 11/11 (sale-ngay-doi)
+      {
+        id: "set-chim-cau-jean-no",
+        sku: "TP-KV-003",
+        name: "Set Áo Chim Câu Phối Quần Bom Jean Nơ",
+        campaign: "sale-ngay-doi",
+        campaignName: "Sale Ngày Đôi 10/10 11/11",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Thô thêu chim bồ câu & Jean mềm wash êm",
+        materialFeature: "Quần jean co giãn không cộm ngứa",
+        originalPrice: 590000,
+        basePrice: 295000,
+        discountPercent: 50,
+        image: "images/products/khanh-vy/set-chim-cau-jean-no.jpg",
+        soldCount: 39,
+        totalStock: 40,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 295000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 295000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 295000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 315000 }
+        ]
+      },
+      {
+        id: "vay-tuong-vi",
+        sku: "TP-KV-009",
+        name: "Váy Tường Vi Hồng Phấn Đính Nơ Lụa",
+        campaign: "sale-ngay-doi",
+        campaignName: "Sale Ngày Đôi 10/10 11/11",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Tơ xước dập ly nhẹ, mềm mịn như mây",
+        materialFeature: "Tặng kèm kẹp nơ đồng bộ xinh xắn",
+        originalPrice: 520000,
+        basePrice: 286000,
+        discountPercent: 45,
+        image: "images/products/khanh-vy/vay-tuong-vi.jpg",
+        soldCount: 33,
+        totalStock: 35,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 286000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 286000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 286000 }
+        ]
+      },
+      {
+        id: "set-thanh-yen-caro",
+        sku: "TP-KV-005",
+        name: "Set Thanh Yên Phối Chân Váy Caro Xanh",
+        campaign: "sale-ngay-doi",
+        campaignName: "Sale Ngày Đôi 10/10 11/11",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Cotton dệt kẻ ô vintage & Lụa tơ",
+        materialFeature: "Phối đồ tiện lợi cho bé dạo phố",
+        originalPrice: 480000,
+        basePrice: 264000,
+        discountPercent: 45,
+        image: "images/products/khanh-vy/set-thanh-yen-caro.jpg",
+        soldCount: 28,
+        totalStock: 32,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 264000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 264000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 264000 }
+        ]
+      },
+      {
+        id: "vay-thi-tho-hong",
+        sku: "TP-KV-007",
+        name: "Váy Thi Thơ Cánh Tiên Hồng Phấn",
+        campaign: "sale-ngay-doi",
+        campaignName: "Sale Ngày Đôi 10/10 11/11",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Voan cát mềm mại rủ nhẹ",
+        materialFeature: "Tay cánh tiên bay bổng đáng yêu",
+        originalPrice: 450000,
+        basePrice: 270000,
+        discountPercent: 40,
+        image: "images/products/khanh-vy/vay-thi-tho-hong.jpg",
+        soldCount: 25,
+        totalStock: 30,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 270000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 270000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 270000 }
+        ]
+      }
+    ];
+
+    // State Variables
+    let currentCampaign = 'all';
+    let currentQuickProduct = null;
+    let selectedQuickSizeIdx = 0;
+    let cart = [];
+
+    // Format tiền tệ chuẩn Việt Nam Đồng (VNĐ)
+    function formatVND(amount) {
+      if (!amount) return '0 VNĐ';
+      return new Intl.NumberFormat('vi-VN').format(amount) + ' VNĐ';
+    }
+
+    // Analytics Tracker Logger
+    function trackAnalyticsEvent(eventName, payload) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: eventName,
+        timestamp: new Date().toISOString(),
+        ...payload
+      });
+      console.log(`[Analytics Event] ${eventName}:`, payload);
+    }
+
+    // ==================== CAMPAIGN DESCRIPTIONS MAP ====================
+    const CAMPAIGN_INFO = {
+      'all': {
+        icon: '✨',
+        desc: 'Toàn bộ sản phẩm ưu đãi hấp dẫn nhất mùa từ thương hiệu thời trang cao cấp T\'Petie.',
+        tag: '16 deal hời tuyển chọn'
+      },
+      'le2-9': {
+        icon: '🎉',
+        desc: 'Mừng Đại Lễ 2/9 & Tựu Trường: Đồng loạt giảm 30% - 35% các mẫu áo sơ mi, váy xếp ly, set bộ thanh lịch cho bé.',
+        tag: 'Deal Quốc Khánh 2/9'
+      },
+      'sale-he': {
+        icon: '☀️',
+        desc: 'Xả Kho Hạ Mát Giải Nhiệt: Ưu đãi lên tới 50% váy voan tơ, quần bloomer thô đũi mềm êm, thấm hút mồ hôi cho bé thoải mái vận động.',
+        tag: 'Đồng giá từ 145.000 VNĐ'
+      },
+      'sale-thu-dong': {
+        icon: '🍂',
+        desc: 'Đón Gió Thu Đông & Tết Trung Thu: Giảm 25% - 30% BST Áo Dài Đàn Nguyệt, Set Lân Cát, Lân Tường gấm tơ ấm áp.',
+        tag: 'BST Trung Thu Kèm Cốm'
+      },
+      'sale-ngay-doi': {
+        icon: '🎁',
+        desc: 'Siêu Bão Sale Ngày Đôi 10/10 11/11: Giảm sốc đến 50%, tặng kèm phụ kiện kẹp tóc xinh xắn và Freeship toàn quốc.',
+        tag: 'Săn Deal Ngày Đôi'
+      }
+    };
+
+    // ==================== INITIALIZATION ====================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCartFromStorage();
+      initCountdown();
+
+      // Check query parameter ?campaign=...
+      const urlParams = new URLSearchParams(window.location.search);
+      const campaignParam = urlParams.get('campaign');
+      if (campaignParam && ['all', 'le2-9', 'dai-le-2-9', 'sale-he', 'sale-thu-dong', 'sale-ngay-doi'].includes(campaignParam)) {
+        const normalizedCampaign = campaignParam === 'dai-le-2-9' ? 'le2-9' : campaignParam;
+        filterCampaign(normalizedCampaign);
+      } else {
+        renderProducts();
+      }
+    });
+
+    // ==================== FILTER CAMPAIGN FUNCTION ====================
+    function filterCampaign(campaignId) {
+      currentCampaign = campaignId;
+
+      // Update URL query string without reloading page
+      const url = new URL(window.location);
+      if (campaignId === 'all') {
+        url.searchParams.delete('campaign');
+      } else {
+        url.searchParams.set('campaign', campaignId);
+      }
+      window.history.replaceState({}, '', url);
+
+      // Update Tab Styles
+      document.querySelectorAll('.campaign-tab').forEach(btn => {
+        btn.className = 'campaign-tab flex-1 min-w-[110px] sm:min-w-0 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center space-x-1.5 text-charcoal-600 hover:text-charcoal-900';
+      });
+      const activeBtn = document.getElementById(`tab-${campaignId}`);
+      if (activeBtn) {
+        activeBtn.className = 'campaign-tab flex-1 min-w-[110px] sm:min-w-0 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center space-x-1.5 bg-white text-honey-600 shadow-sm ring-1 ring-honey-200';
+      }
+
+      // Update Banner Info
+      const info = CAMPAIGN_INFO[campaignId] || CAMPAIGN_INFO['all'];
+      document.getElementById('campaign-desc-icon').innerText = info.icon;
+      document.getElementById('campaign-desc-text').innerText = info.desc;
+      document.getElementById('campaign-desc-tag').innerText = info.tag;
+
+      // Track Analytics
+      trackAnalyticsEvent('filter_campaign_tab', {
+        campaign_selected: campaignId,
+        source: 'promotions_page'
+      });
+
+      renderProducts();
+    }
+
+    // ==================== RENDER PROMOTION PRODUCTS ====================
+    function renderProducts() {
+      const grid = document.getElementById('promo-products-grid');
+      const emptyState = document.getElementById('promo-empty-state');
+      const countBadge = document.getElementById('campaign-count-badge');
+
+      const filtered = PROMO_PRODUCTS.filter(p => {
+        if (currentCampaign === 'all') return true;
+        return p.campaign === currentCampaign;
+      });
+
+      countBadge.innerText = `${filtered.length} sản phẩm`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(p => {
+        const savings = p.originalPrice - p.basePrice;
+        const progressPercent = Math.round((p.soldCount / p.totalStock) * 100);
+
+        return `
+          <div class="group bg-white rounded-2xl sm:rounded-3xl border border-cream-200 overflow-hidden shadow-card hover:shadow-soft hover:border-blush-300 transition-all duration-300 flex flex-col justify-between relative">
+            
+            <!-- Product Card Top / Image -->
+            <div>
+              <div class="relative w-full aspect-square bg-cream-100 overflow-hidden cursor-pointer" onclick="openQuickSizeModal('${p.id}')">
+                <img
+                  src="${p.image}"
+                  alt="${p.name}"
+                  loading="lazy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onerror="this.src='images/ha-mat.jpg'"
+                />
+
+                <!-- Psychology Sale Discount Badge (Góc trái) -->
+                <div class="absolute top-2 left-2 flex flex-col gap-1 z-10">
+                  <span class="text-[11px] sm:text-xs font-extrabold bg-gradient-to-r from-rose-500 to-blush-500 text-white px-2.5 py-0.5 rounded-full shadow-md">
+                    -${p.discountPercent}%
+                  </span>
+                  ${p.discountPercent >= 45 ? `
+                    <span class="text-[9px] font-bold bg-honey-500 text-white px-2 py-0.2 rounded-full shadow-xs">
+                      ⚡ Siêu Deal
+                    </span>
+                  ` : ''}
+                </div>
+
+                <!-- Campaign Tag (Góc phải) -->
+                <span class="absolute top-2 right-2 text-[9px] font-semibold bg-white/90 backdrop-blur-md text-charcoal-700 px-2 py-0.5 rounded-full border border-cream-200">
+                  ${p.campaignName}
+                </span>
+
+                <!-- Material Ribbon (Chân ảnh) -->
+                <span class="absolute bottom-2 left-2 right-2 text-[9px] bg-white/95 backdrop-blur-md px-2 py-1 rounded-xl truncate border border-cream-200 text-charcoal-700 font-medium">
+                  🌿 ${p.materialFeature}
+                </span>
+              </div>
+
+              <!-- Product Info & Psychology Pricing -->
+              <div class="p-3 sm:p-4 space-y-2">
+                <!-- Tên Sản Phẩm -->
+                <h3
+                  onclick="openQuickSizeModal('${p.id}')"
+                  class="text-xs sm:text-sm font-bold text-charcoal-900 line-clamp-2 cursor-pointer group-hover:text-honey-600 transition-colors leading-snug min-h-[36px]"
+                >
+                  ${p.name}
+                </h3>
+
+                <!-- Mỏ Neo Giá (Psychology Pricing) -->
+                <div class="space-y-0.5">
+                  <div class="flex items-baseline flex-wrap gap-x-2 gap-y-0.5">
+                    <!-- Giá bán nổi bật màu đỏ hồng -->
+                    <span class="text-sm sm:text-base font-extrabold text-rose-600 font-heading tracking-tight">
+                      ${formatVND(p.basePrice)}
+                    </span>
+                    <!-- Giá niêm yết gạch ngang (Anchor Price) -->
+                    <span class="text-[11px] sm:text-xs text-charcoal-400 line-through">
+                      ${formatVND(p.originalPrice)}
+                    </span>
+                  </div>
+
+                  <!-- Tag Tiết Kiệm Kích Thích Tâm Lý Mẹ Bỉm -->
+                  <div class="text-[10px] text-blush-600 font-semibold flex items-center space-x-1">
+                    <span>✨</span>
+                    <span>Tiết kiệm: <strong>${formatVND(savings)}</strong></span>
+                  </div>
+                </div>
+
+                <!-- Deal Scarcity Indicator (Thanh Tiến Độ Bán Chạy) -->
+                <div class="space-y-1 pt-1">
+                  <div class="flex justify-between text-[10px] text-charcoal-500 font-medium">
+                    <span class="flex items-center space-x-0.5">
+                      <span>🔥</span>
+                      <span>Đã bán ${p.soldCount}/${p.totalStock}</span>
+                    </span>
+                    <span class="text-rose-600 font-bold">${progressPercent}%</span>
+                  </div>
+                  <div class="w-full bg-cream-200 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-gradient-to-r from-honey-500 to-rose-500 h-full rounded-full transition-all duration-500" style="width: ${progressPercent}%"></div>
+                  </div>
+                </div>
+
+                <!-- Size Tags Preview -->
+                <div class="flex flex-wrap gap-1 pt-1">
+                  ${p.sizes.slice(0, 3).map(s => `
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-cream-100 text-charcoal-600 border border-cream-200">${s.size}</span>
+                  `).join('')}
+                  ${p.sizes.length > 3 ? `<span class="text-[9px] px-1 py-0.5 text-charcoal-400 font-bold">+${p.sizes.length - 3} size</span>` : ''}
+                </div>
+              </div>
+            </div>
+
+            <!-- CTAs: "Xem size" & "Thêm vào giỏ" -->
+            <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-2">
+              <!-- Nút 1: Xem Size -->
+              <button
+                type="button"
+                data-track="promotion-click"
+                data-campaign="${p.campaign}"
+                data-product-id="${p.id}"
+                data-action="view-size"
+                onclick="openQuickSizeModal('${p.id}')"
+                class="w-full py-2.5 px-2 rounded-xl bg-cream-50 hover:bg-cream-200 text-charcoal-800 text-[11px] sm:text-xs font-bold flex items-center justify-center space-x-1 transition-all active:scale-95 border border-cream-300"
+                title="Xem bảng đo và kích cỡ bé"
+              >
+                <span>📏</span>
+                <span>Xem size</span>
+              </button>
+
+              <!-- Nút 2: Thêm vào giỏ -->
+              <button
+                type="button"
+                data-track="promotion-click"
+                data-campaign="${p.campaign}"
+                data-product-id="${p.id}"
+                data-action="add-to-cart"
+                onclick="quickAddToCart('${p.id}')"
+                class="w-full py-2.5 px-2 rounded-xl bg-honey-500 hover:bg-honey-600 text-white text-[11px] sm:text-xs font-bold flex items-center justify-center space-x-1 transition-all active:scale-95 shadow-sm hover:shadow-md"
+                title="Thêm ngay vào giỏ hàng"
+              >
+                <span>🛍️</span>
+                <span>Thêm giỏ</span>
+              </button>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ==================== QUICK SIZE SELECTOR MODAL ====================
+    function openQuickSizeModal(productId) {
+      const product = PROMO_PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      currentQuickProduct = product;
+      selectedQuickSizeIdx = 0;
+
+      // Track open size event
+      trackAnalyticsEvent('promotion_click', {
+        campaign: product.campaign,
+        action: 'view-size',
+        item_id: product.id,
+        item_name: product.name,
+        price: product.basePrice
+      });
+
+      document.getElementById('qs-name').innerText = product.name;
+      document.getElementById('qs-sku').innerText = product.sku;
+      document.getElementById('qs-badge').innerText = `-${product.discountPercent}%`;
+      document.getElementById('qs-img').src = product.image;
+      document.getElementById('qs-img').onerror = function() { this.src = 'images/ha-mat.jpg'; };
+      document.getElementById('qs-orig-price').innerText = formatVND(product.originalPrice);
+      document.getElementById('qs-material').innerText = product.material;
+      document.getElementById('qs-savings').innerText = `Tiết kiệm ${formatVND(product.originalPrice - product.basePrice)}`;
+
+      // Update CTA tracking
+      const addBtn = document.getElementById('qs-add-cart-btn');
+      addBtn.setAttribute('data-campaign', product.campaign);
+      addBtn.setAttribute('data-product-id', product.id);
+
+      renderQuickSizeGrid();
+
+      const modal = document.getElementById('quicksize-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function renderQuickSizeGrid() {
+      if (!currentQuickProduct) return;
+      const container = document.getElementById('qs-sizes-grid');
+      const selectedSize = currentQuickProduct.sizes[selectedQuickSizeIdx] || currentQuickProduct.sizes[0];
+
+      document.getElementById('qs-price').innerText = formatVND(selectedSize.price);
+      document.getElementById('qs-btn-price').innerText = `• ${formatVND(selectedSize.price)}`;
+
+      container.innerHTML = currentQuickProduct.sizes.map((s, idx) => {
+        const isSelected = idx === selectedQuickSizeIdx;
+        return `
+          <button
+            type="button"
+            onclick="selectQuickSizeIndex(${idx})"
+            class="p-2.5 rounded-xl border text-left transition-all active:scale-95 ${
+              isSelected
+                ? 'border-honey-500 bg-honey-50/80 ring-2 ring-honey-400/40 text-charcoal-900 font-bold'
+                : 'border-cream-300 bg-white hover:border-honey-300 text-charcoal-700'
+            }"
+          >
+            <div class="flex justify-between items-center mb-0.5">
+              <span class="text-xs font-bold">${s.size}</span>
+              <span class="text-[10px] text-rose-600 font-bold">${formatVND(s.price)}</span>
+            </div>
+            <div class="text-[11px] text-sage-700 font-medium">${s.weight}</div>
+            <div class="text-[10px] text-charcoal-400">${s.age}</div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectQuickSizeIndex(idx) {
+      selectedQuickSizeIdx = idx;
+      renderQuickSizeGrid();
+      
+      const sizeObj = currentQuickProduct.sizes[idx];
+      trackAnalyticsEvent('select_size_option', {
+        item_id: currentQuickProduct.id,
+        size_name: sizeObj.size,
+        price: sizeObj.price
+      });
+    }
+
+    function closeQuickSizeModal() {
+      const modal = document.getElementById('quicksize-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function confirmQuickAddFromModal() {
+      if (!currentQuickProduct) return;
+      const sizeObj = currentQuickProduct.sizes[selectedQuickSizeIdx] || currentQuickProduct.sizes[0];
+      
+      addToCartPayload(currentQuickProduct, sizeObj);
+      closeQuickSizeModal();
+    }
+
+    // ==================== GENERAL SIZE GUIDE MODAL ====================
+    function openGeneralSizeGuideModal() {
+      const modal = document.getElementById('sizeguide-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      trackAnalyticsEvent('open_size_guide', { source: 'promotions_page' });
+    }
+
+    function closeGeneralSizeGuideModal() {
+      const modal = document.getElementById('sizeguide-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // ==================== SEARCH MODAL ====================
+    function openSearchModal() {
+      const modal = document.getElementById('search-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.getElementById('search-input').focus();
+    }
+
+    function closeSearchModal() {
+      const modal = document.getElementById('search-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleSearchInput(e) {
+      if (e.key === 'Enter') {
+        searchKeyword(e.target.value);
+      }
+    }
+
+    function searchKeyword(keyword) {
+      closeSearchModal();
+      if (!keyword.trim()) return;
+
+      filterCampaign('all');
+      const grid = document.getElementById('promo-products-grid');
+      const filtered = PROMO_PRODUCTS.filter(p => 
+        p.name.toLowerCase().includes(keyword.toLowerCase()) || 
+        p.material.toLowerCase().includes(keyword.toLowerCase())
+      );
+
+      trackAnalyticsEvent('search_promotions', { keyword });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-2 sm:col-span-4 text-center py-12 text-charcoal-400 space-y-2">
+            <p class="text-base">Không tìm thấy sản phẩm khuyến mãi cho từ khóa "<strong>${keyword}</strong>"</p>
+            <button onclick="filterCampaign('all')" class="text-xs font-bold text-honey-600 underline">Xem lại tất cả ưu đãi</button>
+          </div>
+        `;
+      } else {
+        document.getElementById('campaign-count-badge').innerText = `${filtered.length} kết quả`;
+        // Render search filtered
+        grid.innerHTML = filtered.map(p => {
+          const savings = p.originalPrice - p.basePrice;
+          const progressPercent = Math.round((p.soldCount / p.totalStock) * 100);
+          return `
+            <div class="group bg-white rounded-2xl sm:rounded-3xl border border-cream-200 overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div class="relative w-full aspect-square bg-cream-100 overflow-hidden cursor-pointer" onclick="openQuickSizeModal('${p.id}')">
+                  <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                  <span class="absolute top-2 left-2 text-[11px] font-extrabold bg-rose-500 text-white px-2.5 py-0.5 rounded-full shadow-md">-${p.discountPercent}%</span>
+                </div>
+                <div class="p-3 sm:p-4 space-y-1.5">
+                  <h3 class="text-xs sm:text-sm font-bold text-charcoal-900 line-clamp-2">${p.name}</h3>
+                  <div class="flex items-baseline space-x-2">
+                    <span class="text-sm sm:text-base font-extrabold text-rose-600">${formatVND(p.basePrice)}</span>
+                    <span class="text-[11px] text-charcoal-400 line-through">${formatVND(p.originalPrice)}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 pt-0">
+                <button onclick="openQuickSizeModal('${p.id}')" class="w-full py-2 rounded-xl bg-honey-500 text-white text-xs font-bold">Xem size &amp; Mua</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    // ==================== CART ACTIONS & LOCALSTORAGE SYNC ====================
+    function loadCartFromStorage() {
+      try {
+        const stored = localStorage.getItem('tpetie_cart');
+        if (stored) {
+          cart = JSON.parse(stored);
+        }
+      } catch (e) {
+        cart = [];
+      }
+      updateCartUI();
+    }
+
+    function saveCartToStorage() {
+      try {
+        localStorage.setItem('tpetie_cart', JSON.stringify(cart));
+      } catch (e) {}
+      updateCartUI();
+    }
+
+    function quickAddToCart(productId) {
+      const product = PROMO_PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      // Track CTA click
+      trackAnalyticsEvent('promotion_click', {
+        campaign: product.campaign,
+        action: 'add-to-cart',
+        item_id: product.id,
+        item_name: product.name,
+        price: product.basePrice
+      });
+
+      // Default to first size option
+      const defaultSize = product.sizes[0];
+      addToCartPayload(product, defaultSize);
+    }
+
+    function addToCartPayload(product, sizeOption) {
+      const existingIndex = cart.findIndex(item => item.id === product.id && item.size === sizeOption.size);
+
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: sizeOption.price,
+          originalPrice: product.originalPrice,
+          image: product.image,
+          size: sizeOption.size,
+          quantity: 1
+        });
+      }
+
+      saveCartToStorage();
+
+      // Animate cart icons
+      const badge = document.getElementById('cart-badge-count');
+      badge.classList.remove('animate-bounce-cart');
+      void badge.offsetWidth; // trigger reflow
+      badge.classList.add('animate-bounce-cart');
+
+      showToast(`Đã thêm "${product.name} (${sizeOption.size})" vào giỏ hàng của mẹ! 💕`);
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+      document.getElementById('cart-badge-count').innerText = totalCount;
+      document.getElementById('mobile-cart-badge').innerText = totalCount;
+      document.getElementById('minicart-total').innerText = formatVND(subtotal);
+
+      // Freeship threshold 399.000 VNĐ
+      const freeshipBar = document.getElementById('minicart-freeship-bar');
+      const freeshipText = document.getElementById('minicart-freeship-text');
+      const freeShipLimit = 399000;
+
+      if (subtotal >= freeShipLimit) {
+        freeshipBar.style.width = '100%';
+        freeshipBar.className = 'bg-sage-500 h-full rounded-full transition-all duration-300';
+        freeshipText.innerHTML = '🎉 Chúc mừng mẹ! Đơn hàng đã đủ điều kiện <strong>Freeship 0đ toàn quốc</strong>!';
+      } else {
+        const percent = Math.min(100, Math.round((subtotal / freeShipLimit) * 100));
+        freeshipBar.style.width = percent + '%';
+        freeshipBar.className = 'bg-honey-500 h-full rounded-full transition-all duration-300';
+        const remaining = freeShipLimit - subtotal;
+        freeshipText.innerHTML = `Mua thêm <strong>${formatVND(remaining)}</strong> để nhận <strong>Freeship toàn quốc 399k</strong>!`;
+      }
+
+      // Render items inside MiniCart
+      const container = document.getElementById('minicart-items-container');
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-charcoal-400 space-y-2">
+            <span class="text-3xl">🧸</span>
+            <p class="text-xs">Giỏ hàng của mẹ đang trống</p>
+            <p class="text-[11px]">Nhanh tay chọn đồ xinh cho bé yêu nhé!</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = cart.map((item, idx) => `
+          <div class="py-3 flex space-x-3 items-center">
+            <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-cover rounded-xl border border-cream-200 bg-cream-50 shrink-0" onerror="this.src='images/ha-mat.jpg'" />
+            <div class="flex-1 min-w-0 space-y-0.5">
+              <h4 class="text-xs font-bold text-charcoal-900 truncate">${item.name}</h4>
+              <div class="text-[11px] text-charcoal-500">Kích cỡ: <strong class="text-charcoal-800">${item.size}</strong></div>
+              <div class="flex items-center space-x-2">
+                <span class="text-xs font-bold text-rose-600">${formatVND(item.price)}</span>
+                ${item.originalPrice ? `<span class="text-[10px] text-charcoal-400 line-through">${formatVND(item.originalPrice)}</span>` : ''}
+              </div>
+            </div>
+            <div class="flex items-center space-x-1.5 shrink-0">
+              <button onclick="changeCartQty(${idx}, -1)" class="w-6 h-6 rounded-lg bg-cream-100 hover:bg-cream-200 text-charcoal-700 text-xs font-bold flex items-center justify-center">-</button>
+              <span class="text-xs font-bold px-1">${item.quantity}</span>
+              <button onclick="changeCartQty(${idx}, 1)" class="w-6 h-6 rounded-lg bg-cream-100 hover:bg-cream-200 text-charcoal-700 text-xs font-bold flex items-center justify-center">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function changeCartQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCartToStorage();
+    }
+
+    function openMiniCart() {
+      const drawer = document.getElementById('minicart-drawer');
+      const backdrop = document.getElementById('minicart-backdrop');
+      backdrop.classList.remove('hidden');
+      setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+      drawer.classList.remove('translate-x-full');
+      trackAnalyticsEvent('view_cart', { items_count: cart.length });
+    }
+
+    function closeMiniCart() {
+      const drawer = document.getElementById('minicart-drawer');
+      const backdrop = document.getElementById('minicart-backdrop');
+      backdrop.classList.add('opacity-0');
+      drawer.classList.add('translate-x-full');
+      setTimeout(() => backdrop.classList.add('hidden'), 300);
+    }
+
+    // ==================== VOUCHER & TOAST ====================
+    function copyVoucher(code) {
+      navigator.clipboard.writeText(code);
+      showToast(`Đã lưu mã giảm giá "${code}" vào bộ nhớ tạm! ✨`);
+      trackAnalyticsEvent('apply_promo_code', { coupon_code: code });
+    }
+
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'bg-charcoal-900/95 backdrop-blur-md text-white px-4 py-3 rounded-2xl shadow-xl border border-cream-200/20 text-xs flex items-center space-x-2 transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto';
+      toast.innerHTML = `
+        <span class="text-sm">🌸</span>
+        <span class="flex-1">${message}</span>
+      `;
+      container.appendChild(toast);
+
+      // Animate in
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+
+      // Auto dismiss
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // ==================== REALTIME FLASH SALE COUNTDOWN ====================
+    function initCountdown() {
+      let totalSeconds = 2 * 3600 + 18 * 60 + 45;
+
+      setInterval(() => {
+        if (totalSeconds <= 0) {
+          totalSeconds = 24 * 3600; // Reset next cycle
+        }
+        totalSeconds--;
+
+        const hrs = Math.floor(totalSeconds / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        document.getElementById('countdown-hours').innerText = hrs.toString().padStart(2, '0');
+        document.getElementById('countdown-minutes').innerText = mins.toString().padStart(2, '0');
+        document.getElementById('countdown-seconds').innerText = secs.toString().padStart(2, '0');
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

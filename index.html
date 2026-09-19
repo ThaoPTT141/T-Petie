@@ -326,11 +326,25 @@
         </div>
       </div>
 
-      <!-- 3 Tab Segments -->
-      <div class="bg-cream-100 p-1.5 rounded-2xl flex gap-1">
-        <button onclick="filterSale('dai-le-2-9')" id="sale-tab-dai-le-2-9" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-honey-600 shadow-sm">🎉 Đại Lễ 2/9</button>
-        <button onclick="filterSale('sale-he')" id="sale-tab-sale-he" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-charcoal-600">☀️ Xả Kho Hè</button>
-        <button onclick="filterSale('sale-thu-dong')" id="sale-tab-sale-thu-dong" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-charcoal-600">🍂 Đón Thu Đông</button>
+      <!-- 5 Campaign Filter Tabs (Strictly Matching Sitemap) -->
+      <div class="bg-cream-100 p-1.5 rounded-2xl flex flex-wrap sm:flex-nowrap gap-1">
+        <button onclick="filterSale('all')" id="sale-tab-all" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-honey-600 shadow-sm">✨ Tất Cả</button>
+        <button onclick="filterSale('dai-le-2-9')" id="sale-tab-dai-le-2-9" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-charcoal-600">🎉 Đại Lễ 2/9</button>
+        <button onclick="filterSale('sale-he')" id="sale-tab-sale-he" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-charcoal-600">☀️ Sale Hè</button>
+        <button onclick="filterSale('sale-thu-dong')" id="sale-tab-sale-thu-dong" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-charcoal-600">🍂 Sale Thu - Đông</button>
+        <button onclick="filterSale('sale-ngay-doi')" id="sale-tab-sale-ngay-doi" class="sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-charcoal-600">🎁 Sale Ngày Đôi</button>
+      </div>
+
+      <!-- Quick Link to Dedicated Promotions Page (uu-dai.html) -->
+      <div class="p-3.5 bg-gradient-to-r from-cream-100 via-blush-50 to-honey-50 rounded-2xl border border-cream-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <div class="flex items-center space-x-2 text-charcoal-800">
+          <span class="text-base">🌸</span>
+          <span>Mẹ muốn săn deal giờ vàng trên <strong>Trang Chuyên Đề Ưu Đãi</strong> với đầy đủ công cụ chọn size &amp; bảng đo chi tiết?</span>
+        </div>
+        <a href="uu-dai.html" class="px-4 py-2 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold transition-all shadow-sm flex items-center space-x-1.5 shrink-0 active:scale-95">
+          <span>Xem Trang Ưu Đãi Độc Quyền</span>
+          <span>→</span>
+        </a>
       </div>
 
       <!-- Vouchers -->
@@ -2288,31 +2302,41 @@
       }
     }
 
-    // Render Product Card HTML
+    // Render Product Card HTML (With Psychology Pricing & Analytics Tracking)
     function createProductCardHTML(p) {
+      const discount = p.discountPercent || (p.originalPrice && p.basePrice ? Math.round((1 - p.basePrice / p.originalPrice) * 100) : 0);
+      const savings = p.originalPrice && p.basePrice && p.originalPrice > p.basePrice ? (p.originalPrice - p.basePrice) : 0;
+      const campaign = p.saleCampaign || 'dai-le-2-9';
+
       return `
-        <div class="group bg-white rounded-2xl sm:rounded-3xl border border-cream-200 overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 flex flex-col justify-between">
+        <div class="group bg-white rounded-2xl sm:rounded-3xl border border-cream-200 overflow-hidden shadow-card hover:shadow-soft hover:border-blush-300 transition-all duration-300 flex flex-col justify-between" data-track="promotion-click" data-campaign="${campaign}" data-product-id="${p.id}">
           <div onclick="viewProductDetail('${p.id}')" class="cursor-pointer">
             <div class="relative w-full aspect-square bg-cream-100 overflow-hidden">
-              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              ${p.isSale ? `<span class="absolute top-2 left-2 text-[10px] font-bold bg-blush-500 text-white px-2 py-0.5 rounded-full">-${p.discountPercent}%</span>` : ''}
-              ${p.isBestSeller ? `<span class="absolute top-2 ${p.isSale ? 'left-14' : 'left-2'} text-[10px] font-bold bg-honey-500 text-white px-2 py-0.5 rounded-full">Hot</span>` : ''}
-              <span class="absolute bottom-2 left-2 right-2 text-[9px] bg-white/90 backdrop-blur-md px-2 py-0.5 rounded-full truncate border border-cream-200">🌿 ${p.materialFeature}</span>
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='images/ha-mat.jpg'" />
+              ${(p.isSale || discount > 0) ? `<span class="absolute top-2 left-2 text-[10px] sm:text-xs font-extrabold bg-gradient-to-r from-rose-500 to-blush-500 text-white px-2.5 py-0.5 rounded-full shadow-md">-${discount}%</span>` : ''}
+              ${p.isBestSeller ? `<span class="absolute top-2 ${(p.isSale || discount > 0) ? 'left-14' : 'left-2'} text-[10px] font-bold bg-honey-500 text-white px-2 py-0.5 rounded-full">Hot</span>` : ''}
+              <span class="absolute bottom-2 left-2 right-2 text-[9px] bg-white/90 backdrop-blur-md px-2 py-0.5 rounded-full truncate border border-cream-200">🌿 ${p.materialFeature || 'Thô đũi organic'}</span>
             </div>
             <div class="p-3 sm:p-4">
-              <h3 class="text-xs sm:text-sm font-semibold text-charcoal-900 line-clamp-2 mb-1.5 group-hover:text-honey-600 transition-colors">${p.name}</h3>
-              <div class="flex items-baseline space-x-1.5 mb-2">
-                <span class="text-sm sm:text-base font-bold text-honey-600 font-heading">${formatVND(p.basePrice)}</span>
-                ${p.originalPrice ? `<span class="text-[11px] text-charcoal-400 line-through">${formatVND(p.originalPrice)}</span>` : ''}
+              <h3 class="text-xs sm:text-sm font-bold text-charcoal-900 line-clamp-2 mb-1.5 group-hover:text-honey-600 transition-colors">${p.name}</h3>
+              <div class="space-y-0.5 mb-2">
+                <div class="flex items-baseline space-x-1.5">
+                  <span class="text-sm sm:text-base font-extrabold text-rose-600 font-heading">${formatVND(p.basePrice)}</span>
+                  ${p.originalPrice ? `<span class="text-[11px] text-charcoal-400 line-through">${formatVND(p.originalPrice)}</span>` : ''}
+                </div>
+                ${savings > 0 ? `<div class="text-[10px] text-blush-600 font-semibold">Tiết kiệm: <strong>${formatVND(savings)}</strong></div>` : ''}
               </div>
               <div class="flex flex-wrap gap-1">
-                ${p.sizes.map(s => `<span class="text-[9px] px-1.5 py-0.5 rounded bg-cream-100 text-charcoal-600">${s.size}</span>`).join('')}
+                ${p.sizes.map(s => `<span class="text-[9px] px-1.5 py-0.5 rounded bg-cream-100 text-charcoal-600 border border-cream-200">${s.size}</span>`).join('')}
               </div>
             </div>
           </div>
-          <div class="p-3 pt-0">
-            <button onclick="quickAddCart('${p.id}')" class="w-full py-2 rounded-xl bg-cream-100 hover:bg-honey-500 hover:text-white text-charcoal-800 text-xs font-semibold flex items-center justify-center space-x-1 transition-all active:scale-95 border border-cream-200">
-              <span>🛍️ Thêm nhanh</span>
+          <div class="p-3 pt-0 grid grid-cols-2 gap-1.5">
+            <button onclick="viewProductDetail('${p.id}')" data-track="promotion-click" data-campaign="${campaign}" data-product-id="${p.id}" data-action="view-size" class="py-2 rounded-xl bg-cream-50 hover:bg-cream-200 text-charcoal-800 text-[11px] font-bold flex items-center justify-center space-x-1 border border-cream-300 transition-all active:scale-95">
+              <span>📏 Xem size</span>
+            </button>
+            <button onclick="quickAddCart('${p.id}')" data-track="promotion-click" data-campaign="${campaign}" data-product-id="${p.id}" data-action="add-cart" class="py-2 rounded-xl bg-honey-500 hover:bg-honey-600 text-white text-[11px] font-bold flex items-center justify-center space-x-1 transition-all active:scale-95 shadow-sm hover:shadow-md">
+              <span>🛍️ Thêm giỏ</span>
             </button>
           </div>
         </div>
@@ -2544,10 +2568,38 @@
       document.querySelectorAll('.sale-tab').forEach(t => {
         t.className = 'sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-charcoal-600';
       });
-      document.getElementById(`sale-tab-${campaign}`).className = 'sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-honey-600 shadow-sm';
+      const activeTab = document.getElementById(`sale-tab-${campaign}`);
+      if (activeTab) {
+        activeTab.className = 'sale-tab flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-honey-600 shadow-sm';
+      }
 
-      const filtered = PRODUCTS.filter(p => p.isSale && (p.saleCampaign === campaign || !p.saleCampaign));
-      document.getElementById('sale-products-grid').innerHTML = filtered.map(createProductCardHTML).join('');
+      // Analytics tracking
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'filter_campaign_tab',
+        campaign_selected: campaign,
+        timestamp: new Date().toISOString()
+      });
+      console.log(`[Analytics Event] filter_campaign_tab:`, { campaign });
+
+      const filtered = PRODUCTS.filter(p => {
+        if (!p.isSale) return false;
+        if (campaign === 'all') return true;
+        if (campaign === 'dai-le-2-9' || campaign === 'le2-9') {
+          return p.saleCampaign === 'dai-le-2-9' || p.saleCampaign === 'le2-9';
+        }
+        if (campaign === 'sale-ngay-doi') {
+          return p.saleCampaign === 'sale-ngay-doi' || p.discountPercent >= 24;
+        }
+        return p.saleCampaign === campaign;
+      });
+
+      const grid = document.getElementById('sale-products-grid');
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="col-span-2 sm:col-span-4 text-center py-10 text-charcoal-400">Đang cập nhật thêm sản phẩm ưu đãi cho chiến dịch này...</div>';
+      } else {
+        grid.innerHTML = filtered.map(createProductCardHTML).join('');
+      }
     }
 
     function copyVoucher(code) {
@@ -2958,7 +3010,7 @@
       `).join('');
 
       // Sale initial render
-      filterSale('dai-le-2-9');
+      filterSale('all');
       updateCartUI();
     });
   </script>
