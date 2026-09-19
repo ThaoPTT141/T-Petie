@@ -179,7 +179,7 @@ function AboutContent() {
                   {/* Title Header */}
                   <div className="border-b border-cream-200 pb-4">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-honey-600 bg-honey-50 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
-                      Mục 01 • Khởi Nguồn
+                      Khởi Nguồn
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
                       Câu chuyện thương hiệu T&apos;Petie
@@ -257,7 +257,7 @@ function AboutContent() {
                 >
                   <div className="border-b border-cream-200 pb-4">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-blush-600 bg-blush-50 px-2.5 py-1 rounded-full border border-blush-200 inline-block mb-2">
-                      Mục 02 • Triết Lý
+                      Triết Lý
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
                       Niềm Tin
@@ -331,7 +331,7 @@ function AboutContent() {
                 >
                   <div className="border-b border-cream-200 pb-4">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 inline-block mb-2">
-                      Mục 03 • Tương Lai
+                      Tương Lai
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
                       Tầm nhìn
@@ -395,7 +395,7 @@ function AboutContent() {
                 >
                   <div className="border-b border-cream-200 pb-4">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-honey-600 bg-honey-50 px-2.5 py-1 rounded-full border border-honey-200 inline-block mb-2">
-                      Mục 04 • Trọng Trách
+                      Trọng Trách
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
                       Sứ mệnh
@@ -430,7 +430,7 @@ function AboutContent() {
                 >
                   <div className="border-b border-cream-200 pb-4">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-charcoal-600 bg-cream-100 px-2.5 py-1 rounded-full border border-cream-300 inline-block mb-2">
-                      Mục 05 • Kim Chỉ Nam
+                      Kim Chỉ Nam
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
                       Giá trị cốt lõi
