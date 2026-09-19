@@ -184,50 +184,48 @@ function AboutContent() {
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
                       Câu chuyện thương hiệu T&apos;Petie
                     </h2>
-                    <p className="font-serif italic text-honey-700 text-sm sm:text-base mt-1">
-                      Made for little souls.
-                    </p>
+
                   </div>
 
                   {/* Body Story Paragraphs */}
                   <div className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
-                    <p className="text-charcoal-800">
+                    <p className="text-charcoal-800 text-justify">
                       <strong>T&apos;Petie</strong> được hình thành từ năm 2021, bắt đầu bằng một tình yêu giản dị dành cho thời trang trẻ em và những điều nhỏ bé tạo nên một tuổi thơ đẹp. Chúng tôi tin rằng quần áo không chỉ là thứ trẻ mặc trên người.
                     </p>
 
                     {/* 4 Emotional Memory Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 py-2">
-                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
-                        <span className="text-lg">👗</span>
-                        <span className="text-xs text-charcoal-800">Một chiếc váy trong ngày đặc biệt.</span>
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-3 group transition-all hover:border-honey-300">
+                        <span className="w-8 h-8 rounded-full bg-blush-50 text-blush-600 flex items-center justify-center shrink-0 border border-blush-100">
+                          <Shirt className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                        </span>
+                        <span className="text-xs text-charcoal-800 leading-relaxed">Một chiếc váy trong ngày đặc biệt.</span>
                       </div>
-                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
-                        <span className="text-lg">🎒</span>
-                        <span className="text-xs text-charcoal-800">Một chiếc áo mặc đến trường.</span>
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-3 group transition-all hover:border-sage-300">
+                        <span className="w-8 h-8 rounded-full bg-sage-50 text-sage-600 flex items-center justify-center shrink-0 border border-sage-100">
+                          <Star className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                        </span>
+                        <span className="text-xs text-charcoal-800 leading-relaxed">Một chiếc áo mặc đến trường.</span>
                       </div>
-                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
-                        <span className="text-lg">🚗</span>
-                        <span className="text-xs text-charcoal-800">Một bộ đồ trong chuyến đi cùng gia đình.</span>
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-3 group transition-all hover:border-honey-300">
+                        <span className="w-8 h-8 rounded-full bg-honey-50 text-honey-600 flex items-center justify-center shrink-0 border border-honey-100">
+                          <Compass className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                        </span>
+                        <span className="text-xs text-charcoal-800 leading-relaxed">Một bộ đồ trong chuyến đi cùng gia đình.</span>
                       </div>
-                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-2.5">
-                        <span className="text-lg">🧸</span>
-                        <span className="text-xs text-charcoal-800">Hay một bộ quần áo được mặc đi mặc lại vì đó là món đồ mà bé yêu thích.</span>
+                      <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-3 group transition-all hover:border-blush-300">
+                        <span className="w-8 h-8 rounded-full bg-blush-50 text-blush-600 flex items-center justify-center shrink-0 border border-blush-100">
+                          <Smile className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                        </span>
+                        <span className="text-xs text-charcoal-800 leading-relaxed">Hay một bộ quần áo được mặc đi mặc lại vì đó là món đồ mà bé yêu thích.</span>
                       </div>
                     </div>
 
-                    <p className="text-charcoal-800">
+                    <p className="text-charcoal-800 text-justify">
                       Những điều rất nhỏ ấy, theo thời gian, có thể trở thành những ký ức rất lớn. Vì vậy, T&apos;Petie tạo ra những thiết kế dành cho trẻ nhỏ với tinh thần nhẹ nhàng, tinh tế và tự nhiên — những món đồ đủ đẹp để người lớn yêu thích, nhưng đủ thoải mái để trẻ được tự do vui chơi, khám phá và lớn lên.
                     </p>
 
-                    {/* Highlighted Quote Callout */}
-                    <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-cream-100 via-honey-50 to-blush-50 border border-honey-200/80 shadow-2xs my-3">
-                      <p className="font-serif text-sm sm:text-base text-charcoal-900 leading-relaxed font-semibold italic text-center">
-                        &ldquo;Chúng tôi không tin tuổi thơ cần phải hoàn hảo.<br />
-                        Chúng tôi tin tuổi thơ chỉ cần được nâng niu.&rdquo;
-                      </p>
-                    </div>
-
-                    <p>
+                    <p className="text-charcoal-800 text-justify">
                       Từ cách lựa chọn chất liệu, phom dáng, màu sắc đến từng chi tiết nhỏ, T&apos;Petie luôn cố gắng tạo nên những sản phẩm không chỉ đẹp trong một khoảnh khắc, mà có thể đồng hành cùng những ngày tháng rất thật của một đứa trẻ.
                     </p>
                   </div>
