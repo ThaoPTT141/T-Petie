@@ -263,19 +263,16 @@ function AboutContent() {
                     </div>
 
                     <p>
-                      Trẻ em không cần những bộ quần áo khiến chúng trở thành một <em>&ldquo;phiên bản hoàn hảo&rdquo;</em> trong mắt người lớn.
-                    </p>
-                    <p>
-                      Các em cần được thoải mái chạy nhảy, nghịch ngợm, khám phá, đến trường, đi chơi và lớn lên theo cách của riêng mình.
+                      Trẻ em không cần những bộ quần áo khiến chúng trở thành một <em>&ldquo;phiên bản hoàn hảo&rdquo;</em> trong mắt người lớn. Các em cần được thoải mái chạy nhảy, nghịch ngợm, khám phá, đến trường, đi chơi và lớn lên theo cách của riêng mình.
                     </p>
 
                     {/* 3 "Vừa Đủ" Balance Pillars */}
                     <div className="pt-2">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal-400 mb-3">
+                      <h4 className="text-sm font-bold uppercase tracking-wider text-charcoal-500 mb-4 text-center font-serif">
                         Tinh Thần Thiết Kế Cân Bằng Của T&apos;Petie
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-center space-y-1.5">
+                        <div className="p-4 bg-cream-100 rounded-2xl border border-cream-200 text-center space-y-1.5">
                           <span className="w-8 h-8 rounded-full bg-honey-100 text-honey-700 font-serif font-bold text-xs flex items-center justify-center mx-auto">
                             01
                           </span>
@@ -283,7 +280,7 @@ function AboutContent() {
                           <p className="text-[11px] text-charcoal-500">Nhã nhặn, tôn trọn nét ngây thơ trong trẻo.</p>
                         </div>
 
-                        <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-center space-y-1.5">
+                        <div className="p-4 bg-cream-100 rounded-2xl border border-cream-200 text-center space-y-1.5">
                           <span className="w-8 h-8 rounded-full bg-sage-100 text-sage-700 font-serif font-bold text-xs flex items-center justify-center mx-auto">
                             02
                           </span>
@@ -291,7 +288,7 @@ function AboutContent() {
                           <p className="text-[11px] text-charcoal-500">Thấm hút tốt, êm ái cho từng cử động chạy nhảy.</p>
                         </div>
 
-                        <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-center space-y-1.5">
+                        <div className="p-4 bg-cream-100 rounded-2xl border border-cream-200 text-center space-y-1.5">
                           <span className="w-8 h-8 rounded-full bg-blush-100 text-blush-700 font-serif font-bold text-xs flex items-center justify-center mx-auto">
                             03
                           </span>
@@ -301,7 +298,7 @@ function AboutContent() {
                       </div>
                     </div>
 
-                    <p className="pt-2 font-serif italic text-charcoal-800 text-center sm:text-left">
+                    <p className="pt-2 text-charcoal-800 text-center sm:text-left">
                       Vì vậy, T&apos;Petie theo đuổi những thiết kế đẹp vừa đủ, thoải mái vừa đủ và có cá tính vừa đủ — để quần áo trở thành một phần của tuổi thơ, thay vì che lấp nó.
                     </p>
                   </div>
