@@ -76,7 +76,7 @@ export default function GioHangPage() {
       setDiscountAmount(20000);
       showToast('Đã áp dụng mã giảm giá 20.000đ!', 'success');
     } else if (couponCode.toUpperCase() === 'MEMBERVIP') {
-      setDiscountAmount(Math.round(totalPrice * 0.1));
+      setDiscountAmount(Math.round(selectedSubtotal * 0.1));
       showToast('Đã áp dụng mã giảm 10% thành viên mới!', 'success');
     } else {
       showToast('Mã giảm giá không hợp lệ hoặc đã hết hạn', 'info');
