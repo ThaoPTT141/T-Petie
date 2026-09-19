@@ -128,8 +128,8 @@ function AboutContent() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 lg:w-full min-w-[200px] lg:min-w-0 text-left p-3.5 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-between group border relative ${
                     isCurrent
-                      ? 'bg-white border-blush-500/50 shadow-md ring-2 ring-blush-500/30'
-                      : 'bg-cream-50/70 hover:bg-white border-cream-200 text-charcoal-700 hover:border-blush-500/50'
+                      ? 'bg-gradient-to-r from-blush-50 to-sage-50 border-blush-500/40 shadow-md ring-2 ring-blush-500/20'
+                      : 'bg-blush-50/50 hover:bg-gradient-to-r hover:from-blush-50 hover:to-sage-50 border-blush-100 text-charcoal-700 hover:border-blush-500/30'
                   }`}
                 >
                   <div className="flex items-center space-x-3">
