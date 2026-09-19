@@ -268,7 +268,7 @@ function AboutContent() {
 
                     {/* 3 "Vừa Đủ" Balance Pillars */}
                     <div className="pt-2">
-                      <h4 className="text-sm font-bold uppercase tracking-wider text-charcoal-500 mb-4 text-center font-serif">
+                      <h4 className="font-serif italic font-bold text-lg sm:text-xl text-charcoal-900 text-center mb-4">
                         Tinh Thần Thiết Kế Cân Bằng Của T&apos;Petie
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
