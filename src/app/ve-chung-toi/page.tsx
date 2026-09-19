@@ -506,12 +506,12 @@ function AboutContent() {
             <div className="pt-4 mt-2 border-t border-cream-200/80 flex flex-wrap items-center justify-between gap-3 text-xs shrink-0">
               <div className="flex items-center space-x-2 text-charcoal-500 font-sans">
                 <CheckCircle2 className="w-4 h-4 text-sage-600" />
-                <span>Thương hiệu thiết kế &amp; may đo tại Việt Nam</span>
+                <span>Thương hiệu thiết kế quần áo cho bé</span>
               </div>
 
               <Link
                 href="/be-gai"
-                className="inline-flex items-center space-x-1.5 font-bold text-honey-700 hover:text-honey-800 transition-colors"
+                className="inline-flex items-center space-x-1.5 font-bold text-honey-700 hover:text-white bg-honey-50 hover:bg-honey-500 border border-honey-200 hover:border-honey-500 rounded-full px-3 py-1.5 transition-all"
               >
                 <span>Khám phá các thiết kế của T&apos;Petie</span>
                 <ArrowRight className="w-3.5 h-3.5" />
