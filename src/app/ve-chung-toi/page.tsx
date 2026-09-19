@@ -90,6 +90,19 @@ function AboutContent() {
           alt="Học Xinh - T'Petie" 
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
+        
+        {/* Overlay text on the right side */}
+        <div className="absolute inset-0 flex items-center justify-end pr-8 sm:pr-12 md:pr-24 lg:pr-32 pointer-events-none">
+          <div className="text-right space-y-1 sm:space-y-2 bg-white/40 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/50 shadow-sm lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:border-none lg:shadow-none">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-blush-600 drop-shadow-sm">
+              T&apos;Petie
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl font-serif italic text-charcoal-700">
+              Made for little souls.
+            </p>
+          </div>
+        </div>
+
         {/* Ẩn text đi để giữ SEO nhưng không hiển thị chồng chéo lên ảnh vì ảnh đã có chữ */}
         <div className="sr-only">
           <h1>Made for little souls.</h1>
