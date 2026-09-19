@@ -144,14 +144,9 @@ function AboutContent() {
                     </div>
 
                     <div>
-                      <div className="flex items-center space-x-1.5">
-                        <span className={`text-[10px] font-mono font-bold ${isCurrent ? 'text-blush-500' : 'text-charcoal-400'}`}>
-                          {tab.number}
-                        </span>
-                        <h3 className={`text-xs sm:text-sm font-bold tracking-tight ${isCurrent ? 'text-charcoal-900' : 'text-charcoal-700'}`}>
-                          {tab.title}
-                        </h3>
-                      </div>
+                      <h3 className={`text-xs sm:text-sm font-bold tracking-tight mb-0.5 ${isCurrent ? 'text-charcoal-900' : 'text-charcoal-700'}`}>
+                        {tab.title}
+                      </h3>
                       <p className="text-[11px] text-charcoal-400 line-clamp-1">
                         {tab.subtitle}
                       </p>
