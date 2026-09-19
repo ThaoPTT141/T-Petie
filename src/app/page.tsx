@@ -127,28 +127,19 @@ export default function HomePage() {
 
       {/* 4. FLASH SALE BANNER SECTION */}
       <section className="px-4 sm:px-6 max-w-6xl mx-auto">
-        <div className="bg-gradient-to-r from-honey-500 via-blush-500 to-honey-600 rounded-3xl p-6 sm:p-8 text-white shadow-soft relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="relative z-10 space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center space-x-1.5 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold">
-              <Flame className="w-4 h-4 text-yellow-300" />
-              <span>Ưu Đãi Độc Quyền Tháng 9</span>
-            </div>
-            <h2 className="text-xl sm:text-3xl font-extrabold font-heading">
-              Đại Lễ 2/9 — Giảm Đến 30% Đồ Xinh Cho Bé
-            </h2>
-            <p className="text-xs sm:text-sm text-white/90 max-w-lg">
-              Áp dụng cho toàn bộ các mẫu váy hoa nhí, áo cổ sen và set đồ organic mới nhất.
-            </p>
-          </div>
-
-          <Link
-            href="/sale"
-            data-track="home-flash-sale-banner"
-            className="relative z-10 px-6 py-3 rounded-full bg-white text-honey-600 hover:bg-cream-100 font-bold text-xs sm:text-sm shadow-lg transition-all active:scale-95 shrink-0"
-          >
-            Săn Sale Ngay 🛍️
-          </Link>
-        </div>
+        <Link 
+          href="/sale"
+          className="block relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-[4/1] rounded-3xl overflow-hidden shadow-soft hover:shadow-md transition-shadow"
+          data-track="home-flash-sale-banner"
+        >
+          <Image
+            src="https://i.ibb.co/r2z85170/banner-uu-dai-png.png"
+            alt="Ưu đãi độc quyền - Giảm đến 30%"
+            fill
+            sizes="(max-width: 768px) 100vw, 1200px"
+            className="object-cover object-center"
+          />
+        </Link>
       </section>
 
       {/* 5. BEST SELLERS GRID */}
