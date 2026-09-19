@@ -523,8 +523,8 @@ function AboutContent() {
       </section>
 
       {/* 3. INVITATION FOOTER BANNER */}
-      <section className="bg-gradient-to-r from-cream-100 via-honey-50 to-blush-50 rounded-3xl p-6 sm:p-10 border border-cream-200 text-center space-y-4">
-        <h3 className="text-xl sm:text-2xl font-serif text-charcoal-900">
+      <section className="bg-gradient-to-r from-cream-200 via-honey-100 to-blush-100 rounded-3xl p-6 sm:p-10 border border-cream-300 text-center space-y-4">
+        <h3 className="text-3xl lg:text-4xl font-serif font-bold text-blush-600 tracking-wide drop-shadow-sm">
           Cùng T&apos;Petie Nâng Niu Tuổi Thơ Của Con 🌸
         </h3>
         <p className="text-xs sm:text-sm text-charcoal-600 max-w-lg mx-auto font-sans leading-relaxed">
@@ -532,16 +532,10 @@ function AboutContent() {
         </p>
         <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="/be-gai"
+            href="/bo-suu-tap"
             className="px-6 py-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-xs sm:text-sm shadow-md active:scale-95 transition-all"
           >
-            Mua Sắm Đồ Bé Gái
-          </Link>
-          <Link
-            href="/bo-suu-tap"
-            className="px-6 py-3 rounded-full bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-300 font-bold text-xs sm:text-sm active:scale-95 transition-all"
-          >
-            Xem Lookbook Bộ Sưu Tập
+            XEM BỘ SƯU TẬP
           </Link>
         </div>
       </section>
