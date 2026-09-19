@@ -7,6 +7,13 @@ import { ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 
 const banners = [
   {
+    id: 4,
+    src: '/images/banner-sale.png',
+    alt: 'Ưu đãi độc quyền - Giảm đến 30%',
+    href: '/be-gai',
+    collection: 'Ưu Đãi Độc Quyền'
+  },
+  {
     id: 1,
     src: '/images/banner-2.png',
     alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
