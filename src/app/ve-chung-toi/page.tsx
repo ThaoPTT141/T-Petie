@@ -337,23 +337,23 @@ function AboutContent() {
                       {/* Interactive Visual Ecosystem Roadmap Flow */}
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
                         {[
-                          { step: '01', name: 'Clothing', desc: 'Trang phục hữu cơ' },
-                          { step: '02', name: 'Accessories', desc: 'Phụ kiện dịu ngọt' },
-                          { step: '03', name: 'Objects', desc: 'Đồ dùng nâng niu' },
-                          { step: '04', name: 'Visuals', desc: 'Hình ảnh trong trẻo' },
-                          { step: '05', name: 'Stories', desc: 'Câu chuyện nuôi dưỡng' },
-                          { step: '06', name: 'Childhood Experiences', desc: 'Trải nghiệm tuổi thơ' },
+                          { step: '01', name: 'Clothing', desc: 'Trang phục hữu cơ', colorClass: 'bg-honey-100 text-honey-700' },
+                          { step: '02', name: 'Accessories', desc: 'Phụ kiện dịu ngọt', colorClass: 'bg-sage-100 text-sage-700' },
+                          { step: '03', name: 'Objects', desc: 'Đồ dùng nâng niu', colorClass: 'bg-blush-100 text-blush-700' },
+                          { step: '04', name: 'Visuals', desc: 'Hình ảnh trong trẻo', colorClass: 'bg-honey-100 text-honey-700' },
+                          { step: '05', name: 'Stories', desc: 'Câu chuyện nuôi dưỡng', colorClass: 'bg-sage-100 text-sage-700' },
+                          { step: '06', name: 'Childhood Experiences', desc: 'Trải nghiệm tuổi thơ', colorClass: 'bg-blush-100 text-blush-700' },
                         ].map((item, idx) => (
                           <div
                             key={item.name}
-                            className="p-4 bg-cream-100 rounded-2xl border border-cream-200 hover:border-honey-300 hover:shadow-xs transition-all text-center space-y-2 group"
+                            className="p-4 bg-cream-100 rounded-2xl border border-cream-200 text-center space-y-1.5 transition-all group"
                           >
-                            <span className="w-8 h-8 rounded-full bg-honey-100 text-honey-700 font-serif font-bold text-xs flex items-center justify-center mx-auto transition-transform group-hover:scale-110 mb-1">
+                            <span className={`w-8 h-8 rounded-full ${item.colorClass} font-serif font-bold text-xs flex items-center justify-center mx-auto transition-transform group-hover:scale-110`}>
                               {item.step}
                             </span>
-                            <div className="space-y-0.5">
+                            <div className="pt-1">
                               <h5 className="font-bold text-xs text-charcoal-900">{item.name}</h5>
-                              <p className="text-[10px] text-charcoal-500">{item.desc}</p>
+                              <p className="text-[11px] text-charcoal-500">{item.desc}</p>
                             </div>
                           </div>
                         ))}
