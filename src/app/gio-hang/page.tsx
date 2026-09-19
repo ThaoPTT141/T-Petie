@@ -5,22 +5,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import {
-  Trash2,
-  Plus,
-  Minus,
   ArrowRight,
-  X,
-  Loader2,
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useToast } from '@/context/ToastContext';
 import { trackBeginCheckout } from '@/lib/analytics/tracker';
 
-// Link nhúng Google Form đặt hàng T'Petie
-// Form ID lấy từ link edit: https://docs.google.com/forms/d/1-OveB-NXwpsKmen341Zyx-G5nzOqzdfwLH9obB0_db4/edit
-const GOOGLE_FORM_EMBED_URL =
-  'https://docs.google.com/forms/d/1-OveB-NXwpsKmen341Zyx-G5nzOqzdfwLH9obB0_db4/viewform?embedded=true';
+// Link Google Form đặt hàng T'Petie
+const GOOGLE_FORM_URL = 'https://forms.gle/t866jwRWJ38f4tKD6';
 
 export default function GioHangPage() {
   const { items, updateQuantity, removeFromCart, clearCart, totalPrice, totalItems } = useCart();
@@ -28,8 +21,6 @@ export default function GioHangPage() {
 
   const [couponCode, setCouponCode] = useState('');
   const [discountAmount, setDiscountAmount] = useState(0);
-  const [showFormModal, setShowFormModal] = useState(false);
-  const [formLoading, setFormLoading] = useState(true);
 
   const shippingFee = totalPrice >= 399000 || totalPrice === 0 ? 0 : 30000;
   const finalTotal = Math.max(0, totalPrice + shippingFee - discountAmount);
@@ -57,79 +48,14 @@ export default function GioHangPage() {
       })),
       finalTotal
     );
-    // Mở modal Google Form
-    setFormLoading(true);
-    setShowFormModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowFormModal(false);
-    setFormLoading(true);
+    // Mở Google Form trong tab mới
+    window.open(GOOGLE_FORM_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 space-y-6">
 
-      {/* ===== MODAL GOOGLE FORM ===== */}
-      {showFormModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(4px)' }}
-          onClick={(e) => {
-            if (e.target === e.currentTarget) handleCloseModal();
-          }}
-        >
-          <div
-            className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
-            style={{ maxHeight: '90vh' }}
-          >
-            {/* Header Modal */}
-            <div className="flex items-center justify-between px-5 py-3.5 bg-gradient-to-r from-honey-400 to-honey-500 shrink-0">
-              <div className="flex items-center space-x-2">
-                <span className="text-xl">📝</span>
-                <div>
-                  <p className="text-white font-bold text-sm leading-tight">Đặt Hàng T&apos;Petie</p>
-                  <p className="text-honey-100 text-[11px]">Điền thông tin để T&apos;Petie giao hàng đến mẹ nhé 🌸</p>
-                </div>
-              </div>
-              <button
-                onClick={handleCloseModal}
-                aria-label="Đóng form đặt hàng"
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/40 text-white transition-all"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
 
-            {/* Loading Spinner */}
-            {formLoading && (
-              <div className="absolute inset-0 top-[56px] flex items-center justify-center bg-cream-50 z-10">
-                <div className="text-center space-y-3">
-                  <Loader2 className="w-8 h-8 text-honey-500 animate-spin mx-auto" />
-                  <p className="text-xs text-charcoal-500">Đang tải form đặt hàng...</p>
-                </div>
-              </div>
-            )}
-
-            {/* Google Form Iframe */}
-            <iframe
-              src={GOOGLE_FORM_EMBED_URL}
-              title="Form đặt hàng T'Petie"
-              className="w-full flex-1"
-              style={{ minHeight: '520px', border: 'none' }}
-              onLoad={() => setFormLoading(false)}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-            />
-
-            {/* Footer hint */}
-            <div className="px-5 py-3 bg-cream-50 border-t border-cream-200 text-center shrink-0">
-              <p className="text-[11px] text-charcoal-400">
-                Sau khi gửi form, T&apos;Petie sẽ liên hệ xác nhận đơn qua SĐT trong vòng 30 phút ⏰
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Breadcrumb
         items={[
@@ -293,7 +219,7 @@ export default function GioHangPage() {
                 data-track="cart-proceed-checkout"
                 className="w-full py-3.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95 flex items-center justify-center space-x-2"
               >
-                <span>Tiến Hành Thanh Toán</span>
+                <span>Tiến Hành Đặt Hàng</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
