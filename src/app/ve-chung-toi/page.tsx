@@ -86,7 +86,7 @@ function AboutContent() {
       {/* 1. HERO HEADER BANNER (Soft & Poetic) */}
       <section className="relative rounded-3xl overflow-hidden shadow-soft w-full aspect-[2/1] sm:aspect-[21/9] lg:aspect-[3/1]">
         <img 
-          src="/images/hoc-xinh-kem.jpg" 
+          src="/images/anh-nen-face.jpg" 
           alt="Học Xinh - T'Petie" 
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
