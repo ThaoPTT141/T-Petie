@@ -422,74 +422,72 @@ function AboutContent() {
                     <h2 className="text-2xl sm:text-3xl font-serif text-charcoal-900">
                       Giá trị cốt lõi
                     </h2>
-                    <p className="text-xs text-charcoal-500 font-sans mt-1">
-                      4 nguyên tắc bất biến định hình mọi sản phẩm và quyết định tại T&apos;Petie
-                    </p>
+
                   </div>
 
                   {/* 4 Core Value Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     
                     {/* Card 01 */}
-                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-honey-300 hover:shadow-card transition-all space-y-2 group">
+                    <div className="p-5 rounded-2xl bg-cream-100 border border-cream-200 hover:border-honey-300 hover:shadow-card transition-all space-y-3 group">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold text-honey-600 bg-honey-50 px-2 py-0.5 rounded-full border border-honey-200">
+                        <span className="w-8 h-8 rounded-full bg-honey-100 text-honey-700 font-serif font-bold text-xs flex items-center justify-center">
                           01
                         </span>
-                        <Smile className="w-4 h-4 text-honey-500 group-hover:scale-110 transition-transform" />
+                        <Smile className="w-5 h-5 text-honey-500 group-hover:scale-110 transition-transform" />
                       </div>
-                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
-                        CHILDHOOD FIRST <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Tuổi thơ là trung tâm)</span>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900 uppercase">
+                        CHILDHOOD FIRST <span className="font-sans font-normal italic text-xs text-charcoal-500 block mt-1">(Tuổi thơ là trung tâm)</span>
                       </h3>
-                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans text-justify">
                         Mọi thiết kế cuối cùng đều phải quay về một câu hỏi: <em>&ldquo;Điều này có thực sự dành cho một đứa trẻ không?&rdquo;</em>. Không hy sinh sự thoải mái của trẻ chỉ để đổi lấy một hình ảnh đẹp.
                       </p>
                     </div>
 
                     {/* Card 02 */}
-                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-sage-300 hover:shadow-card transition-all space-y-2 group">
+                    <div className="p-5 rounded-2xl bg-cream-100 border border-cream-200 hover:border-sage-300 hover:shadow-card transition-all space-y-3 group">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold text-sage-700 bg-sage-50 px-2 py-0.5 rounded-full border border-sage-200">
+                        <span className="w-8 h-8 rounded-full bg-sage-100 text-sage-700 font-serif font-bold text-xs flex items-center justify-center">
                           02
                         </span>
-                        <Feather className="w-4 h-4 text-sage-600 group-hover:scale-110 transition-transform" />
+                        <Feather className="w-5 h-5 text-sage-600 group-hover:scale-110 transition-transform" />
                       </div>
-                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
-                        QUIETLY BEAUTIFUL <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Đẹp một cách tinh tế)</span>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900 uppercase">
+                        QUIETLY BEAUTIFUL <span className="font-sans font-normal italic text-xs text-charcoal-500 block mt-1">(Đẹp một cách tinh tế)</span>
                       </h3>
-                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans text-justify">
                         T&apos;Petie không chạy theo sự nổi bật bằng mọi giá. Thay vào đó là màu sắc, chất liệu, phom dáng và những chi tiết nhỏ có thể khiến người ta nhìn lâu hơn một chút.
                       </p>
                     </div>
 
                     {/* Card 03 */}
-                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-blush-300 hover:shadow-card transition-all space-y-2 group">
+                    <div className="p-5 rounded-2xl bg-cream-100 border border-cream-200 hover:border-blush-300 hover:shadow-card transition-all space-y-3 group">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold text-blush-600 bg-blush-50 px-2 py-0.5 rounded-full border border-blush-200">
+                        <span className="w-8 h-8 rounded-full bg-blush-100 text-blush-700 font-serif font-bold text-xs flex items-center justify-center">
                           03
                         </span>
-                        <Shirt className="w-4 h-4 text-blush-500 group-hover:scale-110 transition-transform" />
+                        <Shirt className="w-5 h-5 text-blush-500 group-hover:scale-110 transition-transform" />
                       </div>
-                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
-                        MADE WITH CARE <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Làm bằng sự chăm chút)</span>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900 uppercase">
+                        MADE WITH CARE <span className="font-sans font-normal italic text-xs text-charcoal-500 block mt-1">(Làm bằng sự chăm chút)</span>
                       </h3>
-                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans text-justify">
                         Từ thiết kế, chất liệu, đường may, đóng gói đến cách giao tiếp với khách hàng — những điều nhỏ đều quan trọng.
                       </p>
                     </div>
 
                     {/* Card 04 */}
-                    <div className="p-5 rounded-2xl bg-gradient-to-br from-cream-50 to-white border border-cream-200 hover:border-honey-300 hover:shadow-card transition-all space-y-2 group">
+                    <div className="p-5 rounded-2xl bg-cream-100 border border-cream-200 hover:border-honey-300 hover:shadow-card transition-all space-y-3 group">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold text-honey-700 bg-honey-50 px-2 py-0.5 rounded-full border border-honey-200">
+                        <span className="w-8 h-8 rounded-full bg-honey-100 text-honey-700 font-serif font-bold text-xs flex items-center justify-center">
                           04
                         </span>
-                        <Camera className="w-4 h-4 text-honey-600 group-hover:scale-110 transition-transform" />
+                        <Camera className="w-5 h-5 text-honey-600 group-hover:scale-110 transition-transform" />
                       </div>
-                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900">
-                        LASTING MEMORIES <span className="font-sans font-normal text-xs text-charcoal-500 block sm:inline">(Tạo nên ký ức có thể ở lại)</span>
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-charcoal-900 uppercase">
+                        LASTING MEMORIES <span className="font-sans font-normal italic text-xs text-charcoal-500 block mt-1">(Tạo nên ký ức có thể ở lại)</span>
                       </h3>
-                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                      <p className="text-xs text-charcoal-600 leading-relaxed font-sans text-justify">
                         T&apos;Petie không chỉ nghĩ về mùa này hay xu hướng này. Chúng tôi muốn những sản phẩm của mình có thể xuất hiện trong những bức ảnh mà nhiều năm sau bố mẹ vẫn muốn giữ lại.
                       </p>
                     </div>
