@@ -20,7 +20,9 @@ import {
   CheckCircle2,
   Flower,
   Gift,
-  Star
+  Star,
+  Backpack,
+  Car
 } from 'lucide-react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
@@ -203,13 +205,13 @@ function AboutContent() {
                       </div>
                       <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-3 group transition-all hover:border-sage-300">
                         <span className="w-8 h-8 rounded-full bg-sage-50 text-sage-600 flex items-center justify-center shrink-0 border border-sage-100">
-                          <Star className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                          <Backpack className="w-4 h-4 group-hover:scale-110 transition-transform" />
                         </span>
                         <span className="text-xs text-charcoal-800 leading-relaxed">Một chiếc áo mặc đến trường.</span>
                       </div>
                       <div className="p-3 bg-cream-200 rounded-2xl border border-cream-300 flex items-center space-x-3 group transition-all hover:border-honey-300">
                         <span className="w-8 h-8 rounded-full bg-honey-50 text-honey-600 flex items-center justify-center shrink-0 border border-honey-100">
-                          <Compass className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                          <Car className="w-4 h-4 group-hover:scale-110 transition-transform" />
                         </span>
                         <span className="text-xs text-charcoal-800 leading-relaxed">Một bộ đồ trong chuyến đi cùng gia đình.</span>
                       </div>
