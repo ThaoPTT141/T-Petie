@@ -389,11 +389,13 @@ function AboutContent() {
                       <Sparkles className="w-8 h-8 animate-spin-slow" />
                     </div>
 
-                    <blockquote className="font-serif text-xl sm:text-3xl text-charcoal-900 italic font-bold leading-relaxed px-4">
-                      &ldquo;Tạo nên những điều đẹp đẽ để những tâm hồn nhỏ bé lớn lên cùng.&rdquo;
-                    </blockquote>
+                    <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-honey-50 via-cream-100 to-blush-50 border border-honey-200 shadow-soft my-6">
+                      <blockquote className="font-serif text-xl sm:text-3xl text-charcoal-900 italic font-bold leading-relaxed">
+                        &ldquo;Tạo nên những điều đẹp đẽ để những tâm hồn nhỏ bé lớn lên cùng.&rdquo;
+                      </blockquote>
+                    </div>
 
-                    <p className="text-xs sm:text-sm font-sans text-charcoal-600 leading-relaxed max-w-md mx-auto">
+                    <p className="text-sm font-sans text-charcoal-700 leading-relaxed text-justify w-full">
                       Mỗi đường chỉ êm ái, mỗi gam màu pastel thanh thoát đều là một lời nhắn nhủ yêu thương, gửi trao đến những mầm non đang khám phá thế giới rộng lớn.
                     </p>
                   </div>
