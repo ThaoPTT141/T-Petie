@@ -160,8 +160,9 @@ function AboutContent() {
 
         {/* RIGHT COLUMN: Dynamic Animated Content Panel */}
         <div className="lg:col-span-8">
-          <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-10 shadow-card min-h-[460px] flex flex-col justify-between">
-            <AnimatePresence mode="wait">
+          <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 shadow-card h-[500px] lg:h-[600px] flex flex-col">
+            <div className="flex-1 overflow-y-auto pr-2 sm:pr-4 pb-4 styled-scrollbar">
+              <AnimatePresence mode="wait">
               
               {/* ==================== TAB 1: CÂU CHUYỆN THƯƠNG HIỆU ==================== */}
               {activeTab === 'story' && (
@@ -509,9 +510,10 @@ function AboutContent() {
               )}
 
             </AnimatePresence>
+            </div>
 
             {/* Bottom Footer Action Inside Card */}
-            <div className="pt-6 mt-6 border-t border-cream-200/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div className="pt-4 mt-2 border-t border-cream-200/80 flex flex-wrap items-center justify-between gap-3 text-xs shrink-0">
               <div className="flex items-center space-x-2 text-charcoal-500 font-sans">
                 <CheckCircle2 className="w-4 h-4 text-sage-600" />
                 <span>Thương hiệu thiết kế &amp; may đo tại Việt Nam</span>
