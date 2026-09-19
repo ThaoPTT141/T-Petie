@@ -129,7 +129,8 @@ export default function HomePage() {
       <section className="px-4 sm:px-6 max-w-6xl mx-auto">
         <Link 
           href="/sale"
-          className="block relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-[4/1] rounded-3xl overflow-hidden shadow-soft hover:shadow-md transition-shadow"
+          className="block relative w-full rounded-3xl overflow-hidden shadow-soft hover:shadow-md transition-shadow bg-[#f9f0e0]"
+          style={{ aspectRatio: '3168 / 1344' }}
           data-track="home-flash-sale-banner"
         >
           <Image
@@ -137,7 +138,7 @@ export default function HomePage() {
             alt="Ưu đãi độc quyền - Giảm đến 30%"
             fill
             sizes="(max-width: 768px) 100vw, 1200px"
-            className="object-cover object-center"
+            className="object-contain"
           />
         </Link>
       </section>
