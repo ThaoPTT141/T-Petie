@@ -105,7 +105,7 @@ function AboutContent() {
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* LEFT COLUMN: Navigation Tabs (Vertical on Desktop, Horizontal Scroll on Mobile) */}
-        <div className="lg:col-span-4 space-y-2 lg:sticky lg:top-32 lg:z-10">
+        <div className="lg:col-span-4 space-y-2">
           <div className="hidden lg:block mb-5 text-center">
             <h2 className="text-3xl lg:text-4xl font-serif font-bold text-blush-600 tracking-wide drop-shadow-sm">
               Khám Phá T&apos;Petie
@@ -164,8 +164,8 @@ function AboutContent() {
 
         {/* RIGHT COLUMN: Dynamic Animated Content Panel */}
         <div className="lg:col-span-8">
-          <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 shadow-card min-h-[500px] lg:min-h-[600px] flex flex-col">
-            <div className="flex-1 pb-4">
+          <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 shadow-card h-[500px] lg:h-[600px] flex flex-col">
+            <div className="flex-1 overflow-y-auto pr-2 sm:pr-4 pb-4 styled-scrollbar">
               <AnimatePresence mode="wait">
               
               {/* ==================== TAB 1: CÂU CHUYỆN THƯƠNG HIỆU ==================== */}
@@ -262,7 +262,7 @@ function AboutContent() {
                       </blockquote>
                     </div>
 
-                    <p>
+                    <p className="text-justify">
                       Trẻ em không cần những bộ quần áo khiến chúng trở thành một <em>&ldquo;phiên bản hoàn hảo&rdquo;</em> trong mắt người lớn. Các em cần được thoải mái chạy nhảy, nghịch ngợm, khám phá, đến trường, đi chơi và lớn lên theo cách của riêng mình.
                     </p>
 
@@ -298,7 +298,7 @@ function AboutContent() {
                       </div>
                     </div>
 
-                    <p className="pt-2 text-charcoal-800 text-center sm:text-left">
+                    <p className="pt-2 text-charcoal-800 text-justify">
                       Vì vậy, T&apos;Petie theo đuổi những thiết kế đẹp vừa đủ, thoải mái vừa đủ và có cá tính vừa đủ — để quần áo trở thành một phần của tuổi thơ, thay vì che lấp nó.
                     </p>
                   </div>
@@ -325,7 +325,7 @@ function AboutContent() {
                   </div>
 
                   <div className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-700 leading-relaxed">
-                    <p className="text-charcoal-800">
+                    <p className="text-charcoal-800 text-justify">
                       Trở thành một thương hiệu thời trang trẻ em Việt Nam có dấu ấn riêng, được nhớ đến bởi vẻ đẹp tinh tế, chất lượng và cách trân trọng những năm tháng tuổi thơ. Về dài hạn, T&apos;Petie có thể phát triển thành một thương hiệu lifestyle dành cho trẻ nhỏ, không chỉ giới hạn ở quần áo.
                     </p>
 
@@ -506,12 +506,12 @@ function AboutContent() {
             <div className="pt-4 mt-2 border-t border-cream-200/80 flex flex-wrap items-center justify-between gap-3 text-xs shrink-0">
               <div className="flex items-center space-x-2 text-charcoal-500 font-sans">
                 <CheckCircle2 className="w-4 h-4 text-sage-600" />
-                <span>Thương hiệu thiết kế &amp; may đo tại Việt Nam</span>
+                <span>Thương hiệu thiết kế quần áo cho bé</span>
               </div>
 
               <Link
                 href="/be-gai"
-                className="inline-flex items-center space-x-1.5 font-bold text-honey-700 hover:text-honey-800 transition-colors"
+                className="inline-flex items-center space-x-1.5 font-bold text-honey-700 hover:text-white bg-honey-50 hover:bg-honey-500 border border-honey-200 hover:border-honey-500 rounded-full px-3 py-1.5 transition-all"
               >
                 <span>Khám phá các thiết kế của T&apos;Petie</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -523,8 +523,8 @@ function AboutContent() {
       </section>
 
       {/* 3. INVITATION FOOTER BANNER */}
-      <section className="bg-gradient-to-r from-cream-100 via-honey-50 to-blush-50 rounded-3xl p-6 sm:p-10 border border-cream-200 text-center space-y-4">
-        <h3 className="text-xl sm:text-2xl font-serif text-charcoal-900">
+      <section className="bg-gradient-to-r from-cream-200 via-honey-100 to-blush-100 rounded-3xl p-6 sm:p-10 border border-cream-300 text-center space-y-4">
+        <h3 className="text-3xl lg:text-4xl font-serif font-bold text-blush-600 tracking-wide drop-shadow-sm">
           Cùng T&apos;Petie Nâng Niu Tuổi Thơ Của Con 🌸
         </h3>
         <p className="text-xs sm:text-sm text-charcoal-600 max-w-lg mx-auto font-sans leading-relaxed">
@@ -532,16 +532,10 @@ function AboutContent() {
         </p>
         <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="/be-gai"
+            href="/bo-suu-tap"
             className="px-6 py-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-xs sm:text-sm shadow-md active:scale-95 transition-all"
           >
-            Mua Sắm Đồ Bé Gái
-          </Link>
-          <Link
-            href="/bo-suu-tap"
-            className="px-6 py-3 rounded-full bg-white hover:bg-cream-100 text-charcoal-900 border border-cream-300 font-bold text-xs sm:text-sm active:scale-95 transition-all"
-          >
-            Xem Lookbook Bộ Sưu Tập
+            XEM BỘ SƯU TẬP
           </Link>
         </div>
       </section>
