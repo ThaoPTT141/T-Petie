@@ -97,6 +97,13 @@
     .animate-pulse-subtle {
       animation: pulse-subtle 2.5s infinite ease-in-out;
     }
+    .product-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      image-rendering: -webkit-optimize-contrast;
+      border-radius: 8px 8px 0 0;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-honey-100 selection:text-honey-700 pb-20 md:pb-0">
@@ -245,7 +252,7 @@
         <div>
           <h2 class="text-lg sm:text-2xl font-bold font-heading text-charcoal-900 flex items-center space-x-2">
             <span>Danh Sách Ưu Đãi Theo Chiến Dịch</span>
-            <span id="campaign-count-badge" class="text-xs font-bold px-2 py-0.5 rounded-full bg-cream-200 text-charcoal-700">16 sản phẩm</span>
+            <span id="campaign-count-badge" class="text-xs font-bold px-2 py-0.5 rounded-full bg-cream-200 text-charcoal-700">12 sản phẩm</span>
           </h2>
           <p class="text-xs text-charcoal-400">Bấm chọn chiến dịch để lọc nhanh các mẫu thiết kế đang trợ giá sâu</p>
         </div>
@@ -664,375 +671,301 @@
   <!-- ==================== JAVASCRIPT LOGIC & STATE ==================== -->
   <script>
     // Dữ liệu sản phẩm ưu đãi phong phú theo chuẩn Psychology Pricing (Mỏ neo giá)
-    const PROMO_PRODUCTS = [
-      // 1. Mừng Đại Lễ 2/9 (le2-9)
+        const PROMO_PRODUCTS = [
+      // 1. Nhánh 'Mừng Đại Lễ 2/9' (le2-9)
       {
-        id: "set-ao-vay-hoc-xinh",
-        sku: "TP-HXK-007",
-        name: "Set Áo Sơ Mi Phối Chân Váy Xếp Ly Học Xinh",
+        id: "set-ao-dai-dan-nguyet",
+        sku: "TP-TTKC-001",
+        name: "Set Áo Dài Đan Nguyệt",
+        collectionName: "BST Trung Thu Kem & Cốm",
+        campaign: "le2-9",
+        campaignName: "Mừng Đại Lễ 2/9",
+        category: "be-gai",
+        subcategory: "ao-dai",
+        material: "Vải linen cao cấp mềm nhẹ, thoáng mát",
+        materialFeature: "Vải linen thêu thủ công",
+        originalPrice: 710000,
+        basePrice: 495000,
+        discountPercent: 30,
+        image: "images/promotions/le29-ao-dai.jpg",
+        soldCount: 46,
+        totalStock: 60,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 495000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 495000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 495000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 495000 },
+          { size: "Size 130", weight: "25 - 30kg", age: "8 - 9 tuổi", price: 515000 }
+        ]
+      },
+      {
+        id: "vay-nang-mai",
+        sku: "TP-HXK-002",
+        name: "Váy Nắng Mai",
+        collectionName: "BST Học Xinh Kem",
+        campaign: "le2-9",
+        campaignName: "Mừng Đại Lễ 2/9",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Thô cotton hữu cơ lành tính cho da bé",
+        materialFeature: "Thô cotton kèm ghim cam móc thủ công",
+        originalPrice: 565000,
+        basePrice: 395000,
+        discountPercent: 30,
+        image: "images/promotions/le29-vay-nang-mai.jpg",
+        soldCount: 38,
+        totalStock: 50,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 395000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 395000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 395000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 395000 }
+        ]
+      },
+      {
+        id: "set-lan-cat",
+        sku: "TP-TTKC-002",
+        name: "Set Lân Cát",
+        collectionName: "BST Trung Thu Kem & Cốm",
         campaign: "le2-9",
         campaignName: "Mừng Đại Lễ 2/9",
         category: "be-gai",
         subcategory: "set-do",
-        material: "Thô cotton hữu cơ & Voan xếp ly cao cấp",
-        materialFeature: "Thô cotton mềm mát, cổ sen bồng xòe",
-        originalPrice: 420000,
-        basePrice: 295000,
+        material: "Gấm tơ lót lụa mềm mượt, êm ái",
+        materialFeature: "Đính lân móc thủ công",
+        originalPrice: 565000,
+        basePrice: 395000,
         discountPercent: 30,
-        image: "images/products/hoc-xinh-kem/set-tinh-khoi.jpg",
-        soldCount: 38,
-        totalStock: 50,
+        image: "images/promotions/le29-lan-cat.jpg",
+        soldCount: 52,
+        totalStock: 65,
         sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 295000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 295000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 295000 },
-          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 295000 },
-          { size: "Size 130", weight: "25 - 30kg", age: "8 - 9 tuổi", price: 315000 }
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 395000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 395000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 395000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 395000 }
+        ]
+      },
+
+      // 2. Nhánh 'Sale Hè' (sale-he)
+      {
+        id: "vay-chanh-tay",
+        sku: "TP-HM-001",
+        name: "Váy Chanh Tây",
+        collectionName: "BST Hạ Mật",
+        campaign: "sale-he",
+        campaignName: "Sale Hè",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Thô gió 2 lớp mềm mát, nhẹ êm",
+        materialFeature: "Thô gió 2 lớp mát nhẹ",
+        originalPrice: 590000,
+        basePrice: 415000,
+        discountPercent: 30,
+        image: "images/promotions/he-chanh-tay.jpg",
+        soldCount: 41,
+        totalStock: 55,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 415000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 415000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 415000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 415000 }
         ]
       },
       {
         id: "ao-so-mi-trai-dat",
-        sku: "TP-HXK-001",
-        name: "Áo Sơ Mi Trái Đất Thêu Tay Tựu Trường",
-        campaign: "le2-9",
-        campaignName: "Mừng Đại Lễ 2/9",
+        sku: "TP-HXK-003",
+        name: "Áo Sơ Mi Trái Đất",
+        collectionName: "BST Học Xinh Kem",
+        campaign: "sale-he",
+        campaignName: "Sale Hè",
         category: "be-gai",
         subcategory: "ao",
-        material: "Thô cotton mềm, thấm hút mồ hôi tối đa",
-        materialFeature: "Thêu Trái Đất thủ công tinh tế",
+        material: "Thô cotton thấm hút mồ hôi tối đa",
+        materialFeature: "Thô cotton thêu tay",
         originalPrice: 320000,
         basePrice: 225000,
         discountPercent: 30,
-        image: "images/ao-so-mi-trai-dat.jpg",
-        soldCount: 42,
+        image: "images/promotions/he-so-mi.jpg",
+        soldCount: 48,
         totalStock: 60,
         sizes: [
           { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 225000 },
           { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 225000 },
           { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 225000 },
-          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 225000 },
-          { size: "Size 130", weight: "25 - 30kg", age: "8 - 9 tuổi", price: 225000 },
-          { size: "Size 140", weight: "30 - 35kg", age: "10 - 11 tuổi", price: 245000 }
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 225000 }
         ]
       },
       {
-        id: "ao-baby-blue",
-        sku: "TP-HXK-003",
-        name: "Áo Kiểu Baby Blue Pastel Cúc Gỗ",
-        campaign: "le2-9",
-        campaignName: "Mừng Đại Lễ 2/9",
-        category: "be-gai",
-        subcategory: "ao",
-        material: "Thô cotton mềm dày dặn, màu xanh pastel",
-        materialFeature: "Cúc gỗ dừa tự nhiên, đường may êm",
-        originalPrice: 290000,
-        basePrice: 195000,
-        discountPercent: 33,
-        image: "images/products/hoc-xinh-kem/ao-baby-blue.jpg",
-        soldCount: 26,
-        totalStock: 35,
-        sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 195000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 195000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 195000 },
-          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 195000 }
-        ]
-      },
-      {
-        id: "vay-ghile-o-ly",
-        sku: "TP-HXK-005",
-        name: "Váy Ghile Xếp Ô Ly Phong Cách Preppy",
-        campaign: "le2-9",
-        campaignName: "Mừng Đại Lễ 2/9",
-        category: "be-gai",
-        subcategory: "vay",
-        material: "Kaki mềm phối voan tơ cao cấp",
-        materialFeature: "Form váy chuẩn học đường, thanh lịch",
-        originalPrice: 460000,
-        basePrice: 299000,
-        discountPercent: 35,
-        image: "images/products/hoc-xinh-kem/vay-ghile-o-ly.jpg",
-        soldCount: 19,
-        totalStock: 25,
-        sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 299000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 299000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 299000 },
-          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 319000 }
-        ]
-      },
-
-      // 2. Sale Hè (sale-he)
-      {
-        id: "vay-voan-hoa-nhi-mat-ong",
-        sku: "TP-VG-001",
-        name: "Váy Công Chúa Voan Tơ Hoa Nhí Nắng Mật Ong",
-        campaign: "sale-he",
-        campaignName: "Sale Hè",
-        category: "be-gai",
-        subcategory: "vay",
-        material: "Voan tơ tằm lót lụa Habutai 100% mềm mát",
-        materialFeature: "Thấm hút mồ hôi, lót lụa êm ái",
-        originalPrice: 530000,
-        basePrice: 265000,
-        discountPercent: 50,
-        image: "images/ha-mat.jpg",
-        soldCount: 45,
-        totalStock: 50,
-        sizes: [
-          { size: "Size 1 (90)", weight: "8 - 10kg", age: "9 - 18M", price: 265000 },
-          { size: "Size 2 (100)", weight: "10 - 12kg", age: "18 - 24M", price: 285000 },
-          { size: "Size 3 (110)", weight: "12 - 15kg", age: "2 - 3T", price: 305000 },
-          { size: "Size 4 (120)", weight: "15 - 18kg", age: "3 - 4T", price: 325000 }
-        ]
-      },
-      {
-        id: "quan-bloomer-ha-mat",
-        sku: "TP-QB-002",
-        name: "Quần Bloomer Hạ Mát Lưng Chun Mềm",
-        campaign: "sale-he",
-        campaignName: "Sale Hè",
-        category: "be-gai",
-        subcategory: "quan",
-        material: "Thô đũi 100% tự nhiên mềm xốp",
-        materialFeature: "Lưng thun co giãn không hằn bụng",
-        originalPrice: 290000,
-        basePrice: 145000,
-        discountPercent: 50,
-        image: "images/products/ha-mat/quan-bi-nau.jpg",
-        soldCount: 52,
-        totalStock: 60,
-        sizes: [
-          { size: "Size 1 (90)", weight: "8 - 10kg", age: "9 - 18M", price: 145000 },
-          { size: "Size 2 (100)", weight: "10 - 12kg", age: "18 - 24M", price: 145000 },
-          { size: "Size 3 (110)", weight: "12 - 15kg", age: "2 - 3T", price: 145000 }
-        ]
-      },
-      {
-        id: "vay-luu-ly",
-        sku: "TP-HM-008",
-        name: "Váy Lưu Ly Xanh Mát Cổ Yếm Thêu",
-        campaign: "sale-he",
-        campaignName: "Sale Hè",
-        category: "be-gai",
-        subcategory: "vay",
-        material: "Lụa tơ mát rượi, xòe bồng nhẹ",
-        materialFeature: "Thiết kế thoáng nách hè sảng khoái",
-        originalPrice: 450000,
-        basePrice: 289000,
-        discountPercent: 36,
-        image: "images/products/ha-mat/vay-luu-ly.jpg",
-        soldCount: 31,
-        totalStock: 40,
-        sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 289000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 289000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 289000 }
-        ]
-      },
-      {
-        id: "ao-matcha-latte",
-        sku: "TP-HM-004",
-        name: "Áo Bèo Cổ Sen Xanh Matcha Latte",
+        id: "ao-matcha-latte-va-ao-so",
+        sku: "TP-HM-002",
+        name: "Áo Matcha Latte & Áo Sò",
+        collectionName: "BST Hạ Mật",
         campaign: "sale-he",
         campaignName: "Sale Hè",
         category: "be-gai",
         subcategory: "ao",
-        material: "Thô đũi organic dệt thưa thoáng khí",
-        materialFeature: "Tông màu dịu mát bảo vệ mắt bé",
-        originalPrice: 310000,
-        basePrice: 199000,
-        discountPercent: 36,
-        image: "images/products/ha-mat/ao-matcha-latte.jpg",
-        soldCount: 22,
-        totalStock: 30,
-        sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 199000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 199000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 199000 }
-        ]
-      },
-
-      // 3. Sale Thu - Đông (sale-thu-dong)
-      {
-        id: "set-lan-cat",
-        sku: "TP-TT-001",
-        name: "Set Lân Cát Thêu Chỉ Vàng Cung Đình",
-        campaign: "sale-thu-dong",
-        campaignName: "Sale Thu - Đông",
-        category: "be-gai",
-        subcategory: "set-do",
-        material: "Gấm tơ tằm dệt nổi hoa văn truyền thống",
-        materialFeature: "Lót Habutai chống ngứa, ấm áp dịu êm",
-        originalPrice: 495000,
-        basePrice: 356000,
-        discountPercent: 28,
-        image: "images/products/trung-thu-kem-com/set-lan-cat.jpg",
-        soldCount: 27,
-        totalStock: 35,
-        sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 356000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 356000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 356000 },
-          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 376000 }
-        ]
-      },
-      {
-        id: "set-lan-tuong",
-        sku: "TP-TT-002",
-        name: "Set Lân Tường Xanh Cốm Non Đón Gió",
-        campaign: "sale-thu-dong",
-        campaignName: "Sale Thu - Đông",
-        category: "be-gai",
-        subcategory: "set-do",
-        material: "Tơ nến cao cấp dệt sợi tự nhiên",
-        materialFeature: "Phối chân váy bồng bềnh công chúa",
-        originalPrice: 480000,
-        basePrice: 338000,
+        material: "Linen bột organic tự nhiên",
+        materialFeature: "Linen bột cao cấp",
+        originalPrice: 410000,
+        basePrice: 285000,
         discountPercent: 30,
-        image: "images/products/trung-thu-kem-com/set-lan-tuong.jpg",
-        soldCount: 18,
-        totalStock: 25,
+        image: "images/promotions/he-matcha.jpg",
+        soldCount: 33,
+        totalStock: 45,
         sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 338000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 338000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 338000 }
-        ]
-      },
-      {
-        id: "set-ao-dai-dan-nguyet",
-        sku: "TP-TT-003",
-        name: "Set Áo Dài Đàn Nguyệt Đón Trăng Rằm",
-        campaign: "sale-thu-dong",
-        campaignName: "Sale Thu - Đông",
-        category: "be-gai",
-        subcategory: "set-do",
-        material: "Nhung tơ mịn màng kết hợp lụa",
-        materialFeature: "Đính ngọc trai thủ công cao cấp",
-        originalPrice: 590000,
-        basePrice: 446000,
-        discountPercent: 25,
-        image: "images/products/trung-thu-kem-com/set-ao-dai-dan-nguyet.jpg",
-        soldCount: 14,
-        totalStock: 20,
-        sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 446000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 446000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 446000 },
-          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 466000 }
-        ]
-      },
-      {
-        id: "set-mut-tao",
-        sku: "TP-TT-004",
-        name: "Set Mứt Táo Đỏ Hồng Đào Nơ Lụa",
-        campaign: "sale-thu-dong",
-        campaignName: "Sale Thu - Đông",
-        category: "be-gai",
-        subcategory: "set-do",
-        material: "Voan tơ 2 lớp giữ ấm dịu nhẹ",
-        materialFeature: "Sắc hồng đào ngọt lịm cho bé",
-        originalPrice: 490000,
-        basePrice: 351000,
-        discountPercent: 28,
-        image: "images/products/trung-thu-kem-com/set-mut-tao.jpg",
-        soldCount: 20,
-        totalStock: 28,
-        sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 351000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 351000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 351000 }
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 285000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 285000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 285000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 285000 }
         ]
       },
 
-      // 4. Sale Ngày Đôi 10/10 11/11 (sale-ngay-doi)
+      // 3. Nhánh 'Sale Thu - Đông' (sale-thu-dong)
       {
-        id: "set-chim-cau-jean-no",
-        sku: "TP-KV-003",
-        name: "Set Áo Chim Câu Phối Quần Bom Jean Nơ",
-        campaign: "sale-ngay-doi",
-        campaignName: "Sale Ngày Đôi 10/10 11/11",
+        id: "set-ghile-chan-vay-hoi-hoa",
+        sku: "TP-HXK-004",
+        name: "Set Ghile & Chân Váy Hội Họa",
+        collectionName: "BST Học Xinh Kem",
+        campaign: "sale-thu-dong",
+        campaignName: "Sale Thu - Đông",
         category: "be-gai",
         subcategory: "set-do",
-        material: "Thô thêu chim bồ câu & Jean mềm wash êm",
-        materialFeature: "Quần jean co giãn không cộm ngứa",
-        originalPrice: 590000,
-        basePrice: 295000,
-        discountPercent: 50,
-        image: "images/products/khanh-vy/set-chim-cau-jean-no.jpg",
-        soldCount: 39,
+        material: "Vải chéo Ý mềm cao cấp giữ form",
+        materialFeature: "Chéo Ý không nhăn",
+        originalPrice: 655000,
+        basePrice: 460000,
+        discountPercent: 30,
+        image: "images/promotions/thudong-hoi-hoa.jpg",
+        soldCount: 29,
         totalStock: 40,
         sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 295000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 295000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 295000 },
-          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 315000 }
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 460000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 460000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 460000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 460000 }
         ]
       },
       {
         id: "vay-tuong-vi",
-        sku: "TP-KV-009",
-        name: "Váy Tường Vi Hồng Phấn Đính Nơ Lụa",
-        campaign: "sale-ngay-doi",
-        campaignName: "Sale Ngày Đôi 10/10 11/11",
+        sku: "TP-HKV-001",
+        name: "Váy Tường Vi",
+        collectionName: "BST Hè Khánh Vy",
+        campaign: "sale-thu-dong",
+        campaignName: "Sale Thu - Đông",
         category: "be-gai",
         subcategory: "vay",
-        material: "Tơ xước dập ly nhẹ, mềm mịn như mây",
-        materialFeature: "Tặng kèm kẹp nơ đồng bộ xinh xắn",
-        originalPrice: 520000,
-        basePrice: 286000,
-        discountPercent: 45,
-        image: "images/products/khanh-vy/vay-tuong-vi.jpg",
-        soldCount: 33,
-        totalStock: 35,
+        material: "Chéo Ý mềm mại, hoa thêu sắc sảo",
+        materialFeature: "Chéo Ý thêu hoa đầm tay",
+        originalPrice: 590000,
+        basePrice: 415000,
+        discountPercent: 30,
+        image: "images/promotions/thudong-tuong-vi.jpg",
+        soldCount: 35,
+        totalStock: 45,
         sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 286000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 286000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 286000 }
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 415000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 415000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 415000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 415000 }
         ]
       },
       {
-        id: "set-thanh-yen-caro",
-        sku: "TP-KV-005",
-        name: "Set Thanh Yên Phối Chân Váy Caro Xanh",
+        id: "set-quan-baggy-be-ao-thanh-lam",
+        sku: "TP-HXK-005",
+        name: "Set Quần Baggy Be + Áo Thanh Lam",
+        collectionName: "BST Học Xinh Kem",
+        campaign: "sale-thu-dong",
+        campaignName: "Sale Thu - Đông",
+        category: "be-gai",
+        subcategory: "set-do",
+        material: "Thô đũi mềm mát, áo thanh lam nhẹ nhàng",
+        materialFeature: "BST Học Xinh Kem",
+        originalPrice: 530000,
+        basePrice: 370000,
+        discountPercent: 30,
+        image: "images/promotions/thudong-baggy.jpg",
+        soldCount: 27,
+        totalStock: 35,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 370000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 370000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 370000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 370000 }
+        ]
+      },
+
+      // 4. Nhánh 'Sale Ngày Đôi 10/10 11/11' (sale-ngay-doi)
+      {
+        id: "set-tinh-khoi",
+        sku: "TP-HXK-006",
+        name: "Set Tinh Khôi",
+        collectionName: "BST Học Xinh Kem",
         campaign: "sale-ngay-doi",
         campaignName: "Sale Ngày Đôi 10/10 11/11",
         category: "be-gai",
         subcategory: "set-do",
-        material: "Cotton dệt kẻ ô vintage & Lụa tơ",
-        materialFeature: "Phối đồ tiện lợi cho bé dạo phố",
-        originalPrice: 480000,
-        basePrice: 264000,
-        discountPercent: 45,
-        image: "images/products/khanh-vy/set-thanh-yen-caro.jpg",
-        soldCount: 28,
-        totalStock: 32,
+        material: "Linen tự nhiên 2 tầng mềm êm",
+        materialFeature: "Linen 2 tầng thêu tay",
+        originalPrice: 775000,
+        basePrice: 465000,
+        discountPercent: 40,
+        image: "images/promotions/ngaydoi-tinh-khoi.jpg",
+        soldCount: 39,
+        totalStock: 50,
         sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 264000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 264000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 264000 }
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 465000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 465000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 465000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 465000 }
         ]
       },
       {
-        id: "vay-thi-tho-hong",
-        sku: "TP-KV-007",
-        name: "Váy Thi Thơ Cánh Tiên Hồng Phấn",
+        id: "vay-thi-tho-dinh-buom-organza",
+        sku: "TP-HKV-002",
+        name: "Váy Thi Thơ Đính Bướm Organza",
+        collectionName: "BST Hè Khánh Vy",
         campaign: "sale-ngay-doi",
         campaignName: "Sale Ngày Đôi 10/10 11/11",
         category: "be-gai",
         subcategory: "vay",
-        material: "Voan cát mềm mại rủ nhẹ",
-        materialFeature: "Tay cánh tiên bay bổng đáng yêu",
-        originalPrice: 450000,
-        basePrice: 270000,
+        material: "Organza bồng bềnh lót lụa tơ tằm",
+        materialFeature: "BST Hè Khánh Vy",
+        originalPrice: 725000,
+        basePrice: 435000,
         discountPercent: 40,
-        image: "images/products/khanh-vy/vay-thi-tho-hong.jpg",
-        soldCount: 25,
-        totalStock: 30,
+        image: "images/promotions/ngaydoi-thi-tho.jpg",
+        soldCount: 44,
+        totalStock: 55,
         sizes: [
-          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 270000 },
-          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 270000 },
-          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 270000 }
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 435000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 435000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 435000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 435000 }
+        ]
+      },
+      {
+        id: "vay-muoi-hong-det-hoa-noi",
+        sku: "TP-HM-003",
+        name: "Váy Muối Hồng Dệt Hoa Nổi",
+        collectionName: "BST Hạ Mật",
+        campaign: "sale-ngay-doi",
+        campaignName: "Sale Ngày Đôi 10/10 11/11",
+        category: "be-gai",
+        subcategory: "vay",
+        material: "Muối hồng dệt hoa nổi, lót lụa cao cấp",
+        materialFeature: "Đính kim sa lót lụa",
+        originalPrice: 825000,
+        basePrice: 495000,
+        discountPercent: 40,
+        image: "images/promotions/ngaydoi-muoi-hong.jpg",
+        soldCount: 47,
+        totalStock: 50,
+        sizes: [
+          { size: "Size 90", weight: "10 - 12kg", age: "1 - 2 tuổi", price: 495000 },
+          { size: "Size 100", weight: "13 - 15kg", age: "2 - 4 tuổi", price: 495000 },
+          { size: "Size 110", weight: "16 - 20kg", age: "4 - 5 tuổi", price: 495000 },
+          { size: "Size 120", weight: "20 - 25kg", age: "6 - 7 tuổi", price: 495000 }
         ]
       }
     ];
@@ -1043,10 +976,10 @@
     let selectedQuickSizeIdx = 0;
     let cart = [];
 
-    // Format tiền tệ chuẩn Việt Nam Đồng (VNĐ)
+    // Format tiền tệ chuẩn Việt Nam Đồng (e.g. 710.000đ)
     function formatVND(amount) {
-      if (!amount) return '0 VNĐ';
-      return new Intl.NumberFormat('vi-VN').format(amount) + ' VNĐ';
+      if (!amount) return '0đ';
+      return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
     }
 
     // Analytics Tracker Logger
@@ -1064,28 +997,28 @@
     const CAMPAIGN_INFO = {
       'all': {
         icon: '✨',
-        desc: 'Toàn bộ sản phẩm ưu đãi hấp dẫn nhất mùa từ thương hiệu thời trang cao cấp T\'Petie.',
-        tag: '16 deal hời tuyển chọn'
+        desc: 'Toàn bộ 12 sản phẩm ưu đãi tuyển chọn hấp dẫn nhất mùa từ thương hiệu thời trang cao cấp T\'Petie.',
+        tag: '12 deal hời tuyển chọn'
       },
       'le2-9': {
         icon: '🎉',
-        desc: 'Mừng Đại Lễ 2/9 & Tựu Trường: Đồng loạt giảm 30% - 35% các mẫu áo sơ mi, váy xếp ly, set bộ thanh lịch cho bé.',
-        tag: 'Deal Quốc Khánh 2/9'
+        desc: 'Mừng Đại Lễ 2/9: Đồng loạt giảm 30% Set Áo Dài Đan Nguyệt, Váy Nắng Mai, Set Lân Cát thêu thủ công cao cấp.',
+        tag: 'Deal Quốc Khánh 2/9 (-30%)'
       },
       'sale-he': {
         icon: '☀️',
-        desc: 'Xả Kho Hạ Mát Giải Nhiệt: Ưu đãi lên tới 50% váy voan tơ, quần bloomer thô đũi mềm êm, thấm hút mồ hôi cho bé thoải mái vận động.',
-        tag: 'Đồng giá từ 145.000 VNĐ'
+        desc: 'Sale Hè Năng Động: Giảm 30% Váy Chanh Tây, Áo Sơ Mi Trái Đất, Áo Matcha Latte & Áo Sò thô mát nhẹ.',
+        tag: 'Sale Hè Rực Rỡ (-30%)'
       },
       'sale-thu-dong': {
         icon: '🍂',
-        desc: 'Đón Gió Thu Đông & Tết Trung Thu: Giảm 25% - 30% BST Áo Dài Đàn Nguyệt, Set Lân Cát, Lân Tường gấm tơ ấm áp.',
-        tag: 'BST Trung Thu Kèm Cốm'
+        desc: 'Sale Thu - Đông: Giảm 30% Set Ghile Hội Họa, Váy Tường Vi, Set Quần Baggy Be + Áo Thanh Lam ấm áp.',
+        tag: 'BST Thu Đông Mới (-30%)'
       },
       'sale-ngay-doi': {
         icon: '🎁',
-        desc: 'Siêu Bão Sale Ngày Đôi 10/10 11/11: Giảm sốc đến 50%, tặng kèm phụ kiện kẹp tóc xinh xắn và Freeship toàn quốc.',
-        tag: 'Săn Deal Ngày Đôi'
+        desc: 'Đại Tiệc Sale Ngày Đôi 10/10 11/11: Giảm sốc 40% Set Tinh Khôi, Váy Thi Thơ, Váy Muối Hồng Dệt Hoa Nổi.',
+        tag: 'Săn Siêu Deal Ngày Đôi (-40%)'
       }
     };
 
@@ -1172,25 +1105,20 @@
             
             <!-- Product Card Top / Image -->
             <div>
-              <div class="relative w-full aspect-square bg-cream-100 overflow-hidden cursor-pointer" onclick="openQuickSizeModal('${p.id}')">
+              <div class="relative w-full overflow-hidden cursor-pointer bg-cream-100" onclick="openQuickSizeModal('${p.id}')">
                 <img
                   src="${p.image}"
                   alt="${p.name}"
                   loading="lazy"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  onerror="this.src='images/ha-mat.jpg'"
+                  class="product-img group-hover:scale-105 transition-transform duration-500"
+                  onerror="this.src='images/promotions/le29-ao-dai.jpg'"
                 />
 
-                <!-- Psychology Sale Discount Badge (Góc trái) -->
+                <!-- Huy hiệu Sale (-30%, -40%) (Góc trái) -->
                 <div class="absolute top-2 left-2 flex flex-col gap-1 z-10">
-                  <span class="text-[11px] sm:text-xs font-extrabold bg-gradient-to-r from-rose-500 to-blush-500 text-white px-2.5 py-0.5 rounded-full shadow-md">
+                  <span class="text-[11px] sm:text-xs font-extrabold bg-gradient-to-r from-rose-500 to-rose-600 text-white px-2.5 py-0.5 rounded-full shadow-md">
                     -${p.discountPercent}%
                   </span>
-                  ${p.discountPercent >= 45 ? `
-                    <span class="text-[9px] font-bold bg-honey-500 text-white px-2 py-0.2 rounded-full shadow-xs">
-                      ⚡ Siêu Deal
-                    </span>
-                  ` : ''}
                 </div>
 
                 <!-- Campaign Tag (Góc phải) -->
@@ -1205,7 +1133,12 @@
               </div>
 
               <!-- Product Info & Psychology Pricing -->
-              <div class="p-3 sm:p-4 space-y-2">
+              <div class="p-3 sm:p-4 space-y-1.5">
+                <!-- Tên Bộ Sưu Tập nhỏ phía trên -->
+                <div class="text-[10px] sm:text-[11px] font-bold text-honey-600 uppercase tracking-wider line-clamp-1 mb-0.5">
+                  ${p.collectionName}
+                </div>
+
                 <!-- Tên Sản Phẩm -->
                 <h3
                   onclick="openQuickSizeModal('${p.id}')"
@@ -1214,14 +1147,14 @@
                   ${p.name}
                 </h3>
 
-                <!-- Mỏ Neo Giá (Psychology Pricing) -->
-                <div class="space-y-0.5">
+                <!-- Mỏ Neo Giá (Psychology Pricing): Giá gạch ngang màu xám + Giá Sale màu đỏ nổi bật -->
+                <div class="space-y-0.5 pt-0.5">
                   <div class="flex items-baseline flex-wrap gap-x-2 gap-y-0.5">
-                    <!-- Giá bán nổi bật màu đỏ hồng -->
+                    <!-- Giá Sale màu đỏ nổi bật -->
                     <span class="text-sm sm:text-base font-extrabold text-rose-600 font-heading tracking-tight">
                       ${formatVND(p.basePrice)}
                     </span>
-                    <!-- Giá niêm yết gạch ngang (Anchor Price) -->
+                    <!-- Giá gạch ngang màu xám -->
                     <span class="text-[11px] sm:text-xs text-charcoal-400 line-through">
                       ${formatVND(p.originalPrice)}
                     </span>
@@ -1258,7 +1191,7 @@
               </div>
             </div>
 
-            <!-- CTAs: "Xem size" & "Thêm vào giỏ" -->
+            <!-- CTAs: Nút "Xem size" và nút "Thêm vào giỏ" -->
             <div class="p-3 sm:p-4 pt-0 grid grid-cols-2 gap-2">
               <!-- Nút 1: Xem Size -->
               <button
@@ -1287,7 +1220,7 @@
                 title="Thêm ngay vào giỏ hàng"
               >
                 <span>🛍️</span>
-                <span>Thêm giỏ</span>
+                <span>Thêm vào giỏ</span>
               </button>
             </div>
 
@@ -1317,7 +1250,7 @@
       document.getElementById('qs-sku').innerText = product.sku;
       document.getElementById('qs-badge').innerText = `-${product.discountPercent}%`;
       document.getElementById('qs-img').src = product.image;
-      document.getElementById('qs-img').onerror = function() { this.src = 'images/ha-mat.jpg'; };
+      document.getElementById('qs-img').onerror = function() { this.src = 'images/promotions/le29-ao-dai.jpg'; };
       document.getElementById('qs-orig-price').innerText = formatVND(product.originalPrice);
       document.getElementById('qs-material').innerText = product.material;
       document.getElementById('qs-savings').innerText = `Tiết kiệm ${formatVND(product.originalPrice - product.basePrice)}`;
@@ -1450,15 +1383,15 @@
         // Render search filtered
         grid.innerHTML = filtered.map(p => {
           const savings = p.originalPrice - p.basePrice;
-          const progressPercent = Math.round((p.soldCount / p.totalStock) * 100);
           return `
             <div class="group bg-white rounded-2xl sm:rounded-3xl border border-cream-200 overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div class="relative w-full aspect-square bg-cream-100 overflow-hidden cursor-pointer" onclick="openQuickSizeModal('${p.id}')">
-                  <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                <div class="relative w-full overflow-hidden cursor-pointer bg-cream-100" onclick="openQuickSizeModal('${p.id}')">
+                  <img src="${p.image}" alt="${p.name}" class="product-img group-hover:scale-105 transition-transform" onerror="this.src='images/promotions/le29-ao-dai.jpg'" />
                   <span class="absolute top-2 left-2 text-[11px] font-extrabold bg-rose-500 text-white px-2.5 py-0.5 rounded-full shadow-md">-${p.discountPercent}%</span>
                 </div>
                 <div class="p-3 sm:p-4 space-y-1.5">
+                  <div class="text-[10px] sm:text-[11px] font-bold text-honey-600 uppercase tracking-wider line-clamp-1">${p.collectionName}</div>
                   <h3 class="text-xs sm:text-sm font-bold text-charcoal-900 line-clamp-2">${p.name}</h3>
                   <div class="flex items-baseline space-x-2">
                     <span class="text-sm sm:text-base font-extrabold text-rose-600">${formatVND(p.basePrice)}</span>
@@ -1466,8 +1399,9 @@
                   </div>
                 </div>
               </div>
-              <div class="p-3 pt-0">
-                <button onclick="openQuickSizeModal('${p.id}')" class="w-full py-2 rounded-xl bg-honey-500 text-white text-xs font-bold">Xem size &amp; Mua</button>
+              <div class="p-3 pt-0 grid grid-cols-2 gap-2">
+                <button onclick="openQuickSizeModal('${p.id}')" class="w-full py-2 rounded-xl bg-cream-50 hover:bg-cream-200 text-charcoal-800 text-xs font-bold border border-cream-300">Xem size</button>
+                <button onclick="quickAddToCart('${p.id}')" class="w-full py-2 rounded-xl bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold">Thêm vào giỏ</button>
               </div>
             </div>
           `;
