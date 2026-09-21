@@ -214,9 +214,8 @@ export default function ThanhToanPage() {
                     <option value="">-- Chọn kênh --</option>
                     <option value="Facebook">Facebook</option>
                     <option value="TikTok">TikTok</option>
-                    <option value="Google Search">Tìm kiếm Google</option>
+                    <option value="Instagram">Instagram</option>
                     <option value="Bạn bè giới thiệu">Bạn bè giới thiệu</option>
-                    <option value="Khác">Khác</option>
                   </select>
                 </div>
               </div>
