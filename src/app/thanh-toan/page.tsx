@@ -64,12 +64,12 @@ export default function ThanhToanPage() {
     e.preventDefault();
     
     if (!formData.fullName || !formData.phone || !formData.address) {
-      showToast('Vui lòng điền đầy đủ thông tin bắt buộc!', 'error');
+      showToast('Vui lòng điền đầy đủ thông tin bắt buộc!', 'info');
       return;
     }
     
     if (!/^(0[3|5|7|8|9])+([0-9]{8})\b/.test(formData.phone)) {
-      showToast('Số điện thoại không hợp lệ!', 'error');
+      showToast('Số điện thoại không hợp lệ!', 'info');
       return;
     }
 
@@ -105,7 +105,7 @@ export default function ThanhToanPage() {
     } catch (error: unknown) {
       console.error('Lỗi khi thanh toán:', error);
       const errorMessage = error instanceof Error ? error.message : 'Có lỗi xảy ra, vui lòng thử lại sau.';
-      showToast(errorMessage, 'error');
+      showToast(errorMessage, 'info');
     } finally {
       setIsSubmitting(false);
     }
