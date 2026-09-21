@@ -10,7 +10,6 @@ import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useToast } from '@/context/ToastContext';
 import { trackBeginCheckout } from '@/lib/analytics/tracker';
 
-const GOOGLE_FORM_URL = 'https://forms.gle/t866jwRWJ38f4tKD6';
 
 interface BuyNowItem {
   productId: string;
