@@ -48,7 +48,7 @@ export default function ThanhToanPage() {
     setIsLoading(false);
   }, [router]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -199,7 +199,7 @@ export default function ThanhToanPage() {
                   <select
                     name="source"
                     value={formData.source}
-                    onChange={(e: any) => handleInputChange(e)}
+                    onChange={handleInputChange}
                     className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:border-honey-500 focus:ring-1 focus:ring-honey-500 transition-shadow text-sm appearance-none"
                   >
                     <option value="">-- Chọn kênh --</option>
