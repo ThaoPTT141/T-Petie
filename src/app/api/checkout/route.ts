@@ -33,10 +33,11 @@ export async function POST(request: Request) {
     const data = await response.json();
     return NextResponse.json(data);
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Lỗi API Checkout:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Đã xảy ra lỗi hệ thống';
     return NextResponse.json(
-      { status: 'error', message: error.message || 'Đã xảy ra lỗi hệ thống' },
+      { status: 'error', message: errorMessage },
       { status: 500 }
     );
   }

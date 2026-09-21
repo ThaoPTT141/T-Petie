@@ -8,7 +8,7 @@ import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useToast } from '@/context/ToastContext';
 
 interface CheckoutData {
-  items: any[];
+  items: Record<string, unknown>[];
   subtotal: number;
   discountAmount: number;
   shippingFee: number;
@@ -95,9 +95,11 @@ export default function ThanhToanPage() {
       } else {
         throw new Error(result.message || 'Lỗi không xác định');
       }
-    } catch (error: any) {
-      console.error(error);
-      showToast('Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại sau!', 'error');
+    } catch (error: unknown) {
+      console.error('Lỗi khi thanh toán:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Có lỗi xảy ra, vui lòng thử lại sau.';
+      showToast(errorMessage, 'error');
+    } finally {
       setIsSubmitting(false);
     }
   };
