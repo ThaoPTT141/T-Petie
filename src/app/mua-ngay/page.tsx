@@ -69,7 +69,18 @@ export default function MuaNgayPage() {
       [{ item_id: item.productId, item_name: item.productName, price: item.price, quantity }],
       total
     );
-    window.open(GOOGLE_FORM_URL, '_blank', 'noopener,noreferrer');
+    
+    // Lưu dữ liệu vào session và chuyển hướng sang trang thanh toán
+    sessionStorage.setItem('checkout_data', JSON.stringify({
+      items: [{ ...item, quantity }],
+      subtotal,
+      discountAmount,
+      shippingFee,
+      finalTotal: total,
+      couponCode
+    }));
+    
+    router.push('/thanh-toan');
   };
 
   return (

@@ -16,14 +16,16 @@ import { useCart } from '@/context/CartContext';
 import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useToast } from '@/context/ToastContext';
 import { trackBeginCheckout } from '@/lib/analytics/tracker';
+import { useRouter } from 'next/navigation';
 
-// Link Google Form đặt hàng T'Petie
-const GOOGLE_FORM_URL = 'https://forms.gle/t866jwRWJ38f4tKD6';
+// Bỏ link Google Form cũ
+// const GOOGLE_FORM_URL = 'https://forms.gle/t866jwRWJ38f4tKD6';
 
 const itemKey = (productId: string, selectedSize: string) =>
   `${productId}-${selectedSize}`;
 
 export default function GioHangPage() {
+  const router = useRouter();
   const { items, updateQuantity, removeFromCart, clearCart, totalItems } = useCart();
   const { showToast } = useToast();
 
@@ -97,7 +99,18 @@ export default function GioHangPage() {
       })),
       finalTotal
     );
-    window.open(GOOGLE_FORM_URL, '_blank', 'noopener,noreferrer');
+    
+    // Lưu dữ liệu vào session và chuyển hướng sang trang thanh toán
+    sessionStorage.setItem('checkout_data', JSON.stringify({
+      items: selectedItems,
+      subtotal: selectedSubtotal,
+      discountAmount,
+      shippingFee,
+      finalTotal,
+      couponCode
+    }));
+    
+    router.push('/thanh-toan');
   };
 
   return (
