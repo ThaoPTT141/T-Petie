@@ -8,7 +8,14 @@ import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useToast } from '@/context/ToastContext';
 
 interface CheckoutData {
-  items: Record<string, unknown>[];
+  items: {
+    productId: string;
+    productName: string;
+    selectedSize: string;
+    quantity: number;
+    price: number;
+    thumbnail: string;
+  }[];
   subtotal: number;
   discountAmount: number;
   shippingFee: number;
