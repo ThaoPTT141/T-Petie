@@ -68,7 +68,7 @@ export function HeroCarousel() {
               priority={index === 0}
               quality={100}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1400px"
-              className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.01]"
+              className="object-contain md:object-cover object-center transition-transform duration-500 group-hover:scale-[1.01]"
             />
           </Link>
         ))}
