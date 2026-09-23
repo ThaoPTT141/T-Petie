@@ -141,9 +141,9 @@ export function Header() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 6, scale: 0.97 }}
                           transition={{ duration: 0.16, ease: 'easeOut' }}
-                          className="absolute left-0 top-full pt-1.5 z-50 min-w-[260px] max-w-[300px]"
+                          className="absolute left-0 top-full pt-1.5 z-50 min-w-[220px] max-w-[260px]"
                         >
-                          <div className="bg-white rounded-2xl shadow-2xl border border-cream-300/90 ring-1 ring-black/5 p-2 space-y-1">
+                          <div className="bg-white rounded-2xl shadow-2xl border border-cream-300/90 ring-1 ring-black/5 p-1.5 space-y-0.5">
                             {item.children?.map((sub) => {
                               const isSubCurrent = pathname === sub.href;
                               return (
@@ -151,25 +151,18 @@ export function Header() {
                                   key={sub.href}
                                   href={sub.href}
                                   onClick={() => setHoveredNavIndex(null)}
-                                  className={`group/sub flex flex-col p-2.5 rounded-xl transition-all ${
+                                  className={`group/sub flex items-center justify-between px-3 py-2 rounded-xl transition-all ${
                                     isSubCurrent
                                       ? 'bg-honey-50 text-honey-900 font-bold'
-                                      : 'hover:bg-cream-100 text-charcoal-900 hover:text-honey-700'
+                                      : 'hover:bg-cream-100 text-charcoal-800 hover:text-honey-700'
                                   }`}
                                 >
-                                  <div className="flex items-center justify-between">
-                                    <span className="text-xs font-bold leading-tight text-charcoal-900 group-hover/sub:text-honey-700">
-                                      {sub.label}
-                                    </span>
-                                    {sub.badge && (
-                                      <span className="text-[9px] font-bold bg-honey-100 text-honey-800 px-1.5 py-0.2 rounded-full">
-                                        {sub.badge}
-                                      </span>
-                                    )}
-                                  </div>
-                                  {sub.description && (
-                                    <span className="text-[11px] text-charcoal-600 font-medium group-hover/sub:text-charcoal-800 mt-0.5 leading-snug line-clamp-1">
-                                      {sub.description}
+                                  <span className="text-xs font-semibold leading-tight text-charcoal-900 group-hover/sub:text-honey-700">
+                                    {sub.label}
+                                  </span>
+                                  {sub.badge && (
+                                    <span className="text-[9px] font-bold bg-honey-100 text-honey-800 px-1.5 py-0.5 rounded-full ml-2 shrink-0">
+                                      {sub.badge}
                                     </span>
                                   )}
                                 </Link>
