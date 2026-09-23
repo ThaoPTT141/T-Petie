@@ -11,7 +11,7 @@ const features = [
     icon: '🌿',
     title: '100% Cotton & Đũi Tự Nhiên',
     description: 'Vải được dệt từ sợi tự nhiên hữu cơ, không sử dụng hóa chất nhuộm độc hại, an toàn với làn da non nớt.',
-    objectPosition: 'center center'
+    objectPosition: 'center 15%'
   },
   {
     id: 2,
@@ -19,15 +19,15 @@ const features = [
     icon: '🪡',
     title: 'Đường May Lộn Ẩn Tinh Tế',
     description: 'Mọi đường chỉ và cúc bấm đều được xử lý giấu mép kỹ càng, đảm bảo không cọ xát hay làm đau bé khi vận động.',
-    objectPosition: 'center center'
+    objectPosition: 'center 20%'
   },
   {
     id: 3,
     src: '/images/set-ao-mut-cam-phoi-quan-sooc-be.jpg',
     icon: '🧸',
-    title: 'Phom Dáng Dễ Mặc Bỉm',
+    title: 'Form Dáng Dễ Mặc',
     description: 'Thiết kế đũng quần và váy rộng rãi, có cúc bấm đũng tiện lợi cho mẹ thay bỉm cho bé chỉ trong 30 giây.',
-    objectPosition: 'center center'
+    objectPosition: 'center 10%'
   }
 ];
 
@@ -63,7 +63,7 @@ export function FeatureCarousel() {
               index === currentIndex ? 'translate-x-0' : index < currentIndex ? '-translate-x-full' : 'translate-x-full'
             }`}
           >
-            {/* Background Image full cover */}
+            {/* Background Image full cover — objectPosition per-banner để không cắt người */}
             <Image
               src={feature.src}
               alt={feature.title}
@@ -74,12 +74,12 @@ export function FeatureCarousel() {
               style={{ objectPosition: feature.objectPosition }}
             />
             
-            {/* Subtle Gradient Overlay just for text readability, avoiding making the whole image dark */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent sm:bg-gradient-to-r sm:from-black/60 sm:via-black/10 sm:to-transparent" />
+            {/* Gradient che phủ vùng dưới để chữ dễ đọc, không tối toàn ảnh */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
             
-            {/* Uniqlo-style Text overlay (No Box, Bottom Left) */}
-            <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-12 sm:right-auto sm:w-2/3 md:w-1/2 text-left z-10">
-              <span className="text-2xl sm:text-3xl mb-2 sm:mb-4 block drop-shadow-md">{feature.icon}</span>
+            {/* Chữ đặt phía trên góc trái — tránh vùng logo watermark ở giữa ảnh */}
+            <div className="absolute top-6 left-6 right-6 sm:top-10 sm:left-12 sm:right-auto sm:w-2/3 md:w-1/2 text-left z-10">
+              <span className="text-2xl sm:text-3xl mb-2 sm:mb-3 block drop-shadow-md">{feature.icon}</span>
               <h3 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl text-white mb-2 sm:mb-3 drop-shadow-md tracking-wide">
                 {feature.title}
               </h3>
