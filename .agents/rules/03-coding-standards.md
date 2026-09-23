@@ -45,3 +45,5 @@ src/
    - Sử dụng thẻ `Image` từ `next/image` với `sizes`, `priority` hợp lý cho banner trang chủ.
 4. **Xử Lý Dữ Liệu An Toàn**:
    - Dữ liệu sản phẩm luôn hỗ trợ Fallback từ `src/data/products.json` nếu Google Sheet API gặp sự cố hoặc offline.
+5. **Tự Động Đồng Bộ GitHub (Auto Git Sync)**:
+   - Sau mỗi tác vụ/lệnh hoàn thành code hoặc dữ liệu thành công, luôn tự động thực hiện commit và push lên GitHub (`git add .`, `git commit -m "..."`, `git push origin <branch>`).

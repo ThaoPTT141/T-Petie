@@ -36,6 +36,9 @@ Dự án được xây dựng bám sát lộ trình 6 giai đoạn:
    - Mọi hành vi tương tác quan trọng (Xem sản phẩm, Chọn size, Click BST, Click Sale, Thêm giỏ hàng, Rớt ở bước thanh toán) đều phải được kích hoạt qua module `src/lib/analytics/tracker.ts`.
    - Chuẩn hoá định dạng `dataLayer.push` cho GTM và sự kiện tùy chỉnh cho GA4 + Microsoft Clarity.
 
+5. **Tự Động Đồng Bộ GitHub (Auto Git Sync)**:
+   - Sau mỗi lần chỉnh sửa/viết code/dữ liệu thành công theo yêu cầu của người dùng, luôn tự động chạy `git add`, `git commit` (với commit message ngắn gọn, chuẩn mực) và `git push origin <branch>` để đồng bộ ngay lập tức lên kho lưu trữ GitHub.
+
 ---
 
 ## 3. Bản Đồ Thư Mục Dự Án (Project Structure Map)
