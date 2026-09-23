@@ -103,74 +103,9 @@ function LoginContent() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
-      <div className="bg-white rounded-3xl border border-cream-200 shadow-card overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
-        
-        {/* LEFT COLUMN: BRAND ART & STORY BANNER */}
-        <div className="lg:col-span-5 bg-gradient-to-br from-cream-100 via-blush-50 to-honey-100 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
-          {/* Subtle background glow */}
-          <div className="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-honey-200/40 blur-2xl pointer-events-none" />
-          <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-blush-200/40 blur-2xl pointer-events-none" />
-
-          <div className="relative z-10 space-y-4">
-            <Link href="/" className="inline-block">
-              <img
-                src="/images/logo.png"
-                alt="T'Petie Logo"
-                className="h-11 w-auto object-contain hover:scale-105 transition-transform"
-              />
-            </Link>
-
-            <div className="pt-4 space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-honey-700 bg-white/80 px-2.5 py-1 rounded-full border border-honey-200 inline-block">
-                Thành Viên T&apos;Petie
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-serif italic text-charcoal-900 leading-tight">
-                Nâng niu từng khoảnh khắc tuổi thơ con.
-              </h2>
-              <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed font-sans">
-                Đăng nhập để theo dõi đơn hàng, quản lý hồ sơ bé yêu và nhận đặc quyền tích điểm dành riêng cho Mẹ.
-              </p>
-            </div>
-          </div>
-
-          {/* Quick Demo Test Buttons */}
-          <div className="relative z-10 pt-8 mt-8 border-t border-cream-200/80 space-y-2.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-charcoal-500 block">
-              ⚡ Tài Khoản Dùng Thử Nhanh:
-            </span>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-              <button
-                type="button"
-                onClick={() => fillDemoAccount('admin@tpetie.vn', 'AdminPassword123!')}
-                className="p-2.5 rounded-xl bg-white/90 hover:bg-white border border-honey-300 text-left transition-all active:scale-95 shadow-2xs group"
-              >
-                <div className="flex items-center space-x-1.5 font-bold text-honey-700">
-                  <Crown className="w-3.5 h-3.5" />
-                  <span>Admin Demo</span>
-                </div>
-                <p className="text-[10px] text-charcoal-400 font-mono truncate">admin@tpetie.vn</p>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => fillDemoAccount('user@tpetie.vn', 'UserPassword123!')}
-                className="p-2.5 rounded-xl bg-white/90 hover:bg-white border border-blush-300 text-left transition-all active:scale-95 shadow-2xs group"
-              >
-                <div className="flex items-center space-x-1.5 font-bold text-blush-600">
-                  <Heart className="w-3.5 h-3.5" />
-                  <span>User Mẹ Bỉm</span>
-                </div>
-                <p className="text-[10px] text-charcoal-400 font-mono truncate">user@tpetie.vn</p>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT COLUMN: LOGIN FORM */}
-        <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-center">
-          <div className="max-w-md mx-auto w-full space-y-6">
+    <div className="max-w-md mx-auto px-4 sm:px-6 py-6 sm:py-12">
+      <div className="bg-white rounded-3xl border border-cream-200 shadow-card overflow-hidden p-6 sm:p-10 flex flex-col justify-center min-h-[580px]">
+          <div className="w-full space-y-6">
             
             {/* Header */}
             <div>
