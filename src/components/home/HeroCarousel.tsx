@@ -17,7 +17,7 @@ const banners = [
   },
   {
     id: 2,
-    src: '/images/banner-2.png',
+    src: '/images/hero-banner.png',
     alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
     href: '/bo-suu-tap/hoc-xinh-kem',
     collection: 'BST Tựu Trường: Học Xinh Kem',
