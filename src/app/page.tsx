@@ -28,7 +28,7 @@ export default function HomePage() {
 
 
       {/* 3. BỘ SƯU TẬP LOOKBOOK CAROUSEL (4 BST) */}
-      <section className="px-4 sm:px-6 max-w-6xl mx-auto">
+      <section id="collections" className="px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div>
             <div className="flex items-center space-x-1.5 text-xs font-bold text-honey-600 uppercase tracking-wider mb-1">
@@ -52,7 +52,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. FLASH SALE BANNER SECTION */}
-      <section className="px-4 sm:px-6 max-w-6xl mx-auto">
+      <section id="flash-sale" className="px-4 sm:px-6 max-w-6xl mx-auto">
         <Link 
           href="/sale"
           className="block relative w-full rounded-3xl overflow-hidden shadow-soft hover:shadow-md transition-shadow bg-[#f9f0e0]"
@@ -72,7 +72,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. BEST SELLERS GRID */}
-      <section className="px-4 sm:px-6 max-w-6xl mx-auto">
+      <section id="best-seller" className="px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <div>
             <div className="flex items-center space-x-1 text-xs font-bold text-sage-700 uppercase tracking-wider mb-1">

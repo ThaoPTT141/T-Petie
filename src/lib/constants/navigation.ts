@@ -23,10 +23,9 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     label: 'Trang Chủ',
     href: '/',
     children: [
-      { label: 'Váy', href: '/be-gai/vay', description: 'Váy đầm công chúa, voan tơ cao cấp' },
-      { label: 'Áo', href: '/be-gai/ao', description: 'Áo sơ mi cổ sen, thêu tay tỉ mỉ' },
-      { label: 'Quần', href: '/be-gai/quan', description: 'Quần bloomer, quần yếm thô đũi' },
-      { label: 'Set đồ', href: '/be-gai/set-do', description: 'Set bộ phối sẵn tone sur tone' },
+      { label: 'Sản Phẩm Bán Chạy Nhất', href: '/#best-seller', description: 'Những mẫu đồ được các mẹ yêu thích nhất' },
+      { label: 'Bộ Sưu Tập Nổi Bật', href: '/#collections', description: 'Khám phá chuyện của mùa qua từng thiết kế' },
+      { label: 'Ưu Đãi Độc Quyền', href: '/#flash-sale', description: 'Các chương trình khuyến mãi hấp dẫn' },
     ],
   },
   {

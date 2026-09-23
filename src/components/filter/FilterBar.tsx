@@ -26,41 +26,10 @@ export function FilterBar({
   const pathname = usePathname();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const subcategories = [
-    { label: 'Tất Cả', slug: 'all', href: '/be-gai' },
-    { label: '👗 Váy Đầm', slug: 'vay', href: '/be-gai/vay' },
-    { label: '👚 Áo Kiểu', slug: 'ao', href: '/be-gai/ao' },
-    { label: '🩳 Quần Xinh', slug: 'quan', href: '/be-gai/quan' },
-    { label: '✨ Set Bộ', slug: 'set-do', href: '/be-gai/set-do' },
-  ];
-
   return (
     <div className="space-y-3 mb-6">
       {/* Category Pills Trượt Ngang Cho Mobile & Desktop */}
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1">
-          {subcategories.map((sub) => {
-            const isSelected =
-              (sub.slug === 'all' && pathname === '/be-gai') ||
-              pathname === sub.href ||
-              activeSubcategory === sub.slug;
-
-            return (
-              <Link
-                key={sub.slug}
-                href={sub.href}
-                data-track={`filter-tab-${sub.slug}`}
-                className={`px-3.5 py-2 rounded-full text-xs font-bold shrink-0 transition-all active:scale-95 ${
-                  isSelected
-                    ? 'bg-honey-500 text-white shadow-sm'
-                    : 'bg-cream-100 hover:bg-cream-200 text-charcoal-700 border border-cream-200'
-                }`}
-              >
-                {sub.label}
-              </Link>
-            );
-          })}
-        </div>
+      <div className="flex items-center justify-end gap-2">
 
         {/* Nút Bộ Lọc Drawer Mobile */}
         <button
