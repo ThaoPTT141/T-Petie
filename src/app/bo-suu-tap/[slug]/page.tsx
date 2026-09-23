@@ -56,8 +56,8 @@ export default function CollectionDetailPage({ params }: PageProps) {
           className="w-full h-auto object-contain block"
         />
 
-        {/* Ẩn Text overlay trên banner cho các BST đã có sẵn Typography trong ảnh thiết kế (Học Xinh Kem, Hạ Mật, Trung Thu), các BST khác vẫn hiển thị */}
-        {!['hoc-xinh-kem', 'ha-mat', 'trung-thu-kem-com'].includes(collection.id) && (
+        {/* Ẩn Text overlay trên banner cho các BST đã có sẵn Typography trong ảnh thiết kế (Học Xinh Kem, Hạ Mật, Trung Thu, Khánh Vy), các BST khác nếu có vẫn hiển thị */}
+        {!['hoc-xinh-kem', 'ha-mat', 'trung-thu-kem-com', 'khanh-vy'].includes(collection.id) && (
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent flex items-end p-5 sm:p-8 z-10">
             <div className="max-w-md text-white">
               {collection.season && (
