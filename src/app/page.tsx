@@ -9,6 +9,7 @@ import { Collection } from '@/types/collection';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { LookbookCarousel } from '@/components/collection/LookbookCarousel';
 import { HeroCarousel } from '@/components/home/HeroCarousel';
+import { FeatureCarousel } from '@/components/home/FeatureCarousel';
 
 export default function HomePage() {
   const products = localProducts as Product[];
@@ -96,41 +97,8 @@ export default function HomePage() {
       </section>
 
       {/* 6. VÌ SAO MẸ YÊU THÍCH T'PETIE */}
-      <section className="px-4 sm:px-6 max-w-6xl mx-auto">
-        <div className="bg-cream-100/70 border border-cream-200 rounded-3xl p-6 sm:p-10 text-center">
-          <span className="text-xs font-bold text-honey-600 uppercase tracking-wider block mb-2">
-            Chất Lượng Là Danh Dự
-          </span>
-          <h2 className="text-xl sm:text-3xl font-bold font-heading text-charcoal-900 mb-8">
-            Những điều làm nên sự khác biệt của T&apos;Petie
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
-            <div className="bg-white p-5 rounded-2xl border border-cream-200 shadow-card">
-              <span className="text-2xl mb-2 block">🌿</span>
-              <h3 className="font-heading font-bold text-sm text-charcoal-900 mb-1">100% Cotton &amp; Đũi Tự Nhiên</h3>
-              <p className="text-xs text-charcoal-600 leading-relaxed">
-                Vải được dệt từ sợi tự nhiên hữu cơ, không sử dụng hóa chất nhuộm độc hại, an toàn với làn da non nớt.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-2xl border border-cream-200 shadow-card">
-              <span className="text-2xl mb-2 block">🪡</span>
-              <h3 className="font-heading font-bold text-sm text-charcoal-900 mb-1">Đường May Lộn Ẩn Tinh Tế</h3>
-              <p className="text-xs text-charcoal-600 leading-relaxed">
-                Mọi đường chỉ và cúc bấm đều được xử lý giấu mép kỹ càng, đảm bảo không cọ xát hay làm đau bé khi vận động.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-2xl border border-cream-200 shadow-card">
-              <span className="text-2xl mb-2 block">🧸</span>
-              <h3 className="font-heading font-bold text-sm text-charcoal-900 mb-1">Phom Dáng Dễ Mặc Bỉm</h3>
-              <p className="text-xs text-charcoal-600 leading-relaxed">
-                Thiết kế đũng quần và váy rộng rãi, có cúc bấm đũng tiện lợi cho mẹ thay bỉm cho bé chỉ trong 30 giây.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section className="px-4 sm:px-6 max-w-6xl mx-auto pb-10">
+        <FeatureCarousel />
       </section>
     </div>
   );
