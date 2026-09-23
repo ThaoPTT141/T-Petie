@@ -22,7 +22,7 @@ const banners = [
     href: '/bo-suu-tap/hoc-xinh-kem',
     collection: 'BST Tựu Trường: Học Xinh Kem',
     bg: '#FFFDF7',
-    objectPosition: '50% 15%'
+    objectPosition: 'center center'
   },
   {
     id: 3,
