@@ -8,24 +8,27 @@ import { ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 const banners = [
   {
     id: 1,
-    src: '/images/banner-2.png',
-    alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
+    src: '/images/banner-1.jpg',
+    alt: 'Trung Thu Collection - Ánh Trăng Của Bé',
     href: '/be-gai',
-    collection: 'BST Tựu Trường: Học Xinh Kem'
+    collection: 'BST Trung Thu: Ánh Trăng Của Bé',
+    bg: '#FFF8E7'
   },
   {
     id: 2,
-    src: '/images/banner-1.jpg',
-    alt: 'Trung Thu Collection',
+    src: '/images/banner-2.png',
+    alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
     href: '/be-gai',
-    collection: 'BST Trung Thu: Ánh Trăng Của Bé'
+    collection: 'BST Tựu Trường: Học Xinh Kem',
+    bg: '#EAF4EC'
   },
   {
     id: 3,
     src: '/images/banner-3.jpg',
     alt: 'Hè yêu nhẹ nhàng của bé',
     href: '/be-gai',
-    collection: 'BST Hạ Mát: Hè Yêu Nhẹ Nhàng'
+    collection: 'BST Hạ Mát: Hè Yêu Nhẹ Nhàng',
+    bg: '#FFEBEB'
   }
 ];
 
@@ -47,7 +50,7 @@ export function HeroCarousel() {
   return (
     <div className="relative rounded-3xl overflow-hidden border border-cream-200 shadow-soft bg-cream-50 group">
       {/* Banner Container */}
-      <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-[2.5/1] overflow-hidden bg-cream-50 flex items-center justify-center">
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/7] md:aspect-[21/8] overflow-hidden flex items-center justify-center">
         {banners.map((banner, index) => (
           <Link
             key={banner.id}
@@ -56,6 +59,7 @@ export function HeroCarousel() {
             className={`absolute inset-0 transition-transform duration-700 ease-in-out flex items-center justify-center ${
               index === currentIndex ? 'translate-x-0' : index < currentIndex ? '-translate-x-full' : 'translate-x-full'
             }`}
+            style={{ backgroundColor: banner.bg }}
           >
             <Image
               src={banner.src}
@@ -63,8 +67,8 @@ export function HeroCarousel() {
               fill
               priority={index === 0}
               quality={100}
-              sizes="(max-width: 768px) 100vw, 1200px"
-              className="object-cover object-top group-hover:scale-[1.015] transition-transform duration-500"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1400px"
+              className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.01]"
             />
           </Link>
         ))}
@@ -72,14 +76,14 @@ export function HeroCarousel() {
         {/* Arrow Navigation */}
         <button
           onClick={(e) => { e.preventDefault(); prevSlide(); }}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/70 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal-700 shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-10"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/70 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal-700 shadow-md opacity-60 sm:opacity-0 group-hover:opacity-100 transition-opacity z-10"
           aria-label="Lùi lại"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
         <button
           onClick={(e) => { e.preventDefault(); nextSlide(); }}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/70 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal-700 shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-10"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/70 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal-700 shadow-md opacity-60 sm:opacity-0 group-hover:opacity-100 transition-opacity z-10"
           aria-label="Tiến tới"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
