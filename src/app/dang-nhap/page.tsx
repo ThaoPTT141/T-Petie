@@ -103,7 +103,7 @@ function LoginForm() {
               Đăng Nhập Tài Khoản
             </h1>
             <p className="text-xs sm:text-sm text-charcoal-500 mt-1">
-              Chào mừng Mẹ quay trở lại với thế giới ngọt ngào của T&apos;Petie
+              Chào mừng Mẹ đến với thế giới ngọt ngào của T&apos;Petie
             </p>
           </div>
 
