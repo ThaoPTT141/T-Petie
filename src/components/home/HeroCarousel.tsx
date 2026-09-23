@@ -17,11 +17,11 @@ const banners = [
   },
   {
     id: 2,
-    src: '/images/banner-ngot-ngao-new.png',
-    alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
+    src: '/images/hoc-xinh-kem.jpg',
+    alt: 'BST Tựu Trường: Học Xinh Kem',
     href: '/bo-suu-tap/hoc-xinh-kem',
     collection: 'BST Tựu Trường: Học Xinh Kem',
-    objectPosition: '30% 25%'
+    objectPosition: 'center center'
   },
   {
     id: 3,

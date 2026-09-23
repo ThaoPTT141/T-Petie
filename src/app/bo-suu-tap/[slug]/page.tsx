@@ -49,45 +49,39 @@ export default function CollectionDetailPage({ params }: PageProps) {
 
       {/* Hero Banner BST */}
       <div className="relative rounded-3xl overflow-hidden bg-cream-100 border border-cream-200 shadow-soft">
-        <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden">
-          {/* Logo T'Petie watermark mờ tinh tế */}
-          <div className="absolute top-4 right-5 sm:top-6 sm:right-8 opacity-25 select-none pointer-events-none z-10">
-            <span className="font-heading italic font-extrabold text-base sm:text-2xl text-white tracking-wider drop-shadow-sm">
-              T&apos;Petie ✨
-            </span>
-          </div>
-
-          {/* Ảnh Banner với background-size: cover và background-position: 30% 25% để tập trung rõ khuôn mặt, mũ cói và thân trên bé gái */}
+        <div className="relative w-full aspect-[16/6.2] sm:aspect-[21/8] min-h-[220px] sm:min-h-[300px] md:min-h-[360px] overflow-hidden">
+          {/* Ảnh Banner với background-size: cover và background-position: center giúp hiển thị trọn vẹn và cân đối */}
           <Image
             src={collection.bannerImage}
             alt={collection.title}
             fill
             priority
             quality={100}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
-            className="object-cover transition-transform duration-500"
-            style={{ objectPosition: collection.id === 'hoc-xinh-kem' ? '30% 25%' : 'center center' }}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1400px"
+            className="object-cover object-center transition-transform duration-500"
           />
 
-          {/* Thẻ Text Thông Tin BST đặt ở góc dưới bên trái, tránh che mặt và mũ bé gái */}
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent flex items-end p-5 sm:p-8 z-10">
-            <div className="max-w-md text-white">
-              {collection.season && (
-                <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-honey-500 text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 shadow-sm">
-                  <Sparkles className="w-3 h-3 mr-1" />
-                  {collection.season}
-                </span>
-              )}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading mb-1.5 leading-tight drop-shadow-sm">
-                {collection.title}
-              </h1>
-              {collection.subtitle && (
-                <p className="text-xs sm:text-sm text-white/90 leading-relaxed drop-shadow-sm line-clamp-2">
-                  {collection.subtitle}
-                </p>
-              )}
+          {/* Ẩn Text overlay trên banner cho BST Học Xinh Kem (vì ảnh thiết kế đã có sẵn Typography Học Xinh), các BST khác vẫn hiển thị */}
+          {collection.id !== 'hoc-xinh-kem' && (
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent flex items-end p-5 sm:p-8 z-10">
+              <div className="max-w-md text-white">
+                {collection.season && (
+                  <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-honey-500 text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 shadow-sm">
+                    <Sparkles className="w-3 h-3 mr-1" />
+                    {collection.season}
+                  </span>
+                )}
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading mb-1.5 leading-tight drop-shadow-sm">
+                  {collection.title}
+                </h1>
+                {collection.subtitle && (
+                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed drop-shadow-sm line-clamp-2">
+                    {collection.subtitle}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 

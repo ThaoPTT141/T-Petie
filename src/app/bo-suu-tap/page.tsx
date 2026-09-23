@@ -42,8 +42,7 @@ export default function BoSuuTapPage() {
                   alt={col.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  style={{ objectPosition: col.id === 'hoc-xinh-kem' ? '30% 25%' : 'center center' }}
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
                 {col.badge && (
                   <div className="absolute top-3 left-3">
