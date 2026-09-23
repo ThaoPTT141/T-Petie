@@ -19,9 +19,9 @@ const banners = [
     id: 2,
     src: '/images/banner-2.png',
     alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
-    href: '/be-gai',
+    href: '/bo-suu-tap/hoc-xinh-kem',
     collection: 'BST Tựu Trường: Học Xinh Kem',
-    bg: '#EAF4EC',
+    bg: '#FDFDFB',
     objectPosition: 'center center'
   },
   {
@@ -71,7 +71,7 @@ export function HeroCarousel() {
               priority={index === 0}
               quality={100}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1400px"
-              className="object-contain md:object-cover transition-transform duration-500 group-hover:scale-[1.01]"
+              className="object-contain transition-transform duration-500 group-hover:scale-[1.01]"
               style={{ objectPosition: banner.objectPosition }}
             />
           </Link>

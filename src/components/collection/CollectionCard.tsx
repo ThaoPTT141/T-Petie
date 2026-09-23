@@ -21,13 +21,13 @@ export function CollectionCard({ collection }: { collection: Collection }) {
         className="block"
       >
         {/* Ảnh Banner BST */}
-        <div className="relative w-full aspect-[4/3] bg-cream-100 overflow-hidden">
+        <div className="relative w-full aspect-[4/3] bg-[#FDFDFB] overflow-hidden">
           <Image
             src={collection.bannerImage}
             alt={collection.title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="object-contain object-center group-hover:scale-105 transition-transform duration-500 ease-out"
           />
           {/* Badge */}
           {collection.badge && (

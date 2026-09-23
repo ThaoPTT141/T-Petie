@@ -48,28 +48,40 @@ export default function CollectionDetailPage({ params }: PageProps) {
       />
 
       {/* Hero Banner BST */}
-      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cream-100 to-white border border-cream-200 shadow-soft">
-        <div className="relative w-full h-64 sm:h-96 bg-cream-100">
+      <div className="relative rounded-3xl overflow-hidden bg-[#FDFDFB] border border-cream-200 shadow-soft">
+        <div className="relative w-full h-80 sm:h-[420px] md:h-[480px] bg-[#FDFDFB] flex items-center justify-center">
+          {/* Logo T'Petie watermark mờ tinh tế */}
+          <div className="absolute top-4 right-5 sm:top-6 sm:right-8 opacity-25 select-none pointer-events-none z-10">
+            <span className="font-heading italic font-extrabold text-base sm:text-2xl text-honey-800 tracking-wider">
+              T&apos;Petie ✨
+            </span>
+          </div>
+
+          {/* Ảnh Banner với background-size: contain / object-contain trọn vẹn không bị cắt xén */}
           <Image
             src={collection.bannerImage}
             alt={collection.title}
             fill
             priority
-            sizes="100vw"
-            className="object-cover"
+            quality={100}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
+            className="object-contain object-center z-0 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/30 to-transparent flex items-end p-6 sm:p-10">
-            <div className="text-white max-w-2xl">
+
+          {/* Thẻ Text Thông Tin BST đặt cân đối trên nền kem trống, không đè lên bé gái */}
+          <div className="absolute inset-0 flex flex-col justify-end md:justify-center p-4 sm:p-6 md:p-8 pointer-events-none z-10">
+            <div className="max-w-xs sm:max-w-sm bg-white/90 md:bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-cream-200/80 shadow-md text-charcoal-900 pointer-events-auto">
               {collection.season && (
-                <span className="inline-block px-3 py-1 rounded-full bg-honey-500 text-white text-xs font-bold uppercase tracking-wider mb-2">
+                <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-honey-500 text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 shadow-2xs">
+                  <Sparkles className="w-3 h-3 mr-1" />
                   {collection.season}
                 </span>
               )}
-              <h1 className="text-2xl sm:text-4xl font-extrabold font-heading mb-2">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-heading text-charcoal-900 mb-1.5 leading-tight">
                 {collection.title}
               </h1>
               {collection.subtitle && (
-                <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
+                <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed line-clamp-2 sm:line-clamp-3">
                   {collection.subtitle}
                 </p>
               )}

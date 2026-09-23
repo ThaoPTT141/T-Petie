@@ -36,13 +36,13 @@ export default function BoSuuTapPage() {
           >
             <div>
               {/* Banner Cover */}
-              <div className="relative w-full aspect-[16/9] bg-cream-100 overflow-hidden">
+              <div className="relative w-full aspect-[16/9] bg-[#FDFDFB] overflow-hidden">
                 <Image
                   src={col.bannerImage}
                   alt={col.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  className="object-contain object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
                 {col.badge && (
                   <div className="absolute top-3 left-3">
