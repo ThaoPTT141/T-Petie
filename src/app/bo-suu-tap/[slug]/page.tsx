@@ -49,40 +49,34 @@ export default function CollectionDetailPage({ params }: PageProps) {
 
       {/* Hero Banner BST */}
       <div className="relative rounded-3xl overflow-hidden bg-cream-100 border border-cream-200 shadow-soft">
-        <div className="relative w-full aspect-[16/6.2] sm:aspect-[21/8] min-h-[220px] sm:min-h-[300px] md:min-h-[360px] overflow-hidden">
-          {/* Ảnh Banner với background-size: cover và background-position: center giúp hiển thị trọn vẹn và cân đối */}
-          <Image
-            src={collection.bannerImage}
-            alt={collection.title}
-            fill
-            priority
-            quality={100}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1400px"
-            className="object-cover object-center transition-transform duration-500"
-          />
+        {/* Banner image tự động co giãn theo tỷ lệ gốc 100% trên cả Mobile & PC không bị cắt xén */}
+        <img
+          src={collection.bannerImage}
+          alt={collection.title}
+          className="w-full h-auto object-contain block"
+        />
 
-          {/* Ẩn Text overlay trên banner cho BST Học Xinh Kem & Hạ Mật (vì ảnh thiết kế đã có sẵn Typography), các BST khác vẫn hiển thị */}
-          {!['hoc-xinh-kem', 'ha-mat'].includes(collection.id) && (
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent flex items-end p-5 sm:p-8 z-10">
-              <div className="max-w-md text-white">
-                {collection.season && (
-                  <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-honey-500 text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 shadow-sm">
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    {collection.season}
-                  </span>
-                )}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading mb-1.5 leading-tight drop-shadow-sm">
-                  {collection.title}
-                </h1>
-                {collection.subtitle && (
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed drop-shadow-sm line-clamp-2">
-                    {collection.subtitle}
-                  </p>
-                )}
-              </div>
+        {/* Ẩn Text overlay trên banner cho các BST đã có sẵn Typography trong ảnh thiết kế (Học Xinh Kem, Hạ Mật, Trung Thu), các BST khác vẫn hiển thị */}
+        {!['hoc-xinh-kem', 'ha-mat', 'trung-thu-kem-com'].includes(collection.id) && (
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent flex items-end p-5 sm:p-8 z-10">
+            <div className="max-w-md text-white">
+              {collection.season && (
+                <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-honey-500 text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 shadow-sm">
+                  <Sparkles className="w-3 h-3 mr-1" />
+                  {collection.season}
+                </span>
+              )}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading mb-1.5 leading-tight drop-shadow-sm">
+                {collection.title}
+              </h1>
+              {collection.subtitle && (
+                <p className="text-xs sm:text-sm text-white/90 leading-relaxed drop-shadow-sm line-clamp-2">
+                  {collection.subtitle}
+                </p>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Câu Chuyện Cảm Hứng & Lookbook */}

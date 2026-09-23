@@ -8,10 +8,10 @@ import { ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 const banners = [
   {
     id: 1,
-    src: '/images/banner-1.jpg',
-    alt: 'Trung Thu Collection - Ánh Trăng Của Bé',
-    href: '/be-gai',
-    collection: 'BST Trung Thu: Ánh Trăng Của Bé',
+    src: '/images/banner-trung-thu.jpg',
+    alt: 'BST Trung Thu: Rằm Tháng Tám',
+    href: '/bo-suu-tap/trung-thu-kem-com',
+    collection: 'BST Trung Thu: Rằm Tháng Tám',
     bg: '#FFF8E7',
     objectPosition: 'center center'
   },
