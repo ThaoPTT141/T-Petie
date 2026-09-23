@@ -93,17 +93,10 @@ function LoginContent() {
     }
   };
 
-  // Quick Demo Account Helper
-  const fillDemoAccount = (demoEmail: string, demoPass: string) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setErrorMessage(null);
-  };
-
   return (
     <div className="max-w-md mx-auto px-4 sm:px-6 py-6 sm:py-12">
       <div className="bg-white rounded-3xl border border-cream-200 shadow-card overflow-hidden p-6 sm:p-10 flex flex-col justify-center min-h-[580px]">
-          <div className="w-full space-y-6">
+        <div className="w-full space-y-6">
             
             {/* Header */}
             <div>
