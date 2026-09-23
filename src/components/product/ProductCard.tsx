@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Heart } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { Product } from '@/types/product';
 import { formatPriceCompact } from '@/lib/utils/formatters';
 import { useCart } from '@/context/CartContext';
@@ -69,20 +69,6 @@ export function ProductCard({ product }: { product: Product }) {
               </span>
             )}
           </div>
-
-          {/* Nút Yêu Thích Góc Phải Trên */}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              showToast(`Đã lưu "${product.name}" vào danh sách yêu thích!`, 'love');
-            }}
-            data-track="toggle-wishlist"
-            className="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 backdrop-blur-md text-charcoal-400 hover:text-blush-500 hover:bg-white transition-colors z-10"
-            aria-label="Yêu thích"
-          >
-            <Heart className="w-3.5 h-3.5" />
-          </button>
 
           {/* Tag Chất Liệu Nổi Bật Dưới Chân Ảnh */}
           <div className="absolute bottom-2 left-2 right-2 z-10">
