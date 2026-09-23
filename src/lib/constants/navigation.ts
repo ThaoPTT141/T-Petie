@@ -23,9 +23,9 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     label: 'Trang Chủ',
     href: '/',
     children: [
-      { label: 'Sản Phẩm Bán Chạy Nhất', href: '/#best-seller', description: 'Những mẫu đồ được các mẹ yêu thích nhất' },
-      { label: 'Bộ Sưu Tập Nổi Bật', href: '/#collections', description: 'Khám phá chuyện của mùa qua từng thiết kế' },
-      { label: 'Ưu Đãi Độc Quyền', href: '/#flash-sale', description: 'Các chương trình khuyến mãi hấp dẫn' },
+      { label: 'Bộ Sưu Tập Nổi Bật', href: '/#collections' },
+      { label: 'Sản Phẩm Bán Chạy Nhất', href: '/#best-seller' },
+      { label: 'Ưu Đãi Độc Quyền', href: '/#flash-sale' },
     ],
   },
   {
