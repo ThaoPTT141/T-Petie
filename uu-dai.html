@@ -214,87 +214,125 @@
 
     <!-- ==================== HERO SALE BANNER & COUNTDOWN ==================== -->
     <section
-      class="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-r from-honey-500 via-blush-500 to-rose-500 p-4 sm:p-7 md:p-8 lg:p-10 text-white shadow-soft">
-      <!-- Decorative Glows -->
-      <div class="absolute -right-10 -bottom-10 w-64 sm:w-80 h-64 sm:h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-10 -top-10 w-48 sm:w-64 h-48 sm:h-64 bg-yellow-300/20 rounded-full blur-2xl pointer-events-none"></div>
+      class="relative rounded-3xl border border-rose-100/70 shadow-sm overflow-hidden bg-gradient-to-r from-amber-50 via-rose-50 to-orange-50 p-5 sm:p-7 md:p-8 lg:p-10 text-charcoal-900 transition-all">
+      <!-- Decorative Warm & Pastel Glows -->
+      <div class="absolute -right-12 -top-12 w-64 sm:w-80 h-64 sm:h-80 bg-rose-200/30 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-12 -bottom-12 w-56 sm:w-72 h-56 sm:h-72 bg-amber-200/25 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 left-1/3 w-40 h-40 bg-orange-100/40 rounded-full blur-2xl pointer-events-none"></div>
 
       <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 items-center gap-6 lg:gap-8">
-        <!-- Cột Trái: Tiêu đề, thông điệp & Countdown (Mobile-first + Desktop expanded) -->
-        <div class="md:col-span-7 lg:col-span-7 space-y-3 sm:space-y-4 text-center md:text-left">
-          <div
-            class="inline-flex items-center space-x-1.5 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[10.5px] sm:text-xs font-bold shadow-xs">
-            <span>🔥</span>
-            <span class="tracking-wide uppercase">SĂN DEAL CHO BÉ — GIÁ MỀM CHO MẸ</span>
+        <!-- Cột Trái (Nội dung & Countdown): Mobile xếp trên, Desktop chiếm 7/12 -->
+        <div class="order-1 md:order-1 md:col-span-7 lg:col-span-7 space-y-3.5 sm:space-y-4 text-center md:text-left">
+          <!-- Tag nhỏ xinh -->
+          <div class="inline-flex items-center space-x-1.5 text-rose-600 bg-white/80 border border-rose-200 px-3.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm shadow-xs">
+            <span>✨</span>
+            <span>Mùa Yêu Thương Cho Bé • Flash Sale Giới Hạn</span>
           </div>
 
-          <h1 class="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading tracking-tight leading-tight">
-            Ưu Đãi Độc Quyền T'Petie <br class="hidden sm:inline" />
-            <span class="text-yellow-200">Giảm Sâu Đến 35%</span>
-          </h1>
+          <!-- Tiêu đề thời trang & Subtitle -->
+          <div class="space-y-1.5 sm:space-y-2">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-charcoal-900 tracking-tight leading-tight">
+              T'Petie Ưu Đãi Mùa Lễ Hội
+            </h1>
+            <p class="text-xs sm:text-sm text-charcoal-600 leading-relaxed max-w-xl mx-auto md:mx-0 font-normal">
+              Dành riêng những thiết kế thêu tay thủ công ngọt ngào nhất cho thiên thần nhỏ của mẹ. Tuyển chọn trang phục chất liệu tự nhiên, mềm mại và chuẩn form dáng bé Việt.
+            </p>
+          </div>
 
-          <p class="text-xs sm:text-sm text-white/95 leading-relaxed max-w-xl mx-auto md:mx-0">
-            Tuyển chọn 30 mẫu váy áo thêu tay, set bộ cotton organic cao cấp từ 4 Bộ Sưu Tập chính thức của T'Petie. Chuẩn form dáng bé Việt từ 8kg đến 22kg (Size 1 - 6)!
-          </p>
-
-          <!-- Realtime Flash Sale Countdown -->
-          <div class="pt-1 flex flex-wrap items-center justify-center md:justify-start gap-2.5 sm:gap-3">
-            <div
-              class="flex items-center space-x-2 bg-black/30 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20 text-xs sm:text-sm shadow-sm">
-              <span class="animate-pulse text-sm sm:text-base">⏰</span>
-              <span class="font-medium text-white/90">Kết thúc sau:</span>
-              <div class="flex items-center space-x-1 font-mono font-bold text-xs sm:text-base">
-                <span id="countdown-hours" class="bg-white/25 px-2 py-0.5 rounded-md min-w-[28px] text-center">02</span>
-                <span class="font-bold">:</span>
-                <span id="countdown-minutes" class="bg-white/25 px-2 py-0.5 rounded-md min-w-[28px] text-center">18</span>
-                <span class="font-bold">:</span>
-                <span id="countdown-seconds" class="bg-white/25 px-2 py-0.5 rounded-md min-w-[28px] text-center">45</span>
+          <!-- Đồng hồ đếm ngược (Countdown Timer) tinh tế: Ngày : Giờ : Phút : Giây -->
+          <div class="pt-1 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2.5 sm:gap-3">
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
+              <!-- Ô Ngày -->
+              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-days" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">02</span>
+                <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Ngày</span>
+              </div>
+              <span class="font-extrabold text-rose-300 text-sm sm:text-base pb-3.5">:</span>
+              <!-- Ô Giờ -->
+              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-hours" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">14</span>
+                <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Giờ</span>
+              </div>
+              <span class="font-extrabold text-rose-300 text-sm sm:text-base pb-3.5">:</span>
+              <!-- Ô Phút -->
+              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-minutes" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">35</span>
+                <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Phút</span>
+              </div>
+              <span class="font-extrabold text-rose-300 text-sm sm:text-base pb-3.5">:</span>
+              <!-- Ô Giây -->
+              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-seconds" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">20</span>
+                <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Giây</span>
               </div>
             </div>
-            <div class="text-xs text-white/90 bg-white/15 backdrop-blur-sm px-3 py-2 rounded-xl hidden sm:inline-flex items-center space-x-1.5 border border-white/10">
+
+            <!-- Freeship badge kèm -->
+            <div class="text-xs text-charcoal-700 bg-white/70 backdrop-blur-sm px-3 py-2 rounded-xl inline-flex items-center space-x-1.5 border border-rose-100/80 shadow-xs">
               <span>🚚</span>
-              <span>Freeship toàn quốc từ 399k</span>
+              <span class="font-medium">Freeship toàn quốc từ 399k</span>
             </div>
+          </div>
+
+          <!-- Nút CTA: Khám Phá Ưu Đãi Ngay -->
+          <div class="pt-1 flex flex-wrap items-center justify-center md:justify-start gap-3">
+            <a href="#campaign-tabs-bar"
+              class="inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300 group">
+              <span>🛍️</span>
+              <span>Khám Phá Ưu Đãi Ngay</span>
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
           </div>
 
           <!-- Trust Badges on Desktop -->
-          <div class="hidden lg:flex items-center space-x-4 pt-1 text-[11.5px] text-white/90 font-medium">
-            <span class="flex items-center space-x-1"><span>✨</span><span>Chính hãng 100%</span></span>
+          <div class="hidden lg:flex items-center space-x-4 pt-1 text-[11.5px] text-charcoal-500 font-medium">
+            <span class="flex items-center space-x-1"><span class="text-rose-500">✨</span><span>100% Thêu tay thủ công</span></span>
             <span>•</span>
-            <span class="flex items-center space-x-1"><span>🌿</span><span>Chất liệu an toàn cho da</span></span>
+            <span class="flex items-center space-x-1"><span class="text-sage-500">🌿</span><span>Vải Linen &amp; Cotton hữu cơ</span></span>
             <span>•</span>
-            <span class="flex items-center space-x-1"><span>🔄</span><span>Đổi size miễn phí 7 ngày</span></span>
+            <span class="flex items-center space-x-1"><span class="text-honey-500">🔄</span><span>Đổi size linh hoạt 7 ngày</span></span>
           </div>
         </div>
 
-        <!-- Cột Phải: Showcase Hình ảnh BST Nổi bật trên Desktop/Tablet -->
-        <div class="hidden md:flex md:col-span-5 lg:col-span-5 justify-center md:justify-end">
-          <div class="relative w-full max-w-[280px] lg:max-w-[320px]">
-            <!-- Glow effect behind hero card -->
-            <div class="absolute -inset-1.5 bg-yellow-300/30 rounded-3xl blur-xl"></div>
+        <!-- Cột Phải (Khung ảnh thời trang sinh động): Mobile xếp dưới gọn gàng, Desktop chiếm 5/12 -->
+        <div class="order-2 md:order-2 md:col-span-5 lg:col-span-5 flex justify-center md:justify-end">
+          <div class="relative w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[330px]">
+            <!-- Decorative soft backdrop glow -->
+            <div class="absolute -inset-2 bg-gradient-to-tr from-rose-300/30 via-amber-200/30 to-orange-200/30 rounded-3xl blur-xl pointer-events-none"></div>
 
-            <!-- Featured Collection Card -->
-            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/40 bg-white/10 backdrop-blur-sm group cursor-pointer" onclick="filterCampaign('le2-9')">
+            <!-- Khung ảnh chính: Bo góc nghệ thuật dạng arched window / rounded-3xl mềm mại -->
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-white bg-white rotate-1 hover:rotate-0 transition-transform duration-300 group cursor-pointer" onclick="filterCampaign('le2-9')">
               <img
-                src="images/sale/set-ao-dai-dan-nguyet.jpg"
-                alt="BST Trung Thu Kem & Cốm - T'Petie"
+                src="images/promotions/le29-ao-dai.jpg"
+                alt="Set Áo Dài Đan Nguyệt T'Petie"
                 loading="eager"
                 fetchpriority="high"
-                class="w-full h-56 lg:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-56 sm:h-64 lg:h-72 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; transform: translateZ(0); -webkit-transform: translateZ(0);"
+                onerror="this.src='images/sale/set-ao-dai-dan-nguyet.jpg'"
               />
-              <!-- Floating Top Tag -->
-              <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full shadow-md text-charcoal-800 text-[11px] font-bold flex items-center space-x-1 border border-cream-200">
-                <span>🌸</span>
-                <span>BST Trung Thu Kem &amp; Cốm</span>
+
+              <!-- Sticker nhỏ đính góc: Giảm tới 35% -->
+              <div class="absolute top-2.5 right-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-extrabold text-[11px] sm:text-xs px-3 py-1 rounded-full shadow-md border border-white -rotate-6 flex items-center space-x-1 pointer-events-none">
+                <span>🏷️</span>
+                <span>Giảm tới 35%</span>
               </div>
-              <!-- Floating Bottom Badge -->
-              <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-charcoal-900/80 backdrop-blur-md p-2.5 rounded-xl text-white flex items-center justify-between border border-white/20 text-xs">
-                <div>
-                  <div class="font-bold text-[11.5px] text-yellow-300">Set Áo Dài Đan Nguyệt</div>
-                  <div class="text-[10px] text-white/80">Sale 30% • Chỉ từ 497.000đ (Gốc 710.000đ)</div>
+
+              <!-- Lookbook floating tag ở góc trên bên trái -->
+              <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm text-charcoal-800 text-[10.5px] font-bold flex items-center space-x-1 border border-rose-100">
+                <span>🌸</span>
+                <span>Lookbook Mới Nhất</span>
+              </div>
+
+              <!-- Floating Bottom Badge Thông tin sản phẩm -->
+              <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-white/95 backdrop-blur-md p-2.5 rounded-xl text-charcoal-900 flex items-center justify-between border border-rose-100 shadow-sm text-xs">
+                <div class="min-w-0 pr-2">
+                  <div class="font-bold text-[11.5px] text-charcoal-900 truncate">Set Áo Dài Đan Nguyệt</div>
+                  <div class="text-[10px] text-rose-600 font-semibold">Ưu đãi 30% • Chỉ từ 497.000đ</div>
                 </div>
-                <span class="px-2.5 py-1 rounded-lg bg-honey-500 text-white font-bold text-[10px] shrink-0 group-hover:bg-honey-600 transition-colors shadow-sm">
+                <span class="px-2.5 py-1 rounded-lg bg-rose-500 text-white font-bold text-[10.5px] shrink-0 group-hover:bg-rose-600 transition-colors shadow-xs">
                   Xem ngay
                 </span>
               </div>
@@ -314,51 +352,67 @@
         <span class="text-[10px] text-rose-500 font-semibold">Vuốt xem thêm →</span>
       </div>
 
-      <div class="snap-x snap-mandatory flex overflow-x-auto no-scrollbar gap-2.5 pb-1 -mx-3 px-3 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3 sm:gap-4">
-        <!-- Voucher 1 -->
+      <div class="snap-x snap-mandatory flex overflow-x-auto no-scrollbar gap-2.5 sm:gap-3.5 pb-1 -mx-3 px-3 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3">
+        <!-- Voucher 1: Giảm 20k -->
         <div
-          class="min-w-[260px] sm:min-w-0 snap-center p-3 sm:p-4 rounded-2xl bg-white border border-cream-200 flex items-center justify-between shadow-card hover:border-honey-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0">
-          <div class="space-y-0.5">
-            <div class="text-honey-600 font-bold text-xs sm:text-sm flex items-center space-x-1">
+          class="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
+          <!-- Ticket Cutout Notches & Divider -->
+          <div class="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
+          <div class="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
+          <div class="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none"></div>
+
+          <div class="space-y-0.5 pr-4 flex-1 min-w-0">
+            <div class="text-rose-600 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
               <span>🏷️</span>
               <span>Giảm 20.000 VNĐ</span>
             </div>
-            <p class="text-[10.5px] text-charcoal-400">Đơn từ 250k • Code: <strong class="text-charcoal-700">TPETIE20</strong></p>
+            <p class="text-[10.5px] text-charcoal-500">Đơn từ 250k • Code: <strong class="text-charcoal-800 font-bold">TPETIE20</strong></p>
           </div>
-          <button onclick="copyVoucher('TPETIE20')"
-            class="px-3.5 py-1.5 rounded-full bg-honey-100 text-honey-700 text-xs font-bold hover:bg-honey-500 hover:text-white transition-all active:scale-95 shrink-0 min-h-[38px]">
-            Lưu Mã
+          <button id="btn-voucher-TPETIE20" onclick="saveVoucher(this, 'TPETIE20')"
+            class="px-3.5 py-1.5 rounded-full bg-rose-50 hover:bg-rose-500 text-rose-600 hover:text-white border border-rose-200 text-xs font-bold transition-all active:scale-95 shrink-0 min-h-[36px] flex items-center justify-center space-x-1">
+            <span>Lưu Mã</span>
           </button>
         </div>
 
-        <!-- Voucher 2 -->
+        <!-- Voucher 2: Freeship -->
         <div
-          class="min-w-[260px] sm:min-w-0 snap-center p-3 sm:p-4 rounded-2xl bg-white border border-cream-200 flex items-center justify-between shadow-card hover:border-sage-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0">
-          <div class="space-y-0.5">
-            <div class="text-sage-700 font-bold text-xs sm:text-sm flex items-center space-x-1">
+          class="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
+          <!-- Ticket Cutout Notches & Divider -->
+          <div class="absolute -top-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
+          <div class="absolute -bottom-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
+          <div class="absolute top-2 bottom-2 right-[103px] sm:right-[113px] border-r border-dashed border-rose-200/90 pointer-events-none"></div>
+
+          <div class="space-y-0.5 pr-4 flex-1 min-w-0">
+            <div class="text-sage-700 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
               <span>🚚</span>
               <span>Freeship Toàn Quốc 0đ</span>
             </div>
-            <p class="text-[10.5px] text-charcoal-400">Đơn từ 399k • Tự áp dụng</p>
+            <p class="text-[10.5px] text-charcoal-500">Đơn từ 399k • Tự áp dụng khi giỏ đủ</p>
           </div>
-          <span class="text-[11px] font-bold text-sage-700 bg-sage-50 px-3 py-1.5 rounded-full border border-sage-200 shrink-0">
-            Tự Áp Dụng
+          <span class="text-[11px] font-bold text-sage-700 bg-sage-50 px-3 py-1.5 rounded-full border border-sage-200 shrink-0 flex items-center space-x-1">
+            <span>✓</span>
+            <span>Tự Áp Dụng</span>
           </span>
         </div>
 
-        <!-- Voucher 3 -->
+        <!-- Voucher 3: Giảm 10% First Order -->
         <div
-          class="min-w-[260px] sm:min-w-0 snap-center p-3 sm:p-4 rounded-2xl bg-white border border-cream-200 flex items-center justify-between shadow-card hover:border-blush-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0">
-          <div class="space-y-0.5">
-            <div class="text-blush-600 font-bold text-xs sm:text-sm flex items-center space-x-1">
+          class="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
+          <!-- Ticket Cutout Notches & Divider -->
+          <div class="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
+          <div class="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
+          <div class="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none"></div>
+
+          <div class="space-y-0.5 pr-4 flex-1 min-w-0">
+            <div class="text-amber-600 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
               <span>🎁</span>
               <span>Giảm 10% Tối Đa 50k</span>
             </div>
-            <p class="text-[10.5px] text-charcoal-400">Mẹ mua lần đầu • Code: <strong class="text-charcoal-700">MEMBERVIP</strong></p>
+            <p class="text-[10.5px] text-charcoal-500">Mẹ mua lần đầu • Code: <strong class="text-charcoal-800 font-bold">MEMBERVIP</strong></p>
           </div>
-          <button onclick="copyVoucher('MEMBERVIP')"
-            class="px-3.5 py-1.5 rounded-full bg-blush-100 text-blush-600 text-xs font-bold hover:bg-blush-500 hover:text-white transition-all active:scale-95 shrink-0 min-h-[38px]">
-            Lưu Mã
+          <button id="btn-voucher-MEMBERVIP" onclick="saveVoucher(this, 'MEMBERVIP')"
+            class="px-3.5 py-1.5 rounded-full bg-amber-50 hover:bg-amber-500 text-amber-700 hover:text-white border border-amber-200 text-xs font-bold transition-all active:scale-95 shrink-0 min-h-[36px] flex items-center justify-center space-x-1">
+            <span>Lưu Mã</span>
           </button>
         </div>
       </div>
@@ -1940,13 +1994,24 @@
     }
 
     // ==================== VOUCHER & TOAST HELPERS ====================
-    function copyVoucher(code) {
+    function saveVoucher(btn, code) {
       navigator.clipboard.writeText(code).then(() => {
         showToast(`Đã lưu mã voucher "${code}" vào khay nhớ tạm!`);
         trackAnalyticsEvent('apply_promotion', { coupon: code });
       }).catch(() => {
         showToast(`Mã ưu đãi của mẹ: ${code}`);
       });
+
+      if (btn) {
+        btn.innerHTML = '<span>✓</span><span>Đã Lưu</span>';
+        btn.className = 'px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 text-xs font-bold flex items-center justify-center space-x-1 shrink-0 cursor-default min-h-[36px]';
+        btn.onclick = null;
+      }
+    }
+
+    function copyVoucher(code) {
+      const btn = document.getElementById(`btn-voucher-${code}`);
+      saveVoucher(btn, code);
     }
 
     function showToast(message) {
@@ -1965,11 +2030,12 @@
       }, 2500);
     }
 
-    // ==================== COUNTDOWN TIMER ====================
+    // ==================== COUNTDOWN TIMER (Ngày : Giờ : Phút : Giây) ====================
     function initCountdown() {
-      let hours = 2;
-      let minutes = 18;
-      let seconds = 45;
+      let days = 2;
+      let hours = 14;
+      let minutes = 35;
+      let seconds = 20;
 
       setInterval(() => {
         if (seconds > 0) {
@@ -1980,14 +2046,21 @@
             minutes--;
           } else {
             minutes = 59;
-            if (hours > 0) hours--;
+            if (hours > 0) {
+              hours--;
+            } else {
+              hours = 23;
+              if (days > 0) days--;
+            }
           }
         }
 
+        const dEl = document.getElementById('countdown-days');
         const hEl = document.getElementById('countdown-hours');
         const mEl = document.getElementById('countdown-minutes');
         const sEl = document.getElementById('countdown-seconds');
 
+        if (dEl) dEl.innerText = days.toString().padStart(2, '0');
         if (hEl) hEl.innerText = hours.toString().padStart(2, '0');
         if (mEl) mEl.innerText = minutes.toString().padStart(2, '0');
         if (sEl) sEl.innerText = seconds.toString().padStart(2, '0');
