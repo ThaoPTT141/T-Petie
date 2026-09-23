@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Heart, ShieldCheck, RefreshCw, Truck, Phone, MessageCircle } from 'lucide-react';
+import { Heart, Phone, MessageCircle } from 'lucide-react';
 
 export function Footer() {
   const pathname = usePathname();
@@ -11,42 +11,6 @@ export function Footer() {
 
   return (
     <footer className={`bg-cream-100 border-t border-cream-200 ${isCollectionPage ? 'pt-8 sm:pt-10' : 'pt-10'} pb-24 md:pb-12 text-charcoal-700`}>
-      {/* 3 Cam kết chất lượng dịch vụ - Ẩn hoàn toàn trên các trang Bộ sưu tập, giữ nguyên ở Trang chủ & các trang khác */}
-      {!isCollectionPage && (
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-white p-5 rounded-3xl border border-cream-200 shadow-card">
-            <div className="flex items-center space-x-3 p-2">
-              <div className="w-10 h-10 rounded-2xl bg-sage-100 text-sage-600 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs sm:text-sm font-bold text-charcoal-900">100% Vải Organic An Toàn</h4>
-                <p className="text-[11px] text-charcoal-400">Không châm chích, thoáng mát cho da bé</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-3 p-2">
-              <div className="w-10 h-10 rounded-2xl bg-honey-100 text-honey-600 flex items-center justify-center shrink-0">
-                <RefreshCw className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs sm:text-sm font-bold text-charcoal-900">Đổi Size Miễn Phí 7 Ngày</h4>
-                <p className="text-[11px] text-charcoal-400">Hỗ trợ đổi tận nhà nếu bé mặc không vừa</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-3 p-2">
-              <div className="w-10 h-10 rounded-2xl bg-blush-100 text-blush-600 flex items-center justify-center shrink-0">
-                <Truck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs sm:text-sm font-bold text-charcoal-900">Freeship Đơn Từ 399k</h4>
-                <p className="text-[11px] text-charcoal-400">Giao nhanh toàn quốc 2 - 3 ngày</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Cấu trúc Footer 4 Cột Chính */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -113,11 +77,6 @@ export function Footer() {
             <li>
               <Link href="/san-pham/vay-chanh-tay" className="hover:text-honey-600 transition-colors block">
                 Hướng dẫn chọn size
-              </Link>
-            </li>
-            <li>
-              <Link href="/cua-hang" className="hover:text-honey-600 transition-colors block">
-                Hệ thống Showroom offline
               </Link>
             </li>
           </ul>
