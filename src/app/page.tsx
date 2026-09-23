@@ -14,7 +14,7 @@ export default function HomePage() {
   const products = localProducts as Product[];
   const collections = localCollections as Collection[];
 
-  const bestSellers = products.filter((p) => p.isBestSeller);
+  const bestSellers = products.filter((p) => p.isBestSeller).slice(0, 12);
   const newArrivals = products.filter((p) => p.isNewArrival);
   const flashSaleProducts = products.filter((p) => p.isSale);
 
