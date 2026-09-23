@@ -1,13 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Heart, Phone, MessageCircle } from 'lucide-react';
+import { SizeGuideModal } from '@/components/product/SizeGuideModal';
 
 export function Footer() {
   const pathname = usePathname();
   const isCollectionPage = pathname?.startsWith('/bo-suu-tap');
+  const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
 
   return (
     <footer className={`bg-cream-100 border-t border-cream-200 ${isCollectionPage ? 'pt-8 sm:pt-10' : 'pt-10'} pb-24 md:pb-12 text-charcoal-700`}>
@@ -75,9 +77,13 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/san-pham/vay-chanh-tay" className="hover:text-honey-600 transition-colors block">
+              <button
+                type="button"
+                onClick={() => setIsSizeGuideOpen(true)}
+                className="hover:text-honey-600 transition-colors text-left block"
+              >
                 Hướng dẫn chọn size
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -162,6 +168,12 @@ export function Footer() {
           <Heart className="w-3 h-3 text-blush-500 fill-blush-500 inline" />
         </p>
       </div>
+
+      {/* Modal Bảng Hướng Dẫn Chọn Size */}
+      <SizeGuideModal
+        isOpen={isSizeGuideOpen}
+        onClose={() => setIsSizeGuideOpen(false)}
+      />
     </footer>
   );
 }
