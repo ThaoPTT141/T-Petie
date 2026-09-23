@@ -17,7 +17,7 @@ const banners = [
   },
   {
     id: 2,
-    src: '/images/hoc-xinh-kem.jpg',
+    src: '/images/banner-hxk.jpg',
     alt: 'BST Tựu Trường: Học Xinh Kem',
     href: '/bo-suu-tap/hoc-xinh-kem',
     collection: 'BST Tựu Trường: Học Xinh Kem',
