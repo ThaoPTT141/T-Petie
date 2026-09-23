@@ -61,8 +61,8 @@ export default function CollectionDetailPage({ params }: PageProps) {
             className="object-cover object-center transition-transform duration-500"
           />
 
-          {/* Ẩn Text overlay trên banner cho BST Học Xinh Kem (vì ảnh thiết kế đã có sẵn Typography Học Xinh), các BST khác vẫn hiển thị */}
-          {collection.id !== 'hoc-xinh-kem' && (
+          {/* Ẩn Text overlay trên banner cho BST Học Xinh Kem & Hạ Mật (vì ảnh thiết kế đã có sẵn Typography), các BST khác vẫn hiển thị */}
+          {!['hoc-xinh-kem', 'ha-mat'].includes(collection.id) && (
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent flex items-end p-5 sm:p-8 z-10">
               <div className="max-w-md text-white">
                 {collection.season && (

@@ -25,12 +25,12 @@ const banners = [
   },
   {
     id: 3,
-    src: '/images/banner-3.jpg',
-    alt: 'Hè yêu nhẹ nhàng của bé',
-    href: '/be-gai',
-    collection: 'BST Hạ Mát: Hè Yêu Nhẹ Nhàng',
-    bg: '#FFEBEB',
-    objectPosition: 'center top'
+    src: '/images/banner-ha-mat.jpg',
+    alt: 'BST Hạ Mật: Embracing the colour of Summer',
+    href: '/bo-suu-tap/ha-mat',
+    collection: 'BST Hạ Mật: Hè Yêu Nhẹ Nhàng',
+    bg: '#FFF8E7',
+    objectPosition: 'center center'
   }
 ];
 
