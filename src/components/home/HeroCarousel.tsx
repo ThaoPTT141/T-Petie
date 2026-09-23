@@ -21,8 +21,7 @@ const banners = [
     alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
     href: '/bo-suu-tap/hoc-xinh-kem',
     collection: 'BST Tựu Trường: Học Xinh Kem',
-    bg: '#FFFDF7',
-    objectPosition: 'center center'
+    objectPosition: '30% 25%'
   },
   {
     id: 3,

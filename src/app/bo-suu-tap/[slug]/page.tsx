@@ -57,7 +57,7 @@ export default function CollectionDetailPage({ params }: PageProps) {
             </span>
           </div>
 
-          {/* Ảnh Banner với background-size: cover và background-position: 50% 15% để luôn thấy rõ mặt và mũ bé gái */}
+          {/* Ảnh Banner với background-size: cover và background-position: 30% 25% để tập trung rõ khuôn mặt, mũ cói và thân trên bé gái */}
           <Image
             src={collection.bannerImage}
             alt={collection.title}
@@ -66,7 +66,7 @@ export default function CollectionDetailPage({ params }: PageProps) {
             quality={100}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
             className="object-cover transition-transform duration-500"
-            style={{ objectPosition: collection.id === 'hoc-xinh-kem' ? '50% 15%' : 'center center' }}
+            style={{ objectPosition: collection.id === 'hoc-xinh-kem' ? '30% 25%' : 'center center' }}
           />
 
           {/* Thẻ Text Thông Tin BST đặt ở góc dưới bên trái, tránh che mặt và mũ bé gái */}

@@ -28,7 +28,7 @@ export function CollectionCard({ collection }: { collection: Collection }) {
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-            style={{ objectPosition: collection.id === 'hoc-xinh-kem' ? '50% 15%' : 'center center' }}
+            style={{ objectPosition: collection.id === 'hoc-xinh-kem' ? '30% 25%' : 'center center' }}
           />
           {/* Badge */}
           {collection.badge && (
