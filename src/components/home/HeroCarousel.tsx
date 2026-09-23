@@ -12,7 +12,8 @@ const banners = [
     alt: 'Trung Thu Collection - Ánh Trăng Của Bé',
     href: '/be-gai',
     collection: 'BST Trung Thu: Ánh Trăng Của Bé',
-    bg: '#FFF8E7'
+    bg: '#FFF8E7',
+    objectPosition: 'center center'
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const banners = [
     alt: 'Ngọt ngào, trong trẻo - Nâng niu từng bước chạm bé yêu',
     href: '/be-gai',
     collection: 'BST Tựu Trường: Học Xinh Kem',
-    bg: '#EAF4EC'
+    bg: '#EAF4EC',
+    objectPosition: 'center center'
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ const banners = [
     alt: 'Hè yêu nhẹ nhàng của bé',
     href: '/be-gai',
     collection: 'BST Hạ Mát: Hè Yêu Nhẹ Nhàng',
-    bg: '#FFEBEB'
+    bg: '#FFEBEB',
+    objectPosition: 'center top'
   }
 ];
 
@@ -68,7 +71,8 @@ export function HeroCarousel() {
               priority={index === 0}
               quality={100}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1400px"
-              className="object-contain md:object-cover object-center transition-transform duration-500 group-hover:scale-[1.01]"
+              className="object-contain md:object-cover transition-transform duration-500 group-hover:scale-[1.01]"
+              style={{ objectPosition: banner.objectPosition }}
             />
           </Link>
         ))}
