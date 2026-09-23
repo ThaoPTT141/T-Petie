@@ -52,30 +52,30 @@ export function FeatureCarousel() {
         Những điều làm nên sự khác biệt của T'Petie
       </h2>
 
-      <div className="relative w-full aspect-[4/5] sm:aspect-[21/9] md:aspect-[2.5/1] rounded-2xl overflow-hidden shadow-card group">
+      <div className="relative w-full aspect-[3/4] sm:aspect-[16/7] md:aspect-[2.5/1] rounded-2xl overflow-hidden shadow-card group bg-cream-50">
         {features.map((feature, index) => (
           <div
             key={feature.id}
-            className={`absolute inset-0 transition-transform duration-700 ease-in-out flex ${
+            className={`absolute inset-0 transition-transform duration-700 ease-in-out flex items-center justify-center ${
               index === currentIndex ? 'translate-x-0' : index < currentIndex ? '-translate-x-full' : 'translate-x-full'
             }`}
           >
-            <Image
-              src={feature.src}
-              alt={feature.title}
-              fill
-              quality={90}
-              sizes="(max-width: 640px) 100vw, 1200px"
-              className="object-cover object-center"
-            />
-            {/* Overlay Gradient for Text Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/60 via-transparent to-transparent sm:bg-gradient-to-r sm:from-charcoal-900/50 sm:to-transparent" />
+            <div className="absolute inset-0 w-full h-full sm:w-1/2 md:w-3/5 sm:left-auto sm:right-0">
+              <Image
+                src={feature.src}
+                alt={feature.title}
+                fill
+                quality={100}
+                sizes="(max-width: 640px) 100vw, 800px"
+                className="object-contain sm:object-cover object-top sm:object-center"
+              />
+            </div>
             
-            {/* Blurred Corner Text Box */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-auto sm:w-1/2 md:w-1/3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-5 text-left shadow-lg transform transition-all duration-700 delay-300">
+            {/* Solid Text Box placed carefully to not obscure character */}
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:left-8 sm:right-auto sm:w-1/2 md:w-2/5 bg-white/95 border border-cream-200 rounded-2xl p-5 md:p-6 text-left shadow-lg transform transition-all duration-700 delay-300">
               <span className="text-3xl mb-2 block">{feature.icon}</span>
-              <h3 className="font-heading font-bold text-lg text-white mb-2 drop-shadow-sm">{feature.title}</h3>
-              <p className="text-sm text-white/90 leading-relaxed drop-shadow-sm">
+              <h3 className="font-heading font-bold text-lg md:text-xl text-charcoal-900 mb-2">{feature.title}</h3>
+              <p className="text-sm text-charcoal-600 leading-relaxed">
                 {feature.description}
               </p>
             </div>
