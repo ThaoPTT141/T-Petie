@@ -11,9 +11,7 @@ import {
   Eye, 
   EyeOff, 
   ArrowRight, 
-  AlertCircle,
-  Crown,
-  Heart
+  AlertCircle
 } from 'lucide-react';
 
 /**
@@ -267,7 +265,6 @@ function LoginContent() {
 
           </div>
         </div>
-
       </div>
     </div>
   );
