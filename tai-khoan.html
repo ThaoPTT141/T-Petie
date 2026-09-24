@@ -211,9 +211,9 @@
 
           <!-- Chân trang: Liên kết tinh tế dành riêng cho Admin -->
           <div class="mt-8 pt-5 border-t border-[#F0EBE1] text-center lg:text-left text-xs text-charcoal-400">
-            <span>Bạn là nhân viên quản trị?</span>
+            <span>Nhân viên quản trị hệ thống?</span>
             <a href="admin-login.html" class="font-semibold text-amber-700 hover:text-amber-800 hover:underline ml-1 inline-flex items-center space-x-1">
-              <span>Đăng nhập vào Portal Admin</span>
+              <span>Đăng nhập Admin tại đây</span>
               <span>→</span>
             </a>
           </div>
@@ -227,17 +227,18 @@
         
         <div class="text-center mb-6">
           <div class="relative inline-block">
-            <img id="user-avatar-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80"
-              alt="Avatar" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-amber-100 shadow-md mx-auto" />
+            <div id="user-avatar-badge" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-2xl sm:text-3xl flex items-center justify-center border-4 border-amber-100 shadow-md mx-auto">
+              Q
+            </div>
             <span class="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow border border-cream-200 text-xs">
               🌸
             </span>
           </div>
           <h2 id="user-display-name" class="font-heading font-extrabold text-xl sm:text-2xl text-charcoal-900 mt-3">
-            Mẹ Quỳnh Như
+            Nguyễn Như Quỳnh
           </h2>
           <p id="user-display-email" class="text-xs text-charcoal-400 font-mono mt-0.5">
-            quynhnhu.mom@gmail.com
+            nhuquynh.marketing@gmail.com
           </p>
           <div class="inline-flex items-center space-x-1.5 mt-2.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200/60">
             <span>⭐</span>
@@ -296,60 +297,147 @@
     </div>
   </main>
 
-  <!-- ==================== POPUP MÔ PHỎNG OAUTH GOOGLE / FACEBOOK ==================== -->
-  <div id="oauth-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
-    <div class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl border border-[#E5E7EB] transform scale-95 transition-transform duration-300" id="oauth-box">
+  <!-- ==================== POPUP MÔ PHỎNG GOOGLE SIGN-IN ==================== -->
+  <div id="google-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl border border-[#E5E7EB] transform scale-95 transition-transform duration-300" id="google-box">
       
-      <!-- Header Popup -->
-      <div class="flex items-center justify-between border-b border-gray-100 pb-3 mb-4">
-        <div class="flex items-center space-x-2.5">
-          <span id="oauth-service-icon" class="w-5 h-5 shrink-0"></span>
-          <div>
-            <h3 id="oauth-service-title" class="text-xs font-bold text-charcoal-900 font-heading">Đăng nhập với Google</h3>
-            <p class="text-[10px] text-charcoal-400">Chọn tài khoản tiếp tục với T'Petie</p>
+      <!-- Header Google Chuẩn -->
+      <div class="text-center pb-3 border-b border-gray-100 relative">
+        <button onclick="closeGoogleModal()" class="absolute right-0 top-0 text-gray-400 hover:text-gray-700 text-sm p-1 rounded-full hover:bg-gray-100">✕</button>
+        <!-- Logo Google G 4 màu -->
+        <svg class="w-8 h-8 mx-auto mb-2" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+        </svg>
+        <h3 class="text-sm font-bold text-charcoal-900 font-heading">Đăng nhập bằng Google</h3>
+        <p class="text-[11px] text-charcoal-500 mt-0.5">Chọn tài khoản để tiếp tục đến <strong class="text-amber-700">T'Petie Fashion</strong></p>
+      </div>
+
+      <!-- Trạng thái Loading Google -->
+      <div id="google-loading-state" class="hidden py-8 text-center space-y-3">
+        <div class="w-9 h-9 border-3 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <div class="text-xs font-bold text-charcoal-900">Đang kết nối với Google...</div>
+        <div class="text-[11px] text-charcoal-500">Đang bảo mật phiên xác thực tài khoản</div>
+      </div>
+
+      <!-- Danh sách tài khoản Google -->
+      <div id="google-account-list" class="space-y-2.5 my-4">
+        
+        <!-- Tài khoản 1: Nguyễn Như Quỳnh -->
+        <button onclick="executeGoogleLogin('Nguyễn Như Quỳnh', 'nhuquynh.marketing@gmail.com')"
+          class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-gray-200 hover:border-amber-400 hover:bg-amber-50/50 text-left transition-all group">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-sm border border-white">
+            Q
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-bold text-charcoal-900 group-hover:text-amber-700 truncate">Nguyễn Như Quỳnh</div>
+            <div class="text-[10px] text-charcoal-400 truncate font-mono">nhuquynh.marketing@gmail.com</div>
+          </div>
+          <span class="text-xs text-gray-300 group-hover:text-amber-500">→</span>
+        </button>
+
+        <!-- Tùy chọn 2: Sử dụng tài khoản khác -->
+        <div id="google-custom-account-block">
+          <button onclick="toggleCustomGoogleInput()"
+            class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-dashed border-gray-300 hover:border-amber-400 hover:bg-slate-50 text-left transition-all group">
+            <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center text-sm font-semibold shrink-0">
+              👤+
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-semibold text-charcoal-700 group-hover:text-amber-700 truncate">Sử dụng một tài khoản khác</div>
+              <div class="text-[10px] text-charcoal-400 truncate">Nhập nhanh tài khoản Google của bạn</div>
+            </div>
+          </button>
+
+          <!-- Form nhập tài khoản khác -->
+          <div id="google-custom-form" class="hidden mt-3 p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+            <div>
+              <label class="text-[10px] font-bold text-charcoal-600 uppercase">Họ và tên của Mẹ</label>
+              <input type="text" id="custom-google-name" placeholder="Ví dụ: Hoàng Mai Anh"
+                class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-charcoal-600 uppercase">Địa chỉ Email Google</label>
+              <input type="email" id="custom-google-email" placeholder="maianh.mom@gmail.com"
+                class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
+            </div>
+            <button onclick="submitCustomGoogleLogin()"
+              class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-bold transition-all shadow-sm">
+              Xác Nhận &amp; Tiếp Tục
+            </button>
           </div>
         </div>
-        <button onclick="closeOAuthModal()" class="text-gray-400 hover:text-gray-700 text-sm p-1 rounded-full hover:bg-gray-100">✕</button>
-      </div>
 
-      <!-- Trạng thái Loading Xác thực -->
-      <div id="oauth-loading-state" class="hidden py-8 text-center space-y-3">
-        <div class="w-8 h-8 border-3 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
-        <div class="text-xs font-bold text-charcoal-900">Đang xác thực bảo mật...</div>
-        <div class="text-[10px] text-charcoal-500">Vui lòng chờ trong giây lát</div>
-      </div>
-
-      <!-- Danh sách tài khoản mô phỏng -->
-      <div id="oauth-account-list" class="space-y-2 mb-4">
-        <p class="text-[11px] font-semibold text-charcoal-600">Tài khoản Google cá nhân khả dụng:</p>
-
-        <!-- Tài khoản 1: Quỳnh Như -->
-        <button onclick="selectAccount('Quỳnh Như', 'quynhnhu.mom@gmail.com', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80')"
-          class="w-full flex items-center space-x-3 p-2.5 rounded-2xl border border-gray-100 hover:border-amber-400 hover:bg-amber-50/40 text-left transition-all group">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80"
-            alt="Quỳnh Như" class="w-10 h-10 rounded-full object-cover border border-amber-200 shrink-0" />
-          <div class="flex-1 min-w-0">
-            <div class="text-xs font-bold text-charcoal-900 group-hover:text-amber-700 truncate">Mẹ Quỳnh Như</div>
-            <div class="text-[10px] text-charcoal-400 truncate">quynhnhu.mom@gmail.com</div>
-          </div>
-          <span class="text-xs text-gray-300 group-hover:text-amber-500">→</span>
-        </button>
-
-        <!-- Tài khoản 2: Thu Trang -->
-        <button onclick="selectAccount('Thu Trang', 'thutrang.tran@gmail.com', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80')"
-          class="w-full flex items-center space-x-3 p-2.5 rounded-2xl border border-gray-100 hover:border-amber-400 hover:bg-amber-50/40 text-left transition-all group">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80"
-            alt="Thu Trang" class="w-10 h-10 rounded-full object-cover border border-amber-200 shrink-0" />
-          <div class="flex-1 min-w-0">
-            <div class="text-xs font-bold text-charcoal-900 group-hover:text-amber-700 truncate">Mẹ Thu Trang</div>
-            <div class="text-[10px] text-charcoal-400 truncate">thutrang.tran@gmail.com</div>
-          </div>
-          <span class="text-xs text-gray-300 group-hover:text-amber-500">→</span>
-        </button>
       </div>
 
       <div class="text-center pt-2 border-t border-gray-100 text-[10px] text-charcoal-400">
-        Xác thực một chạm an toàn chuẩn OAuth 2.0
+        Để tiếp tục, Google sẽ chia sẻ tên, địa chỉ email của bạn với T'Petie.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== POPUP MÔ PHỎNG FACEBOOK LOGIN ==================== -->
+  <div id="fb-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border border-[#E5E7EB] transform scale-95 transition-transform duration-300" id="fb-box">
+      
+      <!-- Header Facebook Xanh Thương Hiệu #1877F2 -->
+      <div class="bg-[#1877F2] px-6 py-4 flex items-center justify-between text-white">
+        <div class="flex items-center space-x-2">
+          <!-- Icon Facebook SVG Trắng -->
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span class="font-bold text-sm font-heading tracking-wide">Facebook Login</span>
+        </div>
+        <button onclick="closeFbModal()" class="text-white/80 hover:text-white text-base">✕</button>
+      </div>
+
+      <!-- Nội dung Popup Facebook -->
+      <div class="p-6">
+        
+        <!-- Loading State Facebook -->
+        <div id="fb-loading-state" class="hidden py-6 text-center space-y-3">
+          <div class="w-9 h-9 border-3 border-[#1877F2] border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div class="text-xs font-bold text-charcoal-900">Đang xác thực bảo mật với Facebook...</div>
+          <div class="text-[11px] text-charcoal-500">Đang đồng bộ hồ sơ thành viên T'Petie</div>
+        </div>
+
+        <div id="fb-content-body" class="space-y-4 text-center">
+          
+          <div class="w-14 h-14 mx-auto rounded-full bg-blue-50 border-2 border-blue-200 flex items-center justify-center p-2">
+            <img src="images/logo.png" alt="T'Petie" class="w-auto h-7 object-contain" />
+          </div>
+
+          <div>
+            <h4 class="text-sm font-bold text-charcoal-900">Đăng nhập bằng tài khoản Facebook</h4>
+            <p class="text-xs text-charcoal-600 mt-1.5 leading-relaxed px-2">
+              <strong>T'Petie Fashion</strong> đang yêu cầu quyền truy cập vào <strong>tên</strong> và <strong>ảnh đại diện</strong> của bạn.
+            </p>
+          </div>
+
+          <!-- Nút Tiếp Tục Với Tên Như Quỳnh -->
+          <div class="space-y-2.5 pt-2">
+            <button onclick="executeFbLogin('Nguyễn Như Quỳnh', 'nhuquynh.fb@gmail.com')"
+              class="w-full flex items-center justify-center space-x-2.5 bg-[#1877F2] hover:bg-[#166FE5] text-white py-3 px-4 rounded-2xl font-bold text-xs sm:text-sm shadow-md transition-all active:scale-[0.98]">
+              <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px]">Q</div>
+              <span>Tiếp tục dưới tên Như Quỳnh</span>
+            </button>
+
+            <button onclick="closeFbModal()"
+              class="w-full py-2.5 px-4 rounded-2xl bg-gray-100 hover:bg-gray-200 text-charcoal-700 font-semibold text-xs transition-all">
+              Hủy
+            </button>
+          </div>
+
+          <div class="text-[10px] text-charcoal-400 pt-2 border-t border-gray-100">
+            Ứng dụng sẽ không thể đăng bài viết lên Facebook nếu không có sự đồng ý của bạn.
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -360,26 +448,26 @@
 
   <!-- ==================== SCRIPT XỬ LÝ AUTH ==================== -->
   <script>
-    const STORAGE_KEY_USER = 'tpetie_current_user';
-    let currentProvider = 'google';
+    const STORAGE_KEY_USER = 'tpetie_user';
+    const STORAGE_KEY_USER_LEGACY = 'tpetie_current_user';
 
+    // Kiểm tra session hiện có
     function checkUserSession() {
-      const userStr = localStorage.getItem(STORAGE_KEY_USER);
+      const userStr = localStorage.getItem(STORAGE_KEY_USER) || localStorage.getItem(STORAGE_KEY_USER_LEGACY);
       const loginView = document.getElementById('login-view');
       const profileView = document.getElementById('profile-view');
 
       if (userStr) {
         try {
           const user = JSON.parse(userStr);
-          if (user && user.role === 'user') {
+          if (user && user.isLoggedIn && user.role === 'user') {
             loginView.classList.add('hidden');
             profileView.classList.remove('hidden');
 
-            document.getElementById('user-display-name').innerText = user.name ? `Mẹ ${user.name}` : 'Mẹ Yêu';
-            document.getElementById('user-display-email').innerText = user.email || '';
-            if (user.avatar) {
-              document.getElementById('user-avatar-img').src = user.avatar;
-            }
+            document.getElementById('user-display-name').innerText = user.name || 'Nguyễn Như Quỳnh';
+            document.getElementById('user-display-email').innerText = user.email || 'nhuquynh.marketing@gmail.com';
+            const firstLetter = (user.name || 'Q').charAt(0).toUpperCase();
+            document.getElementById('user-avatar-badge').innerText = firstLetter;
             if (user.points) {
               document.getElementById('user-points').innerText = `${user.points} ⭐`;
             }
@@ -394,36 +482,12 @@
       profileView.classList.add('hidden');
     }
 
-    function startOAuthSimulation(provider) {
-      currentProvider = provider;
-      const modal = document.getElementById('oauth-modal');
-      const box = document.getElementById('oauth-box');
-      const icon = document.getElementById('oauth-service-icon');
-      const title = document.getElementById('oauth-service-title');
-      const list = document.getElementById('oauth-account-list');
-      const loading = document.getElementById('oauth-loading-state');
-
-      list.classList.remove('hidden');
-      loading.classList.add('hidden');
-
-      if (provider === 'google') {
-        icon.innerHTML = `
-          <svg viewBox="0 0 24 24" class="w-full h-full">
-            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
-            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
-            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
-            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-          </svg>
-        `;
-        title.innerText = 'Đăng nhập với Google';
-      } else {
-        icon.innerHTML = `
-          <svg viewBox="0 0 24 24" class="w-full h-full fill-[#1877F2]">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        `;
-        title.innerText = 'Tiếp tục với Facebook';
-      }
+    // Modal Google
+    function openGoogleModal() {
+      const modal = document.getElementById('google-modal');
+      const box = document.getElementById('google-box');
+      document.getElementById('google-account-list').classList.remove('hidden');
+      document.getElementById('google-loading-state').classList.add('hidden');
 
       modal.classList.remove('hidden');
       setTimeout(() => {
@@ -432,46 +496,100 @@
       }, 10);
     }
 
-    function closeOAuthModal() {
-      const modal = document.getElementById('oauth-modal');
-      const box = document.getElementById('oauth-box');
+    function closeGoogleModal() {
+      const modal = document.getElementById('google-modal');
+      const box = document.getElementById('google-box');
       modal.classList.add('opacity-0');
       box.classList.add('scale-95');
       setTimeout(() => modal.classList.add('hidden'), 250);
     }
 
-    function selectAccount(name, email, avatar) {
-      const list = document.getElementById('oauth-account-list');
-      const loading = document.getElementById('oauth-loading-state');
-      
-      list.classList.add('hidden');
-      loading.classList.remove('hidden');
+    function toggleCustomGoogleInput() {
+      const form = document.getElementById('google-custom-form');
+      form.classList.toggle('hidden');
+    }
+
+    function submitCustomGoogleLogin() {
+      const name = document.getElementById('custom-google-name').value.trim() || 'Mẹ Yêu';
+      const email = document.getElementById('custom-google-email').value.trim() || 'me.tpetie@gmail.com';
+      executeGoogleLogin(name, email);
+    }
+
+    function executeGoogleLogin(name, email) {
+      document.getElementById('google-account-list').classList.add('hidden');
+      document.getElementById('google-loading-state').classList.remove('hidden');
 
       setTimeout(() => {
-        closeOAuthModal();
-
-        const userData = {
-          role: 'user',
+        closeGoogleModal();
+        saveAndRedirect({
+          isLoggedIn: true,
           name: name,
           email: email,
-          avatar: avatar,
-          provider: currentProvider,
+          role: 'user',
+          method: 'Google',
           points: 250,
           loggedInAt: new Date().toISOString()
-        };
-
-        localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(userData));
-        showToast(`🌸 Đăng nhập thành công! Chào mừng Mẹ ${name}`);
-
-        setTimeout(() => {
-          const returnUrl = new URLSearchParams(window.location.search).get('returnUrl') || 'uu-dai.html';
-          window.location.href = returnUrl;
-        }, 800);
+        });
       }, 800);
     }
 
+    // Modal Facebook
+    function openFbModal() {
+      const modal = document.getElementById('fb-modal');
+      const box = document.getElementById('fb-box');
+      document.getElementById('fb-content-body').classList.remove('hidden');
+      document.getElementById('fb-loading-state').classList.add('hidden');
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+      }, 10);
+    }
+
+    function closeFbModal() {
+      const modal = document.getElementById('fb-modal');
+      const box = document.getElementById('fb-box');
+      modal.classList.add('opacity-0');
+      box.classList.add('scale-95');
+      setTimeout(() => modal.classList.add('hidden'), 250);
+    }
+
+    function executeFbLogin(name, email) {
+      document.getElementById('fb-content-body').classList.add('hidden');
+      document.getElementById('fb-loading-state').classList.remove('hidden');
+
+      setTimeout(() => {
+        closeFbModal();
+        saveAndRedirect({
+          isLoggedIn: true,
+          name: name,
+          email: email,
+          role: 'user',
+          method: 'Facebook',
+          points: 250,
+          loggedInAt: new Date().toISOString()
+        });
+      }, 800);
+    }
+
+    // Lưu session và chuyển trang
+    function saveAndRedirect(userData) {
+      localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(userData));
+      localStorage.setItem(STORAGE_KEY_USER_LEGACY, JSON.stringify(userData));
+
+      showToast(`🌸 Đăng nhập thành công! Chào mừng Mẹ ${userData.name}`);
+
+      setTimeout(() => {
+        const returnUrl = new URLSearchParams(window.location.search).get('returnUrl') || 'uu-dai.html';
+        window.location.href = returnUrl;
+      }, 600);
+    }
+
+    // Đăng xuất
     function handleUserLogout() {
       localStorage.removeItem(STORAGE_KEY_USER);
+      localStorage.removeItem(STORAGE_KEY_USER_LEGACY);
       showToast('Đã đăng xuất tài khoản an toàn.');
       setTimeout(() => {
         checkUserSession();
@@ -499,7 +617,19 @@
       }, 2500);
     }
 
-    window.addEventListener('DOMContentLoaded', checkUserSession);
+    window.addEventListener('DOMContentLoaded', () => {
+      // Gán sự kiện cho 2 nút chính
+      const btnGoogle = document.getElementById('btn-login-google');
+      const btnFb = document.getElementById('btn-login-facebook');
+      if (btnGoogle) {
+        btnGoogle.onclick = openGoogleModal;
+      }
+      if (btnFb) {
+        btnFb.onclick = openFbModal;
+      }
+
+      checkUserSession();
+    });
   </script>
 
 </body>

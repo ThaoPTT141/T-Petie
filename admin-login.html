@@ -186,35 +186,40 @@
     </div>
   </footer>
 
-  <!-- ==================== POPUP MÔ PHỎNG XÁC THỰC ADMIN ==================== -->
-  <div id="admin-oauth-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
-    <div class="bg-slate-900 border border-slate-700 w-full max-w-sm rounded-3xl p-6 shadow-2xl transform scale-95 transition-transform duration-300" id="admin-oauth-box">
+  <!-- ==================== POPUP MÔ PHỎNG XÁC THỰC GOOGLE WORKSPACE ==================== -->
+  <div id="admin-google-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-slate-900 border border-slate-700 w-full max-w-sm rounded-3xl p-6 shadow-2xl transform scale-95 transition-transform duration-300" id="admin-google-box">
       
-      <!-- Header Popup -->
+      <!-- Header Popup Google Workspace -->
       <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
         <div class="flex items-center space-x-2.5">
-          <span id="admin-oauth-icon" class="text-xl">🏢</span>
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
           <div>
-            <h3 id="admin-oauth-title" class="text-xs font-bold text-white font-heading">Google Workspace SSO</h3>
-            <p class="text-[10px] text-slate-400">Chọn tài khoản nhân sự quản trị</p>
+            <h3 class="text-xs font-bold text-white font-heading">Google Workspace SSO</h3>
+            <p class="text-[10px] text-slate-400">Hệ thống xác thực nội bộ T'Petie Enterprise</p>
           </div>
         </div>
-        <button onclick="closeAdminOAuthModal()" class="text-slate-400 hover:text-white text-sm p-1 rounded-full hover:bg-slate-800">✕</button>
+        <button onclick="closeAdminGoogleModal()" class="text-slate-400 hover:text-white text-sm p-1 rounded-full hover:bg-slate-800">✕</button>
       </div>
 
-      <!-- Trạng thái Loading Xác thực -->
-      <div id="admin-loading-state" class="hidden py-8 text-center space-y-3">
-        <div class="w-8 h-8 border-3 border-amber-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
+      <!-- Trạng thái Loading Google Workspace -->
+      <div id="admin-google-loading" class="hidden py-8 text-center space-y-3">
+        <div class="w-9 h-9 border-3 border-amber-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
         <div class="text-xs font-bold text-white">Đang xác thực bảo mật tài khoản Quản trị...</div>
-        <div class="text-[10px] text-slate-400">Cấp quyền truy cập hệ thống T'Petie</div>
+        <div class="text-[10px] text-slate-400">Khởi tạo phiên mã hóa 256-bit</div>
       </div>
 
-      <!-- Danh sách tài khoản Admin demo -->
-      <div id="admin-account-list" class="space-y-2 mb-4">
+      <!-- Danh sách tài khoản Admin Google Workspace -->
+      <div id="admin-google-list" class="space-y-2 mb-4">
         <p class="text-[11px] font-semibold text-slate-300">Tài khoản quản trị viên công vụ:</p>
 
         <!-- Admin 1: Super Admin -->
-        <button onclick="selectAdminAccount('Quản Trị Viên T\'Petie', 'admin@tpetie.vn', 'Super Admin — Ban Quản Trị', '👑')"
+        <button onclick="executeAdminLogin('Quản Trị Viên T\'Petie', 'admin@tpetie.vn', 'Super Admin — Ban Quản Trị', '👑', 'Google Workspace')"
           class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-slate-800 hover:border-amber-400/60 bg-slate-800/40 hover:bg-slate-800 text-left transition-all group">
           <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-lg font-bold shrink-0">
             👑
@@ -226,8 +231,8 @@
           <span class="text-xs text-slate-500 group-hover:text-amber-400">Xác thực →</span>
         </button>
 
-        <!-- Admin 2: E-commerce Manager -->
-        <button onclick="selectAdminAccount('Lê Thu Thảo', 'thao.ptt@tpetie.vn', 'E-commerce Campaign Manager', '⭐')"
+        <!-- Admin 2: E-commerce Campaign Manager -->
+        <button onclick="executeAdminLogin('Lê Thu Thảo', 'thao.ptt@tpetie.vn', 'E-commerce Campaign Manager', '⭐', 'Google Workspace')"
           class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-slate-800 hover:border-amber-400/60 bg-slate-800/40 hover:bg-slate-800 text-left transition-all group">
           <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center text-lg font-bold shrink-0">
             ⭐
@@ -238,10 +243,95 @@
           </div>
           <span class="text-xs text-slate-500 group-hover:text-amber-400">Xác thực →</span>
         </button>
+
+        <!-- Tùy chọn: Nhập tài khoản công vụ khác -->
+        <div id="admin-custom-block">
+          <button onclick="toggleAdminCustomInput()"
+            class="w-full flex items-center space-x-3 p-2.5 rounded-2xl border border-dashed border-slate-700 hover:border-amber-400/50 hover:bg-slate-800/30 text-left transition-all group">
+            <div class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-bold shrink-0">
+              +
+            </div>
+            <div class="text-xs text-slate-400 group-hover:text-amber-300">
+              Sử dụng tài khoản công vụ khác...
+            </div>
+          </button>
+
+          <div id="admin-custom-form" class="hidden mt-2 p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+            <input type="text" id="custom-admin-name" placeholder="Họ và tên nhân sự..."
+              class="w-full px-3 py-1.5 text-xs bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-amber-500" />
+            <input type="email" id="custom-admin-email" placeholder="email@tpetie.vn"
+              class="w-full px-3 py-1.5 text-xs bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-amber-500" />
+            <button onclick="submitCustomAdminLogin()"
+              class="w-full py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-xl text-xs font-bold transition-all">
+              Xác Thực Ngay
+            </button>
+          </div>
+        </div>
+
       </div>
 
       <div class="text-center pt-2 border-t border-slate-800 text-[10px] text-slate-500">
-        Quyền hạn: Đọc &amp; Ghi dữ liệu 49 sản phẩm ưu đãi và chiến dịch
+        Quyền hạn: Toàn quyền truy cập Dashboard, quản lý 49 sản phẩm Sale
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== POPUP MÔ PHỎNG XÁC THỰC FACEBOOK BUSINESS ==================== -->
+  <div id="admin-fb-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-slate-900 border border-slate-700 w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="admin-fb-box">
+      
+      <!-- Header Meta Business -->
+      <div class="bg-[#1877F2] px-6 py-4 flex items-center justify-between text-white">
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span class="font-bold text-sm font-heading tracking-wide">Meta Business Suite</span>
+        </div>
+        <button onclick="closeAdminFbModal()" class="text-white/80 hover:text-white text-base">✕</button>
+      </div>
+
+      <div class="p-6">
+        
+        <!-- Loading Facebook Business -->
+        <div id="admin-fb-loading" class="hidden py-6 text-center space-y-3">
+          <div class="w-9 h-9 border-3 border-blue-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div class="text-xs font-bold text-white">Đang xác thực quyền Business Manager...</div>
+          <div class="text-[10px] text-slate-400">Đang đồng bộ phân quyền từ Meta Business Suite</div>
+        </div>
+
+        <div id="admin-fb-content" class="space-y-4 text-center">
+          <div class="w-14 h-14 mx-auto rounded-full bg-blue-950/60 border border-blue-500/40 flex items-center justify-center text-2xl">
+            💼
+          </div>
+
+          <div>
+            <h4 class="text-sm font-bold text-white">Xác Thực Quản Trị Viên Doanh Nghiệp</h4>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Doanh nghiệp: <strong>T'Petie Haute Couture Co., Ltd</strong><br/>
+              Vai trò: <strong>Enterprise System Administrator</strong>
+            </p>
+          </div>
+
+          <div class="space-y-2.5 pt-2">
+            <button onclick="executeAdminLogin('Quản Trị Viên T\'Petie', 'admin@tpetie.vn', 'Meta Business Manager', '💼', 'Facebook Business')"
+              class="w-full flex items-center justify-center space-x-2 bg-[#1877F2] hover:bg-[#166FE5] text-white py-3 px-4 rounded-2xl font-bold text-xs sm:text-sm shadow-lg transition-all active:scale-[0.98]">
+              <span>Tiếp tục với Meta Business Suite</span>
+              <span>→</span>
+            </button>
+
+            <button onclick="closeAdminFbModal()"
+              class="w-full py-2.5 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-all">
+              Hủy Bỏ
+            </button>
+          </div>
+
+          <div class="text-[10px] text-slate-500 pt-2 border-t border-slate-800">
+            Hệ thống chỉ cấp quyền cho các tài khoản Facebook đã được liên kết trong Meta Business Manager của T'Petie.
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -252,8 +342,8 @@
 
   <!-- SCRIPT XỬ LÝ AUTH ADMIN -->
   <script>
-    const STORAGE_KEY_USER = 'tpetie_current_user';
-    let currentAdminProvider = 'google-workspace';
+    const STORAGE_KEY_USER = 'tpetie_user';
+    const STORAGE_KEY_USER_LEGACY = 'tpetie_current_user';
 
     window.addEventListener('DOMContentLoaded', () => {
       // Bắt query unauthorized nếu bị redirect về
@@ -264,36 +354,29 @@
       }
 
       // Nếu đã đăng nhập admin -> tự động chuyển thẳng vào admin.html
-      const userStr = localStorage.getItem(STORAGE_KEY_USER);
+      const userStr = localStorage.getItem(STORAGE_KEY_USER) || localStorage.getItem(STORAGE_KEY_USER_LEGACY);
       if (userStr) {
         try {
           const user = JSON.parse(userStr);
-          if (user && user.role === 'admin') {
+          if (user && user.isLoggedIn && user.role === 'admin') {
             window.location.href = 'admin.html';
           }
         } catch (e) {}
       }
+
+      // Gán sự kiện click cho 2 nút
+      const btnGoogle = document.getElementById('btn-admin-google');
+      const btnFb = document.getElementById('btn-admin-fb');
+      if (btnGoogle) btnGoogle.onclick = openAdminGoogleModal;
+      if (btnFb) btnFb.onclick = openAdminFbModal;
     });
 
-    function startAdminOAuthSimulation(provider) {
-      currentAdminProvider = provider;
-      const modal = document.getElementById('admin-oauth-modal');
-      const box = document.getElementById('admin-oauth-box');
-      const icon = document.getElementById('admin-oauth-icon');
-      const title = document.getElementById('admin-oauth-title');
-      const list = document.getElementById('admin-account-list');
-      const loading = document.getElementById('admin-loading-state');
-
-      list.classList.remove('hidden');
-      loading.classList.add('hidden');
-
-      if (provider === 'google-workspace') {
-        icon.innerHTML = '🏢';
-        title.innerText = 'Google Workspace SSO';
-      } else {
-        icon.innerHTML = '💼';
-        title.innerText = 'Facebook Business SSO';
-      }
+    // Modal Google Workspace
+    function openAdminGoogleModal() {
+      const modal = document.getElementById('admin-google-modal');
+      const box = document.getElementById('admin-google-box');
+      document.getElementById('admin-google-list').classList.remove('hidden');
+      document.getElementById('admin-google-loading').classList.add('hidden');
 
       modal.classList.remove('hidden');
       setTimeout(() => {
@@ -302,40 +385,87 @@
       }, 10);
     }
 
-    function closeAdminOAuthModal() {
-      const modal = document.getElementById('admin-oauth-modal');
-      const box = document.getElementById('admin-oauth-box');
+    function closeAdminGoogleModal() {
+      const modal = document.getElementById('admin-google-modal');
+      const box = document.getElementById('admin-google-box');
       modal.classList.add('opacity-0');
       box.classList.add('scale-95');
       setTimeout(() => modal.classList.add('hidden'), 250);
     }
 
-    function selectAdminAccount(name, email, department, icon) {
-      const list = document.getElementById('admin-account-list');
-      const loading = document.getElementById('admin-loading-state');
+    function toggleAdminCustomInput() {
+      const form = document.getElementById('admin-custom-form');
+      form.classList.toggle('hidden');
+    }
 
-      list.classList.add('hidden');
-      loading.classList.remove('hidden');
+    function submitCustomAdminLogin() {
+      const name = document.getElementById('custom-admin-name').value.trim() || 'Nhân Sự Quản Trị';
+      const email = document.getElementById('custom-admin-email').value.trim() || 'admin@tpetie.vn';
+      executeAdminLogin(name, email, 'Bộ Phận Vận Hành', '⭐', 'Google Workspace');
+    }
+
+    // Modal Facebook Business
+    function openAdminFbModal() {
+      const modal = document.getElementById('admin-fb-modal');
+      const box = document.getElementById('admin-fb-box');
+      document.getElementById('admin-fb-content').classList.remove('hidden');
+      document.getElementById('admin-fb-loading').classList.add('hidden');
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+      }, 10);
+    }
+
+    function closeAdminFbModal() {
+      const modal = document.getElementById('admin-fb-modal');
+      const box = document.getElementById('admin-fb-box');
+      modal.classList.add('opacity-0');
+      box.classList.add('scale-95');
+      setTimeout(() => modal.classList.add('hidden'), 250);
+    }
+
+    // Thực thi đăng nhập Admin
+    function executeAdminLogin(name, email, department, icon, method) {
+      // Ẩn nội dung, hiện loading
+      const googleList = document.getElementById('admin-google-list');
+      const googleLoading = document.getElementById('admin-google-loading');
+      if (googleList && googleLoading) {
+        googleList.classList.add('hidden');
+        googleLoading.classList.remove('hidden');
+      }
+
+      const fbContent = document.getElementById('admin-fb-content');
+      const fbLoading = document.getElementById('admin-fb-loading');
+      if (fbContent && fbLoading) {
+        fbContent.classList.add('hidden');
+        fbLoading.classList.remove('hidden');
+      }
 
       setTimeout(() => {
-        closeAdminOAuthModal();
+        closeAdminGoogleModal();
+        closeAdminFbModal();
 
         const adminData = {
+          isLoggedIn: true,
           role: 'admin',
           name: name,
           email: email,
           department: department,
           avatar: icon || '👑',
-          provider: currentAdminProvider,
+          method: method,
           loggedInAt: new Date().toISOString()
         };
 
         localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(adminData));
+        localStorage.setItem(STORAGE_KEY_USER_LEGACY, JSON.stringify(adminData));
+
         showToast(`🛡️ Cấp quyền Admin thành công! Đang chuyển hướng vào Dashboard...`);
 
         setTimeout(() => {
           window.location.href = 'admin.html';
-        }, 800);
+        }, 700);
       }, 800);
     }
 

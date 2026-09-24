@@ -53,10 +53,11 @@
   <!-- ROUTE GUARD SCRIPT: Kiểm tra quyền Admin ngay trước khi render -->
   <script>
     (function () {
-      const STORAGE_KEY_USER = 'tpetie_current_user';
+      const STORAGE_KEY_USER = 'tpetie_user';
+      const STORAGE_KEY_USER_LEGACY = 'tpetie_current_user';
       try {
-        const user = JSON.parse(localStorage.getItem(STORAGE_KEY_USER) || 'null');
-        if (!user || user.role !== 'admin') {
+        const user = JSON.parse(localStorage.getItem(STORAGE_KEY_USER) || localStorage.getItem(STORAGE_KEY_USER_LEGACY) || 'null');
+        if (!user || !user.isLoggedIn || user.role !== 'admin') {
           window.location.replace('admin-login.html?unauthorized=true');
         }
       } catch (e) {
@@ -423,18 +424,19 @@
 
   <!-- SCRIPT QUẢN TRỊ ADMIN -->
   <script>
-    const STORAGE_KEY_USER = 'tpetie_current_user';
+    const STORAGE_KEY_USER = 'tpetie_user';
+    const STORAGE_KEY_USER_LEGACY = 'tpetie_current_user';
     let allProducts = [];
     let currentFiltered = [];
     let activeCollection = 'all';
 
     window.addEventListener('DOMContentLoaded', () => {
-      const userStr = localStorage.getItem(STORAGE_KEY_USER);
+      const userStr = localStorage.getItem(STORAGE_KEY_USER) || localStorage.getItem(STORAGE_KEY_USER_LEGACY);
       if (userStr) {
         try {
           const user = JSON.parse(userStr);
           if (user) {
-            document.getElementById('admin-sidebar-name').innerText = user.name || 'Quản Trị Viên';
+            document.getElementById('admin-sidebar-name').innerText = user.name || "Quản Trị Viên T'Petie";
             document.getElementById('admin-sidebar-email').innerText = user.email || 'admin@tpetie.vn';
           }
         } catch (e) {}
@@ -594,6 +596,7 @@
     function handleAdminLogout() {
       if (confirm('Bạn có chắc chắn muốn đăng xuất khỏi cổng Quản Trị Viên không?')) {
         localStorage.removeItem(STORAGE_KEY_USER);
+        localStorage.removeItem(STORAGE_KEY_USER_LEGACY);
         showAdminToast('Đã đăng xuất phiên làm việc của Quản Trị Viên.');
         setTimeout(() => {
           window.location.href = 'admin-login.html';
