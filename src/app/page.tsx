@@ -32,10 +32,6 @@ export default function HomePage() {
       <section id="best-seller" className="px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <div className="flex items-center space-x-1 text-xs font-bold text-sage-700 uppercase tracking-wider mb-1">
-              <Heart className="w-3.5 h-3.5 fill-sage-500 text-sage-500" />
-              <span>Mẹ Bỉm Tin Chọn</span>
-            </div>
             <h2 className="text-lg sm:text-2xl font-bold font-heading text-charcoal-900">
               Sản Phẩm Bán Chạy Nhất
             </h2>
