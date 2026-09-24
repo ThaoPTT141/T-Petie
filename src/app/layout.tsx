@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
-  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
+  const ga4Id = 'G-LF9P82Z9QM';
 
   return (
     <html lang="vi">
