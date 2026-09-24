@@ -28,28 +28,28 @@ export default function HomePage() {
 
 
 
-      {/* 3. BỘ SƯU TẬP LOOKBOOK CAROUSEL (4 BST) */}
-      <section id="collections" className="px-4 sm:px-6 max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-4">
+      {/* 3. BEST SELLERS GRID */}
+      <section id="best-seller" className="px-4 sm:px-6 max-w-6xl mx-auto">
+        <div className="flex items-center justify-between mb-6">
           <div>
-            <div className="flex items-center space-x-1.5 text-xs font-bold text-honey-600 uppercase tracking-wider mb-1">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Chuyện Của Mùa</span>
+            <div className="flex items-center space-x-1 text-xs font-bold text-sage-700 uppercase tracking-wider mb-1">
+              <Heart className="w-3.5 h-3.5 fill-sage-500 text-sage-500" />
+              <span>Mẹ Bỉm Tin Chọn</span>
             </div>
             <h2 className="text-lg sm:text-2xl font-bold font-heading text-charcoal-900">
-              Bộ Sưu Tập Nổi Bật
+              Sản Phẩm Bán Chạy Nhất
             </h2>
           </div>
           <Link
-            href="/bo-suu-tap"
+            href="/be-gai"
             className="text-xs font-bold text-honey-600 hover:text-honey-700 flex items-center space-x-1"
           >
-            <span>Xem Lookbook</span>
+            <span>Khám phá thêm</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <LookbookCarousel collections={collections} />
+        <ProductGrid products={bestSellers} />
       </section>
 
       {/* 4. FLASH SALE BANNER SECTION */}
@@ -72,28 +72,28 @@ export default function HomePage() {
         </Link>
       </section>
 
-      {/* 5. BEST SELLERS GRID */}
-      <section id="best-seller" className="px-4 sm:px-6 max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
+      {/* 5. BỘ SƯU TẬP LOOKBOOK CAROUSEL (4 BST) */}
+      <section id="collections" className="px-4 sm:px-6 max-w-6xl mx-auto">
+        <div className="flex items-center justify-between mb-4">
           <div>
-            <div className="flex items-center space-x-1 text-xs font-bold text-sage-700 uppercase tracking-wider mb-1">
-              <Heart className="w-3.5 h-3.5 fill-sage-500 text-sage-500" />
-              <span>Mẹ Bỉm Tin Chọn</span>
+            <div className="flex items-center space-x-1.5 text-xs font-bold text-honey-600 uppercase tracking-wider mb-1">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Chuyện Của Mùa</span>
             </div>
             <h2 className="text-lg sm:text-2xl font-bold font-heading text-charcoal-900">
-              Sản Phẩm Bán Chạy Nhất
+              Bộ Sưu Tập Nổi Bật
             </h2>
           </div>
           <Link
-            href="/be-gai"
+            href="/bo-suu-tap"
             className="text-xs font-bold text-honey-600 hover:text-honey-700 flex items-center space-x-1"
           >
-            <span>Khám phá thêm</span>
+            <span>Xem Lookbook</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <ProductGrid products={bestSellers} />
+        <LookbookCarousel collections={collections} />
       </section>
 
       {/* 6. VÌ SAO MẸ YÊU THÍCH T'PETIE */}
