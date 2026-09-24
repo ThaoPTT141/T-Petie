@@ -53,11 +53,6 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/chinh-sach-giao-hang" className="hover:text-honey-600 transition-colors block">
-                Chính sách giao hàng
-              </Link>
-            </li>
-            <li>
               <Link href="/chinh-sach-thanh-toan" className="hover:text-honey-600 transition-colors block">
                 Chính sách thanh toán
               </Link>
