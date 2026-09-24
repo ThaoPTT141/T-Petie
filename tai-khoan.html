@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>T'Petie | Tài Khoản Của Mẹ — Đăng Nhập & Mua Sắm Yêu Thương</title>
+  <meta name="description"
+    content="Trang đăng nhập dành riêng cho ba mẹ tại T'Petie. Kết nối nhanh chóng và an toàn qua Google và Facebook để nhận ưu đãi độc quyền." />
+
+  <!-- Google Fonts: Quicksand, Be Vietnam Pro & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Quicksand:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Quicksand', 'sans-serif'],
+            sans: ['Be Vietnam Pro', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            cream: {
+              50: '#FFFDF9',
+              100: '#FFF8EE',
+              200: '#F5EBE1',
+              300: '#EADCCF',
+            },
+            sage: {
+              50: '#F4FAF5',
+              100: '#EAF4EC',
+              500: '#77B77A',
+              700: '#4B834E',
+            },
+            honey: {
+              50: '#FFFBF0',
+              100: '#FFF2D6',
+              500: '#F5A623',
+              600: '#D97706',
+              700: '#B45309',
+            },
+            blush: {
+              50: '#FFF5F5',
+              100: '#FFEBEB',
+              500: '#F2828D',
+              600: '#E06D75',
+            },
+            charcoal: {
+              400: '#98A1B0',
+              600: '#6C727F',
+              700: '#4F5D75',
+              900: '#2D3142',
+            },
+          },
+          boxShadow: {
+            soft: '0 8px 30px -4px rgba(220, 190, 160, 0.25)',
+            card: '0 4px 20px rgba(0, 0, 0, 0.04)',
+            glow: '0 0 25px rgba(245, 166, 35, 0.25)',
+          },
+          borderRadius: {
+            '2xl': '1rem',
+            '3xl': '1.5rem',
+            '4xl': '2rem',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #2D3142;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-heading {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+
+    .animate-float {
+      animation: float-slow 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col antialiased selection:bg-honey-100 selection:text-honey-700 bg-gradient-to-b from-cream-50 via-cream-100/40 to-blush-50/30">
+
+  <!-- ==================== HEADER TỐI GIẢN ==================== -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-cream-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Nút Quay lại -->
+      <a href="javascript:void(0)" onclick="goBackOrHome()"
+        class="inline-flex items-center space-x-1.5 text-xs font-bold text-charcoal-700 hover:text-honey-600 transition-colors py-2 px-3 rounded-full hover:bg-cream-100">
+        <span>←</span>
+        <span>Quay Lại</span>
+      </a>
+
+      <!-- Logo T'Petie -->
+      <a href="index.html" class="flex items-center group">
+        <img src="images/logo.png" alt="T'Petie - Made for little souls"
+          class="h-10 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform" />
+      </a>
+
+      <!-- Link Trang Ưu Đãi -->
+      <a href="uu-dai.html"
+        class="inline-flex items-center space-x-1 text-xs font-bold text-blush-600 hover:text-blush-700 bg-blush-50 px-3 py-1.5 rounded-full border border-blush-100 transition-all">
+        <span>🎁</span>
+        <span class="hidden sm:inline">Ưu Đãi Hot</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6 md:p-10 relative overflow-hidden">
+    <!-- Nền trang trí đốm màu Pastel -->
+    <div class="absolute -top-20 -left-20 w-80 h-80 bg-honey-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-blush-200/35 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/4 w-60 h-60 bg-sage-100/40 rounded-full blur-2xl pointer-events-none"></div>
+
+    <!-- KHUNG CHÍNH (CONTAINER) -->
+    <div class="relative w-full max-w-md sm:max-w-lg z-10">
+
+      <!-- ==================== VIEW 1: FORM ĐĂNG NHẬP KHÁCH HÀNG ==================== -->
+      <div id="login-view" class="bg-white/95 backdrop-blur-md rounded-3xl sm:rounded-4xl p-6 sm:p-9 shadow-soft border border-cream-200 text-center transition-all">
+        
+        <!-- Logo & Icon Chào Mừng -->
+        <div class="flex justify-center mb-4">
+          <div class="relative">
+            <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-cream-100 via-honey-50 to-blush-100 flex items-center justify-center shadow-inner border border-cream-200 animate-float">
+              <img src="images/logo.png" alt="T'Petie" class="w-14 h-auto object-contain" />
+            </div>
+            <span class="absolute -bottom-1 -right-1 text-lg bg-white rounded-full p-1 shadow-sm border border-cream-200">✨</span>
+          </div>
+        </div>
+
+        <!-- Tiêu đề & Lời chào ngọt ngào -->
+        <h1 class="font-heading font-extrabold text-2xl sm:text-3xl text-charcoal-900 tracking-tight mb-2">
+          Chào mừng ba mẹ đến với T'Petie
+        </h1>
+        <p class="text-xs sm:text-sm text-charcoal-600 max-w-sm mx-auto leading-relaxed mb-7 font-normal">
+          Nơi gửi gắm những thiết kế <span class="text-honey-600 font-semibold">ngọt ngào & trong trẻo</span>, nâng niu từng bước chạm đầu đời của bé yêu 🌿
+        </p>
+
+        <!-- Khung lợi ích khi đăng nhập -->
+        <div class="bg-cream-50/80 rounded-2xl p-3.5 border border-cream-200 mb-6 text-left grid grid-cols-2 gap-2 text-[11px] sm:text-xs text-charcoal-700">
+          <div class="flex items-center space-x-2">
+            <span class="text-honey-600">🏷️</span>
+            <span>Tích lũy điểm thưởng mẹ & bé</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-blush-500">🎁</span>
+            <span>Voucher giảm giá 15% - 38%</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sage-700">🚚</span>
+            <span>Freeship toàn quốc từ 399k</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-honey-600">📦</span>
+            <span>Theo dõi hành trình đơn hàng</span>
+          </div>
+        </div>
+
+        <!-- CHỈ CÓ 2 PHƯƠNG THỨC ĐĂNG NHẬP -->
+        <div class="space-y-3.5 mb-6">
+          
+          <!-- 1. NÚT GOOGLE (Icon SVG chuẩn, nền trắng viền xám) -->
+          <button id="btn-google-login" onclick="openOAuthModal('google')"
+            class="w-full flex items-center justify-center space-x-3 bg-white hover:bg-cream-50 active:scale-[0.98] border border-charcoal-200/80 hover:border-charcoal-400 py-3.5 px-5 rounded-2xl shadow-sm hover:shadow transition-all group min-h-[48px]">
+            <!-- Google SVG Icon chuẩn -->
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4"
+                d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
+              <path fill="#34A853"
+                d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" />
+              <path fill="#FBBC05"
+                d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
+              <path fill="#EA4335"
+                d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+            </svg>
+            <span class="text-sm font-bold text-charcoal-900 group-hover:text-charcoal-700">Tiếp tục với Google</span>
+          </button>
+
+          <!-- 2. NÚT FACEBOOK (Icon SVG chuẩn, nền xanh #1877F2, chữ trắng) -->
+          <button id="btn-facebook-login" onclick="openOAuthModal('facebook')"
+            class="w-full flex items-center justify-center space-x-3 bg-[#1877F2] hover:bg-[#166FE5] active:scale-[0.98] text-white py-3.5 px-5 rounded-2xl shadow-sm hover:shadow-md transition-all group min-h-[48px]">
+            <!-- Facebook SVG Icon chuẩn -->
+            <svg class="w-5 h-5 shrink-0 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            <span class="text-sm font-bold tracking-wide">Tiếp tục với Facebook</span>
+          </button>
+
+        </div>
+
+        <!-- Điều khoản & Bảo mật thân thiện -->
+        <p class="text-[11px] text-charcoal-400 leading-normal">
+          Bằng việc tiếp tục, ba mẹ đồng ý với 
+          <a href="#" class="underline hover:text-honey-600 transition-colors">Điều khoản dịch vụ</a> & 
+          <a href="#" class="underline hover:text-honey-600 transition-colors">Chính sách bảo vệ thông tin</a> của T'Petie.
+        </p>
+
+        <!-- Divider sang cổng Quản Trị Viên -->
+        <div class="mt-8 pt-5 border-t border-cream-200/80 flex items-center justify-between text-xs text-charcoal-500">
+          <span>Dành cho Quản trị viên T'Petie?</span>
+          <a href="admin-login.html" class="font-bold text-honey-600 hover:text-honey-700 hover:underline inline-flex items-center space-x-1">
+            <span>Admin Portal</span>
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- ==================== VIEW 2: PROFILE DASHBOARD (Khi Mẹ Đã Đăng Nhập) ==================== -->
+      <div id="profile-view" class="hidden bg-white/95 backdrop-blur-md rounded-3xl sm:rounded-4xl p-6 sm:p-9 shadow-soft border border-cream-200 transition-all">
+        
+        <div class="text-center mb-6">
+          <div class="relative inline-block">
+            <img id="user-avatar-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80"
+              alt="Avatar" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white shadow-md mx-auto" />
+            <span id="user-provider-badge" class="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow border border-cream-200 text-xs">
+              🌐
+            </span>
+          </div>
+          <h2 id="user-display-name" class="font-heading font-extrabold text-xl sm:text-2xl text-charcoal-900 mt-3">
+            Mẹ Quỳnh Như
+          </h2>
+          <p id="user-display-email" class="text-xs text-charcoal-500 font-mono">
+            quynhnhu.mom@gmail.com
+          </p>
+          <div class="inline-flex items-center space-x-1.5 mt-2 px-3 py-1 rounded-full bg-honey-100 text-honey-700 text-xs font-bold border border-honey-200">
+            <span>🌸</span>
+            <span>Khách Hàng Thân Thiết T'Petie</span>
+          </div>
+        </div>
+
+        <!-- 3 Thẻ thống kê tài khoản Mẹ -->
+        <div class="grid grid-cols-3 gap-2.5 mb-6 text-center">
+          <div class="bg-cream-50 p-3 rounded-2xl border border-cream-200">
+            <div class="text-[10px] text-charcoal-500 font-medium">Điểm Tích Lũy</div>
+            <div id="user-points" class="font-heading font-bold text-base sm:text-lg text-honey-600">250 ⭐</div>
+          </div>
+          <div class="bg-blush-50 p-3 rounded-2xl border border-blush-100">
+            <div class="text-[10px] text-charcoal-500 font-medium">Mã Ưu Đãi</div>
+            <div class="font-heading font-bold text-base sm:text-lg text-blush-600">4 Voucher</div>
+          </div>
+          <div class="bg-sage-50 p-3 rounded-2xl border border-sage-100">
+            <div class="text-[10px] text-charcoal-500 font-medium">Đơn Hàng</div>
+            <div class="font-heading font-bold text-base sm:text-lg text-sage-700">2 Đơn</div>
+          </div>
+        </div>
+
+        <!-- Danh sách tiện ích -->
+        <div class="space-y-2 mb-6">
+          <a href="uu-dai.html" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-50/80 hover:bg-cream-100 border border-cream-200 text-xs font-bold text-charcoal-800 transition-colors">
+            <span class="flex items-center space-x-2.5">
+              <span>🎁</span>
+              <span>Khám phá 49 mẫu thời trang Sale</span>
+            </span>
+            <span class="text-honey-600">Xem ngay →</span>
+          </a>
+          <a href="index.html" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-50/80 hover:bg-cream-100 border border-cream-200 text-xs font-bold text-charcoal-800 transition-colors">
+            <span class="flex items-center space-x-2.5">
+              <span>👗</span>
+              <span>Bộ sưu tập đầm & áo bé gái</span>
+            </span>
+            <span class="text-honey-600">Khám phá →</span>
+          </a>
+        </div>
+
+        <!-- Nút Hành Động -->
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="continueShopping()"
+            class="py-3 px-4 rounded-2xl bg-honey-500 hover:bg-honey-600 active:scale-95 text-white font-bold text-xs shadow-md transition-all">
+            Tiếp Tục Mua Sắm
+          </button>
+          <button onclick="handleUserLogout()"
+            class="py-3 px-4 rounded-2xl bg-white hover:bg-rose-50 active:scale-95 border border-rose-200 text-rose-600 font-bold text-xs transition-all">
+            Đăng Xuất Tài Khoản
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== POPUP MÔ PHỎNG OAUTH (GOOGLE / FACEBOOK) ==================== -->
+  <div id="oauth-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl border border-cream-200 transform scale-95 transition-transform duration-300" id="oauth-box">
+      
+      <!-- Header Popup -->
+      <div class="flex items-center justify-between border-b border-cream-200 pb-3 mb-4">
+        <div class="flex items-center space-x-2">
+          <span id="oauth-service-icon" class="text-xl"></span>
+          <div>
+            <h3 id="oauth-service-title" class="text-xs font-bold text-charcoal-900 font-heading">Đăng nhập tài khoản</h3>
+            <p class="text-[10px] text-charcoal-400">Kết nối bảo mật với T'Petie</p>
+          </div>
+        </div>
+        <button onclick="closeOAuthModal()" class="text-charcoal-400 hover:text-charcoal-700 text-sm p-1 rounded-full hover:bg-cream-100">✕</button>
+      </div>
+
+      <!-- Lựa chọn tài khoản có sẵn -->
+      <div class="space-y-2.5 mb-4">
+        <p class="text-[11px] font-semibold text-charcoal-600">Chọn tài khoản tiếp tục:</p>
+
+        <!-- Account 1: Mẹ Quỳnh Như -->
+        <button onclick="selectAccount('Quỳnh Như', 'quynhnhu.mom@gmail.com', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80')"
+          class="w-full flex items-center space-x-3 p-2.5 rounded-2xl border border-cream-200 hover:border-honey-400 hover:bg-cream-50 text-left transition-all group">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80"
+            alt="Quỳnh Như" class="w-10 h-10 rounded-full object-cover border" />
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-bold text-charcoal-900 group-hover:text-honey-600 truncate">Mẹ Quỳnh Như (Khuyên dùng)</div>
+            <div class="text-[10px] text-charcoal-400 truncate">quynhnhu.mom@gmail.com</div>
+          </div>
+          <span class="text-xs text-charcoal-300 group-hover:text-honey-500">→</span>
+        </button>
+
+        <!-- Account 2: Mẹ Thu Trang -->
+        <button onclick="selectAccount('Thu Trang', 'thutrang.tran@gmail.com', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80')"
+          class="w-full flex items-center space-x-3 p-2.5 rounded-2xl border border-cream-200 hover:border-honey-400 hover:bg-cream-50 text-left transition-all group">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80"
+            alt="Thu Trang" class="w-10 h-10 rounded-full object-cover border" />
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-bold text-charcoal-900 group-hover:text-honey-600 truncate">Mẹ Thu Trang</div>
+            <div class="text-[10px] text-charcoal-400 truncate">thutrang.tran@gmail.com</div>
+          </div>
+          <span class="text-xs text-charcoal-300 group-hover:text-honey-500">→</span>
+        </button>
+
+        <!-- Tùy chọn nhập tài khoản khác -->
+        <div class="pt-2">
+          <details class="text-[11px] text-charcoal-600">
+            <summary class="cursor-pointer font-semibold text-honey-600 hover:underline">Sử dụng tài khoản khác của mẹ ✍️</summary>
+            <div class="mt-2 space-y-2 bg-cream-50/70 p-2.5 rounded-xl border border-cream-200">
+              <input id="custom-user-name" type="text" placeholder="Họ và tên của Mẹ"
+                class="w-full px-3 py-1.5 rounded-lg border border-cream-300 text-xs outline-none focus:border-honey-500 bg-white" />
+              <input id="custom-user-email" type="email" placeholder="Địa chỉ email cá nhân"
+                class="w-full px-3 py-1.5 rounded-lg border border-cream-300 text-xs outline-none focus:border-honey-500 bg-white" />
+              <button onclick="submitCustomAccount()"
+                class="w-full py-1.5 rounded-lg bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold transition-colors">
+                Xác Nhận Đăng Nhập
+              </button>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="text-center pt-2 border-t border-cream-200">
+        <span class="text-[10px] text-charcoal-400">T'Petie cam kết bảo mật danh tính & không đăng tin tự động</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+  <!-- JAVASCRIPT XỬ LÝ AUTH USER -->
+  <script>
+    const STORAGE_KEY_USER = 'tpetie_current_user';
+    let currentProvider = 'google';
+
+    // Đọc trạng thái đăng nhập
+    function checkUserSession() {
+      const userStr = localStorage.getItem(STORAGE_KEY_USER);
+      const loginView = document.getElementById('login-view');
+      const profileView = document.getElementById('profile-view');
+
+      if (userStr) {
+        try {
+          const user = JSON.parse(userStr);
+          if (user && user.role === 'user') {
+            // Hiển thị profile
+            loginView.classList.add('hidden');
+            profileView.classList.remove('hidden');
+
+            document.getElementById('user-display-name').innerText = user.name ? `Mẹ ${user.name}` : 'Mẹ Yêu';
+            document.getElementById('user-display-email').innerText = user.email || '';
+            if (user.avatar) {
+              document.getElementById('user-avatar-img').src = user.avatar;
+            }
+            if (user.points) {
+              document.getElementById('user-points').innerText = `${user.points} ⭐`;
+            }
+            document.getElementById('user-provider-badge').innerText = user.provider === 'facebook' ? 'f' : 'G';
+            return;
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      // Chưa đăng nhập hoặc không phải user role
+      loginView.classList.remove('hidden');
+      profileView.classList.add('hidden');
+    }
+
+    // Mở OAuth Modal
+    function openOAuthModal(provider) {
+      currentProvider = provider;
+      const modal = document.getElementById('oauth-modal');
+      const box = document.getElementById('oauth-box');
+      const icon = document.getElementById('oauth-service-icon');
+      const title = document.getElementById('oauth-service-title');
+
+      if (provider === 'google') {
+        icon.innerHTML = `
+          <svg class="w-5 h-5" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
+        `;
+        title.innerText = 'Đăng nhập với Google';
+      } else {
+        icon.innerHTML = `
+          <svg class="w-5 h-5 fill-[#1877F2]" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        `;
+        title.innerText = 'Tiếp tục với Facebook';
+      }
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+      }, 10);
+    }
+
+    // Đóng Modal
+    function closeOAuthModal() {
+      const modal = document.getElementById('oauth-modal');
+      const box = document.getElementById('oauth-box');
+      modal.classList.add('opacity-0');
+      box.classList.add('scale-95');
+      setTimeout(() => modal.classList.add('hidden'), 250);
+    }
+
+    // Chọn tài khoản mô phỏng
+    function selectAccount(name, email, avatar) {
+      closeOAuthModal();
+      
+      const userData = {
+        role: 'user',
+        name: name,
+        email: email,
+        avatar: avatar,
+        provider: currentProvider,
+        phone: '0912 345 678',
+        points: 250,
+        address: 'Hà Nội, Việt Nam',
+        loggedInAt: new Date().toISOString()
+      };
+
+      localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(userData));
+      showToast(`🌸 Chào mừng Mẹ ${name} đã đăng nhập thành công!`);
+
+      setTimeout(() => {
+        const returnUrl = new URLSearchParams(window.location.search).get('returnUrl') || 'index.html';
+        window.location.href = returnUrl;
+      }, 1200);
+    }
+
+    // Nhập tài khoản tùy ý
+    function submitCustomAccount() {
+      const name = document.getElementById('custom-user-name').value.trim();
+      const email = document.getElementById('custom-user-email').value.trim();
+
+      if (!name || !email) {
+        alert('Mẹ vui lòng nhập tên và email nhé!');
+        return;
+      }
+
+      selectAccount(name, email, 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80');
+    }
+
+    // Đăng xuất
+    function handleUserLogout() {
+      localStorage.removeItem(STORAGE_KEY_USER);
+      showToast('Đã đăng xuất tài khoản thành công.');
+      setTimeout(() => {
+        checkUserSession();
+      }, 500);
+    }
+
+    // Tiếp tục mua sắm
+    function continueShopping() {
+      const returnUrl = new URLSearchParams(window.location.search).get('returnUrl') || 'uu-dai.html';
+      window.location.href = returnUrl;
+    }
+
+    // Quay lại trang trước hoặc về index
+    function goBackOrHome() {
+      if (document.referrer && document.referrer.includes(window.location.hostname)) {
+        window.history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    }
+
+    // Toast
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'bg-charcoal-900/95 text-white text-xs py-3 px-4 rounded-2xl shadow-xl backdrop-blur-md flex items-center space-x-2 pointer-events-auto border border-white/10';
+      toast.innerHTML = `<span>✨</span><span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s ease';
+        setTimeout(() => toast.remove(), 400);
+      }, 2500);
+    }
+
+    // Khởi tạo
+    window.addEventListener('DOMContentLoaded', checkUserSession);
+  </script>
+
+</body>
+
+</html>

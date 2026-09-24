@@ -122,10 +122,12 @@
           
         </button>
         <!-- Auth Button / Profile -->
-        <button id="header-auth-btn" onclick="navigateTo('tai-khoan')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800" title="Tài khoản">
-          <span id="header-auth-icon">👤</span>
-          <span id="header-auth-label" class="hidden sm:inline">Đăng Nhập</span>
-        </button>
+        <div id="header-auth-container" class="relative">
+          <a href="tai-khoan.html" id="header-auth-btn" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800" title="Tài khoản">
+            <span id="header-auth-icon">👤</span>
+            <span id="header-auth-label" class="hidden sm:inline">Tài Khoản</span>
+          </a>
+        </div>
         <!-- Cart Button -->
         <button id="header-cart-btn" onclick="openMiniCart()" class="relative flex items-center space-x-1.5 bg-cream-100 hover:bg-honey-100 border border-cream-300 px-3 py-1.5 rounded-full transition-all active:scale-95">
           <span>🛍️</span>
@@ -2134,39 +2136,60 @@
 
     // Cập nhật giao diện Header theo trạng thái Đăng nhập / Role
     function updateHeaderAuthUI() {
-      const authBtn = document.getElementById('header-auth-btn');
-      const authLabel = document.getElementById('header-auth-label');
-      const authIcon = document.getElementById('header-auth-icon');
-      const mobileIcon = document.getElementById('mobile-auth-icon');
-      const mobileLabel = document.getElementById('mobile-auth-label');
+      currentUser = getCurrentUser();
+      const container = document.getElementById('header-auth-container');
+      if (!container) return;
 
-      if (currentUser) {
-        if (currentUser.role === 'admin') {
-          if (authLabel) authLabel.innerText = 'Admin Portal';
-          if (authIcon) authIcon.innerText = '👑';
-          if (mobileLabel) mobileLabel.innerText = 'Admin';
-          if (mobileIcon) mobileIcon.innerText = '👑';
-          if (authBtn) {
-            authBtn.className = 'flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-honey-100 hover:bg-honey-200 border border-honey-300 transition-all text-xs font-bold text-honey-800';
-          }
-        } else {
-          const shortName = currentUser.name.split(' ').pop() || 'Mẹ';
-          if (authLabel) authLabel.innerText = `Mẹ ${shortName}`;
-          if (authIcon) authIcon.innerText = '🌸';
-          if (mobileLabel) mobileLabel.innerText = `Mẹ ${shortName}`;
-          if (mobileIcon) mobileIcon.innerText = '🌸';
-          if (authBtn) {
-            authBtn.className = 'flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-cream-200 border border-cream-300 transition-all text-xs font-bold text-charcoal-800';
-          }
-        }
+      if (!currentUser) {
+        container.innerHTML = `
+          <a href="tai-khoan.html" id="header-auth-btn" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800" title="Đăng nhập tài khoản">
+            <span id="header-auth-icon">👤</span>
+            <span id="header-auth-label" class="hidden sm:inline">Tài Khoản</span>
+          </a>
+        `;
+        return;
+      }
+
+      if (currentUser.role === 'admin') {
+        container.innerHTML = `
+          <div class="relative group">
+            <a href="admin.html" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-amber-100 hover:bg-amber-200 border border-amber-300 transition-all text-xs font-bold text-amber-900" title="Quản Trị Viên">
+              <span>👑</span>
+              <span class="hidden sm:inline">Admin Portal</span>
+            </a>
+            <div class="absolute right-0 top-full mt-1.5 w-44 bg-white rounded-2xl shadow-xl border border-cream-200 py-1.5 hidden group-hover:block z-50">
+              <div class="px-3 py-1.5 border-b border-cream-100 text-[11px]">
+                <div class="font-bold text-charcoal-900 truncate">${currentUser.name || 'Quản Trị Viên'}</div>
+                <div class="text-[10px] text-charcoal-400 font-mono truncate">${currentUser.email}</div>
+              </div>
+              <a href="admin.html" class="block px-3 py-1.5 text-xs text-charcoal-700 hover:bg-cream-100 font-medium">Bảng Điều Khiển</a>
+              <button onclick="performLogout()" class="w-full text-left px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 font-bold">Đăng Xuất</button>
+            </div>
+          </div>
+        `;
       } else {
-        if (authLabel) authLabel.innerText = 'Đăng Nhập';
-        if (authIcon) authIcon.innerText = '👤';
-        if (mobileLabel) mobileLabel.innerText = 'Tài Khoản';
-        if (mobileIcon) mobileIcon.innerText = '👤';
-        if (authBtn) {
-          authBtn.className = 'flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800';
-        }
+        const shortName = currentUser.name ? (currentUser.name.split(' ').pop()) : 'Mẹ';
+        const avatarSrc = currentUser.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&h=100&q=80';
+        container.innerHTML = `
+          <div class="relative group">
+            <button class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800">
+              <img src="${avatarSrc}" alt="Avatar" class="w-5 h-5 rounded-full object-cover border border-cream-300" onerror="this.src='images/logo.png'" />
+              <span class="hidden sm:inline">Mẹ ${shortName}</span>
+              <span class="text-[9px] text-charcoal-400">▼</span>
+            </button>
+            <div class="absolute right-0 top-full mt-1.5 w-48 bg-white rounded-2xl shadow-xl border border-cream-200 py-2 hidden group-hover:block z-50">
+              <div class="px-3 py-1.5 border-b border-cream-100 text-[11px]">
+                <div class="font-bold text-charcoal-900 truncate">${currentUser.name || 'Mẹ Bỉm'}</div>
+                <div class="text-[10px] text-charcoal-400 font-mono truncate">${currentUser.email || ''}</div>
+                <div class="text-[10px] text-honey-600 font-bold mt-0.5">⭐ ${currentUser.points || 250} Điểm thưởng</div>
+              </div>
+              <a href="tai-khoan.html" class="block px-3 py-2 text-xs text-charcoal-700 hover:bg-cream-100 font-semibold">Tài Khoản Của Mẹ</a>
+              <a href="uu-dai.html" class="block px-3 py-2 text-xs text-charcoal-700 hover:bg-cream-100 font-medium">Sản Phẩm Ưu Đãi Hot</a>
+              <div class="border-t border-cream-100 my-1"></div>
+              <button onclick="performLogout()" class="w-full text-left px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 font-bold">Đăng Xuất</button>
+            </div>
+          </div>
+        `;
       }
     }
 

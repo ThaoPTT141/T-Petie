@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>T'Petie | Ưu Đãi & Khuyến Mãi — Đồ Xinh Cho Bé, Giá Mềm Cho Mẹ</title>
-  <meta name="description" content="Chương trình ưu đãi thời trang thiết kế trẻ em T'Petie. Khám phá deal hời mừng Đại Lễ 2/9, Sale Hè, Sale Thu - Đông và Sale Ngày Đôi 10/10 11/11." />
+  <meta name="description"
+    content="Chương trình ưu đãi thời trang thiết kế trẻ em T'Petie. Khám phá deal hời mừng Đại Lễ 2/9, Sale Hè, Sale Thu - Đông và Sale Ngày Đôi 10/10 11/11." />
 
   <!-- Google Fonts: Quicksand, Be Vietnam Pro & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Quicksand:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -70,37 +74,71 @@
   </script>
 
   <style>
-    html, body {
+    html,
+    body {
       overflow-x: hidden;
       max-width: 100vw;
     }
+
     body {
       background-color: #FFFDF9;
       color: #2D3142;
       font-family: 'Be Vietnam Pro', sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
-    h1, h2, h3, h4, .font-heading {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-heading {
       font-family: 'Quicksand', sans-serif;
     }
+
     /* Hide scrollbar */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    
-    @keyframes bounce-short {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px) scale(1.15); }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
     }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @keyframes bounce-short {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px) scale(1.15);
+      }
+    }
+
     .animate-bounce-cart {
       animation: bounce-short 0.4s ease-in-out;
     }
+
     @keyframes pulse-subtle {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.92; transform: scale(1.02); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.92;
+        transform: scale(1.02);
+      }
     }
+
     .animate-pulse-subtle {
       animation: pulse-subtle 2.5s infinite ease-in-out;
     }
+
     .product-img {
       width: 100%;
       height: 180px;
@@ -157,6 +195,7 @@
     }
   </style>
 </head>
+
 <body class="min-h-screen flex flex-col antialiased selection:bg-honey-100 selection:text-honey-700 pb-20 md:pb-0">
 
   <!-- ==================== STICKY HEADER ==================== -->
@@ -164,39 +203,51 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
       <a href="index.html" class="flex items-center group py-1" title="Về trang chủ T'Petie">
-        <img src="images/logo.png" alt="T'Petie - Made for little souls" class="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
+        <img src="images/logo.png" alt="T'Petie - Made for little souls"
+          class="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
       </a>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
         <a href="index.html" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Trang Chủ</a>
-        <a href="index.html#page-be-gai" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Bé Gái</a>
-        <a href="index.html#page-bo-suu-tap" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 flex items-center space-x-1 transition-colors">
+        <a href="index.html#page-be-gai"
+          class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Bé Gái</a>
+        <a href="index.html#page-bo-suu-tap"
+          class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 flex items-center space-x-1 transition-colors">
           <span>Bộ Sưu Tập</span>
           <span class="text-[9px] font-bold bg-honey-500 text-white px-1.5 py-0.2 rounded-full">Mới</span>
         </a>
-        <a href="uu-dai.html" class="nav-btn text-honey-600 font-bold py-1 flex items-center space-x-1 border-b-2 border-honey-500">
+        <a href="uu-dai.html"
+          class="nav-btn text-honey-600 font-bold py-1 flex items-center space-x-1 border-b-2 border-honey-500">
           <span>Ưu Đãi &amp; Sale</span>
           <span class="text-[9px] font-bold bg-blush-500 text-white px-1.5 py-0.2 rounded-full animate-pulse">Hot</span>
         </a>
-        <a href="index.html#page-ve-chung-toi" class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Về Chúng Tôi</a>
+        <a href="index.html#page-ve-chung-toi"
+          class="nav-btn text-charcoal-700 hover:text-honey-600 py-1 transition-colors">Về Chúng Tôi</a>
       </nav>
 
       <!-- Action Buttons -->
       <div class="flex items-center space-x-2 sm:space-x-3">
-        <button onclick="openSearchModal()" class="p-2 rounded-full hover:bg-cream-100 text-charcoal-700 transition-colors" title="Tìm kiếm">
+        <button onclick="openSearchModal()"
+          class="p-2 rounded-full hover:bg-cream-100 text-charcoal-700 transition-colors" title="Tìm kiếm">
           🔍
         </button>
         <!-- Auth Button / Profile -->
-        <a href="index.html#page-dang-nhap" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800" title="Tài khoản">
-          <span>👤</span>
-          <span class="hidden sm:inline">Tài Khoản</span>
-        </a>
+        <div id="header-auth-container" class="relative">
+          <a href="tai-khoan.html" id="header-auth-btn"
+            class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800"
+            title="Tài khoản">
+            <span id="header-auth-icon">👤</span>
+            <span id="header-auth-label" class="hidden sm:inline">Tài Khoản</span>
+          </a>
+        </div>
         <!-- Cart Button -->
-        <button id="header-cart-btn" onclick="openMiniCart()" class="relative flex items-center space-x-1.5 bg-cream-100 hover:bg-honey-100 border border-cream-300 px-3 py-1.5 rounded-full transition-all active:scale-95">
+        <button id="header-cart-btn" onclick="openMiniCart()"
+          class="relative flex items-center space-x-1.5 bg-cream-100 hover:bg-honey-100 border border-cream-300 px-3 py-1.5 rounded-full transition-all active:scale-95">
           <span>🛍️</span>
           <span class="text-xs font-bold text-charcoal-800 hidden sm:inline">Giỏ hàng</span>
-          <span id="cart-badge-count" class="bg-honey-500 text-white rounded-full min-w-5 h-5 px-1.5 text-[11px] font-bold flex items-center justify-center">0</span>
+          <span id="cart-badge-count"
+            class="bg-honey-500 text-white rounded-full min-w-5 h-5 px-1.5 text-[11px] font-bold flex items-center justify-center">0</span>
         </button>
       </div>
     </div>
@@ -216,26 +267,33 @@
     <section
       class="relative rounded-3xl border border-rose-100/70 shadow-sm overflow-hidden bg-gradient-to-r from-amber-50 via-rose-50 to-orange-50 p-5 sm:p-7 md:p-8 lg:p-10 text-charcoal-900 transition-all">
       <!-- Decorative Warm & Pastel Glows -->
-      <div class="absolute -right-12 -top-12 w-64 sm:w-80 h-64 sm:h-80 bg-rose-200/30 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-12 -bottom-12 w-56 sm:w-72 h-56 sm:h-72 bg-amber-200/25 rounded-full blur-3xl pointer-events-none"></div>
+      <div
+        class="absolute -right-12 -top-12 w-64 sm:w-80 h-64 sm:h-80 bg-rose-200/30 rounded-full blur-3xl pointer-events-none">
+      </div>
+      <div
+        class="absolute -left-12 -bottom-12 w-56 sm:w-72 h-56 sm:h-72 bg-amber-200/25 rounded-full blur-3xl pointer-events-none">
+      </div>
       <div class="absolute top-1/2 left-1/3 w-40 h-40 bg-orange-100/40 rounded-full blur-2xl pointer-events-none"></div>
 
       <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 items-center gap-6 lg:gap-8">
         <!-- Cột Trái (Nội dung & Countdown): Mobile xếp trên, Desktop chiếm 7/12 -->
         <div class="order-1 md:order-1 md:col-span-7 lg:col-span-7 space-y-3.5 sm:space-y-4 text-center md:text-left">
           <!-- Tag nhỏ xinh -->
-          <div class="inline-flex items-center space-x-1.5 text-rose-600 bg-white/80 border border-rose-200 px-3.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm shadow-xs">
+          <div
+            class="inline-flex items-center space-x-1.5 text-rose-600 bg-white/80 border border-rose-200 px-3.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm shadow-xs">
             <span>✨</span>
             <span>Mùa Yêu Thương Cho Bé • Flash Sale Giới Hạn</span>
           </div>
 
           <!-- Tiêu đề thời trang & Subtitle -->
           <div class="space-y-1.5 sm:space-y-2">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-charcoal-900 tracking-tight leading-tight">
+            <h1
+              class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-charcoal-900 tracking-tight leading-tight">
               T'Petie Ưu Đãi Mùa Lễ Hội
             </h1>
             <p class="text-xs sm:text-sm text-charcoal-600 leading-relaxed max-w-xl mx-auto md:mx-0 font-normal">
-              Dành riêng những thiết kế thêu tay thủ công ngọt ngào nhất cho thiên thần nhỏ của mẹ. Tuyển chọn trang phục chất liệu tự nhiên, mềm mại và chuẩn form dáng bé Việt.
+              Dành riêng những thiết kế thêu tay thủ công ngọt ngào nhất cho thiên thần nhỏ của mẹ. Tuyển chọn trang
+              phục chất liệu tự nhiên, mềm mại và chuẩn form dáng bé Việt.
             </p>
           </div>
 
@@ -243,32 +301,41 @@
           <div class="pt-1 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2.5 sm:gap-3">
             <div class="flex items-center space-x-1.5 sm:space-x-2">
               <!-- Ô Ngày -->
-              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
-                <span id="countdown-days" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">02</span>
+              <div
+                class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-days"
+                  class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">02</span>
                 <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Ngày</span>
               </div>
               <span class="font-extrabold text-rose-300 text-sm sm:text-base pb-3.5">:</span>
               <!-- Ô Giờ -->
-              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
-                <span id="countdown-hours" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">14</span>
+              <div
+                class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-hours"
+                  class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">14</span>
                 <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Giờ</span>
               </div>
               <span class="font-extrabold text-rose-300 text-sm sm:text-base pb-3.5">:</span>
               <!-- Ô Phút -->
-              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
-                <span id="countdown-minutes" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">35</span>
+              <div
+                class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-minutes"
+                  class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">35</span>
                 <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Phút</span>
               </div>
               <span class="font-extrabold text-rose-300 text-sm sm:text-base pb-3.5">:</span>
               <!-- Ô Giây -->
-              <div class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
-                <span id="countdown-seconds" class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">20</span>
+              <div
+                class="bg-white shadow-sm border border-rose-100 rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 text-center min-w-[48px] sm:min-w-[54px]">
+                <span id="countdown-seconds"
+                  class="block font-mono font-extrabold text-base sm:text-lg text-rose-600 leading-tight">20</span>
                 <span class="block text-[9.5px] uppercase font-bold text-charcoal-400 tracking-wider">Giây</span>
               </div>
             </div>
 
             <!-- Freeship badge kèm -->
-            <div class="text-xs text-charcoal-700 bg-white/70 backdrop-blur-sm px-3 py-2 rounded-xl inline-flex items-center space-x-1.5 border border-rose-100/80 shadow-xs">
+            <div
+              class="text-xs text-charcoal-700 bg-white/70 backdrop-blur-sm px-3 py-2 rounded-xl inline-flex items-center space-x-1.5 border border-rose-100/80 shadow-xs">
               <span>🚚</span>
               <span class="font-medium">Freeship toàn quốc từ 399k</span>
             </div>
@@ -280,19 +347,23 @@
               class="inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300 group">
               <span>🛍️</span>
               <span>Khám Phá Ưu Đãi Ngay</span>
-              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
           </div>
 
           <!-- Trust Badges on Desktop -->
           <div class="hidden lg:flex items-center space-x-4 pt-1 text-[11.5px] text-charcoal-500 font-medium">
-            <span class="flex items-center space-x-1"><span class="text-rose-500">✨</span><span>100% Thêu tay thủ công</span></span>
+            <span class="flex items-center space-x-1"><span class="text-rose-500">✨</span><span>100% Thêu tay thủ
+                công</span></span>
             <span>•</span>
-            <span class="flex items-center space-x-1"><span class="text-sage-500">🌿</span><span>Vải Linen &amp; Cotton hữu cơ</span></span>
+            <span class="flex items-center space-x-1"><span class="text-sage-500">🌿</span><span>Vải Linen &amp; Cotton
+                hữu cơ</span></span>
             <span>•</span>
-            <span class="flex items-center space-x-1"><span class="text-honey-500">🔄</span><span>Đổi size linh hoạt 7 ngày</span></span>
+            <span class="flex items-center space-x-1"><span class="text-honey-500">🔄</span><span>Đổi size linh hoạt 7
+                ngày</span></span>
           </div>
         </div>
 
@@ -300,39 +371,43 @@
         <div class="order-2 md:order-2 md:col-span-5 lg:col-span-5 flex justify-center md:justify-end">
           <div class="relative w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[330px]">
             <!-- Decorative soft backdrop glow -->
-            <div class="absolute -inset-2 bg-gradient-to-tr from-rose-300/30 via-amber-200/30 to-orange-200/30 rounded-3xl blur-xl pointer-events-none"></div>
+            <div
+              class="absolute -inset-2 bg-gradient-to-tr from-rose-300/30 via-amber-200/30 to-orange-200/30 rounded-3xl blur-xl pointer-events-none">
+            </div>
 
             <!-- Khung ảnh chính: Bo góc nghệ thuật dạng arched window / rounded-3xl mềm mại -->
-            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-white bg-white rotate-1 hover:rotate-0 transition-transform duration-300 group cursor-pointer" onclick="filterCampaign('le2-9')">
-              <img
-                src="images/promotions/le29-ao-dai.jpg"
-                alt="Set Áo Dài Đan Nguyệt T'Petie"
-                loading="eager"
+            <div
+              class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-white bg-white rotate-1 hover:rotate-0 transition-transform duration-300 group cursor-pointer"
+              onclick="filterCampaign('le2-9')">
+              <img src="images/promotions/le29-ao-dai.jpg" alt="Set Áo Dài Đan Nguyệt T'Petie" loading="eager"
                 fetchpriority="high"
                 class="w-full h-56 sm:h-64 lg:h-72 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; transform: translateZ(0); -webkit-transform: translateZ(0);"
-                onerror="this.src='images/sale/set-ao-dai-dan-nguyet.jpg'"
-              />
+                onerror="this.src='images/sale/set-ao-dai-dan-nguyet.jpg'" />
 
               <!-- Sticker nhỏ đính góc: Giảm tới 35% -->
-              <div class="absolute top-2.5 right-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-extrabold text-[11px] sm:text-xs px-3 py-1 rounded-full shadow-md border border-white -rotate-6 flex items-center space-x-1 pointer-events-none">
+              <div
+                class="absolute top-2.5 right-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-extrabold text-[11px] sm:text-xs px-3 py-1 rounded-full shadow-md border border-white -rotate-6 flex items-center space-x-1 pointer-events-none">
                 <span>🏷️</span>
                 <span>Giảm tới 35%</span>
               </div>
 
               <!-- Lookbook floating tag ở góc trên bên trái -->
-              <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm text-charcoal-800 text-[10.5px] font-bold flex items-center space-x-1 border border-rose-100">
+              <div
+                class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm text-charcoal-800 text-[10.5px] font-bold flex items-center space-x-1 border border-rose-100">
                 <span>🌸</span>
                 <span>Lookbook Mới Nhất</span>
               </div>
 
               <!-- Floating Bottom Badge Thông tin sản phẩm -->
-              <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-white/95 backdrop-blur-md p-2.5 rounded-xl text-charcoal-900 flex items-center justify-between border border-rose-100 shadow-sm text-xs">
+              <div
+                class="absolute bottom-2.5 left-2.5 right-2.5 bg-white/95 backdrop-blur-md p-2.5 rounded-xl text-charcoal-900 flex items-center justify-between border border-rose-100 shadow-sm text-xs">
                 <div class="min-w-0 pr-2">
                   <div class="font-bold text-[11.5px] text-charcoal-900 truncate">Set Áo Dài Đan Nguyệt</div>
                   <div class="text-[10px] text-rose-600 font-semibold">Ưu đãi 30% • Chỉ từ 497.000đ</div>
                 </div>
-                <span class="px-2.5 py-1 rounded-lg bg-rose-500 text-white font-bold text-[10.5px] shrink-0 group-hover:bg-rose-600 transition-colors shadow-xs">
+                <span
+                  class="px-2.5 py-1 rounded-lg bg-rose-500 text-white font-bold text-[10.5px] shrink-0 group-hover:bg-rose-600 transition-colors shadow-xs">
                   Xem ngay
                 </span>
               </div>
@@ -352,21 +427,29 @@
         <span class="text-[10px] text-rose-500 font-semibold">Vuốt xem thêm →</span>
       </div>
 
-      <div class="snap-x snap-mandatory flex overflow-x-auto no-scrollbar gap-2.5 sm:gap-3.5 pb-1 -mx-3 px-3 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3">
+      <div
+        class="snap-x snap-mandatory flex overflow-x-auto no-scrollbar gap-2.5 sm:gap-3.5 pb-1 -mx-3 px-3 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3">
         <!-- Voucher 1: Giảm 20k -->
         <div
           class="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
           <!-- Ticket Cutout Notches & Divider -->
-          <div class="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
-          <div class="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
-          <div class="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none"></div>
+          <div
+            class="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10">
+          </div>
+          <div
+            class="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10">
+          </div>
+          <div
+            class="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none">
+          </div>
 
           <div class="space-y-0.5 pr-4 flex-1 min-w-0">
             <div class="text-rose-600 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
               <span>🏷️</span>
               <span>Giảm 20.000 VNĐ</span>
             </div>
-            <p class="text-[10.5px] text-charcoal-500">Đơn từ 250k • Code: <strong class="text-charcoal-800 font-bold">TPETIE20</strong></p>
+            <p class="text-[10.5px] text-charcoal-500">Đơn từ 250k • Code: <strong
+                class="text-charcoal-800 font-bold">TPETIE20</strong></p>
           </div>
           <button id="btn-voucher-TPETIE20" onclick="saveVoucher(this, 'TPETIE20')"
             class="px-3.5 py-1.5 rounded-full bg-rose-50 hover:bg-rose-500 text-rose-600 hover:text-white border border-rose-200 text-xs font-bold transition-all active:scale-95 shrink-0 min-h-[36px] flex items-center justify-center space-x-1">
@@ -378,9 +461,15 @@
         <div
           class="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
           <!-- Ticket Cutout Notches & Divider -->
-          <div class="absolute -top-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
-          <div class="absolute -bottom-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
-          <div class="absolute top-2 bottom-2 right-[103px] sm:right-[113px] border-r border-dashed border-rose-200/90 pointer-events-none"></div>
+          <div
+            class="absolute -top-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10">
+          </div>
+          <div
+            class="absolute -bottom-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10">
+          </div>
+          <div
+            class="absolute top-2 bottom-2 right-[103px] sm:right-[113px] border-r border-dashed border-rose-200/90 pointer-events-none">
+          </div>
 
           <div class="space-y-0.5 pr-4 flex-1 min-w-0">
             <div class="text-sage-700 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
@@ -389,7 +478,8 @@
             </div>
             <p class="text-[10.5px] text-charcoal-500">Đơn từ 399k • Tự áp dụng khi giỏ đủ</p>
           </div>
-          <span class="text-[11px] font-bold text-sage-700 bg-sage-50 px-3 py-1.5 rounded-full border border-sage-200 shrink-0 flex items-center space-x-1">
+          <span
+            class="text-[11px] font-bold text-sage-700 bg-sage-50 px-3 py-1.5 rounded-full border border-sage-200 shrink-0 flex items-center space-x-1">
             <span>✓</span>
             <span>Tự Áp Dụng</span>
           </span>
@@ -399,16 +489,23 @@
         <div
           class="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
           <!-- Ticket Cutout Notches & Divider -->
-          <div class="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
-          <div class="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10"></div>
-          <div class="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none"></div>
+          <div
+            class="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10">
+          </div>
+          <div
+            class="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10">
+          </div>
+          <div
+            class="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none">
+          </div>
 
           <div class="space-y-0.5 pr-4 flex-1 min-w-0">
             <div class="text-amber-600 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
               <span>🎁</span>
               <span>Giảm 10% Tối Đa 50k</span>
             </div>
-            <p class="text-[10.5px] text-charcoal-500">Mẹ mua lần đầu • Code: <strong class="text-charcoal-800 font-bold">MEMBERVIP</strong></p>
+            <p class="text-[10.5px] text-charcoal-500">Mẹ mua lần đầu • Code: <strong
+                class="text-charcoal-800 font-bold">MEMBERVIP</strong></p>
           </div>
           <button id="btn-voucher-MEMBERVIP" onclick="saveVoucher(this, 'MEMBERVIP')"
             class="px-3.5 py-1.5 rounded-full bg-amber-50 hover:bg-amber-500 text-amber-700 hover:text-white border border-amber-200 text-xs font-bold transition-all active:scale-95 shrink-0 min-h-[36px] flex items-center justify-center space-x-1">
@@ -419,17 +516,21 @@
     </section>
 
     <!-- ==================== 5 CAMPAIGN FILTER TABS ==================== -->
-    <section class="sticky top-[56px] sm:top-[64px] z-30 bg-white/95 backdrop-blur-md py-2.5 px-3 sm:px-0 -mx-3 sm:mx-0 border-b border-cream-200/90 shadow-xs space-y-2">
+    <section
+      class="sticky top-[56px] sm:top-[64px] z-30 bg-white/95 backdrop-blur-md py-2.5 px-3 sm:px-0 -mx-3 sm:mx-0 border-b border-cream-200/90 shadow-xs space-y-2">
       <div class="flex items-center justify-between px-1 sm:px-0">
         <div class="flex items-center space-x-2">
           <span class="text-xs sm:text-base font-bold font-heading text-charcoal-900">Chiến Dịch Ưu Đãi</span>
-          <span id="campaign-count-badge" class="text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full bg-blush-100 text-blush-600">30 sản phẩm</span>
+          <span id="campaign-count-badge"
+            class="text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full bg-blush-100 text-blush-600">30 sản
+            phẩm</span>
         </div>
         <span class="text-[11px] text-charcoal-400 hidden sm:inline">Chọn chiến dịch để lọc danh sách sản phẩm</span>
       </div>
 
       <!-- Horizontal Scroll Pill Tabs (Swipable on mobile, smoothly spaced on desktop) -->
-      <div id="campaign-tabs-bar" class="flex items-center space-x-2 sm:space-x-2.5 overflow-x-auto md:overflow-x-visible no-scrollbar py-0.5 px-1 sm:px-0">
+      <div id="campaign-tabs-bar"
+        class="flex items-center space-x-2 sm:space-x-2.5 overflow-x-auto md:overflow-x-visible no-scrollbar py-0.5 px-1 sm:px-0">
         <!-- 1. Tất Cả -->
         <button onclick="filterCampaign('all')" id="tab-all" data-campaign="all"
           class="campaign-tab shrink-0 py-2 px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-blush-100 text-blush-600 border border-blush-300 shadow-sm active:scale-95">
@@ -471,7 +572,8 @@
         class="p-2.5 sm:p-3 rounded-xl bg-cream-50 border border-cream-200 text-[11px] sm:text-xs text-charcoal-700 flex items-center justify-between gap-2">
         <div class="flex items-center space-x-1.5">
           <span class="text-sm" id="campaign-desc-icon">✨</span>
-          <span id="campaign-desc-text" class="line-clamp-1 sm:line-clamp-none">Toàn bộ 49 sản phẩm ưu đãi đặc biệt có gắn bảng giá in trực tiếp trên hình ảnh thực tế của T'Petie!</span>
+          <span id="campaign-desc-text" class="line-clamp-1 sm:line-clamp-none">Toàn bộ 49 sản phẩm ưu đãi đặc biệt có
+            gắn bảng giá in trực tiếp trên hình ảnh thực tế của T'Petie!</span>
         </div>
         <span id="campaign-desc-tag"
           class="hidden sm:inline-block text-[10px] font-bold px-2 py-0.5 rounded-full bg-honey-100 text-honey-700 shrink-0">
@@ -482,16 +584,20 @@
 
     <!-- ==================== RESPONSIVE PROMOTION PRODUCT GRID ==================== -->
     <section>
-      <div id="promo-products-grid" class="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4 sm:gap-4 md:gap-5 lg:gap-6 px-0.5 sm:px-0">
+      <div id="promo-products-grid"
+        class="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4 sm:gap-4 md:gap-5 lg:gap-6 px-0.5 sm:px-0">
         <!-- Rendered dynamically via JavaScript -->
       </div>
 
       <!-- Empty State Fallback -->
-      <div id="promo-empty-state" class="hidden text-center py-16 space-y-3 bg-white rounded-3xl border border-cream-200 p-8 shadow-card">
+      <div id="promo-empty-state"
+        class="hidden text-center py-16 space-y-3 bg-white rounded-3xl border border-cream-200 p-8 shadow-card">
         <div class="text-4xl">🧸</div>
-        <h3 class="font-heading font-bold text-base text-charcoal-900">Chiến dịch này đang được chuẩn bị thêm sản phẩm</h3>
+        <h3 class="font-heading font-bold text-base text-charcoal-900">Chiến dịch này đang được chuẩn bị thêm sản phẩm
+        </h3>
         <p class="text-xs text-charcoal-400">Mẹ hãy xem qua các chiến dịch ưu đãi khác hoặc bấm "Tất Cả" nhé!</p>
-        <button onclick="filterCampaign('all')" class="px-5 py-2 rounded-full bg-honey-500 text-white text-xs font-bold hover:bg-honey-600 transition-all">
+        <button onclick="filterCampaign('all')"
+          class="px-5 py-2 rounded-full bg-honey-500 text-white text-xs font-bold hover:bg-honey-600 transition-all">
           Xem Tất Cả Ưu Đãi
         </button>
       </div>
@@ -529,13 +635,16 @@
       <!-- Cột 1: Logo & Lời Cam Kết -->
       <div class="space-y-3">
         <a href="index.html" class="inline-block group">
-          <img src="images/logo.png" alt="T'Petie - Made for little souls" class="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
+          <img src="images/logo.png" alt="T'Petie - Made for little souls"
+            class="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
         </a>
         <p class="text-xs leading-relaxed text-charcoal-600">
-          <strong class="font-bold text-charcoal-900 uppercase">LỜI CAM KẾT:</strong> Thương hiệu thời trang thiết kế trẻ em, nâng niu từng bước chạm đầu đời của bé yêu.
+          <strong class="font-bold text-charcoal-900 uppercase">LỜI CAM KẾT:</strong> Thương hiệu thời trang thiết kế
+          trẻ em, nâng niu từng bước chạm đầu đời của bé yêu.
         </p>
         <div class="pt-1">
-          <span class="text-[11px] font-semibold text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 inline-block">
+          <span
+            class="text-[11px] font-semibold text-sage-700 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 inline-block">
             🌿 Thiết kế &amp; May đo tại Việt Nam
           </span>
         </div>
@@ -545,10 +654,14 @@
       <div class="space-y-3">
         <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">CHÍNH SÁCH</h4>
         <ul class="space-y-2 text-xs text-charcoal-600">
-          <li><a href="javascript:void(0)" onclick="showToast('Chính sách bảo mật thông tin khách hàng T\'Petie')" class="hover:text-honey-600 block">Chính sách bảo mật</a></li>
-          <li><a href="javascript:void(0)" onclick="showToast('Chính sách đổi trả miễn phí trong 7 ngày')" class="hover:text-honey-600 block">Chính sách đổi trả</a></li>
-          <li><a href="javascript:void(0)" onclick="showToast('Chính sách giao hàng toàn quốc 2-3 ngày')" class="hover:text-honey-600 block">Chính sách giao hàng</a></li>
-          <li><a href="javascript:void(0)" onclick="showToast('Chính sách thanh toán an toàn COD & QR')" class="hover:text-honey-600 block">Chính sách thanh toán</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách bảo mật thông tin khách hàng T\'Petie')"
+              class="hover:text-honey-600 block">Chính sách bảo mật</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách đổi trả miễn phí trong 7 ngày')"
+              class="hover:text-honey-600 block">Chính sách đổi trả</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách giao hàng toàn quốc 2-3 ngày')"
+              class="hover:text-honey-600 block">Chính sách giao hàng</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Chính sách thanh toán an toàn COD & QR')"
+              class="hover:text-honey-600 block">Chính sách thanh toán</a></li>
         </ul>
       </div>
 
@@ -557,7 +670,8 @@
         <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">CHĂM SÓC KHÁCH HÀNG</h4>
         <ul class="space-y-2 text-xs text-charcoal-600">
           <li><a href="index.html#page-dang-nhap" class="hover:text-honey-600 block">Tra cứu đơn hàng</a></li>
-          <li><a href="javascript:void(0)" onclick="openGeneralSizeGuideModal()" class="hover:text-honey-600 block">Hướng dẫn chọn size</a></li>
+          <li><a href="javascript:void(0)" onclick="openGeneralSizeGuideModal()"
+              class="hover:text-honey-600 block">Hướng dẫn chọn size</a></li>
           <li><a href="index.html" class="hover:text-honey-600 block">Hệ thống Showroom offline</a></li>
         </ul>
       </div>
@@ -566,11 +680,13 @@
       <div class="space-y-3">
         <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">KẾT NỐI VỚI T'PETIE</h4>
         <div class="space-y-2 text-xs">
-          <a href="tel:0988123456" class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
+          <a href="tel:0988123456"
+            class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
             <span>📞</span>
             <span>Hotline: 0988.123.456 (8h - 22h)</span>
           </a>
-          <a href="https://zalo.me" target="_blank" class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
+          <a href="https://zalo.me" target="_blank"
+            class="flex items-center space-x-2 text-charcoal-800 font-semibold hover:text-honey-600">
             <span>💬</span>
             <span>Zalo Official: T'Petie Baby &amp; Mom</span>
           </a>
@@ -578,37 +694,46 @@
         <div class="pt-2">
           <span class="text-[11px] font-semibold text-charcoal-400 block mb-2">Mạng xã hội:</span>
           <div class="flex items-center space-x-2.5">
-            <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-blue-50">📘</a>
-            <a href="https://tiktok.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-cream-200">🎵</a>
-            <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-pink-50">📷</a>
+            <a href="https://facebook.com" target="_blank"
+              class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-blue-50">📘</a>
+            <a href="https://tiktok.com" target="_blank"
+              class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-cream-200">🎵</a>
+            <a href="https://instagram.com" target="_blank"
+              class="w-8 h-8 rounded-full bg-white border border-cream-300 flex items-center justify-center text-xs hover:bg-pink-50">📷</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 pt-6 border-t border-cream-200 text-center text-xs text-charcoal-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 pt-6 border-t border-cream-200 text-center text-xs text-charcoal-400 flex flex-col sm:flex-row items-center justify-between gap-2">
       <p>© 2024 T'Petie Vietnam. All rights reserved.</p>
       <p>Made with love for Mom &amp; Baby ❤️</p>
     </div>
   </footer>
 
   <!-- ==================== MINI-CART DRAWER TRƯỢT BÊN PHẢI ==================== -->
-  <div id="minicart-backdrop" onclick="closeMiniCart()" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"></div>
-  <div id="minicart-drawer" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between">
+  <div id="minicart-backdrop" onclick="closeMiniCart()"
+    class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+  </div>
+  <div id="minicart-drawer"
+    class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between">
     <!-- Header -->
     <div class="p-4 border-b border-cream-200 flex items-center justify-between bg-cream-50">
       <div class="flex items-center space-x-2">
         <span>🛍️</span>
         <h3 class="font-heading font-bold text-base text-charcoal-900">Giỏ Hàng Của Mẹ</h3>
       </div>
-      <button onclick="closeMiniCart()" class="p-1.5 rounded-full hover:bg-cream-200 text-charcoal-600 transition-colors">✕</button>
+      <button onclick="closeMiniCart()"
+        class="p-1.5 rounded-full hover:bg-cream-200 text-charcoal-600 transition-colors">✕</button>
     </div>
 
     <!-- Freeship Progress Bar -->
     <div class="px-4 py-2.5 bg-honey-50 border-b border-cream-200 text-xs text-honey-700">
       <div id="minicart-freeship-text">Mua thêm để nhận <strong>Freeship toàn quốc 399k</strong>!</div>
       <div class="w-full bg-cream-200 rounded-full h-1.5 mt-2 overflow-hidden">
-        <div id="minicart-freeship-bar" class="bg-honey-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+        <div id="minicart-freeship-bar" class="bg-honey-500 h-full rounded-full transition-all duration-300"
+          style="width: 0%"></div>
       </div>
     </div>
 
@@ -624,10 +749,12 @@
         <span id="minicart-total" class="text-lg font-bold text-rose-600 font-heading">0 VNĐ</span>
       </div>
       <div class="grid grid-cols-2 gap-2">
-        <a href="index.html#page-gio-hang" class="w-full py-2.5 rounded-full border border-cream-300 bg-white hover:bg-cream-100 text-charcoal-900 text-xs font-bold text-center block transition-colors">
+        <a href="index.html#page-gio-hang"
+          class="w-full py-2.5 rounded-full border border-cream-300 bg-white hover:bg-cream-100 text-charcoal-900 text-xs font-bold text-center block transition-colors">
           Xem Giỏ Hàng
         </a>
-        <a href="index.html#page-gio-hang" class="w-full py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold text-center block shadow-md transition-all active:scale-95">
+        <a href="index.html#page-gio-hang"
+          class="w-full py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold text-center block shadow-md transition-all active:scale-95">
           Thanh Toán →
         </a>
       </div>
@@ -637,16 +764,17 @@
   <!-- ==================== QUICK SIZE SELECTOR MODAL / BOTTOM SHEET DRAWER (Xem Size) ==================== -->
   <div id="quicksize-modal"
     class="fixed inset-0 z-50 bg-charcoal-900/50 backdrop-blur-sm hidden items-end sm:items-center justify-center transition-all duration-300">
-    
+
     <!-- Backdrop Click to Close -->
     <div onclick="closeQuickSizeModal()" class="absolute inset-0"></div>
 
     <!-- Bottom Sheet Container (Slide-up on mobile, centered modal on desktop) -->
     <div id="quicksize-container"
       class="relative z-10 w-full sm:max-w-lg bg-white rounded-t-3xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl border border-cream-200 space-y-3.5 max-h-[88vh] overflow-y-auto transform transition-transform duration-300 ease-out translate-y-full sm:translate-y-0">
-      
+
       <!-- Drag Handle for Mobile -->
-      <div class="w-12 h-1.5 bg-cream-300 rounded-full mx-auto sm:hidden cursor-pointer" onclick="closeQuickSizeModal()"></div>
+      <div class="w-12 h-1.5 bg-cream-300 rounded-full mx-auto sm:hidden cursor-pointer"
+        onclick="closeQuickSizeModal()"></div>
 
       <!-- Header -->
       <div class="flex justify-between items-start pb-2 border-b border-cream-200">
@@ -654,9 +782,11 @@
           <div class="flex items-center space-x-1.5">
             <span class="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full" id="qs-badge">-30%</span>
             <span class="text-[11px] text-charcoal-400 font-mono" id="qs-sku">TP-SKU</span>
-            <span class="text-[10px] font-bold text-honey-700 bg-honey-50 px-2 py-0.5 rounded-full" id="qs-collection">BST T'Petie</span>
+            <span class="text-[10px] font-bold text-honey-700 bg-honey-50 px-2 py-0.5 rounded-full"
+              id="qs-collection">BST T'Petie</span>
           </div>
-          <h3 class="font-heading font-bold text-sm sm:text-base text-charcoal-900 line-clamp-1" id="qs-name">Tên Sản Phẩm</h3>
+          <h3 class="font-heading font-bold text-sm sm:text-base text-charcoal-900 line-clamp-1" id="qs-name">Tên Sản
+            Phẩm</h3>
         </div>
         <button onclick="closeQuickSizeModal()"
           class="p-1.5 rounded-full text-charcoal-400 hover:bg-cream-100 hover:text-charcoal-700 transition-colors">✕</button>
@@ -664,15 +794,15 @@
 
       <!-- Price & Image Summary -->
       <div class="flex items-center space-x-3 bg-cream-50 p-2.5 sm:p-3 rounded-2xl border border-cream-200">
-        <img id="qs-img" src="" alt=""
-          loading="eager"
+        <img id="qs-img" src="" alt="" loading="eager"
           class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover bg-white shrink-0 border border-cream-200"
           style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; transform: translateZ(0); -webkit-transform: translateZ(0);" />
         <div class="space-y-0.5">
           <div class="flex items-baseline gap-2">
             <span class="text-base sm:text-lg font-bold text-rose-600 font-heading" id="qs-price">224.000đ</span>
             <span class="text-xs sm:text-sm text-gray-400 line-through" id="qs-orig-price">320.000đ</span>
-            <span class="text-xs font-semibold text-rose-500 bg-rose-50 px-1.5 py-0.5 rounded ml-auto" id="qs-modal-badge">-30%</span>
+            <span class="text-xs font-semibold text-rose-500 bg-rose-50 px-1.5 py-0.5 rounded ml-auto"
+              id="qs-modal-badge">-30%</span>
           </div>
           <p class="text-[11px] text-sage-700 font-medium" id="qs-material">Thô cotton mềm mát, thêu tay</p>
           <span class="text-[10px] text-blush-600 font-semibold block" id="qs-savings">Tiết kiệm 96.000đ</span>
@@ -756,13 +886,13 @@
       <div
         class="text-[10.5px] text-charcoal-600 bg-sage-50 border border-sage-200/80 p-2.5 rounded-xl flex items-start space-x-2">
         <span>💡</span>
-        <span>Mẹo nhỏ cho mẹ: Form đồ T'Petie may chuẩn theo vóc dáng bé Việt. Nếu bé mũm mĩm hoặc mẹ muốn bé mặc lâu hơn một chút, mẹ hãy tăng <strong>1 size</strong> nhé!</span>
+        <span>Mẹo nhỏ cho mẹ: Form đồ T'Petie may chuẩn theo vóc dáng bé Việt. Nếu bé mũm mĩm hoặc mẹ muốn bé mặc lâu
+          hơn một chút, mẹ hãy tăng <strong>1 size</strong> nhé!</span>
       </div>
 
       <!-- Sticky Add to Cart CTA Button -->
       <div class="pt-1 sticky bottom-0 bg-white pb-1">
-        <button id="qs-add-cart-btn"
-          onclick="confirmQuickAddFromModal()"
+        <button id="qs-add-cart-btn" onclick="confirmQuickAddFromModal()"
           class="w-full min-h-[46px] py-3 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center justify-center space-x-2">
           <span>🛍️ Thêm Vào Giỏ Hàng</span>
           <span id="qs-btn-price"></span>
@@ -772,7 +902,8 @@
   </div>
 
   <!-- ==================== GENERAL SIZE GUIDE MODAL ==================== -->
-  <div id="sizeguide-modal" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div id="sizeguide-modal"
+    class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden items-center justify-center p-4">
     <div class="w-full max-w-lg bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-cream-200 space-y-4">
       <div class="flex justify-between items-center pb-2 border-b border-cream-200">
         <h3 class="font-heading font-bold text-base text-charcoal-900 flex items-center space-x-2">
@@ -835,33 +966,43 @@
 
       <div class="text-xs text-sage-800 bg-sage-50 p-3 rounded-xl space-y-1">
         <p>💡 <strong>Gợi ý từ T'Petie:</strong></p>
-        <p>Các bé cùng độ tuổi có thể có vóc dáng khác nhau. Mẹ nên ưu tiên chọn size theo <strong>chiều cao và cân nặng thực tế</strong> của bé thay vì độ tuổi nhé!</p>
+        <p>Các bé cùng độ tuổi có thể có vóc dáng khác nhau. Mẹ nên ưu tiên chọn size theo <strong>chiều cao và cân nặng
+            thực tế</strong> của bé thay vì độ tuổi nhé!</p>
       </div>
 
-      <button onclick="closeGeneralSizeGuideModal()" class="w-full py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold shadow-md transition-colors">
+      <button onclick="closeGeneralSizeGuideModal()"
+        class="w-full py-2.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white text-xs font-bold shadow-md transition-colors">
         Đã Hiểu, Cảm Ơn T'Petie
       </button>
     </div>
   </div>
 
   <!-- ==================== SEARCH MODAL ==================== -->
-  <div id="search-modal" class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden items-start justify-center pt-20 p-4">
+  <div id="search-modal"
+    class="fixed inset-0 z-50 bg-charcoal-900/40 backdrop-blur-sm hidden items-start justify-center pt-20 p-4">
     <div class="w-full max-w-lg bg-white rounded-3xl p-5 shadow-2xl border border-cream-200 space-y-4">
       <div class="flex justify-between items-center">
         <h3 class="font-heading font-bold text-sm text-charcoal-900">🔍 Tìm Kiếm Đồ Ưu Đãi Cho Bé</h3>
         <button onclick="closeSearchModal()" class="p-1 text-charcoal-400 hover:text-charcoal-700">✕</button>
       </div>
-      <input type="text" id="search-input" onkeyup="handleSearchInput(event)" placeholder="Nhập váy hoa nhí, áo sơ mi, thô đũi organic..." class="w-full p-3 rounded-2xl bg-cream-50 border border-cream-300 text-xs focus:outline-none focus:border-honey-500" />
+      <input type="text" id="search-input" onkeyup="handleSearchInput(event)"
+        placeholder="Nhập váy hoa nhí, áo sơ mi, thô đũi organic..."
+        class="w-full p-3 rounded-2xl bg-cream-50 border border-cream-300 text-xs focus:outline-none focus:border-honey-500" />
       <div class="flex flex-wrap gap-2 text-xs">
-        <button onclick="searchKeyword('Váy')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">👗 Váy công chúa</button>
-        <button onclick="searchKeyword('Áo')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">👚 Áo sơ mi</button>
-        <button onclick="searchKeyword('Set')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">✨ Set bộ lễ hội</button>
+        <button onclick="searchKeyword('Váy')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">👗 Váy
+          công chúa</button>
+        <button onclick="searchKeyword('Áo')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">👚 Áo sơ
+          mi</button>
+        <button onclick="searchKeyword('Set')" class="px-3 py-1 rounded-full bg-cream-100 hover:bg-honey-100">✨ Set bộ
+          lễ hội</button>
       </div>
     </div>
   </div>
 
   <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
-  <div id="toast-container" class="fixed bottom-20 sm:bottom-6 right-4 z-50 flex flex-col space-y-2 pointer-events-none max-w-sm w-full px-2"></div>
+  <div id="toast-container"
+    class="fixed bottom-20 sm:bottom-6 right-4 z-50 flex flex-col space-y-2 pointer-events-none max-w-sm w-full px-2">
+  </div>
 
   <!-- ==================== MOBILE BOTTOM NAVIGATION ==================== -->
   <div
@@ -876,7 +1017,8 @@
       <span class="text-base">✨</span>
       <span>BST</span>
     </a>
-    <a href="uu-dai.html" class="flex flex-col items-center py-1 px-2 text-rose-600 font-bold text-[10px] min-h-[44px] justify-center relative">
+    <a href="uu-dai.html"
+      class="flex flex-col items-center py-1 px-2 text-rose-600 font-bold text-[10px] min-h-[44px] justify-center relative">
       <span class="text-base">🏷️</span>
       <span>Ưu Đãi</span>
       <span class="w-1.5 h-1.5 bg-rose-500 rounded-full mt-0.5"></span>
@@ -897,578 +1039,578 @@
 
   <!-- ==================== JAVASCRIPT LOGIC & STATE ==================== -->
   <script>
-        // Dữ liệu 30 sản phẩm ưu đãi chuẩn xác 100% của T'Petie
+    // Dữ liệu 30 sản phẩm ưu đãi chuẩn xác 100% của T'Petie
     const PRODUCTS_DATA = [
-  {
-    "id": 1,
-    "name": "Áo Việt Nam Bé (Tặng Thêu Tên)",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 395000,
-    "salePrice": 245000,
-    "discount": "-38%",
-    "image": "images/sale/1789732196487_5483593727769673322_g1185252936286095617_666bdb327933b7460318fcc03f193be5.jpg",
-    "size": "Size 100 (13-15kg) | Size 150 (35-40kg)"
-  },
-  {
-    "id": 2,
-    "name": "Áo Việt Nam Mẹ (Tặng Thêu Tên)",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 495000,
-    "salePrice": 420000,
-    "discount": "-15%",
-    "image": "images/sale/1789732196496_5483593727769673322_g1185252936286095617_032529d675fd6093bfd62fd1d8d8deca.jpg",
-    "size": "Freesize Mẹ (45-60kg)"
-  },
-  {
-    "id": 3,
-    "name": "Set Tổ Quốc (Áo Kem Quần Đỏ)",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 350000,
-    "salePrice": 245000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196503_5483593727769673322_g1185252936286095617_bb3f58c595070097e2b152c86c25484f.jpg",
-    "size": "Size 90 (10-12kg) - Size 150 (35-40kg)"
-  },
-  {
-    "id": 4,
-    "name": "Set Tổ Quốc (Áo Xanh Quần Trắng)",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 350000,
-    "salePrice": 245000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196511_5483593727769673322_g1185252936286095617_d882bb26ea05a08e7a61a1db506bae66.jpg",
-    "size": "Size 150 (35-40kg / dưới 1m50)"
-  },
-  {
-    "id": 5,
-    "name": "Sét Cát Chu Đỏ",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 445000,
-    "salePrice": 295000,
-    "discount": "-34%",
-    "image": "images/sale/1789732196303_5483593727769673322_g1185252936286095617_6ce40f24a8f7988e36387b45142d64d9.jpg",
-    "size": "Size 90 (10-12kg) - Size 110 (16-20kg)"
-  },
-  {
-    "id": 6,
-    "name": "Set Thị Lựu Đỏ",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 280000,
-    "salePrice": 195000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196426_5483593727769673322_g1185252936286095617_cd3f319e063f7d2b68c9603d99dcb822.jpg",
-    "size": "Size 140 (30-35kg, 130-140cm)"
-  },
-  {
-    "id": 7,
-    "name": "Set Koi Thêu Tay",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 375000,
-    "salePrice": 255000,
-    "discount": "-32%",
-    "image": "images/sale/1789732196550_5483593727769673322_g1185252936286095617_7fd162af338a5da639d8ba7cc08f973f.jpg",
-    "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
-  },
-  {
-    "id": 8,
-    "name": "Áo Kẹo Táo",
-    "collection": "BST Mừng Đại Lễ 2/9",
-    "campaign": "le2-9",
-    "originalPrice": 325000,
-    "salePrice": 215000,
-    "discount": "-34%",
-    "image": "images/sale/1789732196318_5483593727769673322_g1185252936286095617_4fd339ea89b9240b55d49975d6b2baa9.jpg",
-    "size": "Size 110 (16-20kg) - Size 120 (20-25kg)"
-  },
-  {
-    "id": 9,
-    "name": "Set Biển Xanh (Bé)",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 475000,
-    "salePrice": 379000,
-    "discount": "-20%",
-    "image": "images/sale/1789732196617_5483593727769673322_g1185252936286095617_6eae4dc8faecb90abf7ea027a6a1fc2f.jpg",
-    "size": "Size 90 (10-12kg) - Size 140 (30-35kg)"
-  },
-  {
-    "id": 10,
-    "name": "Set Biển Xanh (Mẹ)",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 775000,
-    "salePrice": 659000,
-    "discount": "-15%",
-    "image": "images/sale/1789732196610_5483593727769673322_g1185252936286095617_e99bb7cbffab9790b8f9b20a69ef2b5d.jpg",
-    "size": "Freesize Mẹ (45-60kg)"
-  },
-  {
-    "id": 11,
-    "name": "Set Thanh Yên Cổ Sen",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 510000,
-    "salePrice": 384000,
-    "discount": "-25%",
-    "image": "images/sale/1789732196654_5483593727769673322_g1185252936286095617_52c78914af5e83ecf34c83a455ea10c2.jpg",
-    "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
-  },
-  {
-    "id": 12,
-    "name": "Váy Hạ Lam Kẻ Xanh",
-    "collection": "BST Hè Khánh Vy",
-    "campaign": "sale-he",
-    "originalPrice": 525000,
-    "salePrice": 396000,
-    "discount": "-25%",
-    "image": "images/sale/1789732196662_5483593727769673322_g1185252936286095617_83eaf244c277fb15b685421a57a9fd80.jpg",
-    "size": "Size 90 (10-12kg) - Size 140 (30-35kg)"
-  },
-  {
-    "id": 13,
-    "name": "Váy Sao Xanh Hoa Nhí",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 385000,
-    "salePrice": 295000,
-    "discount": "-23%",
-    "image": "images/sale/1789732196595_5483593727769673322_g1185252936286095617_a874d1f408175774f51031f29ddfce97.jpg",
-    "size": "Size 110 (16-20kg) - Size 140 (30-35kg)"
-  },
-  {
-    "id": 14,
-    "name": "Áo Matcha Latte Cổ Sen",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 285000,
-    "salePrice": 240000,
-    "discount": "-16%",
-    "image": "images/sale/1789732196602_5483593727769673322_g1185252936286095617_f15c767f5868cb2c8deb4500d3af9497.jpg",
-    "size": "Size 110 (16-20kg, 100-110cm)"
-  },
-  {
-    "id": 15,
-    "name": "Áo Chim Câu Trắng Ren",
-    "collection": "BST Hè Khánh Vy",
-    "campaign": "sale-he",
-    "originalPrice": 395000,
-    "salePrice": 265000,
-    "discount": "-33%",
-    "image": "images/sale/1789732196639_5483593727769673322_g1185252936286095617_4f1414042158eefbdd6af7848dd0d77f.jpg",
-    "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
-  },
-  {
-    "id": 16,
-    "name": "Áo Mứt Cam Thêu Hoa",
-    "collection": "BST Hè Khánh Vy",
-    "campaign": "sale-he",
-    "originalPrice": 255000,
-    "salePrice": 185000,
-    "discount": "-27%",
-    "image": "images/sale/1789732196632_5483593727769673322_g1185252936286095617_295e934752ebbffb744cfcf3f62c112a.jpg",
-    "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
-  },
-  {
-    "id": 17,
-    "name": "Sơ Mi Hải Âu Kèm Khăn Đỏ",
-    "collection": "BST Hè Khánh Vy",
-    "campaign": "sale-he",
-    "originalPrice": 285000,
-    "salePrice": 195000,
-    "discount": "-32%",
-    "image": "images/sale/1789732196647_5483593727769673322_g1185252936286095617_54821d11290c2fc625ba704f5ae2a091.jpg",
-    "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
-  },
-  {
-    "id": 18,
-    "name": "Áo Lam Tinh Chấm Bi",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 325000,
-    "salePrice": 250000,
-    "discount": "-23%",
-    "image": "images/sale/1789732196625_5483593727769673322_g1185252936286095617_8d38e01ce105a02979d5388aaf3dac8c.jpg",
-    "size": "Size 100 (13-15kg) - Size 150 (35-40kg)"
-  },
-  {
-    "id": 19,
-    "name": "Áo Sò Thủy Thủ Kèm Gấu",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 325000,
-    "salePrice": 240000,
-    "discount": "-26%",
-    "image": "images/sale/1789732196588_5483593727769673322_g1185252936286095617_6567272632927aaaceeac2c870f58d18.jpg",
-    "size": "Size 100 (13-15kg, 90-100cm)"
-  },
-  {
-    "id": 20,
-    "name": "Váy Kim Cúc Vàng Xếp Ly",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 395000,
-    "salePrice": 265000,
-    "discount": "-33%",
-    "image": "images/sale/1789732196581_5483593727769673322_g1185252936286095617_ef379bbe967d2d0c70522efd65986b4d.jpg",
-    "size": "Size 100 (13-15kg, 90-100cm)"
-  },
-  {
-    "id": 21,
-    "name": "Váy Tana Xanh Đen Cổ Trắng",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 395000,
-    "salePrice": 265000,
-    "discount": "-33%",
-    "image": "images/sale/1789732196573_5483593727769673322_g1185252936286095617_80e2abcf128746b326c1ef4b9a8cf35b.jpg",
-    "size": "Size 100 (13-15kg, 90-100cm)"
-  },
-  {
-    "id": 22,
-    "name": "Áo Cát Chi Thủy Thủ",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 295000,
-    "salePrice": 195000,
-    "discount": "-34%",
-    "image": "images/sale/1789732196558_5483593727769673322_g1185252936286095617_ead338b84d383ad2fb4bf13447dd7a57.jpg",
-    "size": "Size 90 (10-12kg) - Size 120 (20-25kg)"
-  },
-  {
-    "id": 23,
-    "name": "Áo Yếm Hoa Cam",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 130000,
-    "salePrice": 90000,
-    "discount": "-31%",
-    "image": "images/sale/1789732196402_5483593727769673322_g1185252936286095617_4e6ae352479704681639366b1e0374ed.jpg",
-    "size": "Size 120 (20-25kg, 110-120cm)"
-  },
-  {
-    "id": 24,
-    "name": "Áo Cam Ren Cổ Điệu",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 145000,
-    "salePrice": 99000,
-    "discount": "-32%",
-    "image": "images/sale/1789732196410_5483593727769673322_g1185252936286095617_ad854906cf8687fe5d4dfde51d28b9bd.jpg",
-    "size": "Size 110 (16-20kg) - Size 120 (20-25kg)"
-  },
-  {
-    "id": 25,
-    "name": "Váy Trà Sữa",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 235000,
-    "salePrice": 165000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196434_5483593727769673322_g1185252936286095617_a210732a642cbb3b99e5c148203afca6.jpg",
-    "size": "Size 110 (16-20kg) - Size 130 (25-30kg)"
-  },
-  {
-    "id": 26,
-    "name": "Áo Sunny Vàng Cổ Trắng",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 265000,
-    "salePrice": 185000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196441_5483593727769673322_g1185252936286095617_cbd41e1f0e0424be3d87ad1b0e9ad132.jpg",
-    "size": "Size 110 (16-20kg) - Size 130 (25-30kg)"
-  },
-  {
-    "id": 27,
-    "name": "Váy Tiểu Hoa Trắng",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 365000,
-    "salePrice": 255000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196464_5483593727769673322_g1185252936286095617_cab2a64bbf08531f3cefc819d0b50984.jpg",
-    "size": "Size 110 (16-20kg) - Size 140 (30-35kg)"
-  },
-  {
-    "id": 28,
-    "name": "Váy Hạ Tú Cổ Vịt",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 365000,
-    "salePrice": 255000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196456_5483593727769673322_g1185252936286095617_0f68c1dd30b92134f67fc7b78da3fbe3.jpg",
-    "size": "Size 130 (25-30kg, 120-130cm)"
-  },
-  {
-    "id": 29,
-    "name": "Set Áo Hạnh Nhân & Quần Caro",
-    "collection": "BST Hạ Mật",
-    "campaign": "sale-he",
-    "originalPrice": 235000,
-    "salePrice": 165000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196472_5483593727769673322_g1185252936286095617_436e27b885fbfd93b18a060161ae7c68.jpg",
-    "size": "Size 110 (16-20kg, 100-110cm)"
-  },
-  {
-    "id": 30,
-    "name": "Set Xuân Diệu (Đầm Bé)",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 845000,
-    "salePrice": 415000,
-    "discount": "-51%",
-    "image": "images/sale/1789732196254_5483593727769673322_g1185252936286095617_90dc60157e9187b277fc00f75898efd0.jpg",
-    "size": "Size 100 (13-15kg) | Size 140 (30-35kg)"
-  },
-  {
-    "id": 31,
-    "name": "Set Thanh Lam Thu Đông",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 495000,
-    "salePrice": 295000,
-    "discount": "-40%",
-    "image": "images/sale/1789732196285_5483593727769673322_g1185252936286095617_b78d45b6fa772b33f9df490815913b02.jpg",
-    "size": "Size 100 (13-15kg) - Size 140 (30-35kg)"
-  },
-  {
-    "id": 32,
-    "name": "Váy Bánh Gừng Caro",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 415000,
-    "salePrice": 255000,
-    "discount": "-39%",
-    "image": "images/sale/1789732196339_5483593727769673322_g1185252936286095617_a2e40b03e88d0fe8b18ba086ee7347c9.jpg",
-    "size": "Size 90 (10-12kg) - Size 150 (35-40kg)"
-  },
-  {
-    "id": 33,
-    "name": "Áo Bánh Kem Trắng",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 285000,
-    "salePrice": 195000,
-    "discount": "-32%",
-    "image": "images/sale/1789732196347_5483593727769673322_g1185252936286095617_4a8d518eb4f4c8ac57620759fe441bf9.jpg",
-    "size": "Size 90 (10-12kg, 80-90cm)"
-  },
-  {
-    "id": 34,
-    "name": "Váy Mâm Xôi Cổ Bèo",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 425000,
-    "salePrice": 295000,
-    "discount": "-31%",
-    "image": "images/sale/1789732196364_5483593727769673322_g1185252936286095617_11da4f85379b89da40d2ec52a537d0ae.jpg",
-    "size": "Size 100 (13-15kg, 90-100cm)"
-  },
-  {
-    "id": 35,
-    "name": "Váy Lily Thu Đông",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 280000,
-    "salePrice": 195000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196395_5483593727769673322_g1185252936286095617_5e4a1adf8ceb8f090ab29dc632067304.jpg",
-    "size": "Size 110 (16-20kg, 100-110cm)"
-  },
-  {
-    "id": 36,
-    "name": "Váy Yến Mạch Tầng",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 455000,
-    "salePrice": 295000,
-    "discount": "-35%",
-    "image": "images/sale/1789732196519_5483593727769673322_g1185252936286095617_38124c63be2d05a370ab0e5ce5ddfaf3.jpg",
-    "size": "Size 100 (13-15kg) - Size 120 (20-25kg)"
-  },
-  {
-    "id": 37,
-    "name": "Quần Nhung Daisy",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 165000,
-    "salePrice": 125000,
-    "discount": "-24%",
-    "image": "images/sale/1789732196527_5483593727769673322_g1185252936286095617_245fbf56f5c699d1311e900ddda28e43.jpg",
-    "size": "Size 100 (13-15kg) - Size 120 (20-25kg)"
-  },
-  {
-    "id": 38,
-    "name": "Áo Macca Cổ Sen",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 285000,
-    "salePrice": 195000,
-    "discount": "-32%",
-    "image": "images/sale/1789732196535_5483593727769673322_g1185252936286095617_00b00068d401768813408b21f711e0a6.jpg",
-    "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
-  },
-  {
-    "id": 39,
-    "name": "Yếm Quần Totto Nhung Đỏ",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 325000,
-    "salePrice": 255000,
-    "discount": "-22%",
-    "image": "images/sale/1789732196543_5483593727769673322_g1185252936286095617_bb0007142228ffc77758d0ecf9e77f3c.jpg",
-    "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
-  },
-  {
-    "id": 40,
-    "name": "Áo Ghile Daisy Thêu Hoa",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 195000,
-    "salePrice": 135000,
-    "discount": "-31%",
-    "image": "images/sale/1789732196565_5483593727769673322_g1185252936286095617_ba3689b749a5f5b83e68448bf31b2f16.jpg",
-    "size": "Size 90 (10-12kg, 80-90cm)"
-  },
-  {
-    "id": 41,
-    "name": "Áo Lavender Tím Nhạt",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 265000,
-    "salePrice": 185000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196449_5483593727769673322_g1185252936286095617_c8faca7f49a688675a91159d82a24e68.jpg",
-    "size": "Size 110 (16-20kg) - Size 130 (25-30kg)"
-  },
-  {
-    "id": 42,
-    "name": "Quần Bí Ngố Thủy Thủ",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-thu-dong",
-    "originalPrice": 135000,
-    "salePrice": 125000,
-    "discount": "-7%",
-    "image": "images/sale/1789732196387_5483593727769673322_g1185252936286095617_b18593c70aa2fee97561f50d35a48e1a.jpg",
-    "size": "Size 130 (25-30kg) - Size 150 (35-40kg)"
-  },
-  {
-    "id": 43,
-    "name": "Váy Dạ Hội Ngọc Tuyết",
-    "collection": "BST Cao Cấp",
-    "campaign": "sale-ngay-doi",
-    "originalPrice": 495000,
-    "salePrice": 345000,
-    "discount": "-30%",
-    "image": "images/sale/1789732196355_5483593727769673322_g1185252936286095617_3a589dc3c505631aee53fef5edf17daa.jpg",
-    "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
-  },
-  {
-    "id": 44,
-    "name": "Váy Thi Thơ Đính Bướm",
-    "collection": "BST Hè Khánh Vy",
-    "campaign": "sale-ngay-doi",
-    "originalPrice": 465000,
-    "salePrice": 348000,
-    "discount": "-25%",
-    "image": "images/sale/1789732196669_5483593727769673322_g1185252936286095617_6e06ff6196ca256596e0ee28f6cc4c2f.jpg",
-    "size": "Size 90 (10-12kg) - Size 110 (16-20kg)"
-  },
-  {
-    "id": 45,
-    "name": "Váy Tường Vi Xếp Ly",
-    "collection": "BST Hè Khánh Vy",
-    "campaign": "sale-ngay-doi",
-    "originalPrice": 545000,
-    "salePrice": 374000,
-    "discount": "-31%",
-    "image": "images/sale/1789732196371_5483593727769673322_g1185252936286095617_66ebbc9ca9f00d8b91cb7810acc1180b.jpg",
-    "size": "Size 130 (25-30kg) - Size 150 (35-40kg)"
-  },
-  {
-    "id": 46,
-    "name": "Quần Váy Xếp Nếp",
-    "collection": "BST Thu Đông",
-    "campaign": "sale-ngay-doi",
-    "originalPrice": 125000,
-    "salePrice": 105000,
-    "discount": "-16%",
-    "image": "images/sale/1789732196328_5483593727769673322_g1185252936286095617_2ccb32be66e04882a3996a4cd9a9c12b.jpg",
-    "size": "Size 100 (13-15kg) - Size 150 (35-40kg)"
-  },
-  {
-    "id": 47,
-    "name": "Quần Bom Jean Nơ",
-    "collection": "BST Hè Khánh Vy",
-    "campaign": "sale-ngay-doi",
-    "originalPrice": 165000,
-    "salePrice": 150000,
-    "discount": "-9%",
-    "image": "images/sale/1789732196379_5483593727769673322_g1185252936286095617_77e105228277192dabd8aef3526a8dea.jpg",
-    "size": "Size 130 (25-30kg) - Size 150 (35-40kg)"
-  },
-  {
-    "id": 48,
-    "name": "Quần Bom Hoa Nhí",
-    "collection": "BST Học Xinh Kem",
-    "campaign": "sale-ngay-doi",
-    "originalPrice": 130000,
-    "salePrice": 90000,
-    "discount": "-31%",
-    "image": "images/sale/1789732196418_5483593727769673322_g1185252936286095617_f82a0ab3abeaa57aa872e99de5b56927.jpg",
-    "size": "Size 110 (16-20kg) - Size 140 (30-35kg)"
-  },
-  {
-    "id": 49,
-    "name": "Quần Bom Caro Be",
-    "collection": "BST Học Xinh Kem",
-    "campaign": "sale-ngay-doi",
-    "originalPrice": 130000,
-    "salePrice": 90000,
-    "discount": "-31%",
-    "image": "images/sale/1789732196479_5483593727769673322_g1185252936286095617_ddeec9717fddd7b528d47d9ccb5d1d63.jpg",
-    "size": "Size 90 (10-12kg) - Size 120 (20-25kg)"
-  }
-];
+      {
+        "id": 1,
+        "name": "Áo Việt Nam Bé (Tặng Thêu Tên)",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 395000,
+        "salePrice": 245000,
+        "discount": "-38%",
+        "image": "images/sale/1789732196487_5483593727769673322_g1185252936286095617_666bdb327933b7460318fcc03f193be5.jpg",
+        "size": "Size 100 (13-15kg) | Size 150 (35-40kg)"
+      },
+      {
+        "id": 2,
+        "name": "Áo Việt Nam Mẹ (Tặng Thêu Tên)",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 495000,
+        "salePrice": 420000,
+        "discount": "-15%",
+        "image": "images/sale/1789732196496_5483593727769673322_g1185252936286095617_032529d675fd6093bfd62fd1d8d8deca.jpg",
+        "size": "Freesize Mẹ (45-60kg)"
+      },
+      {
+        "id": 3,
+        "name": "Set Tổ Quốc (Áo Kem Quần Đỏ)",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 350000,
+        "salePrice": 245000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196503_5483593727769673322_g1185252936286095617_bb3f58c595070097e2b152c86c25484f.jpg",
+        "size": "Size 90 (10-12kg) - Size 150 (35-40kg)"
+      },
+      {
+        "id": 4,
+        "name": "Set Tổ Quốc (Áo Xanh Quần Trắng)",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 350000,
+        "salePrice": 245000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196511_5483593727769673322_g1185252936286095617_d882bb26ea05a08e7a61a1db506bae66.jpg",
+        "size": "Size 150 (35-40kg / dưới 1m50)"
+      },
+      {
+        "id": 5,
+        "name": "Sét Cát Chu Đỏ",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 445000,
+        "salePrice": 295000,
+        "discount": "-34%",
+        "image": "images/sale/1789732196303_5483593727769673322_g1185252936286095617_6ce40f24a8f7988e36387b45142d64d9.jpg",
+        "size": "Size 90 (10-12kg) - Size 110 (16-20kg)"
+      },
+      {
+        "id": 6,
+        "name": "Set Thị Lựu Đỏ",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 280000,
+        "salePrice": 195000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196426_5483593727769673322_g1185252936286095617_cd3f319e063f7d2b68c9603d99dcb822.jpg",
+        "size": "Size 140 (30-35kg, 130-140cm)"
+      },
+      {
+        "id": 7,
+        "name": "Set Koi Thêu Tay",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 375000,
+        "salePrice": 255000,
+        "discount": "-32%",
+        "image": "images/sale/1789732196550_5483593727769673322_g1185252936286095617_7fd162af338a5da639d8ba7cc08f973f.jpg",
+        "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
+      },
+      {
+        "id": 8,
+        "name": "Áo Kẹo Táo",
+        "collection": "BST Mừng Đại Lễ 2/9",
+        "campaign": "le2-9",
+        "originalPrice": 325000,
+        "salePrice": 215000,
+        "discount": "-34%",
+        "image": "images/sale/1789732196318_5483593727769673322_g1185252936286095617_4fd339ea89b9240b55d49975d6b2baa9.jpg",
+        "size": "Size 110 (16-20kg) - Size 120 (20-25kg)"
+      },
+      {
+        "id": 9,
+        "name": "Set Biển Xanh (Bé)",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 475000,
+        "salePrice": 379000,
+        "discount": "-20%",
+        "image": "images/sale/1789732196617_5483593727769673322_g1185252936286095617_6eae4dc8faecb90abf7ea027a6a1fc2f.jpg",
+        "size": "Size 90 (10-12kg) - Size 140 (30-35kg)"
+      },
+      {
+        "id": 10,
+        "name": "Set Biển Xanh (Mẹ)",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 775000,
+        "salePrice": 659000,
+        "discount": "-15%",
+        "image": "images/sale/1789732196610_5483593727769673322_g1185252936286095617_e99bb7cbffab9790b8f9b20a69ef2b5d.jpg",
+        "size": "Freesize Mẹ (45-60kg)"
+      },
+      {
+        "id": 11,
+        "name": "Set Thanh Yên Cổ Sen",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 510000,
+        "salePrice": 384000,
+        "discount": "-25%",
+        "image": "images/sale/1789732196654_5483593727769673322_g1185252936286095617_52c78914af5e83ecf34c83a455ea10c2.jpg",
+        "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
+      },
+      {
+        "id": 12,
+        "name": "Váy Hạ Lam Kẻ Xanh",
+        "collection": "BST Hè Khánh Vy",
+        "campaign": "sale-he",
+        "originalPrice": 525000,
+        "salePrice": 396000,
+        "discount": "-25%",
+        "image": "images/sale/1789732196662_5483593727769673322_g1185252936286095617_83eaf244c277fb15b685421a57a9fd80.jpg",
+        "size": "Size 90 (10-12kg) - Size 140 (30-35kg)"
+      },
+      {
+        "id": 13,
+        "name": "Váy Sao Xanh Hoa Nhí",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 385000,
+        "salePrice": 295000,
+        "discount": "-23%",
+        "image": "images/sale/1789732196595_5483593727769673322_g1185252936286095617_a874d1f408175774f51031f29ddfce97.jpg",
+        "size": "Size 110 (16-20kg) - Size 140 (30-35kg)"
+      },
+      {
+        "id": 14,
+        "name": "Áo Matcha Latte Cổ Sen",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 285000,
+        "salePrice": 240000,
+        "discount": "-16%",
+        "image": "images/sale/1789732196602_5483593727769673322_g1185252936286095617_f15c767f5868cb2c8deb4500d3af9497.jpg",
+        "size": "Size 110 (16-20kg, 100-110cm)"
+      },
+      {
+        "id": 15,
+        "name": "Áo Chim Câu Trắng Ren",
+        "collection": "BST Hè Khánh Vy",
+        "campaign": "sale-he",
+        "originalPrice": 395000,
+        "salePrice": 265000,
+        "discount": "-33%",
+        "image": "images/sale/1789732196639_5483593727769673322_g1185252936286095617_4f1414042158eefbdd6af7848dd0d77f.jpg",
+        "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
+      },
+      {
+        "id": 16,
+        "name": "Áo Mứt Cam Thêu Hoa",
+        "collection": "BST Hè Khánh Vy",
+        "campaign": "sale-he",
+        "originalPrice": 255000,
+        "salePrice": 185000,
+        "discount": "-27%",
+        "image": "images/sale/1789732196632_5483593727769673322_g1185252936286095617_295e934752ebbffb744cfcf3f62c112a.jpg",
+        "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
+      },
+      {
+        "id": 17,
+        "name": "Sơ Mi Hải Âu Kèm Khăn Đỏ",
+        "collection": "BST Hè Khánh Vy",
+        "campaign": "sale-he",
+        "originalPrice": 285000,
+        "salePrice": 195000,
+        "discount": "-32%",
+        "image": "images/sale/1789732196647_5483593727769673322_g1185252936286095617_54821d11290c2fc625ba704f5ae2a091.jpg",
+        "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
+      },
+      {
+        "id": 18,
+        "name": "Áo Lam Tinh Chấm Bi",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 325000,
+        "salePrice": 250000,
+        "discount": "-23%",
+        "image": "images/sale/1789732196625_5483593727769673322_g1185252936286095617_8d38e01ce105a02979d5388aaf3dac8c.jpg",
+        "size": "Size 100 (13-15kg) - Size 150 (35-40kg)"
+      },
+      {
+        "id": 19,
+        "name": "Áo Sò Thủy Thủ Kèm Gấu",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 325000,
+        "salePrice": 240000,
+        "discount": "-26%",
+        "image": "images/sale/1789732196588_5483593727769673322_g1185252936286095617_6567272632927aaaceeac2c870f58d18.jpg",
+        "size": "Size 100 (13-15kg, 90-100cm)"
+      },
+      {
+        "id": 20,
+        "name": "Váy Kim Cúc Vàng Xếp Ly",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 395000,
+        "salePrice": 265000,
+        "discount": "-33%",
+        "image": "images/sale/1789732196581_5483593727769673322_g1185252936286095617_ef379bbe967d2d0c70522efd65986b4d.jpg",
+        "size": "Size 100 (13-15kg, 90-100cm)"
+      },
+      {
+        "id": 21,
+        "name": "Váy Tana Xanh Đen Cổ Trắng",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 395000,
+        "salePrice": 265000,
+        "discount": "-33%",
+        "image": "images/sale/1789732196573_5483593727769673322_g1185252936286095617_80e2abcf128746b326c1ef4b9a8cf35b.jpg",
+        "size": "Size 100 (13-15kg, 90-100cm)"
+      },
+      {
+        "id": 22,
+        "name": "Áo Cát Chi Thủy Thủ",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 295000,
+        "salePrice": 195000,
+        "discount": "-34%",
+        "image": "images/sale/1789732196558_5483593727769673322_g1185252936286095617_ead338b84d383ad2fb4bf13447dd7a57.jpg",
+        "size": "Size 90 (10-12kg) - Size 120 (20-25kg)"
+      },
+      {
+        "id": 23,
+        "name": "Áo Yếm Hoa Cam",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 130000,
+        "salePrice": 90000,
+        "discount": "-31%",
+        "image": "images/sale/1789732196402_5483593727769673322_g1185252936286095617_4e6ae352479704681639366b1e0374ed.jpg",
+        "size": "Size 120 (20-25kg, 110-120cm)"
+      },
+      {
+        "id": 24,
+        "name": "Áo Cam Ren Cổ Điệu",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 145000,
+        "salePrice": 99000,
+        "discount": "-32%",
+        "image": "images/sale/1789732196410_5483593727769673322_g1185252936286095617_ad854906cf8687fe5d4dfde51d28b9bd.jpg",
+        "size": "Size 110 (16-20kg) - Size 120 (20-25kg)"
+      },
+      {
+        "id": 25,
+        "name": "Váy Trà Sữa",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 235000,
+        "salePrice": 165000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196434_5483593727769673322_g1185252936286095617_a210732a642cbb3b99e5c148203afca6.jpg",
+        "size": "Size 110 (16-20kg) - Size 130 (25-30kg)"
+      },
+      {
+        "id": 26,
+        "name": "Áo Sunny Vàng Cổ Trắng",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 265000,
+        "salePrice": 185000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196441_5483593727769673322_g1185252936286095617_cbd41e1f0e0424be3d87ad1b0e9ad132.jpg",
+        "size": "Size 110 (16-20kg) - Size 130 (25-30kg)"
+      },
+      {
+        "id": 27,
+        "name": "Váy Tiểu Hoa Trắng",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 365000,
+        "salePrice": 255000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196464_5483593727769673322_g1185252936286095617_cab2a64bbf08531f3cefc819d0b50984.jpg",
+        "size": "Size 110 (16-20kg) - Size 140 (30-35kg)"
+      },
+      {
+        "id": 28,
+        "name": "Váy Hạ Tú Cổ Vịt",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 365000,
+        "salePrice": 255000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196456_5483593727769673322_g1185252936286095617_0f68c1dd30b92134f67fc7b78da3fbe3.jpg",
+        "size": "Size 130 (25-30kg, 120-130cm)"
+      },
+      {
+        "id": 29,
+        "name": "Set Áo Hạnh Nhân & Quần Caro",
+        "collection": "BST Hạ Mật",
+        "campaign": "sale-he",
+        "originalPrice": 235000,
+        "salePrice": 165000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196472_5483593727769673322_g1185252936286095617_436e27b885fbfd93b18a060161ae7c68.jpg",
+        "size": "Size 110 (16-20kg, 100-110cm)"
+      },
+      {
+        "id": 30,
+        "name": "Set Xuân Diệu (Đầm Bé)",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 845000,
+        "salePrice": 415000,
+        "discount": "-51%",
+        "image": "images/sale/1789732196254_5483593727769673322_g1185252936286095617_90dc60157e9187b277fc00f75898efd0.jpg",
+        "size": "Size 100 (13-15kg) | Size 140 (30-35kg)"
+      },
+      {
+        "id": 31,
+        "name": "Set Thanh Lam Thu Đông",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 495000,
+        "salePrice": 295000,
+        "discount": "-40%",
+        "image": "images/sale/1789732196285_5483593727769673322_g1185252936286095617_b78d45b6fa772b33f9df490815913b02.jpg",
+        "size": "Size 100 (13-15kg) - Size 140 (30-35kg)"
+      },
+      {
+        "id": 32,
+        "name": "Váy Bánh Gừng Caro",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 415000,
+        "salePrice": 255000,
+        "discount": "-39%",
+        "image": "images/sale/1789732196339_5483593727769673322_g1185252936286095617_a2e40b03e88d0fe8b18ba086ee7347c9.jpg",
+        "size": "Size 90 (10-12kg) - Size 150 (35-40kg)"
+      },
+      {
+        "id": 33,
+        "name": "Áo Bánh Kem Trắng",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 285000,
+        "salePrice": 195000,
+        "discount": "-32%",
+        "image": "images/sale/1789732196347_5483593727769673322_g1185252936286095617_4a8d518eb4f4c8ac57620759fe441bf9.jpg",
+        "size": "Size 90 (10-12kg, 80-90cm)"
+      },
+      {
+        "id": 34,
+        "name": "Váy Mâm Xôi Cổ Bèo",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 425000,
+        "salePrice": 295000,
+        "discount": "-31%",
+        "image": "images/sale/1789732196364_5483593727769673322_g1185252936286095617_11da4f85379b89da40d2ec52a537d0ae.jpg",
+        "size": "Size 100 (13-15kg, 90-100cm)"
+      },
+      {
+        "id": 35,
+        "name": "Váy Lily Thu Đông",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 280000,
+        "salePrice": 195000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196395_5483593727769673322_g1185252936286095617_5e4a1adf8ceb8f090ab29dc632067304.jpg",
+        "size": "Size 110 (16-20kg, 100-110cm)"
+      },
+      {
+        "id": 36,
+        "name": "Váy Yến Mạch Tầng",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 455000,
+        "salePrice": 295000,
+        "discount": "-35%",
+        "image": "images/sale/1789732196519_5483593727769673322_g1185252936286095617_38124c63be2d05a370ab0e5ce5ddfaf3.jpg",
+        "size": "Size 100 (13-15kg) - Size 120 (20-25kg)"
+      },
+      {
+        "id": 37,
+        "name": "Quần Nhung Daisy",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 165000,
+        "salePrice": 125000,
+        "discount": "-24%",
+        "image": "images/sale/1789732196527_5483593727769673322_g1185252936286095617_245fbf56f5c699d1311e900ddda28e43.jpg",
+        "size": "Size 100 (13-15kg) - Size 120 (20-25kg)"
+      },
+      {
+        "id": 38,
+        "name": "Áo Macca Cổ Sen",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 285000,
+        "salePrice": 195000,
+        "discount": "-32%",
+        "image": "images/sale/1789732196535_5483593727769673322_g1185252936286095617_00b00068d401768813408b21f711e0a6.jpg",
+        "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
+      },
+      {
+        "id": 39,
+        "name": "Yếm Quần Totto Nhung Đỏ",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 325000,
+        "salePrice": 255000,
+        "discount": "-22%",
+        "image": "images/sale/1789732196543_5483593727769673322_g1185252936286095617_bb0007142228ffc77758d0ecf9e77f3c.jpg",
+        "size": "Size 100 (13-15kg) - Size 130 (25-30kg)"
+      },
+      {
+        "id": 40,
+        "name": "Áo Ghile Daisy Thêu Hoa",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 195000,
+        "salePrice": 135000,
+        "discount": "-31%",
+        "image": "images/sale/1789732196565_5483593727769673322_g1185252936286095617_ba3689b749a5f5b83e68448bf31b2f16.jpg",
+        "size": "Size 90 (10-12kg, 80-90cm)"
+      },
+      {
+        "id": 41,
+        "name": "Áo Lavender Tím Nhạt",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 265000,
+        "salePrice": 185000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196449_5483593727769673322_g1185252936286095617_c8faca7f49a688675a91159d82a24e68.jpg",
+        "size": "Size 110 (16-20kg) - Size 130 (25-30kg)"
+      },
+      {
+        "id": 42,
+        "name": "Quần Bí Ngố Thủy Thủ",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-thu-dong",
+        "originalPrice": 135000,
+        "salePrice": 125000,
+        "discount": "-7%",
+        "image": "images/sale/1789732196387_5483593727769673322_g1185252936286095617_b18593c70aa2fee97561f50d35a48e1a.jpg",
+        "size": "Size 130 (25-30kg) - Size 150 (35-40kg)"
+      },
+      {
+        "id": 43,
+        "name": "Váy Dạ Hội Ngọc Tuyết",
+        "collection": "BST Cao Cấp",
+        "campaign": "sale-ngay-doi",
+        "originalPrice": 495000,
+        "salePrice": 345000,
+        "discount": "-30%",
+        "image": "images/sale/1789732196355_5483593727769673322_g1185252936286095617_3a589dc3c505631aee53fef5edf17daa.jpg",
+        "size": "Size 100 (13-15kg) - Size 110 (16-20kg)"
+      },
+      {
+        "id": 44,
+        "name": "Váy Thi Thơ Đính Bướm",
+        "collection": "BST Hè Khánh Vy",
+        "campaign": "sale-ngay-doi",
+        "originalPrice": 465000,
+        "salePrice": 348000,
+        "discount": "-25%",
+        "image": "images/sale/1789732196669_5483593727769673322_g1185252936286095617_6e06ff6196ca256596e0ee28f6cc4c2f.jpg",
+        "size": "Size 90 (10-12kg) - Size 110 (16-20kg)"
+      },
+      {
+        "id": 45,
+        "name": "Váy Tường Vi Xếp Ly",
+        "collection": "BST Hè Khánh Vy",
+        "campaign": "sale-ngay-doi",
+        "originalPrice": 545000,
+        "salePrice": 374000,
+        "discount": "-31%",
+        "image": "images/sale/1789732196371_5483593727769673322_g1185252936286095617_66ebbc9ca9f00d8b91cb7810acc1180b.jpg",
+        "size": "Size 130 (25-30kg) - Size 150 (35-40kg)"
+      },
+      {
+        "id": 46,
+        "name": "Quần Váy Xếp Nếp",
+        "collection": "BST Thu Đông",
+        "campaign": "sale-ngay-doi",
+        "originalPrice": 125000,
+        "salePrice": 105000,
+        "discount": "-16%",
+        "image": "images/sale/1789732196328_5483593727769673322_g1185252936286095617_2ccb32be66e04882a3996a4cd9a9c12b.jpg",
+        "size": "Size 100 (13-15kg) - Size 150 (35-40kg)"
+      },
+      {
+        "id": 47,
+        "name": "Quần Bom Jean Nơ",
+        "collection": "BST Hè Khánh Vy",
+        "campaign": "sale-ngay-doi",
+        "originalPrice": 165000,
+        "salePrice": 150000,
+        "discount": "-9%",
+        "image": "images/sale/1789732196379_5483593727769673322_g1185252936286095617_77e105228277192dabd8aef3526a8dea.jpg",
+        "size": "Size 130 (25-30kg) - Size 150 (35-40kg)"
+      },
+      {
+        "id": 48,
+        "name": "Quần Bom Hoa Nhí",
+        "collection": "BST Học Xinh Kem",
+        "campaign": "sale-ngay-doi",
+        "originalPrice": 130000,
+        "salePrice": 90000,
+        "discount": "-31%",
+        "image": "images/sale/1789732196418_5483593727769673322_g1185252936286095617_f82a0ab3abeaa57aa872e99de5b56927.jpg",
+        "size": "Size 110 (16-20kg) - Size 140 (30-35kg)"
+      },
+      {
+        "id": 49,
+        "name": "Quần Bom Caro Be",
+        "collection": "BST Học Xinh Kem",
+        "campaign": "sale-ngay-doi",
+        "originalPrice": 130000,
+        "salePrice": 90000,
+        "discount": "-31%",
+        "image": "images/sale/1789732196479_5483593727769673322_g1185252936286095617_ddeec9717fddd7b528d47d9ccb5d1d63.jpg",
+        "size": "Size 90 (10-12kg) - Size 120 (20-25kg)"
+      }
+    ];
 
     const PROMO_PRODUCTS = PRODUCTS_DATA;
 
     const CAMPAIGN_INFO = {
-  "all": {
-    "icon": "✨",
-    "desc": "Toàn bộ 49 sản phẩm ưu đãi đặc biệt có gắn bảng giá in trực tiếp trên hình ảnh thực tế của T'Petie!",
-    "tag": "49 mẫu thiết kế chính hãng"
-  },
-  "le2-9": {
-    "icon": "🎉",
-    "desc": "Mừng Đại Lễ 2/9: Áo Việt Nam (Bé & Mẹ - Tặng thêu tên), Set Tổ Quốc đỏ & xanh, Sét Cát Chu, Set Thị Lựu, Set Koi Thêu Tay, Áo Kẹo Táo.",
-    "tag": "8 mẫu Mừng Lễ (Sale tới -38%)"
-  },
-  "sale-he": {
-    "icon": "☀️",
-    "desc": "Sale Hè Rực Rỡ: Set Biển Xanh (Mẹ & Bé), Set Thanh Yên, Váy Hạ Lam, Váy Sao Xanh, Áo Matcha Latte, Áo Chim Câu, Áo Mứt Cam, Sơ Mi Hải Âu, Áo Lam Tinh, Váy Kim Cúc, Váy Tana...",
-    "tag": "21 mẫu Mùa Hè (Sale tới -34%)"
-  },
-  "sale-thu-dong": {
-    "icon": "🍂",
-    "desc": "Sale Thu - Đông: Set Xuân Diệu, Set Thanh Lam, Váy Bánh Gừng, Áo Bánh Kem, Váy Mâm Xôi, Váy Lily Thu Đông, Váy Yến Mạch, Quần Nhung Daisy, Áo Macca, Yếm Quần Totto, Ghile Daisy...",
-    "tag": "13 mẫu Thu Đông (Sale tới -51%)"
-  },
-  "sale-ngay-doi": {
-    "icon": "🎁",
-    "desc": "Sale Ngày Đôi 10/10 11/11: Váy Dạ Hội Ngọc Tuyết, Váy Thi Thơ Đính Bướm, Váy Tường Vi, Quần Váy, Quần Bom Jean Nơ, Bom Hoa Nhí, Bom Caro.",
-    "tag": "7 siêu phẩm ngày đôi (Sale tới -31%)"
-  }
-};
+      "all": {
+        "icon": "✨",
+        "desc": "Toàn bộ 49 sản phẩm ưu đãi đặc biệt có gắn bảng giá in trực tiếp trên hình ảnh thực tế của T'Petie!",
+        "tag": "49 mẫu thiết kế chính hãng"
+      },
+      "le2-9": {
+        "icon": "🎉",
+        "desc": "Mừng Đại Lễ 2/9: Áo Việt Nam (Bé & Mẹ - Tặng thêu tên), Set Tổ Quốc đỏ & xanh, Sét Cát Chu, Set Thị Lựu, Set Koi Thêu Tay, Áo Kẹo Táo.",
+        "tag": "8 mẫu Mừng Lễ (Sale tới -38%)"
+      },
+      "sale-he": {
+        "icon": "☀️",
+        "desc": "Sale Hè Rực Rỡ: Set Biển Xanh (Mẹ & Bé), Set Thanh Yên, Váy Hạ Lam, Váy Sao Xanh, Áo Matcha Latte, Áo Chim Câu, Áo Mứt Cam, Sơ Mi Hải Âu, Áo Lam Tinh, Váy Kim Cúc, Váy Tana...",
+        "tag": "21 mẫu Mùa Hè (Sale tới -34%)"
+      },
+      "sale-thu-dong": {
+        "icon": "🍂",
+        "desc": "Sale Thu - Đông: Set Xuân Diệu, Set Thanh Lam, Váy Bánh Gừng, Áo Bánh Kem, Váy Mâm Xôi, Váy Lily Thu Đông, Váy Yến Mạch, Quần Nhung Daisy, Áo Macca, Yếm Quần Totto, Ghile Daisy...",
+        "tag": "13 mẫu Thu Đông (Sale tới -51%)"
+      },
+      "sale-ngay-doi": {
+        "icon": "🎁",
+        "desc": "Sale Ngày Đôi 10/10 11/11: Váy Dạ Hội Ngọc Tuyết, Váy Thi Thơ Đính Bướm, Váy Tường Vi, Quần Váy, Quần Bom Jean Nơ, Bom Hoa Nhí, Bom Caro.",
+        "tag": "7 siêu phẩm ngày đôi (Sale tới -31%)"
+      }
+    };
 
     const SIZES_STANDARD = [
       { size: "Size 1", weight: "8 - 10kg", age: "1 - 2 tuổi (75-85cm)" },
@@ -1556,7 +1698,7 @@
       renderProducts();
     }
 
-        // ==================== RENDER PROMOTION PRODUCTS ====================
+    // ==================== RENDER PROMOTION PRODUCTS ====================
     function renderProducts(customList) {
       const grid = document.getElementById('promo-products-grid');
       const emptyState = document.getElementById('promo-empty-state');
@@ -1660,7 +1802,7 @@
       }).join('');
     }
 
-        // ==================== 5. BOTTOM SHEET DRAWER (Xem Size) ====================
+    // ==================== 5. BOTTOM SHEET DRAWER (Xem Size) ====================
     function openQuickSizeModal(productId) {
       const product = PRODUCTS_DATA.find(p => p.id == productId);
       if (!product) return;
@@ -1694,7 +1836,7 @@
       const container = document.getElementById('quicksize-container');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
-      
+
       // Slide up transition
       setTimeout(() => {
         container.classList.remove('translate-y-full');
@@ -2066,6 +2208,86 @@
         if (sEl) sEl.innerText = seconds.toString().padStart(2, '0');
       }, 1000);
     }
+
+    // ==================== AUTH HEADER & SESSION SYNC ====================
+    function initAuthHeader() {
+      const STORAGE_KEY_USER = 'tpetie_current_user';
+      const container = document.getElementById('header-auth-container');
+      if (!container) return;
+
+      const userStr = localStorage.getItem(STORAGE_KEY_USER);
+      if (!userStr) {
+        container.innerHTML = `
+          <a href="tai-khoan.html" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800" title="Đăng nhập tài khoản">
+            <span>👤</span>
+            <span class="hidden sm:inline">Tài Khoản</span>
+          </a>
+        `;
+        return;
+      }
+
+      try {
+        const user = JSON.parse(userStr);
+        if (user && user.role === 'admin') {
+          // Admin Session
+          container.innerHTML = `
+            <div class="relative group">
+              <a href="admin.html" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-amber-100 hover:bg-amber-200 border border-amber-300 transition-all text-xs font-bold text-amber-900" title="Quản Trị Viên">
+                <span>👑</span>
+                <span class="hidden sm:inline">Admin Portal</span>
+              </a>
+              <div class="absolute right-0 top-full mt-1.5 w-44 bg-white rounded-2xl shadow-xl border border-cream-200 py-1.5 hidden group-hover:block z-50">
+                <div class="px-3 py-1.5 border-b border-cream-100 text-[11px]">
+                  <div class="font-bold text-charcoal-900 truncate">${user.name || 'Quản Trị Viên'}</div>
+                  <div class="text-[10px] text-charcoal-400 font-mono truncate">${user.email}</div>
+                </div>
+                <a href="admin.html" class="block px-3 py-1.5 text-xs text-charcoal-700 hover:bg-cream-100 font-medium">Bảng Điều Khiển</a>
+                <button onclick="logoutFromHeader()" class="w-full text-left px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 font-bold">Đăng Xuất</button>
+              </div>
+            </div>
+          `;
+        } else if (user && user.role === 'user') {
+          // User Session
+          const displayName = user.name ? `Mẹ ${user.name.split(' ').pop()}` : 'Mẹ Yêu';
+          const avatarSrc = user.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&h=100&q=80';
+          container.innerHTML = `
+            <div class="relative group">
+              <button class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800">
+                <img src="${avatarSrc}" alt="Avatar" class="w-5 h-5 rounded-full object-cover border border-cream-300" onerror="this.src='images/logo.png'" />
+                <span class="hidden sm:inline">${displayName}</span>
+                <span class="text-[9px] text-charcoal-400">▼</span>
+              </button>
+              <div class="absolute right-0 top-full mt-1.5 w-48 bg-white rounded-2xl shadow-xl border border-cream-200 py-2 hidden group-hover:block z-50">
+                <div class="px-3 py-1.5 border-b border-cream-100 text-[11px]">
+                  <div class="font-bold text-charcoal-900 truncate">${user.name || 'Mẹ Bỉm'}</div>
+                  <div class="text-[10px] text-charcoal-400 font-mono truncate">${user.email || ''}</div>
+                  <div class="text-[10px] text-honey-600 font-bold mt-0.5">⭐ ${user.points || 250} Điểm thưởng</div>
+                </div>
+                <a href="tai-khoan.html" class="block px-3 py-2 text-xs text-charcoal-700 hover:bg-cream-100 font-semibold">Tài Khoản Của Mẹ</a>
+                <a href="index.html" class="block px-3 py-2 text-xs text-charcoal-700 hover:bg-cream-100 font-medium">Trang Chủ T'Petie</a>
+                <div class="border-t border-cream-100 my-1"></div>
+                <button onclick="logoutFromHeader()" class="w-full text-left px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 font-bold">Đăng Xuất</button>
+              </div>
+            </div>
+          `;
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function logoutFromHeader() {
+      localStorage.removeItem('tpetie_current_user');
+      showToast('Đã đăng xuất tài khoản an toàn.');
+      initAuthHeader();
+    }
+
+    // Tự động khởi chạy
+    document.addEventListener('DOMContentLoaded', () => {
+      initCountdown();
+      initAuthHeader();
+    });
   </script>
 </body>
+
 </html>
