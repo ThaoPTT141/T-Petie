@@ -68,16 +68,18 @@ export default function RootLayout({
               src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
               strategy="afterInteractive"
             />
-            <Script id="google-analytics-ga4" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${ga4Id}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${ga4Id}');
+                `,
+              }}
+            />
           </>
         )}
       </head>
