@@ -5,13 +5,13 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { useToast } from '@/context/ToastContext';
-import { 
-  Lock, 
-  Mail, 
-  Eye, 
-  EyeOff, 
-  ArrowRight, 
-  AlertCircle 
+import {
+  Lock,
+  Mail,
+  Eye,
+  EyeOff,
+  ArrowRight,
+  AlertCircle
 } from 'lucide-react';
 
 /**
@@ -29,7 +29,7 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
-  
+
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -96,7 +96,7 @@ function LoginForm() {
     <div className="max-w-md mx-auto px-4 sm:px-6 py-6 sm:py-12">
       <div className="bg-white rounded-3xl border border-cream-200 shadow-card overflow-hidden p-6 sm:p-10 flex flex-col justify-center min-h-[580px]">
         <div className="w-full space-y-6">
-          
+
           {/* Header */}
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold font-heading text-charcoal-900">
@@ -256,7 +256,9 @@ function LoginForm() {
 
         </div>
       </div>
+
     </div>
+    </div >
   );
 }
 
