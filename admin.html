@@ -40,15 +40,9 @@
               950: '#020617',
             },
             honey: {
-              50: '#FFFBF0',
-              100: '#FFF2D6',
               500: '#F5A623',
               600: '#D97706',
               700: '#B45309',
-            },
-            blush: {
-              500: '#F2828D',
-              600: '#E06D75',
             }
           }
         }
@@ -73,7 +67,7 @@
 
   <style>
     body {
-      background-color: #0F172A;
+      background-color: #020617;
       color: #E2E8F0;
       font-family: 'Be Vietnam Pro', sans-serif;
       -webkit-tap-highlight-color: transparent;
@@ -83,20 +77,20 @@
       font-family: 'Quicksand', sans-serif;
     }
 
-    /* Custom scrollbar cho admin table */
+    /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #1E293B;
+      background: #0F172A;
     }
     ::-webkit-scrollbar-thumb {
-      background: #475569;
+      background: #334155;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #64748B;
+      background: #475569;
     }
   </style>
 </head>
@@ -108,7 +102,7 @@
     class="fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
     
     <div>
-      <!-- Logo & Brand Header -->
+      <!-- Brand Header -->
       <div class="h-16 px-5 border-b border-slate-800 flex items-center justify-between">
         <a href="admin.html" class="flex items-center space-x-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/10 p-1 flex items-center justify-center border border-white/10">
@@ -116,7 +110,7 @@
           </div>
           <div>
             <span class="font-heading font-extrabold text-sm text-white tracking-wide block">T'Petie Portal</span>
-            <span class="text-[9px] text-amber-400 font-bold uppercase tracking-wider block">Admin Dashboard</span>
+            <span class="text-[9px] text-amber-400 font-bold uppercase tracking-wider block">Admin Management</span>
           </div>
         </a>
 
@@ -127,7 +121,7 @@
       </div>
 
       <!-- Navigation Links -->
-      <nav class="p-3 space-y-1 text-xs font-semibold">
+      <nav class="p-3 space-y-1.5 text-xs font-semibold">
         <a href="#overview" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
           <span class="text-base">📊</span>
           <span>Bảng Điều Khiển</span>
@@ -136,16 +130,16 @@
           <span class="text-base">🏷️</span>
           <span>Sản Phẩm Sale (49 mẫu)</span>
         </a>
-        <a href="#orders" onclick="showAdminToast('Chức năng Quản lý Đơn hàng đang đồng bộ')" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+        <a href="#orders-section" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <span class="text-base">🛍️</span>
           <span>Đơn Hàng Mới</span>
           <span class="ml-auto bg-rose-500/20 text-rose-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-rose-500/30">14 mới</span>
         </a>
-        <a href="#users" onclick="showAdminToast('Chức năng Khách Hàng đang đồng bộ')" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+        <a href="javascript:void(0)" onclick="showAdminToast('Hệ thống khách hàng đang đồng bộ')" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <span class="text-base">👥</span>
           <span>Khách Hàng (Mẹ Bỉm)</span>
         </a>
-        <a href="#campaigns" onclick="showAdminToast('Chức năng Cài đặt Chiến dịch')" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+        <a href="javascript:void(0)" onclick="showAdminToast('Cài đặt chiến dịch')" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <span class="text-base">⚙️</span>
           <span>Cài Đặt Khuyến Mãi</span>
         </a>
@@ -159,14 +153,14 @@
           👑
         </div>
         <div class="flex-1 min-w-0">
-          <div id="admin-sidebar-name" class="text-xs font-bold text-white truncate">Quản Trị Viên</div>
+          <div id="admin-sidebar-name" class="text-xs font-bold text-white truncate">Quản Trị Viên T'Petie</div>
           <div id="admin-sidebar-email" class="text-[10px] text-slate-400 truncate">admin@tpetie.vn</div>
         </div>
       </div>
 
       <!-- Nút Đăng Xuất Admin -->
       <button onclick="handleAdminLogout()"
-        class="w-full py-2 px-3 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/30 text-xs font-bold transition-all flex items-center justify-center space-x-2">
+        class="w-full py-2.5 px-3 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/30 text-xs font-bold transition-all flex items-center justify-center space-x-2">
         <span>🚪</span>
         <span>Đăng Xuất Admin</span>
       </button>
@@ -198,22 +192,17 @@
       <div class="flex items-center space-x-2 sm:space-x-3">
         <!-- Nút Xem Cửa Hàng -->
         <a href="uu-dai.html" target="_blank"
-          class="hidden sm:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors">
+          class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors">
           <span>🛍️</span>
           <span>Xem Cửa Hàng</span>
           <span class="text-[10px] text-slate-400">↗</span>
         </a>
 
-        <!-- Avatar Admin Header -->
-        <div class="flex items-center space-x-2 pl-2 border-l border-slate-800">
-          <span id="admin-header-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 hidden sm:inline">
-            Super Admin
-          </span>
-          <button onclick="handleAdminLogout()" title="Đăng xuất Admin"
-            class="p-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors text-xs font-bold flex items-center space-x-1">
-            <span>Đăng Xuất</span>
-          </button>
-        </div>
+        <!-- Nút Đăng Xuất Header -->
+        <button onclick="handleAdminLogout()" title="Đăng xuất Admin"
+          class="p-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors text-xs font-bold flex items-center space-x-1 border border-slate-800">
+          <span>Đăng Xuất</span>
+        </button>
       </div>
 
     </header>
@@ -242,7 +231,7 @@
         <!-- Metric 2: Tổng sản phẩm sale -->
         <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 relative overflow-hidden">
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Sản Phẩm Khuyến Mãi</span>
+            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Sản Phẩm Sale</span>
             <span class="p-2 rounded-xl bg-amber-500/10 text-amber-400 text-xs">🏷️</span>
           </div>
           <div id="stat-total-products" class="text-xl sm:text-2xl font-heading font-extrabold text-amber-400 mb-1">
@@ -283,18 +272,18 @@
 
       </section>
 
-      <!-- ==================== 2. BẢNG QUẢN LÝ SẢN PHẨM ƯU ĐÃI ==================== -->
+      <!-- ==================== 2. BẢNG QUẢN LÝ SẢN PHẨM ƯU ĐÃI (49 ITEMS) ==================== -->
       <section id="products-table" class="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
         
-        <!-- Header Bảng: Tiêu đề + Bộ lọc + Tìm kiếm -->
+        <!-- Header Bảng -->
         <div class="p-4 sm:p-6 border-b border-slate-800 space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <h2 class="font-heading font-extrabold text-lg text-white">Danh Sách Sản Phẩm Ưu Đãi Chiến Dịch</h2>
-              <p class="text-xs text-slate-400">Hiển thị thông tin giá sale, giá gốc và tình trạng của 49 sản phẩm</p>
+              <h2 class="font-heading font-extrabold text-lg text-white">Danh Sách 49 Sản Phẩm Ưu Đãi Chiến Dịch</h2>
+              <p class="text-xs text-slate-400">Hiển thị thông tin giá sale, giá gốc và tình trạng thực tế</p>
             </div>
 
-            <!-- Nút Thao Tác Nhanh -->
+            <!-- Action buttons -->
             <div class="flex items-center space-x-2">
               <button onclick="refreshData()"
                 class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 transition-colors flex items-center space-x-1.5">
@@ -315,7 +304,7 @@
             <div class="sm:col-span-6 relative">
               <input id="search-product-input" type="text" oninput="handleSearch(this.value)"
                 placeholder="🔍 Tìm kiếm sản phẩm theo tên, bộ sưu tập..."
-                class="w-full px-4 py-2.5 pl-10 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white placeholder-slate-500 outline-none focus:border-amber-500 transition-colors" />
+                class="w-full px-4 py-2.5 pl-10 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white placeholder-slate-500 outline-none focus:border-amber-400 transition-colors" />
               <span class="absolute left-3.5 top-2.5 text-xs text-slate-500">🔍</span>
             </div>
 
@@ -341,7 +330,7 @@
           </div>
         </div>
 
-        <!-- Bảng Dữ Liệu Sản Phẩm -->
+        <!-- Bảng Dữ Liệu -->
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs text-slate-300">
             <thead class="bg-slate-950/70 uppercase text-[10px] text-slate-400 border-b border-slate-800 tracking-wider">
@@ -363,12 +352,66 @@
           </table>
         </div>
 
-        <!-- Footer Bảng: Thông tin số lượng hiển thị -->
+        <!-- Footer Bảng -->
         <div class="p-4 border-t border-slate-800 bg-slate-900/40 flex items-center justify-between text-xs text-slate-400">
           <span id="table-count-text">Đang tải dữ liệu sản phẩm...</span>
-          <span class="text-[11px] text-slate-500">Dữ liệu tối ưu theo chuẩn Mobile-First</span>
+          <span class="text-[11px] text-slate-500">Tối ưu chuẩn Mobile-First</span>
         </div>
 
+      </section>
+
+      <!-- ==================== 3. DANH SÁCH ĐƠN HÀNG MẪU GẦN ĐÂY ==================== -->
+      <section id="orders-section" class="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="font-heading font-extrabold text-base sm:text-lg text-white">Đơn Hàng Gần Đây Của Ba Mẹ</h2>
+            <p class="text-xs text-slate-400">Danh sách 4 đơn hàng phát sinh từ chiến dịch Sale</p>
+          </div>
+          <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+            Realtime Sync
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-950/70 uppercase text-[10px] text-slate-400 border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-4">Mã Đơn</th>
+                <th class="py-3 px-4">Khách Hàng</th>
+                <th class="py-3 px-4">Sản Phẩm Đặt</th>
+                <th class="py-3 px-4 text-right">Tổng Tiền</th>
+                <th class="py-3 px-4 text-center">Trạng Thái</th>
+                <th class="py-3 px-4 text-right">Thời Gian</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800">
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-amber-400">#TP-98214</td>
+                <td class="py-3 px-4 font-semibold text-white">Mẹ Quỳnh Như</td>
+                <td class="py-3 px-4 text-slate-300">Áo Việt Nam Bé (Tặng Thêu Tên) - Size 100</td>
+                <td class="py-3 px-4 text-right font-bold text-emerald-400">245.000đ</td>
+                <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">Chờ đóng gói</span></td>
+                <td class="py-3 px-4 text-right text-slate-400">10 phút trước</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-amber-400">#TP-98215</td>
+                <td class="py-3 px-4 font-semibold text-white">Mẹ Thu Trang</td>
+                <td class="py-3 px-4 text-slate-300">Set Tổ Quốc (Áo Kem Quần Đỏ) + Váy Tường Vi</td>
+                <td class="py-3 px-4 text-right font-bold text-emerald-400">660.000đ</td>
+                <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Đã thanh toán</span></td>
+                <td class="py-3 px-4 text-right text-slate-400">25 phút trước</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-amber-400">#TP-98216</td>
+                <td class="py-3 px-4 font-semibold text-white">Mẹ Lan Anh</td>
+                <td class="py-3 px-4 text-slate-300">Set Cát Chu Đỏ - Size 90</td>
+                <td class="py-3 px-4 text-right font-bold text-emerald-400">295.000đ</td>
+                <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">Đang giao hàng</span></td>
+                <td class="py-3 px-4 text-right text-slate-400">1 giờ trước</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
     </main>
@@ -385,7 +428,6 @@
     let currentFiltered = [];
     let activeCollection = 'all';
 
-    // 1. Kiểm tra Admin & Render Info
     window.addEventListener('DOMContentLoaded', () => {
       const userStr = localStorage.getItem(STORAGE_KEY_USER);
       if (userStr) {
@@ -394,9 +436,6 @@
           if (user) {
             document.getElementById('admin-sidebar-name').innerText = user.name || 'Quản Trị Viên';
             document.getElementById('admin-sidebar-email').innerText = user.email || 'admin@tpetie.vn';
-            if (user.department) {
-              document.getElementById('admin-header-badge').innerText = user.department;
-            }
           }
         } catch (e) {}
       }
@@ -404,7 +443,6 @@
       loadProductsData();
     });
 
-    // 2. Tải Dữ liệu từ products-sale.json
     async function loadProductsData() {
       try {
         const response = await fetch('products-sale.json');
@@ -416,17 +454,15 @@
           return;
         }
       } catch (e) {
-        console.warn('Fetch fallback sang demo dataset:', e);
+        console.warn('Fallback sang dataset dự phòng:', e);
       }
 
-      // Fallback nếu chạy file:// trực tiếp mà không qua HTTP server
       currentFiltered = [...FALLBACK_PRODUCTS];
       allProducts = [...FALLBACK_PRODUCTS];
       renderProductsTable(currentFiltered);
       document.getElementById('stat-total-products').innerText = `${allProducts.length} Mẫu`;
     }
 
-    // 3. Render Table
     function renderProductsTable(products) {
       const tbody = document.getElementById('admin-products-tbody');
       const countText = document.getElementById('table-count-text');
@@ -497,7 +533,6 @@
       countText.innerText = `Hiển thị ${products.length} trên tổng số ${allProducts.length} sản phẩm ưu đãi`;
     }
 
-    // 4. Tìm kiếm sản phẩm
     function handleSearch(keyword) {
       const kw = keyword.toLowerCase().trim();
       currentFiltered = allProducts.filter(p => {
@@ -509,7 +544,6 @@
       renderProductsTable(currentFiltered);
     }
 
-    // 5. Lọc theo Bộ sưu tập
     function filterByCollection(colName) {
       activeCollection = colName;
       document.querySelectorAll('.col-filter-btn').forEach(btn => {
@@ -529,7 +563,6 @@
       renderProductsTable(currentFiltered);
     }
 
-    // 6. Sửa giá nhanh (Simulation)
     function quickEditPrice(productId, currentPrice) {
       const newPriceStr = prompt(`Cập nhật giá Sale mới cho sản phẩm #${productId} (VNĐ):`, currentPrice);
       if (newPriceStr === null) return;
@@ -551,7 +584,6 @@
       }
     }
 
-    // 7. Toggle Sidebar Mobile
     function toggleSidebar() {
       const sidebar = document.getElementById('admin-sidebar');
       const backdrop = document.getElementById('sidebar-backdrop');
@@ -559,23 +591,20 @@
       backdrop.classList.toggle('hidden');
     }
 
-    // 8. Đăng Xuất Admin
     function handleAdminLogout() {
       if (confirm('Bạn có chắc chắn muốn đăng xuất khỏi cổng Quản Trị Viên không?')) {
         localStorage.removeItem(STORAGE_KEY_USER);
         showAdminToast('Đã đăng xuất phiên làm việc của Quản Trị Viên.');
         setTimeout(() => {
           window.location.href = 'admin-login.html';
-        }, 600);
+        }, 500);
       }
     }
 
-    // 9. Format tiền VND
     function formatVND(num) {
       return (num || 0).toLocaleString('vi-VN') + 'đ';
     }
 
-    // 10. Toast Admin
     function showAdminToast(msg) {
       const container = document.getElementById('toast-container');
       const toast = document.createElement('div');
@@ -605,7 +634,6 @@
       showAdminToast('Đã xuất file tpetie_products_sale_export.json thành công!');
     }
 
-    // Fallback data 5 mẫu tiêu biểu nếu không có http fetch
     const FALLBACK_PRODUCTS = [
       {
         id: 1,
