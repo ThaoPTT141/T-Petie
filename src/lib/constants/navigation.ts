@@ -31,7 +31,6 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   {
     label: 'Về Chúng Tôi',
     href: '/ve-chung-toi',
-    icon: 'Heart',
     children: [
       { label: 'Câu chuyện thương hiệu', href: '/ve-chung-toi?tab=story', description: 'Hành trình từ năm 2021' },
       { label: 'Niềm tin', href: '/ve-chung-toi?tab=belief', description: 'Tuổi thơ chỉ cần được nâng niu' },
@@ -54,7 +53,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   {
     label: 'Ưu Đãi',
     href: '/sale',
-    badge: 'Hot',
+    badge: '-30%',
     badgeColor: 'bg-orange-500',
     children: [
       { label: 'Mừng đại lễ 2/9', href: '/sale?campaign=dai-le-2-9', description: 'Đồng loạt giảm giá áo sơ mi & set bộ' },
