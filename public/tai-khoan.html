@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>T'Petie | Đăng Nhập Tài Khoản Mẹ & Bé — Thương Hiệu Thời Trang Thiết Kế Cao Cấp</title>
+  <meta name="description"
+    content="Đăng nhập tài khoản T'Petie để tích điểm thành viên, nhận voucher giảm giá độc quyền và theo dõi đơn hàng thời trang cho bé yêu." />
+
+  <!-- Google Fonts: Quicksand, Be Vietnam Pro & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Quicksand:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Quicksand', 'sans-serif'],
+            sans: ['Be Vietnam Pro', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            cream: {
+              50: '#FFFDF9',
+              100: '#FFF8EE',
+              200: '#F5EBE1',
+              300: '#EADCCF',
+            },
+            honey: {
+              500: '#F5A623',
+              600: '#D97706',
+              700: '#B45309',
+            },
+            charcoal: {
+              400: '#98A1B0',
+              600: '#6C727F',
+              700: '#4F5D75',
+              800: '#2D3142',
+              900: '#1E2229',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF7F2;
+      color: #2D3142;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-100 selection:text-amber-800 bg-[#FAF7F2]">
+
+  <!-- ==================== HEADER TỐI GIẢN ==================== -->
+  <header class="w-full border-b border-[#EFE9DF] bg-white/80 backdrop-blur-md sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Nút Quay lại -->
+      <a href="javascript:void(0)" onclick="goBackOrHome()"
+        class="inline-flex items-center space-x-1.5 text-xs font-semibold text-charcoal-700 hover:text-amber-600 transition-colors py-1.5 px-3 rounded-full hover:bg-cream-100">
+        <span>←</span>
+        <span>Quay Lại</span>
+      </a>
+
+      <!-- Logo T'Petie -->
+      <a href="index.html" class="flex items-center group">
+        <img src="images/logo.png" alt="T'Petie - Made for little souls" class="h-9 sm:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
+      </a>
+
+      <!-- Link Sang Ưu Đãi -->
+      <a href="uu-dai.html" class="inline-flex items-center space-x-1 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 px-3.5 py-1.5 rounded-full border border-amber-200/60 transition-colors">
+        <span>🎁</span>
+        <span class="hidden sm:inline">Ưu Đãi Hot</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div class="w-full max-w-5xl">
+
+      <!-- ==================== VIEW 1: TRANG ĐĂNG NHẬP 2 CỘT CHUẨN CAO CẤP ==================== -->
+      <div id="login-view" class="bg-white rounded-3xl sm:rounded-[2rem] shadow-2xl border border-[#EFE9DF] overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all">
+        
+        <!-- CỘT TRÁI: POSTER LOOKBOOK THỜI TRANG CAO CẤP (5 CỘT DESKTOP) -->
+        <div class="hidden lg:flex lg:col-span-5 relative bg-[#FFF8EE] flex-col justify-between p-8 xl:p-10 overflow-hidden border-r border-[#EFE9DF]">
+          <!-- Hình nền Lookbook thực tế của T'Petie -->
+          <img src="images/hero-banner.jpg" alt="T'Petie Lookbook Bé" class="absolute inset-0 w-full h-full object-cover object-center" />
+          
+          <!-- Lớp phủ mềm mại sang trọng -->
+          <div class="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 via-charcoal-900/40 to-black/20"></div>
+
+          <!-- Top Badge trên Poster -->
+          <div class="relative z-10">
+            <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-white/90 backdrop-blur-md text-charcoal-900 shadow-sm border border-white/50">
+              <span>🌸</span>
+              <span>Bộ Sưu Tập Mẹ &amp; Bé 2026</span>
+            </span>
+          </div>
+
+          <!-- Bottom Quote trên Poster -->
+          <div class="relative z-10 space-y-3 text-white">
+            <div class="w-10 h-0.5 bg-amber-400"></div>
+            <p class="font-serif italic text-lg xl:text-xl leading-relaxed text-amber-50">
+              "Nâng niu từng bước chạm đầu đời của bé bằng sự ngọt ngào, trong trẻo và tinh khôi nhất."
+            </p>
+            <div class="flex items-center space-x-2 pt-1">
+              <span class="text-xs font-semibold text-white/90 tracking-wider uppercase font-heading">T'Petie Haute Couture</span>
+              <span class="text-white/40">•</span>
+              <span class="text-xs text-amber-200">Thời trang hữu cơ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI: KHUNG ĐĂNG NHẬP TINH TẾ (7 CỘT DESKTOP) -->
+        <div class="lg:col-span-7 p-6 sm:p-10 xl:p-14 flex flex-col justify-between">
+          
+          <div>
+            <!-- Mobile Brand Bar -->
+            <div class="lg:hidden flex items-center justify-center space-x-2 mb-4">
+              <img src="images/logo.png" alt="T'Petie" class="h-8 w-auto object-contain" />
+            </div>
+
+            <!-- Header Lời Chào -->
+            <div class="text-center lg:text-left mb-8">
+              <div class="hidden lg:inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-[11px] font-bold border border-amber-200/60 mb-3">
+                <span>✨</span>
+                <span>Thành Viên Thân Thiết T'Petie</span>
+              </div>
+              <h1 class="font-heading font-extrabold text-2xl sm:text-3xl text-charcoal-900 tracking-tight">
+                Chào mừng ba mẹ đến với T'Petie
+              </h1>
+              <p class="text-xs sm:text-sm text-charcoal-600 mt-2.5 leading-relaxed font-normal">
+                Đăng nhập nhanh để tích điểm thành viên và nhận ưu đãi độc quyền dành riêng cho bé yêu.
+              </p>
+            </div>
+
+            <!-- CHỈ HIỂN THỊ ĐÚNG 2 NÚT ĐĂNG NHẬP (KHÔNG FORM MẬT KHẨU) -->
+            <div class="space-y-3.5 max-w-md mx-auto lg:mx-0">
+              
+              <!-- NÚT 1: TIẾP TỤC VỚI GOOGLE -->
+              <button id="btn-login-google" onclick="startOAuthSimulation('google')"
+                class="w-full flex items-center justify-center space-x-3 bg-white hover:bg-slate-50 active:scale-[0.99] border border-[#E5E7EB] hover:border-[#D1D5DB] py-3.5 px-5 rounded-2xl shadow-sm hover:shadow transition-all group min-h-[50px]">
+                <!-- Icon Google chuẩn SVG đa sắc -->
+                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                  <path fill="#4285F4"
+                    d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
+                  <path fill="#34A853"
+                    d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" />
+                  <path fill="#FBBC05"
+                    d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
+                  <path fill="#EA4335"
+                    d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+                </svg>
+                <span class="text-xs sm:text-sm font-medium text-charcoal-800 group-hover:text-charcoal-900">
+                  Tiếp tục với Google
+                </span>
+              </button>
+
+              <!-- NÚT 2: TIẾP TỤC VỚI FACEBOOK -->
+              <button id="btn-login-facebook" onclick="startOAuthSimulation('facebook')"
+                class="w-full flex items-center justify-center space-x-3 bg-[#1877F2] hover:bg-[#166FE5] active:scale-[0.99] text-white py-3.5 px-5 rounded-2xl shadow-sm hover:shadow-md transition-all group min-h-[50px]">
+                <!-- Icon Facebook chuẩn SVG -->
+                <svg class="w-5 h-5 shrink-0 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+                <span class="text-xs sm:text-sm font-medium text-white tracking-wide">
+                  Tiếp tục với Facebook
+                </span>
+              </button>
+
+            </div>
+
+            <!-- Cam Kết Quyền Lợi -->
+            <div class="mt-8 pt-6 border-t border-[#F0EBE1] grid grid-cols-3 gap-2 text-center text-[11px] text-charcoal-600 max-w-md mx-auto lg:mx-0">
+              <div class="space-y-1">
+                <span class="text-base block">🛡️</span>
+                <span class="font-medium">Bảo mật chuẩn SSL</span>
+              </div>
+              <div class="space-y-1">
+                <span class="text-base block">⭐</span>
+                <span class="font-medium">Tích lũy điểm VIP</span>
+              </div>
+              <div class="space-y-1">
+                <span class="text-base block">🚚</span>
+                <span class="font-medium">Freeship từ 399k</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Chân trang: Liên kết tinh tế dành riêng cho Admin -->
+          <div class="mt-8 pt-5 border-t border-[#F0EBE1] text-center lg:text-left text-xs text-charcoal-400">
+            <span>Nhân viên quản trị hệ thống?</span>
+            <a href="admin-login.html" class="font-semibold text-amber-700 hover:text-amber-800 hover:underline ml-1 inline-flex items-center space-x-1">
+              <span>Đăng nhập Admin tại đây</span>
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ==================== VIEW 2: PROFILE DASHBOARD (Khi Mẹ Đã Đăng Nhập) ==================== -->
+      <div id="profile-view" class="hidden bg-white rounded-3xl sm:rounded-[2rem] shadow-2xl border border-[#EFE9DF] p-6 sm:p-10 max-w-xl mx-auto transition-all">
+        
+        <div class="text-center mb-6">
+          <div class="relative inline-block">
+            <div id="user-avatar-badge" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-2xl sm:text-3xl flex items-center justify-center border-4 border-amber-100 shadow-md mx-auto">
+              Q
+            </div>
+            <span class="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow border border-cream-200 text-xs">
+              🌸
+            </span>
+          </div>
+          <h2 id="user-display-name" class="font-heading font-extrabold text-xl sm:text-2xl text-charcoal-900 mt-3">
+            Nguyễn Như Quỳnh
+          </h2>
+          <p id="user-display-email" class="text-xs text-charcoal-400 font-mono mt-0.5">
+            nhuquynh.marketing@gmail.com
+          </p>
+          <div class="inline-flex items-center space-x-1.5 mt-2.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200/60">
+            <span>⭐</span>
+            <span>Thành Viên Thân Thiết T'Petie</span>
+          </div>
+        </div>
+
+        <!-- Thống kê điểm thưởng & ưu đãi -->
+        <div class="grid grid-cols-3 gap-3 mb-6 text-center">
+          <div class="bg-cream-50 p-3.5 rounded-2xl border border-cream-200">
+            <div class="text-[10px] text-charcoal-500 font-medium">Điểm Tích Lũy</div>
+            <div id="user-points" class="font-heading font-bold text-lg text-amber-600">250 ⭐</div>
+          </div>
+          <div class="bg-rose-50/60 p-3.5 rounded-2xl border border-rose-100">
+            <div class="text-[10px] text-charcoal-500 font-medium">Voucher Riêng</div>
+            <div class="font-heading font-bold text-lg text-rose-600">4 Mã Giảm</div>
+          </div>
+          <div class="bg-emerald-50/60 p-3.5 rounded-2xl border border-emerald-100">
+            <div class="text-[10px] text-charcoal-500 font-medium">Đơn Đã Đặt</div>
+            <div class="font-heading font-bold text-lg text-emerald-700">2 Đơn</div>
+          </div>
+        </div>
+
+        <!-- Tiện ích nhanh -->
+        <div class="space-y-2.5 mb-6">
+          <a href="uu-dai.html" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-50 hover:bg-cream-100 border border-cream-200 text-xs font-bold text-charcoal-800 transition-colors">
+            <span class="flex items-center space-x-2">
+              <span>🎁</span>
+              <span>Khám phá 49 mẫu váy áo đang Sale</span>
+            </span>
+            <span class="text-amber-600">Xem ngay →</span>
+          </a>
+          <a href="index.html" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-50 hover:bg-cream-100 border border-cream-200 text-xs font-bold text-charcoal-800 transition-colors">
+            <span class="flex items-center space-x-2">
+              <span>👗</span>
+              <span>Trang chủ Bộ sưu tập T'Petie</span>
+            </span>
+            <span class="text-amber-600">Khám phá →</span>
+          </a>
+        </div>
+
+        <!-- Nút Hành Động -->
+        <div class="grid grid-cols-2 gap-3">
+          <a href="uu-dai.html"
+            class="py-3 px-4 rounded-2xl bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold text-xs shadow-md transition-all text-center flex items-center justify-center">
+            Tiếp Tục Mua Sắm
+          </a>
+          <button onclick="handleUserLogout()"
+            class="py-3 px-4 rounded-2xl bg-white hover:bg-rose-50 active:scale-95 border border-rose-200 text-rose-600 font-bold text-xs transition-all">
+            Đăng Xuất Tài Khoản
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== POPUP MÔ PHỎNG GOOGLE SIGN-IN ==================== -->
+  <div id="google-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl border border-[#E5E7EB] transform scale-95 transition-transform duration-300" id="google-box">
+      
+      <!-- Header Google Chuẩn -->
+      <div class="text-center pb-3 border-b border-gray-100 relative">
+        <button onclick="closeGoogleModal()" class="absolute right-0 top-0 text-gray-400 hover:text-gray-700 text-sm p-1 rounded-full hover:bg-gray-100">✕</button>
+        <!-- Logo Google G 4 màu -->
+        <svg class="w-8 h-8 mx-auto mb-2" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+        </svg>
+        <h3 class="text-sm font-bold text-charcoal-900 font-heading">Đăng nhập bằng Google</h3>
+        <p class="text-[11px] text-charcoal-500 mt-0.5">Chọn tài khoản để tiếp tục đến <strong class="text-amber-700">T'Petie Fashion</strong></p>
+      </div>
+
+      <!-- Trạng thái Loading Google -->
+      <div id="google-loading-state" class="hidden py-8 text-center space-y-3">
+        <div class="w-9 h-9 border-3 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <div class="text-xs font-bold text-charcoal-900">Đang kết nối với Google...</div>
+        <div class="text-[11px] text-charcoal-500">Đang bảo mật phiên xác thực tài khoản</div>
+      </div>
+
+      <!-- Danh sách tài khoản Google -->
+      <div id="google-account-list" class="space-y-2.5 my-4">
+        
+        <!-- Tài khoản 1: Nguyễn Như Quỳnh -->
+        <button onclick="executeGoogleLogin('Nguyễn Như Quỳnh', 'nhuquynh.marketing@gmail.com')"
+          class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-gray-200 hover:border-amber-400 hover:bg-amber-50/50 text-left transition-all group">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-sm border border-white">
+            Q
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-bold text-charcoal-900 group-hover:text-amber-700 truncate">Nguyễn Như Quỳnh</div>
+            <div class="text-[10px] text-charcoal-400 truncate font-mono">nhuquynh.marketing@gmail.com</div>
+          </div>
+          <span class="text-xs text-gray-300 group-hover:text-amber-500">→</span>
+        </button>
+
+        <!-- Tùy chọn 2: Sử dụng tài khoản khác -->
+        <div id="google-custom-account-block">
+          <button onclick="toggleCustomGoogleInput()"
+            class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-dashed border-gray-300 hover:border-amber-400 hover:bg-slate-50 text-left transition-all group">
+            <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center text-sm font-semibold shrink-0">
+              👤+
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-semibold text-charcoal-700 group-hover:text-amber-700 truncate">Sử dụng một tài khoản khác</div>
+              <div class="text-[10px] text-charcoal-400 truncate">Nhập nhanh tài khoản Google của bạn</div>
+            </div>
+          </button>
+
+          <!-- Form nhập tài khoản khác -->
+          <div id="google-custom-form" class="hidden mt-3 p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+            <div>
+              <label class="text-[10px] font-bold text-charcoal-600 uppercase">Họ và tên của Mẹ</label>
+              <input type="text" id="custom-google-name" placeholder="Ví dụ: Hoàng Mai Anh"
+                class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-charcoal-600 uppercase">Địa chỉ Email Google</label>
+              <input type="email" id="custom-google-email" placeholder="maianh.mom@gmail.com"
+                class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
+            </div>
+            <button onclick="submitCustomGoogleLogin()"
+              class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-bold transition-all shadow-sm">
+              Xác Nhận &amp; Tiếp Tục
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center pt-2 border-t border-gray-100 text-[10px] text-charcoal-400">
+        Để tiếp tục, Google sẽ chia sẻ tên, địa chỉ email của bạn với T'Petie.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== POPUP MÔ PHỎNG FACEBOOK LOGIN ==================== -->
+  <div id="fb-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border border-[#E5E7EB] transform scale-95 transition-transform duration-300" id="fb-box">
+      
+      <!-- Header Facebook Xanh Thương Hiệu #1877F2 -->
+      <div class="bg-[#1877F2] px-6 py-4 flex items-center justify-between text-white">
+        <div class="flex items-center space-x-2">
+          <!-- Icon Facebook SVG Trắng -->
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span class="font-bold text-sm font-heading tracking-wide">Facebook Login</span>
+        </div>
+        <button onclick="closeFbModal()" class="text-white/80 hover:text-white text-base">✕</button>
+      </div>
+
+      <!-- Nội dung Popup Facebook -->
+      <div class="p-6">
+        
+        <!-- Loading State Facebook -->
+        <div id="fb-loading-state" class="hidden py-6 text-center space-y-3">
+          <div class="w-9 h-9 border-3 border-[#1877F2] border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div class="text-xs font-bold text-charcoal-900">Đang xác thực bảo mật với Facebook...</div>
+          <div class="text-[11px] text-charcoal-500">Đang đồng bộ hồ sơ thành viên T'Petie</div>
+        </div>
+
+        <div id="fb-content-body" class="space-y-4 text-center">
+          
+          <div class="w-14 h-14 mx-auto rounded-full bg-blue-50 border-2 border-blue-200 flex items-center justify-center p-2">
+            <img src="images/logo.png" alt="T'Petie" class="w-auto h-7 object-contain" />
+          </div>
+
+          <div>
+            <h4 class="text-sm font-bold text-charcoal-900">Đăng nhập bằng tài khoản Facebook</h4>
+            <p class="text-xs text-charcoal-600 mt-1.5 leading-relaxed px-2">
+              <strong>T'Petie Fashion</strong> đang yêu cầu quyền truy cập vào <strong>tên</strong> và <strong>ảnh đại diện</strong> của bạn.
+            </p>
+          </div>
+
+          <!-- Nút Tiếp Tục Với Tên Như Quỳnh -->
+          <div class="space-y-2.5 pt-2">
+            <button onclick="executeFbLogin('Nguyễn Như Quỳnh', 'nhuquynh.fb@gmail.com')"
+              class="w-full flex items-center justify-center space-x-2.5 bg-[#1877F2] hover:bg-[#166FE5] text-white py-3 px-4 rounded-2xl font-bold text-xs sm:text-sm shadow-md transition-all active:scale-[0.98]">
+              <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px]">Q</div>
+              <span>Tiếp tục dưới tên Như Quỳnh</span>
+            </button>
+
+            <button onclick="closeFbModal()"
+              class="w-full py-2.5 px-4 rounded-2xl bg-gray-100 hover:bg-gray-200 text-charcoal-700 font-semibold text-xs transition-all">
+              Hủy
+            </button>
+          </div>
+
+          <div class="text-[10px] text-charcoal-400 pt-2 border-t border-gray-100">
+            Ứng dụng sẽ không thể đăng bài viết lên Facebook nếu không có sự đồng ý của bạn.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+  <!-- ==================== SCRIPT XỬ LÝ AUTH ==================== -->
+  <script>
+    const STORAGE_KEY_USER = 'tpetie_user';
+    const STORAGE_KEY_USER_LEGACY = 'tpetie_current_user';
+
+    // Kiểm tra session hiện có
+    function checkUserSession() {
+      const userStr = localStorage.getItem(STORAGE_KEY_USER) || localStorage.getItem(STORAGE_KEY_USER_LEGACY);
+      const loginView = document.getElementById('login-view');
+      const profileView = document.getElementById('profile-view');
+
+      if (userStr) {
+        try {
+          const user = JSON.parse(userStr);
+          if (user && user.isLoggedIn && user.role === 'user') {
+            loginView.classList.add('hidden');
+            profileView.classList.remove('hidden');
+
+            document.getElementById('user-display-name').innerText = user.name || 'Nguyễn Như Quỳnh';
+            document.getElementById('user-display-email').innerText = user.email || 'nhuquynh.marketing@gmail.com';
+            const firstLetter = (user.name || 'Q').charAt(0).toUpperCase();
+            document.getElementById('user-avatar-badge').innerText = firstLetter;
+            if (user.points) {
+              document.getElementById('user-points').innerText = `${user.points} ⭐`;
+            }
+            return;
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      loginView.classList.remove('hidden');
+      profileView.classList.add('hidden');
+    }
+
+    // Modal Google
+    function openGoogleModal() {
+      const modal = document.getElementById('google-modal');
+      const box = document.getElementById('google-box');
+      document.getElementById('google-account-list').classList.remove('hidden');
+      document.getElementById('google-loading-state').classList.add('hidden');
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+      }, 10);
+    }
+
+    function closeGoogleModal() {
+      const modal = document.getElementById('google-modal');
+      const box = document.getElementById('google-box');
+      modal.classList.add('opacity-0');
+      box.classList.add('scale-95');
+      setTimeout(() => modal.classList.add('hidden'), 250);
+    }
+
+    function toggleCustomGoogleInput() {
+      const form = document.getElementById('google-custom-form');
+      form.classList.toggle('hidden');
+    }
+
+    function submitCustomGoogleLogin() {
+      const name = document.getElementById('custom-google-name').value.trim() || 'Mẹ Yêu';
+      const email = document.getElementById('custom-google-email').value.trim() || 'me.tpetie@gmail.com';
+      executeGoogleLogin(name, email);
+    }
+
+    function executeGoogleLogin(name, email) {
+      document.getElementById('google-account-list').classList.add('hidden');
+      document.getElementById('google-loading-state').classList.remove('hidden');
+
+      setTimeout(() => {
+        closeGoogleModal();
+        saveAndRedirect({
+          isLoggedIn: true,
+          name: name,
+          email: email,
+          role: 'user',
+          method: 'Google',
+          points: 250,
+          loggedInAt: new Date().toISOString()
+        });
+      }, 800);
+    }
+
+    // Modal Facebook
+    function openFbModal() {
+      const modal = document.getElementById('fb-modal');
+      const box = document.getElementById('fb-box');
+      document.getElementById('fb-content-body').classList.remove('hidden');
+      document.getElementById('fb-loading-state').classList.add('hidden');
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+      }, 10);
+    }
+
+    function closeFbModal() {
+      const modal = document.getElementById('fb-modal');
+      const box = document.getElementById('fb-box');
+      modal.classList.add('opacity-0');
+      box.classList.add('scale-95');
+      setTimeout(() => modal.classList.add('hidden'), 250);
+    }
+
+    function executeFbLogin(name, email) {
+      document.getElementById('fb-content-body').classList.add('hidden');
+      document.getElementById('fb-loading-state').classList.remove('hidden');
+
+      setTimeout(() => {
+        closeFbModal();
+        saveAndRedirect({
+          isLoggedIn: true,
+          name: name,
+          email: email,
+          role: 'user',
+          method: 'Facebook',
+          points: 250,
+          loggedInAt: new Date().toISOString()
+        });
+      }, 800);
+    }
+
+    // Lưu session và chuyển trang
+    function saveAndRedirect(userData) {
+      localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(userData));
+      localStorage.setItem(STORAGE_KEY_USER_LEGACY, JSON.stringify(userData));
+
+      showToast(`🌸 Đăng nhập thành công! Chào mừng Mẹ ${userData.name}`);
+
+      setTimeout(() => {
+        const returnUrl = new URLSearchParams(window.location.search).get('returnUrl') || 'uu-dai.html';
+        window.location.href = returnUrl;
+      }, 600);
+    }
+
+    // Đăng xuất
+    function handleUserLogout() {
+      localStorage.removeItem(STORAGE_KEY_USER);
+      localStorage.removeItem(STORAGE_KEY_USER_LEGACY);
+      showToast('Đã đăng xuất tài khoản an toàn.');
+      setTimeout(() => {
+        checkUserSession();
+      }, 400);
+    }
+
+    function goBackOrHome() {
+      if (document.referrer && document.referrer.includes(window.location.hostname)) {
+        window.history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    }
+
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'bg-charcoal-900 text-white text-xs py-3 px-4 rounded-2xl shadow-xl flex items-center space-x-2 pointer-events-auto border border-white/10';
+      toast.innerHTML = `<span>✨</span><span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s ease';
+        setTimeout(() => toast.remove(), 400);
+      }, 2500);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Gán sự kiện cho 2 nút chính
+      const btnGoogle = document.getElementById('btn-login-google');
+      const btnFb = document.getElementById('btn-login-facebook');
+      if (btnGoogle) {
+        btnGoogle.onclick = openGoogleModal;
+      }
+      if (btnFb) {
+        btnFb.onclick = openFbModal;
+      }
+
+      checkUserSession();
+    });
+  </script>
+
+</body>
+
+</html>
