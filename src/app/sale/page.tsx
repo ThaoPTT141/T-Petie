@@ -139,34 +139,7 @@ function SaleContent() {
         ))}
       </div>
 
-      {/* TAB SEGMENTED CONTROL */}
-      <div className="bg-cream-100 p-1.5 rounded-2xl grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1">
-        {campaigns.map((camp) => {
-          const isActive = activeTab === camp.id;
-          return (
-            <button
-              key={camp.id}
-              onClick={() => setActiveTab(camp.id)}
-              data-track="promotion-click"
-              data-campaign={camp.id}
-              className={`py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center space-x-1.5 transition-all ${
-                isActive
-                  ? 'bg-white text-honey-600 shadow-sm'
-                  : 'text-charcoal-600 hover:text-charcoal-900'
-              }`}
-            >
-              <span className="truncate">{camp.label}</span>
-              <span
-                className={`text-[10px] px-2 py-0.2 rounded-full font-semibold shrink-0 hidden sm:inline ${
-                  isActive ? 'bg-honey-100 text-honey-700' : 'bg-cream-200 text-charcoal-600'
-                }`}
-              >
-                {camp.badge}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+
 
       {/* Tóm tắt đợt Sale đang chọn */}
       <div className="flex items-center justify-between pb-2 border-b border-cream-200">
