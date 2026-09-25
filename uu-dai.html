@@ -343,7 +343,7 @@
 
           <!-- Nút CTA: Khám Phá Ưu Đãi Ngay -->
           <div class="pt-1 flex flex-wrap items-center justify-center md:justify-start gap-3">
-            <a href="#campaign-tabs-bar"
+            <a href="#all-sale-products"
               class="inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300 group">
               <span>🛍️</span>
               <span>Khám Phá Ưu Đãi Ngay</span>
@@ -378,7 +378,7 @@
             <!-- Khung ảnh chính: Bo góc nghệ thuật dạng arched window / rounded-3xl mềm mại -->
             <div
               class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border-2 border-white bg-white rotate-1 hover:rotate-0 transition-transform duration-300 group cursor-pointer"
-              onclick="filterCampaign('le2-9')">
+              onclick="document.getElementById('all-sale-products')?.scrollIntoView({ behavior: 'smooth' })">
               <img src="images/promotions/le29-ao-dai.jpg" alt="Set Áo Dài Đan Nguyệt T'Petie" loading="eager"
                 fetchpriority="high"
                 class="w-full h-56 sm:h-64 lg:h-72 object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -515,69 +515,20 @@
       </div>
     </section>
 
-    <!-- ==================== 5 CAMPAIGN FILTER TABS ==================== -->
-    <section
-      class="sticky top-[56px] sm:top-[64px] z-30 bg-white/95 backdrop-blur-md py-2.5 px-3 sm:px-0 -mx-3 sm:mx-0 border-b border-cream-200/90 shadow-xs space-y-2">
-      <div class="flex items-center justify-between px-1 sm:px-0">
-        <div class="flex items-center space-x-2">
-          <span class="text-xs sm:text-base font-bold font-heading text-charcoal-900">Chiến Dịch Ưu Đãi</span>
+    <!-- ==================== TIÊU ĐỀ TẤT CẢ SẢN PHẨM ƯU ĐÃI ==================== -->
+    <section id="all-sale-products" class="pt-2 pb-2 border-b border-cream-200">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <h2 class="text-lg sm:text-2xl font-extrabold font-heading text-charcoal-900 tracking-tight">
+            Tất Cả Sản Phẩm Ưu Đãi
+          </h2>
           <span id="campaign-count-badge"
-            class="text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full bg-blush-100 text-blush-600">30 sản
-            phẩm</span>
+            class="text-xs sm:text-sm font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600">
+            49 sản phẩm
+          </span>
         </div>
-        <span class="text-[11px] text-charcoal-400 hidden sm:inline">Chọn chiến dịch để lọc danh sách sản phẩm</span>
-      </div>
-
-      <!-- Horizontal Scroll Pill Tabs (Swipable on mobile, smoothly spaced on desktop) -->
-      <div id="campaign-tabs-bar"
-        class="flex items-center space-x-2 sm:space-x-2.5 overflow-x-auto md:overflow-x-visible no-scrollbar py-0.5 px-1 sm:px-0">
-        <!-- 1. Tất Cả -->
-        <button onclick="filterCampaign('all')" id="tab-all" data-campaign="all"
-          class="campaign-tab shrink-0 py-2 px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-blush-100 text-blush-600 border border-blush-300 shadow-sm active:scale-95">
-          <span>✨</span>
-          <span>Tất Cả (49)</span>
-        </button>
-
-        <!-- 2. Mừng Đại Lễ 2/9 -->
-        <button onclick="filterCampaign('le2-9')" id="tab-le2-9" data-campaign="le2-9"
-          class="campaign-tab shrink-0 py-2 px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-cream-50 hover:bg-cream-100 text-charcoal-600 border border-cream-200 active:scale-95">
-          <span>🎉</span>
-          <span>Mừng Đại Lễ 2/9 (8)</span>
-        </button>
-
-        <!-- 3. Sale Hè -->
-        <button onclick="filterCampaign('sale-he')" id="tab-sale-he" data-campaign="sale-he"
-          class="campaign-tab shrink-0 py-2 px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-cream-50 hover:bg-cream-100 text-charcoal-600 border border-cream-200 active:scale-95">
-          <span>☀️</span>
-          <span>Sale Hè (21)</span>
-        </button>
-
-        <!-- 4. Sale Thu - Đông -->
-        <button onclick="filterCampaign('sale-thu-dong')" id="tab-sale-thu-dong" data-campaign="sale-thu-dong"
-          class="campaign-tab shrink-0 py-2 px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-cream-50 hover:bg-cream-100 text-charcoal-600 border border-cream-200 active:scale-95">
-          <span>🍂</span>
-          <span>Sale Thu - Đông (13)</span>
-        </button>
-
-        <!-- 5. Sale Ngày Đôi 10/10 11/11 -->
-        <button onclick="filterCampaign('sale-ngay-doi')" id="tab-sale-ngay-doi" data-campaign="sale-ngay-doi"
-          class="campaign-tab shrink-0 py-2 px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-cream-50 hover:bg-cream-100 text-charcoal-600 border border-cream-200 active:scale-95">
-          <span>🎁</span>
-          <span>Sale Ngày Đôi (7)</span>
-        </button>
-      </div>
-
-      <!-- Campaign Banner Info Description -->
-      <div id="campaign-banner-desc"
-        class="p-2.5 sm:p-3 rounded-xl bg-cream-50 border border-cream-200 text-[11px] sm:text-xs text-charcoal-700 flex items-center justify-between gap-2">
-        <div class="flex items-center space-x-1.5">
-          <span class="text-sm" id="campaign-desc-icon">✨</span>
-          <span id="campaign-desc-text" class="line-clamp-1 sm:line-clamp-none">Toàn bộ 49 sản phẩm ưu đãi đặc biệt có
-            gắn bảng giá in trực tiếp trên hình ảnh thực tế của T'Petie!</span>
-        </div>
-        <span id="campaign-desc-tag"
-          class="hidden sm:inline-block text-[10px] font-bold px-2 py-0.5 rounded-full bg-honey-100 text-honey-700 shrink-0">
-          Chính sách đổi size 7 ngày
+        <span class="text-xs text-charcoal-500 hidden sm:inline font-medium">
+          ✨ Tuyển chọn toàn bộ thiết kế thêu tay thủ công cao cấp cho bé yêu
         </span>
       </div>
     </section>
@@ -1648,53 +1599,12 @@
     document.addEventListener('DOMContentLoaded', () => {
       loadCartFromStorage();
       initCountdown();
-
-      // Check query parameter ?campaign=...
-      const urlParams = new URLSearchParams(window.location.search);
-      const campaignParam = urlParams.get('campaign');
-      if (campaignParam && ['all', 'le2-9', 'dai-le-2-9', 'sale-he', 'sale-thu-dong', 'sale-ngay-doi'].includes(campaignParam)) {
-        const normalizedCampaign = campaignParam === 'dai-le-2-9' ? 'le2-9' : campaignParam;
-        filterCampaign(normalizedCampaign);
-      } else {
-        renderProducts();
-      }
+      renderProducts();
     });
 
-    // ==================== FILTER CAMPAIGN FUNCTION ====================
-    function filterCampaign(campaignId) {
-      currentCampaign = campaignId;
-
-      // Update URL query string without reloading page
-      const url = new URL(window.location);
-      if (campaignId === 'all') {
-        url.searchParams.delete('campaign');
-      } else {
-        url.searchParams.set('campaign', campaignId);
-      }
-      window.history.replaceState({}, '', url);
-
-      // Update Horizontal Pill Tabs Styles
-      document.querySelectorAll('.campaign-tab').forEach(btn => {
-        btn.className = 'campaign-tab shrink-0 py-2 px-3.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-cream-50 hover:bg-cream-100 text-charcoal-600 border border-cream-200 active:scale-95';
-      });
-      const activeBtn = document.getElementById(`tab-${campaignId}`);
-      if (activeBtn) {
-        activeBtn.className = 'campaign-tab shrink-0 py-2 px-3.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all flex items-center space-x-1.5 bg-blush-100 text-blush-600 border border-blush-300 shadow-sm active:scale-95';
-        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      }
-
-      // Update Banner Info
-      const info = CAMPAIGN_INFO[campaignId] || CAMPAIGN_INFO['all'];
-      document.getElementById('campaign-desc-icon').innerText = info.icon;
-      document.getElementById('campaign-desc-text').innerText = info.desc;
-      document.getElementById('campaign-desc-tag').innerText = info.tag;
-
-      // Track Analytics
-      trackAnalyticsEvent('filter_campaign_tab', {
-        campaign_selected: campaignId,
-        source: 'promotions_page'
-      });
-
+    // ==================== FILTER CAMPAIGN FUNCTION (SCROLL TO ALL) ====================
+    function filterCampaign() {
+      document.getElementById('all-sale-products')?.scrollIntoView({ behavior: 'smooth' });
       renderProducts();
     }
 
@@ -1704,10 +1614,7 @@
       const emptyState = document.getElementById('promo-empty-state');
       const countBadge = document.getElementById('campaign-count-badge');
 
-      const filtered = customList || PRODUCTS_DATA.filter(p => {
-        if (currentCampaign === 'all') return true;
-        return p.campaign === currentCampaign;
-      });
+      const filtered = customList || PRODUCTS_DATA;
 
       if (countBadge) {
         countBadge.innerText = `${filtered.length} sản phẩm`;
