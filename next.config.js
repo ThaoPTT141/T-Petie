@@ -25,7 +25,6 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-      { source: '/sale', destination: '/uu-dai.html' },
       { source: '/tai-khoan', destination: '/tai-khoan.html' },
       { source: '/admin-login', destination: '/admin-login.html' },
       { source: '/admin', destination: '/admin.html' },
