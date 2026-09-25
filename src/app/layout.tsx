@@ -9,6 +9,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { MiniCart } from '@/components/cart/MiniCart';
+import { FloatingMessenger } from '@/components/layout/FloatingMessenger';
 
 export const metadata: Metadata = {
   title: "T'Petie | Thời Trang Trẻ Em Cao Cấp & Dịu Ngọt",
@@ -99,6 +100,9 @@ export default function RootLayout({
 
                 {/* Mobile Bottom Navigation */}
                 <MobileBottomNav />
+
+                {/* Floating Messenger */}
+                <FloatingMessenger />
 
                 {/* Footer */}
                 <Footer />
