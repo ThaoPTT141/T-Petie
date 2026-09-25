@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 export function FloatingMessenger() {
-  // Thay thế bằng ID trang hoặc username m.me của T'Petie
-  const messengerUrl = "https://m.me/tpetie.vn"; 
+  // Liên kết trực tiếp đến hộp thư Messenger của T'Petie
+  const messengerUrl = "https://m.me/thoitrangtreemtpetie"; 
 
   return (
     <div className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-50">
