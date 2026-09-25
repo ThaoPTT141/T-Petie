@@ -302,7 +302,7 @@ export default function RegisterPage() {
 
             <p className="text-center text-xs text-charcoal-500 pt-1">
               Mẹ đã có tài khoản?{' '}
-              <Link href="/dang-nhap" className="font-bold text-honey-600 hover:text-honey-700 underline">
+              <Link href="/tai-khoan" className="font-bold text-honey-600 hover:text-honey-700 underline">
                 Đăng nhập ngay
               </Link>
             </p>

@@ -25,6 +25,11 @@ function LoginForm() {
   const { login, loginWithGoogle, isLoading } = useAuth();
   const { showToast } = useToast();
 
+  React.useEffect(() => {
+    const returnUrl = callbackUrl ? `?returnUrl=${encodeURIComponent(callbackUrl)}` : '';
+    router.replace(`/tai-khoan${returnUrl}`);
+  }, [router, callbackUrl]);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);

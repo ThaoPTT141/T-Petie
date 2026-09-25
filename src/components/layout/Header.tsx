@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
@@ -31,6 +31,18 @@ export function Header() {
   const [searchQuery, setSearchQuery] = useState('');
   const { scrollY } = useScroll();
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const userMenuRef = useRef<HTMLDivElement>(null);
+
+  // Đóng user menu khi click bên ngoài
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target as Node)) {
+        setIsUserMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Ẩn khi cuộn xuống, hiện khi cuộn lên
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -190,23 +202,25 @@ export function Header() {
               <Search className="w-5 h-5" />
             </button>
 
-            {/* TÀI KHOẢN: Nút "Tài Khoản" (Giữ icon user và style) / User Dropdown */}
+            {/* TÀI KHOẢN: Nút "Tài Khoản" chuẩn hoá / User Dropdown */}
             {isAuthenticated && user ? (
-              <div className="relative">
+              <div ref={userMenuRef} className="relative">
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center space-x-1.5 p-1 sm:px-2.5 sm:py-1 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800"
                 >
-                  <div className="w-6 h-6 rounded-full overflow-hidden bg-honey-500 text-white flex items-center justify-center text-[10px]">
+                  <div className="w-6 h-6 rounded-full overflow-hidden bg-gradient-to-tr from-amber-400 to-rose-300 text-white flex items-center justify-center text-[10px] font-bold shadow-sm">
                     {user.avatar ? (
                       <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
                     ) : user.role === 'admin' ? (
                       <Crown className="w-3.5 h-3.5" />
                     ) : (
-                      user.name.charAt(0)
+                      (user.name || 'Q').charAt(0).toUpperCase()
                     )}
                   </div>
-                  <span className="hidden md:inline max-w-[90px] truncate">{user.name}</span>
+                  <span className="hidden md:inline max-w-[140px] truncate">
+                    👤 {user.name || 'Nguyễn Như Quỳnh'}
+                  </span>
                   {user.role === 'admin' && (
                     <span className="hidden sm:inline text-[9px] bg-honey-500 text-white px-1.5 py-0.2 rounded-full font-mono">
                       Admin
@@ -219,17 +233,21 @@ export function Header() {
                 {isUserMenuOpen && (
                   <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-cream-300/90 ring-1 ring-black/5 py-2 z-50 animate-scale-up">
                     <div className="px-3.5 py-2 border-b border-cream-100">
-                      <p className="text-xs font-bold text-charcoal-900 truncate">{user.name}</p>
-                      <p className="text-[10px] text-charcoal-500 font-mono truncate">{user.email}</p>
-                      <span className={`inline-block mt-1 text-[9px] font-bold px-2 py-0.5 rounded-full ${
-                        user.role === 'admin' ? 'bg-honey-100 text-honey-800' : 'bg-sage-100 text-sage-800'
-                      }`}>
-                        {user.role === 'admin' ? '👑 Quản Trị Viên' : '🌸 Khách Hàng (Mẹ Bỉm)'}
-                      </span>
+                      <p className="text-xs font-bold text-charcoal-900 truncate">{user.name || 'Nguyễn Như Quỳnh'}</p>
+                      <p className="text-[10px] text-charcoal-500 font-mono truncate">{user.email || 'nhuquynh.marketing@gmail.com'}</p>
+                      {user.role === 'admin' ? (
+                        <span className="inline-block mt-1 text-[9px] font-bold px-2 py-0.5 rounded-full bg-honey-100 text-honey-800">
+                          👑 Quản Trị Viên
+                        </span>
+                      ) : (
+                        <span className="inline-block mt-1 text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-honey-700">
+                          ⭐ {user.points || 250} Điểm thưởng
+                        </span>
+                      )}
                     </div>
 
                     <div className="py-1 text-xs text-charcoal-900">
-                      {user.role === 'admin' ? (
+                      {user.role === 'admin' && (
                         <Link
                           href="/admin"
                           onClick={() => setIsUserMenuOpen(false)}
@@ -238,27 +256,15 @@ export function Header() {
                           <ShieldCheck className="w-4 h-4 text-honey-600" />
                           <span>Cổng Quản Trị (Admin)</span>
                         </Link>
-                      ) : (
-                        <Link
-                          href="/dashboard"
-                          onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-100 font-semibold text-charcoal-900"
-                        >
-                          <LayoutDashboard className="w-4 h-4 text-honey-600" />
-                          <span>Hồ Sơ &amp; Gợi Ý Size Bé</span>
-                        </Link>
                       )}
-
-                      {user.role === 'user' && (
-                        <Link
-                          href="/dashboard"
-                          onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-100 font-semibold text-charcoal-900"
-                        >
-                          <ShoppingBag className="w-4 h-4 text-sage-600" />
-                          <span>Đơn hàng của tôi</span>
-                        </Link>
-                      )}
+                      <Link
+                        href="/tai-khoan"
+                        onClick={() => setIsUserMenuOpen(false)}
+                        className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-100 font-semibold text-charcoal-900"
+                      >
+                        <UserIcon className="w-4 h-4 text-honey-600" />
+                        <span>Thông tin cá nhân</span>
+                      </Link>
                     </div>
 
                     <div className="pt-1 border-t border-cream-100">
@@ -278,7 +284,7 @@ export function Header() {
               </div>
             ) : (
               <Link
-                href="/dang-nhap"
+                href="/tai-khoan"
                 className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-cream-300 hover:border-honey-300 bg-white hover:bg-cream-50 text-xs font-bold text-charcoal-700 transition-all active:scale-95 shadow-2xs"
               >
                 <UserIcon className="w-3.5 h-3.5 text-honey-600" />

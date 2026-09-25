@@ -620,7 +620,7 @@
       <div class="space-y-3">
         <h4 class="font-heading font-bold text-sm text-charcoal-900 uppercase tracking-wider">CHĂM SÓC KHÁCH HÀNG</h4>
         <ul class="space-y-2 text-xs text-charcoal-600">
-          <li><a href="index.html#page-dang-nhap" class="hover:text-honey-600 block">Tra cứu đơn hàng</a></li>
+          <li><a href="tai-khoan.html" class="hover:text-honey-600 block">Tra cứu đơn hàng</a></li>
           <li><a href="javascript:void(0)" onclick="openGeneralSizeGuideModal()"
               class="hover:text-honey-600 block">Hướng dẫn chọn size</a></li>
           <li><a href="index.html" class="hover:text-honey-600 block">Hệ thống Showroom offline</a></li>
@@ -981,10 +981,10 @@
         class="absolute top-0.5 right-1 bg-rose-500 text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-full min-w-[16px] text-center shadow-sm">0</span>
       <span>Giỏ Hàng</span>
     </button>
-    <a href="index.html#page-dang-nhap"
+    <a href="tai-khoan.html"
       class="flex flex-col items-center py-1 px-2 text-charcoal-600 font-medium text-[10px] hover:text-honey-600 min-h-[44px] justify-center">
-      <span class="text-base">👤</span>
-      <span>Tài Khoản</span>
+      <span class="text-base" id="mobile-auth-icon">👤</span>
+      <span id="mobile-auth-label">Tài Khoản</span>
     </a>
   </div>
 
@@ -2164,10 +2164,10 @@
         container.innerHTML = `
           <div class="relative group">
             <button class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800">
-              <div class="w-5 h-5 rounded-full bg-gradient-to-tr from-amber-400 to-rose-300 text-white font-bold flex items-center justify-center text-[10px] shadow-sm">
+              <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-400 to-rose-300 text-white font-bold flex items-center justify-center text-[10px] shadow-sm">
                 ${initial}
               </div>
-              <span class="hidden sm:inline">${user.name || 'Như Quỳnh'}</span>
+              <span class="hidden sm:inline">👤 ${user.name || 'Nguyễn Như Quỳnh'}</span>
               <span class="text-[9px] text-charcoal-400">▼</span>
             </button>
             <div class="absolute right-0 top-full mt-1.5 w-48 bg-white rounded-2xl shadow-xl border border-cream-200 py-2 hidden group-hover:block z-50">
@@ -2176,27 +2176,33 @@
                 <div class="text-[10px] text-charcoal-400 font-mono truncate">${user.email || 'nhuquynh.marketing@gmail.com'}</div>
                 <div class="text-[10px] text-honey-600 font-bold mt-0.5">⭐ ${user.points || 250} Điểm thưởng</div>
               </div>
-              <a href="tai-khoan.html" class="block px-3 py-2 text-xs text-charcoal-700 hover:bg-cream-100 font-semibold">Hồ Sơ Cá Nhân</a>
-              <a href="uu-dai.html" class="block px-3 py-2 text-xs text-charcoal-700 hover:bg-cream-100 font-medium">Sản Phẩm Ưu Đãi Hot</a>
+              <a href="tai-khoan.html" class="block px-3 py-2 text-xs text-charcoal-700 hover:bg-cream-100 font-semibold">Thông tin cá nhân</a>
               <div class="border-t border-cream-100 my-1"></div>
               <button onclick="handleHeaderLogout()" class="w-full text-left px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 font-bold">Đăng Xuất</button>
             </div>
           </div>
         `;
+        const mobileLabel = document.getElementById('mobile-auth-label');
+        if (mobileLabel) mobileLabel.innerText = user.name ? user.name.split(' ').pop() : 'Tài Khoản';
       }
     }
 
     function handleHeaderLogout() {
       localStorage.removeItem('tpetie_user');
       localStorage.removeItem('tpetie_current_user');
+      localStorage.removeItem('tpetie_admin_token');
       showToast('Đã đăng xuất tài khoản an toàn.');
-      updateHeaderAuthUI();
+      setTimeout(() => {
+        updateHeaderAuthUI();
+        window.location.reload();
+      }, 300);
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       updateHeaderAuthUI();
       initCountdown();
     });
+    window.addEventListener('storage', updateHeaderAuthUI);
   </script>
 </body>
 

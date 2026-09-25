@@ -573,6 +573,14 @@
       }, 800);
     }
 
+    function startOAuthSimulation(provider) {
+      if (provider === 'google') {
+        openGoogleModal();
+      } else {
+        openFbModal();
+      }
+    }
+
     // Lưu session và chuyển trang
     function saveAndRedirect(userData) {
       localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(userData));
@@ -581,8 +589,12 @@
       showToast(`🌸 Đăng nhập thành công! Chào mừng Mẹ ${userData.name}`);
 
       setTimeout(() => {
-        const returnUrl = new URLSearchParams(window.location.search).get('returnUrl') || 'uu-dai.html';
-        window.location.href = returnUrl;
+        const returnUrl = new URLSearchParams(window.location.search).get('returnUrl');
+        if (returnUrl && returnUrl !== 'tai-khoan.html' && returnUrl !== '/tai-khoan' && returnUrl !== '/tai-khoan.html') {
+          window.location.href = returnUrl;
+        } else {
+          checkUserSession();
+        }
       }, 600);
     }
 
@@ -590,6 +602,7 @@
     function handleUserLogout() {
       localStorage.removeItem(STORAGE_KEY_USER);
       localStorage.removeItem(STORAGE_KEY_USER_LEGACY);
+      localStorage.removeItem('tpetie_admin_token');
       showToast('Đã đăng xuất tài khoản an toàn.');
       setTimeout(() => {
         checkUserSession();

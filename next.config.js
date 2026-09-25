@@ -27,6 +27,7 @@ const nextConfig = {
     return [
       { source: '/sale', destination: '/uu-dai.html' },
       { source: '/tai-khoan', destination: '/tai-khoan.html' },
+      { source: '/dang-nhap', destination: '/tai-khoan.html' },
       { source: '/admin-login', destination: '/admin-login.html' },
       { source: '/admin', destination: '/admin.html' },
     ];

@@ -106,9 +106,47 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const { data: session, status, update: updateSession } = useSession();
   const [adminUsers, setAdminUsers] = useState<User[]>(FALLBACK_USERS);
+  const [localUser, setLocalUser] = useState<User | null>(null);
+
+  // Đồng bộ trạng thái đăng nhập từ localStorage ('tpetie_user') dùng chung toàn web
+  const syncLocalUser = useCallback(() => {
+    try {
+      const stored = localStorage.getItem('tpetie_user') || localStorage.getItem('tpetie_current_user');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (parsed && (parsed.isLoggedIn || parsed.name || parsed.email)) {
+          setLocalUser({
+            id: parsed.id || 'user-local',
+            email: parsed.email || 'nhuquynh.marketing@gmail.com',
+            name: parsed.name || 'Nguyễn Như Quỳnh',
+            role: (parsed.role as UserRole) || 'user',
+            status: 'active',
+            avatar: parsed.avatar || undefined,
+            phone: parsed.phone || undefined,
+            address: parsed.address || undefined,
+            city: parsed.city || undefined,
+            points: parsed.points || 250,
+            babyProfile: parsed.babyProfile || undefined,
+            createdAt: parsed.loggedInAt || new Date().toISOString(),
+            lastLoginAt: parsed.loggedInAt || new Date().toISOString(),
+          });
+          return;
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    setLocalUser(null);
+  }, []);
+
+  useEffect(() => {
+    syncLocalUser();
+    window.addEventListener('storage', syncLocalUser);
+    return () => window.removeEventListener('storage', syncLocalUser);
+  }, [syncLocalUser]);
 
   // Chuyển đổi session từ NextAuth sang format User
-  const currentUser: User | null = session?.user
+  const sessionUser: User | null = session?.user
     ? {
         id: session.user.id || 'user-current',
         email: session.user.email || '',
@@ -125,8 +163,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     : null;
 
-  const isLoading = status === 'loading';
-  const isAuthenticated = status === 'authenticated' && !!currentUser;
+  const currentUser: User | null = sessionUser || localUser;
+  const isLoading = status === 'loading' && !localUser;
+  const isAuthenticated = (status === 'authenticated' && !!sessionUser) || !!localUser;
 
   // Tải danh sách user cho Admin từ API Backend
   const fetchAdminUsers = useCallback(async (): Promise<User[]> => {
@@ -229,7 +268,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // 4. Đăng xuất
   const logout = () => {
     trackLogout();
-    signOut({ callbackUrl: '/' });
+    try {
+      localStorage.removeItem('tpetie_user');
+      localStorage.removeItem('tpetie_current_user');
+      localStorage.removeItem('tpetie_admin_token');
+    } catch (e) {}
+    setLocalUser(null);
+    if (session) {
+      signOut({ callbackUrl: '/' });
+    } else {
+      window.location.reload();
+    }
   };
 
   // 5. Cập nhật hồ sơ cá nhân qua API Backend
