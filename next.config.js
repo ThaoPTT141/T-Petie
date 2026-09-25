@@ -28,8 +28,8 @@ const nextConfig = {
       { source: '/sale', destination: '/uu-dai.html' },
       { source: '/tai-khoan', destination: '/tai-khoan.html' },
       { source: '/dang-nhap', destination: '/tai-khoan.html' },
-      { source: '/admin-login', destination: '/admin-login.html' },
-      { source: '/admin', destination: '/admin.html' },
+      { source: '/admin-login', destination: '/tai-khoan.html' },
+      { source: '/admin', destination: '/tai-khoan.html' },
     ];
   },
 };

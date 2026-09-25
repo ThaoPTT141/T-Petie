@@ -209,15 +209,6 @@
 
           </div>
 
-          <!-- Chân trang: Liên kết tinh tế dành riêng cho Admin -->
-          <div class="mt-8 pt-5 border-t border-[#F0EBE1] text-center lg:text-left text-xs text-charcoal-400">
-            <span>Nhân viên quản trị hệ thống?</span>
-            <a href="admin-login.html" class="font-semibold text-amber-700 hover:text-amber-800 hover:underline ml-1 inline-flex items-center space-x-1">
-              <span>Đăng nhập Admin tại đây</span>
-              <span>→</span>
-            </a>
-          </div>
-
         </div>
 
       </div>
@@ -460,7 +451,7 @@
       if (userStr) {
         try {
           const user = JSON.parse(userStr);
-          if (user && user.isLoggedIn && user.role === 'user') {
+          if (user && user.isLoggedIn) {
             loginView.classList.add('hidden');
             profileView.classList.remove('hidden');
 

@@ -53,14 +53,8 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   {
     label: 'Ưu Đãi',
     href: '/sale',
-    badge: '-30%',
-    badgeColor: 'bg-orange-500',
-    children: [
-      { label: 'Mừng đại lễ 2/9', href: '/sale?campaign=dai-le-2-9', description: 'Đồng loạt giảm giá áo sơ mi & set bộ' },
-      { label: 'Sale hè', href: '/sale?campaign=sale-he', description: 'Đồng giá từ 145k váy voan & bloomer' },
-      { label: 'Sale Thu - Đông', href: '/sale?campaign=sale-thu-dong', description: 'Ưu đãi sớm BST Thu Đông và áo khoác' },
-      { label: 'Sale ngày đôi 10/10 11/11', href: '/sale?campaign=sale-ngay-doi', description: 'Bão deal quà tặng & voucher freeship' },
-    ],
+    badge: 'Hot',
+    badgeColor: 'bg-blush-500',
   },
 ];
 
