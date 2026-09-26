@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
@@ -118,7 +118,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           setLocalUser({
             id: parsed.id || 'user-local',
             email: parsed.email || 'me@tpetie.com',
-            name: parsed.name || 'Mẹ T'Petie',
+            name: parsed.name || "Mẹ T'Petie",
             role: (parsed.role as UserRole) || 'user',
             status: 'active',
             avatar: parsed.avatar || undefined,
