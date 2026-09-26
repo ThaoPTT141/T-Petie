@@ -219,17 +219,17 @@
         <div class="text-center mb-6">
           <div class="relative inline-block">
             <div id="user-avatar-badge" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-2xl sm:text-3xl flex items-center justify-center border-4 border-amber-100 shadow-md mx-auto">
-              Q
+              M
             </div>
             <span class="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow border border-cream-200 text-xs">
               🌸
             </span>
           </div>
           <h2 id="user-display-name" class="font-heading font-extrabold text-xl sm:text-2xl text-charcoal-900 mt-3">
-            Nguyễn Như Quỳnh
+            Mẹ T'Petie
           </h2>
           <p id="user-display-email" class="text-xs text-charcoal-400 font-mono mt-0.5">
-            nhuquynh.marketing@gmail.com
+            me@tpetie.com
           </p>
           <div class="inline-flex items-center space-x-1.5 mt-2.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200/60">
             <span>⭐</span>
@@ -437,9 +437,9 @@
             loginView.classList.add('hidden');
             profileView.classList.remove('hidden');
 
-            document.getElementById('user-display-name').innerText = user.name || 'Nguyễn Như Quỳnh';
-            document.getElementById('user-display-email').innerText = user.email || 'nhuquynh.marketing@gmail.com';
-            const firstLetter = (user.name || 'Q').charAt(0).toUpperCase();
+            document.getElementById('user-display-name').innerText = user.name || 'Mẹ T\'Petie';
+            document.getElementById('user-display-email').innerText = user.email || 'me@tpetie.com';
+            const firstLetter = (user.name || 'M').charAt(0).toUpperCase();
             document.getElementById('user-avatar-badge').innerText = firstLetter;
             if (user.points) {
               document.getElementById('user-points').innerText = `${user.points} ⭐`;
