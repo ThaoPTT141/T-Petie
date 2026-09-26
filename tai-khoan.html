@@ -199,77 +199,7 @@
 
       </div>
 
-      <!-- ==================== VIEW 2: PROFILE DASHBOARD (Khi Mẹ Đã Đăng Nhập) ==================== -->
-      <div id="profile-view" class="hidden bg-white rounded-3xl sm:rounded-[2rem] shadow-2xl border border-[#EFE9DF] p-6 sm:p-10 max-w-xl mx-auto transition-all">
-        
-        <div class="text-center mb-6">
-          <div class="relative inline-block">
-            <div id="user-avatar-badge" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-2xl sm:text-3xl flex items-center justify-center border-4 border-amber-100 shadow-md mx-auto">
-              M
-            </div>
-            <span class="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow border border-cream-200 text-xs">
-              🌸
-            </span>
-          </div>
-          <h2 id="user-display-name" class="font-heading font-extrabold text-xl sm:text-2xl text-charcoal-900 mt-3">
-            Mẹ T'Petie
-          </h2>
-          <p id="user-display-email" class="text-xs text-charcoal-400 font-mono mt-0.5">
-            me@tpetie.com
-          </p>
-          <div class="inline-flex items-center space-x-1.5 mt-2.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200/60">
-            <span>⭐</span>
-            <span>Thành Viên Thân Thiết T'Petie</span>
-          </div>
-        </div>
 
-        <!-- Thống kê điểm thưởng & ưu đãi -->
-        <div class="grid grid-cols-3 gap-3 mb-6 text-center">
-          <div class="bg-cream-50 p-3.5 rounded-2xl border border-cream-200">
-            <div class="text-[10px] text-charcoal-500 font-medium">Điểm Tích Lũy</div>
-            <div id="user-points" class="font-heading font-bold text-lg text-amber-600">250 ⭐</div>
-          </div>
-          <div class="bg-rose-50/60 p-3.5 rounded-2xl border border-rose-100">
-            <div class="text-[10px] text-charcoal-500 font-medium">Voucher Riêng</div>
-            <div class="font-heading font-bold text-lg text-rose-600">4 Mã Giảm</div>
-          </div>
-          <div class="bg-emerald-50/60 p-3.5 rounded-2xl border border-emerald-100">
-            <div class="text-[10px] text-charcoal-500 font-medium">Đơn Đã Đặt</div>
-            <div class="font-heading font-bold text-lg text-emerald-700">2 Đơn</div>
-          </div>
-        </div>
-
-        <!-- Tiện ích nhanh -->
-        <div class="space-y-2.5 mb-6">
-          <a href="uu-dai.html" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-50 hover:bg-cream-100 border border-cream-200 text-xs font-bold text-charcoal-800 transition-colors">
-            <span class="flex items-center space-x-2">
-              <span>🎁</span>
-              <span>Khám phá 49 mẫu váy áo đang Sale</span>
-            </span>
-            <span class="text-amber-600">Xem ngay →</span>
-          </a>
-          <a href="index.html" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-50 hover:bg-cream-100 border border-cream-200 text-xs font-bold text-charcoal-800 transition-colors">
-            <span class="flex items-center space-x-2">
-              <span>👗</span>
-              <span>Trang chủ Bộ sưu tập T'Petie</span>
-            </span>
-            <span class="text-amber-600">Khám phá →</span>
-          </a>
-        </div>
-
-        <!-- Nút Hành Động -->
-        <div class="grid grid-cols-2 gap-3">
-          <a href="uu-dai.html"
-            class="py-3 px-4 rounded-2xl bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold text-xs shadow-md transition-all text-center flex items-center justify-center">
-            Tiếp Tục Mua Sắm
-          </a>
-          <button onclick="handleUserLogout()"
-            class="py-3 px-4 rounded-2xl bg-white hover:bg-rose-50 active:scale-95 border border-rose-200 text-rose-600 font-bold text-xs transition-all">
-            Đăng Xuất Tài Khoản
-          </button>
-        </div>
-
-      </div>
 
     </div>
   </main>
@@ -420,16 +350,7 @@
         try {
           const user = JSON.parse(userStr);
           if (user && user.isLoggedIn) {
-            loginView.classList.add('hidden');
-            profileView.classList.remove('hidden');
-
-            document.getElementById('user-display-name').innerText = user.name || 'Mẹ T\'Petie';
-            document.getElementById('user-display-email').innerText = user.email || 'me@tpetie.com';
-            const firstLetter = (user.name || 'M').charAt(0).toUpperCase();
-            document.getElementById('user-avatar-badge').innerText = firstLetter;
-            if (user.points) {
-              document.getElementById('user-points').innerText = `${user.points} ⭐`;
-            }
+            window.location.href = 'index.html';
             return;
           }
         } catch (e) {
@@ -553,7 +474,7 @@
         if (returnUrl && returnUrl !== 'tai-khoan.html' && returnUrl !== '/tai-khoan' && returnUrl !== '/tai-khoan.html') {
           window.location.href = returnUrl;
         } else {
-          checkUserSession();
+          window.location.href = 'index.html';
         }
       }, 600);
     }
