@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
@@ -214,7 +214,7 @@ export function Header() {
                     )}
                   </div>
                   <span className="hidden md:inline max-w-[140px] truncate">
-                    👤 {user.name || 'Nguyễn Như Quỳnh'}
+                    👤 {user.name || 'Mẹ T'Petie'}
                   </span>
                   <ChevronDown className="w-3 h-3 text-charcoal-400" />
                 </button>
@@ -223,8 +223,8 @@ export function Header() {
                 {isUserMenuOpen && (
                   <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-cream-300/90 ring-1 ring-black/5 py-2 z-50 animate-scale-up">
                     <div className="px-3.5 py-2 border-b border-cream-100">
-                      <p className="text-xs font-bold text-charcoal-900 truncate">{user.name || 'Nguyễn Như Quỳnh'}</p>
-                      <p className="text-[10px] text-charcoal-500 font-mono truncate">{user.email || 'nhuquynh.marketing@gmail.com'}</p>
+                      <p className="text-xs font-bold text-charcoal-900 truncate">{user.name || 'Mẹ T'Petie'}</p>
+                      <p className="text-[10px] text-charcoal-500 font-mono truncate">{user.email || 'me@tpetie.com'}</p>
                       <span className="inline-block mt-1 text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-honey-700">
                         ⭐ {user.points || 250} Điểm thưởng
                       </span>

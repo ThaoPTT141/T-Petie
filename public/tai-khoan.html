@@ -219,17 +219,17 @@
         <div class="text-center mb-6">
           <div class="relative inline-block">
             <div id="user-avatar-badge" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-2xl sm:text-3xl flex items-center justify-center border-4 border-amber-100 shadow-md mx-auto">
-              Q
+              M
             </div>
             <span class="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow border border-cream-200 text-xs">
               🌸
             </span>
           </div>
           <h2 id="user-display-name" class="font-heading font-extrabold text-xl sm:text-2xl text-charcoal-900 mt-3">
-            Nguyễn Như Quỳnh
+            Mẹ T'Petie
           </h2>
           <p id="user-display-email" class="text-xs text-charcoal-400 font-mono mt-0.5">
-            nhuquynh.marketing@gmail.com
+            me@tpetie.com
           </p>
           <div class="inline-flex items-center space-x-1.5 mt-2.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200/60">
             <span>⭐</span>
@@ -313,54 +313,25 @@
         <div class="text-[11px] text-charcoal-500">Đang bảo mật phiên xác thực tài khoản</div>
       </div>
 
-      <!-- Danh sách tài khoản Google -->
-      <div id="google-account-list" class="space-y-2.5 my-4">
-        
-        <!-- Tài khoản 1: Nguyễn Như Quỳnh -->
-        <button onclick="executeGoogleLogin('Nguyễn Như Quỳnh', 'nhuquynh.marketing@gmail.com')"
-          class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-gray-200 hover:border-amber-400 hover:bg-amber-50/50 text-left transition-all group">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 via-rose-300 to-amber-200 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-sm border border-white">
-            Q
+      <!-- Form Đăng nhập Google (Mô phỏng nhập tài khoản thật) -->
+      <div id="google-account-list" class="space-y-3 my-4">
+        <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2.5">
+          <p class="text-[11px] text-charcoal-500 mb-2 text-center">Vui lòng đăng nhập bằng tài khoản Google của bạn</p>
+          <div>
+            <label class="text-[10px] font-bold text-charcoal-600 uppercase">Họ và tên của Mẹ</label>
+            <input type="text" id="custom-google-name" placeholder="Ví dụ: Hoàng Mai Anh"
+              class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
           </div>
-          <div class="flex-1 min-w-0">
-            <div class="text-xs font-bold text-charcoal-900 group-hover:text-amber-700 truncate">Nguyễn Như Quỳnh</div>
-            <div class="text-[10px] text-charcoal-400 truncate font-mono">nhuquynh.marketing@gmail.com</div>
+          <div>
+            <label class="text-[10px] font-bold text-charcoal-600 uppercase">Địa chỉ Email Google</label>
+            <input type="email" id="custom-google-email" placeholder="maianh.mom@gmail.com"
+              class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
           </div>
-          <span class="text-xs text-gray-300 group-hover:text-amber-500">→</span>
-        </button>
-
-        <!-- Tùy chọn 2: Sử dụng tài khoản khác -->
-        <div id="google-custom-account-block">
-          <button onclick="toggleCustomGoogleInput()"
-            class="w-full flex items-center space-x-3 p-3 rounded-2xl border border-dashed border-gray-300 hover:border-amber-400 hover:bg-slate-50 text-left transition-all group">
-            <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center text-sm font-semibold shrink-0">
-              👤+
-            </div>
-            <div class="flex-1 min-w-0">
-              <div class="text-xs font-semibold text-charcoal-700 group-hover:text-amber-700 truncate">Sử dụng một tài khoản khác</div>
-              <div class="text-[10px] text-charcoal-400 truncate">Nhập nhanh tài khoản Google của bạn</div>
-            </div>
+          <button onclick="submitCustomGoogleLogin()"
+            class="w-full mt-2 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-bold transition-all shadow-sm">
+            Xác Nhận &amp; Tiếp Tục
           </button>
-
-          <!-- Form nhập tài khoản khác -->
-          <div id="google-custom-form" class="hidden mt-3 p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
-            <div>
-              <label class="text-[10px] font-bold text-charcoal-600 uppercase">Họ và tên của Mẹ</label>
-              <input type="text" id="custom-google-name" placeholder="Ví dụ: Hoàng Mai Anh"
-                class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
-            </div>
-            <div>
-              <label class="text-[10px] font-bold text-charcoal-600 uppercase">Địa chỉ Email Google</label>
-              <input type="email" id="custom-google-email" placeholder="maianh.mom@gmail.com"
-                class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-cream-300 focus:outline-none focus:border-amber-500" />
-            </div>
-            <button onclick="submitCustomGoogleLogin()"
-              class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-bold transition-all shadow-sm">
-              Xác Nhận &amp; Tiếp Tục
-            </button>
-          </div>
         </div>
-
       </div>
 
       <div class="text-center pt-2 border-t border-gray-100 text-[10px] text-charcoal-400">
@@ -409,16 +380,27 @@
             </p>
           </div>
 
-          <!-- Nút Tiếp Tục Với Tên Như Quỳnh -->
-          <div class="space-y-2.5 pt-2">
-            <button onclick="executeFbLogin('Nguyễn Như Quỳnh', 'nhuquynh.fb@gmail.com')"
-              class="w-full flex items-center justify-center space-x-2.5 bg-[#1877F2] hover:bg-[#166FE5] text-white py-3 px-4 rounded-2xl font-bold text-xs sm:text-sm shadow-md transition-all active:scale-[0.98]">
-              <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px]">Q</div>
-              <span>Tiếp tục dưới tên Như Quỳnh</span>
-            </button>
+          <!-- Form Nhập Tài Khoản Facebook -->
+          <div class="space-y-3 pt-2 text-left">
+            <div class="bg-gray-50 p-3 rounded-2xl border border-gray-200 space-y-2.5">
+              <div>
+                <label class="text-[10px] font-bold text-charcoal-600 uppercase">Tên Facebook của Mẹ</label>
+                <input type="text" id="custom-fb-name" placeholder="Ví dụ: Mai Anh"
+                  class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-gray-300 focus:outline-none focus:border-[#1877F2]" />
+              </div>
+              <div>
+                <label class="text-[10px] font-bold text-charcoal-600 uppercase">Email hoặc Số điện thoại</label>
+                <input type="text" id="custom-fb-email" placeholder="maianh@gmail.com"
+                  class="w-full mt-1 px-3 py-2 text-xs bg-white rounded-xl border border-gray-300 focus:outline-none focus:border-[#1877F2]" />
+              </div>
+              <button onclick="submitCustomFbLogin()"
+                class="w-full mt-2 flex items-center justify-center space-x-2.5 bg-[#1877F2] hover:bg-[#166FE5] text-white py-2.5 px-4 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all active:scale-[0.98]">
+                <span>Tiếp tục</span>
+              </button>
+            </div>
 
             <button onclick="closeFbModal()"
-              class="w-full py-2.5 px-4 rounded-2xl bg-gray-100 hover:bg-gray-200 text-charcoal-700 font-semibold text-xs transition-all">
+              class="w-full py-2.5 px-4 rounded-xl bg-gray-100 hover:bg-gray-200 text-charcoal-700 font-semibold text-xs transition-all">
               Hủy
             </button>
           </div>
@@ -455,9 +437,9 @@
             loginView.classList.add('hidden');
             profileView.classList.remove('hidden');
 
-            document.getElementById('user-display-name').innerText = user.name || 'Nguyễn Như Quỳnh';
-            document.getElementById('user-display-email').innerText = user.email || 'nhuquynh.marketing@gmail.com';
-            const firstLetter = (user.name || 'Q').charAt(0).toUpperCase();
+            document.getElementById('user-display-name').innerText = user.name || 'Mẹ T\'Petie';
+            document.getElementById('user-display-email').innerText = user.email || 'me@tpetie.com';
+            const firstLetter = (user.name || 'M').charAt(0).toUpperCase();
             document.getElementById('user-avatar-badge').innerText = firstLetter;
             if (user.points) {
               document.getElementById('user-points').innerText = `${user.points} ⭐`;
@@ -493,11 +475,6 @@
       modal.classList.add('opacity-0');
       box.classList.add('scale-95');
       setTimeout(() => modal.classList.add('hidden'), 250);
-    }
-
-    function toggleCustomGoogleInput() {
-      const form = document.getElementById('google-custom-form');
-      form.classList.toggle('hidden');
     }
 
     function submitCustomGoogleLogin() {
@@ -546,6 +523,12 @@
       setTimeout(() => modal.classList.add('hidden'), 250);
     }
 
+    function submitCustomFbLogin() {
+      const name = document.getElementById('custom-fb-name').value.trim() || 'Mẹ Yêu';
+      const email = document.getElementById('custom-fb-email').value.trim() || 'me.tpetie@gmail.com';
+      executeFbLogin(name, email);
+    }
+
     function executeFbLogin(name, email) {
       document.getElementById('fb-content-body').classList.add('hidden');
       document.getElementById('fb-loading-state').classList.remove('hidden');
@@ -577,7 +560,7 @@
       localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(userData));
       localStorage.setItem(STORAGE_KEY_USER_LEGACY, JSON.stringify(userData));
 
-      showToast(`🌸 Đăng nhập thành công! Chào mừng Mẹ ${userData.name}`);
+      showToast(`🌸 Đăng nhập thành công! Chào mừng ${userData.name}`);
 
       setTimeout(() => {
         const returnUrl = new URLSearchParams(window.location.search).get('returnUrl');
