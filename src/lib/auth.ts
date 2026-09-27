@@ -15,8 +15,8 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET || 'tpetie_super_secret_jwt_key_2024_for_auth_session_signing',
   pages: {
-    signIn: '/tai-khoan',
-    error: '/tai-khoan',
+    signIn: '/dang-nhap',
+    error: '/dang-nhap',
   },
   providers: [
     // 1. Google OAuth Provider
