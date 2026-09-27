@@ -51,7 +51,7 @@ export default function ThanhCongPage() {
 
         <div className="space-y-3 pt-4">
           <Link
-            href="/be-gai"
+            href="/"
             className="w-full py-3.5 rounded-full bg-honey-500 hover:bg-honey-600 text-white font-bold text-sm shadow-md transition-all active:scale-95 flex items-center justify-center space-x-2"
           >
             <ShoppingBag className="w-4 h-4" />
