@@ -1,6 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
+import FacebookProvider from 'next-auth/providers/facebook';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { prisma } from '@/lib/prisma';
 import * as bcrypt from 'bcryptjs';
@@ -40,7 +41,29 @@ export const authOptions: NextAuthOptions = {
       },
     }),
 
-    // 2. Email & Password Credentials Provider
+    // 2. Facebook OAuth Provider
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID || '',
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET || '',
+      allowDangerousEmailAccountLinking: true,
+      profile(profile) {
+        return {
+          id: profile.id,
+          name: profile.name,
+          email: profile.email,
+          image: profile.picture?.data?.url,
+          role: 'user' as UserRole,
+          status: 'active' as UserStatus,
+          points: 100, // Tặng 100 điểm chào mừng
+          phone: null,
+          address: null,
+          city: null,
+          babyProfile: null,
+        };
+      },
+    }),
+
+    // 3. Email & Password Credentials Provider
     CredentialsProvider({
       name: 'Credentials',
       credentials: {

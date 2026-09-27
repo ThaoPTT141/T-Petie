@@ -20,7 +20,7 @@ import {
 
 export default function RegisterPage() {
   const router = useRouter();
-  const { register, loginWithGoogle, isLoading } = useAuth();
+  const { register, loginWithGoogle, loginWithFacebook, isLoading } = useAuth();
   const { showToast } = useToast();
 
   const [name, setName] = useState('');
@@ -74,7 +74,7 @@ export default function RegisterPage() {
 
     if (result.success) {
       showToast('🎉 Đăng ký thành công! Chào mừng Mẹ đến với T\'Petie.');
-      router.push('/dashboard');
+      router.push('/');
     } else {
       setErrorMessage(result.error || 'Đăng ký thất bại. Vui lòng thử lại.');
     }
@@ -88,7 +88,19 @@ export default function RegisterPage() {
 
     if (result.success) {
       showToast('Đăng ký qua Google thành công! 🌸');
-      router.push('/dashboard');
+      router.push('/');
+    }
+  };
+
+  const handleFacebookSignup = async () => {
+    setErrorMessage(null);
+    setIsSubmitting(true);
+    const result = await loginWithFacebook();
+    setIsSubmitting(false);
+
+    if (result.success) {
+      showToast('Đăng ký qua Facebook thành công! 🌸');
+      router.push('/');
     }
   };
 
@@ -176,6 +188,19 @@ export default function RegisterPage() {
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
               </svg>
               <span>Đăng ký nhanh bằng tài khoản Google</span>
+            </button>
+
+            {/* Facebook Signup */}
+            <button
+              type="button"
+              onClick={handleFacebookSignup}
+              disabled={isSubmitting || isLoading}
+              className="w-full py-2.5 px-4 rounded-2xl border border-cream-300 hover:border-honey-300 bg-[#1877F2]/10 hover:bg-[#1877F2]/20 text-[#1877F2] text-xs sm:text-sm font-semibold flex items-center justify-center space-x-2.5 transition-all active:scale-95 shadow-2xs mt-3"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Đăng ký nhanh bằng tài khoản Facebook</span>
             </button>
 
             <div className="relative flex items-center justify-center">

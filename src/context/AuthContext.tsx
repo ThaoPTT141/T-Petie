@@ -87,6 +87,7 @@ interface AuthContextType {
   isLoading: boolean;
   login: (credentials: AuthCredentials) => Promise<{ success: boolean; error?: string; role?: UserRole }>;
   loginWithGoogle: () => Promise<{ success: boolean; role?: UserRole }>;
+  loginWithFacebook: () => Promise<{ success: boolean; role?: UserRole }>;
   register: (data: RegisterData) => Promise<{ success: boolean; error?: string; role?: UserRole }>;
   logout: () => void;
   updateProfile: (data: Partial<User>) => Promise<{ success: boolean; error?: string }>;
@@ -233,7 +234,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const loginWithGoogle = async (): Promise<{ success: boolean; role?: UserRole }> => {
     try {
       trackLogin('google', 'google-oauth');
-      await signIn('google', { callbackUrl: '/dashboard' });
+      await signIn('google', { callbackUrl: '/' });
       return { success: true, role: 'user' };
     } catch (e) {
       console.error('Error during Google signIn:', e);
@@ -241,7 +242,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // 3. Đăng ký tài khoản mới qua API Backend
+  // 3. Đăng nhập qua NextAuth Facebook OAuth
+  const loginWithFacebook = async (): Promise<{ success: boolean; role?: UserRole }> => {
+    try {
+      trackLogin('facebook', 'facebook-oauth');
+      await signIn('facebook', { callbackUrl: '/' });
+      return { success: true, role: 'user' };
+    } catch (e) {
+      console.error('Error during Facebook signIn:', e);
+      return { success: false };
+    }
+  };
+
+  // 4. Đăng ký tài khoản mới qua API Backend
   const register = async (data: RegisterData): Promise<{ success: boolean; error?: string; role?: UserRole }> => {
     try {
       const res = await fetch('/api/auth/register', {
@@ -419,6 +432,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         isLoading,
         login,
         loginWithGoogle,
+        loginWithFacebook,
         register,
         logout,
         updateProfile,
