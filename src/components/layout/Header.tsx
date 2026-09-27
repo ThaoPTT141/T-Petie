@@ -232,7 +232,7 @@ export function Header() {
 
                     <div className="py-1 text-xs text-charcoal-900">
                       <Link
-                        href="/tai-khoan"
+                        href="/dang-nhap"
                         onClick={() => setIsUserMenuOpen(false)}
                         className="flex items-center space-x-2 px-3.5 py-2 hover:bg-cream-100 font-semibold text-charcoal-900"
                       >
@@ -258,7 +258,7 @@ export function Header() {
               </div>
             ) : (
               <Link
-                href="/tai-khoan"
+                href="/dang-nhap"
                 className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-cream-300 hover:border-honey-300 bg-white hover:bg-cream-50 text-xs font-bold text-charcoal-700 transition-all active:scale-95 shadow-2xs"
               >
                 <UserIcon className="w-3.5 h-3.5 text-honey-600" />
