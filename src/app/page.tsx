@@ -52,7 +52,7 @@ export default function HomePage() {
       <section id="flash-sale" className="px-4 sm:px-6 max-w-6xl mx-auto">
         <Link 
           href="/sale"
-          className="block relative w-full rounded-3xl overflow-hidden shadow-soft hover:shadow-md transition-shadow bg-[#f9f0e0]"
+          className="block relative w-full rounded-3xl overflow-hidden shadow-soft hover:shadow-md transition-shadow bg-[#FFF4F7]"
           style={{ aspectRatio: '3168 / 1344' }}
           data-track="home-flash-sale-banner"
         >

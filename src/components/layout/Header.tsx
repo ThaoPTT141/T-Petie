@@ -206,7 +206,7 @@ export function Header() {
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center space-x-1.5 p-1 sm:px-2.5 sm:py-1 rounded-full bg-cream-100 hover:bg-honey-100 border border-cream-300 transition-all text-xs font-bold text-charcoal-800"
                 >
-                  <div className="w-6 h-6 rounded-full overflow-hidden bg-gradient-to-tr from-amber-400 to-rose-300 text-white flex items-center justify-center text-[10px] font-bold shadow-sm">
+                  <div className="w-6 h-6 rounded-full overflow-hidden bg-gradient-to-tr from-honey-500 to-blush-500 text-white flex items-center justify-center text-[10px] font-bold shadow-sm">
                     {user.avatar ? (
                       <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
                     ) : (
@@ -225,7 +225,7 @@ export function Header() {
                     <div className="px-3.5 py-2 border-b border-cream-100">
                       <p className="text-xs font-bold text-charcoal-900 truncate">{user.name || "Mẹ T'Petie"}</p>
                       <p className="text-[10px] text-charcoal-500 font-mono truncate">{user.email || 'me@tpetie.com'}</p>
-                      <span className="inline-block mt-1 text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-honey-700">
+                      <span className="inline-block mt-1 text-[9px] font-bold px-2 py-0.5 rounded-full bg-honey-50 text-honey-700">
                         ⭐ {user.points || 250} Điểm thưởng
                       </span>
                     </div>

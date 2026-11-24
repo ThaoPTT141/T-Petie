@@ -199,7 +199,7 @@ function LoginForm() {
             <button
               type="submit"
               disabled={isSubmitting || isLoading}
-              className="w-full py-4 mt-2 rounded-2xl bg-[#A88160] hover:bg-[#8F6B4C] text-white font-bold text-base shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center justify-center space-x-2 disabled:opacity-50"
+              className="w-full py-4 mt-2 rounded-2xl bg-honey-500 hover:bg-honey-600 text-white font-bold text-base shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center justify-center space-x-2 disabled:opacity-50"
             >
               {isSubmitting ? (
                 <>

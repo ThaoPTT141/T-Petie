@@ -9,7 +9,7 @@
   }
 
   body {
-    background-color: #FFFDF9;
+    background-color: #FFFBFC;
     color: #2D3142;
     font-family: var(--font-be-vietnam-pro);
     -webkit-tap-highlight-color: transparent;
@@ -27,7 +27,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #EADCCF;
+  background: #F2D2DE;
   border-radius: 9999px;
 }
 

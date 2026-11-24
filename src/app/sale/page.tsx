@@ -143,11 +143,11 @@ function SaleContent() {
       <Breadcrumb items={[{ label: 'Chương Trình Ưu Đãi & Khuyến Mãi', href: '/sale' }]} />
 
       {/* ==================== HERO SALE BANNER & COUNTDOWN ==================== */}
-      <section className="relative rounded-3xl border border-rose-100/70 shadow-sm overflow-hidden bg-gradient-to-r from-amber-50 via-rose-50 to-orange-50 p-5 sm:p-7 md:p-8 lg:p-10 text-charcoal-900 transition-all">
+      <section className="relative rounded-3xl border border-rose-100/70 shadow-sm overflow-hidden bg-gradient-to-r from-honey-50 via-rose-50 to-blush-50 p-5 sm:p-7 md:p-8 lg:p-10 text-charcoal-900 transition-all">
         {/* Decorative Warm & Pastel Glows */}
         <div className="absolute -right-12 -top-12 w-64 sm:w-80 h-64 sm:h-80 bg-rose-200/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -left-12 -bottom-12 w-56 sm:w-72 h-56 sm:h-72 bg-amber-200/25 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/2 left-1/3 w-40 h-40 bg-orange-100/40 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute -left-12 -bottom-12 w-56 sm:w-72 h-56 sm:h-72 bg-honey-200/25 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/3 w-40 h-40 bg-blush-100/40 rounded-full blur-2xl pointer-events-none" />
 
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 items-center gap-6 lg:gap-8">
           {/* Cột Trái (Nội dung & Countdown): Mobile xếp trên, Desktop chiếm 7/12 */}
@@ -227,7 +227,7 @@ function SaleContent() {
                 onClick={() => {
                   document.getElementById('all-sale-products')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300 group"
+                className="inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-honey-500 via-rose-500 to-honey-600 hover:from-honey-600 hover:to-rose-600 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300 group"
               >
                 <span>🛍️</span>
                 <span>Khám Phá Ưu Đãi Ngay</span>
@@ -265,7 +265,7 @@ function SaleContent() {
           <div className="order-2 md:order-2 md:col-span-5 lg:col-span-5 flex justify-center md:justify-end">
             <div className="relative w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[330px]">
               {/* Decorative soft backdrop glow */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-rose-300/30 via-amber-200/30 to-orange-200/30 rounded-3xl blur-xl pointer-events-none" />
+              <div className="absolute -inset-2 bg-gradient-to-tr from-rose-300/30 via-honey-200/30 to-blush-100/40 rounded-3xl blur-xl pointer-events-none" />
 
               {/* Khung ảnh chính bo góc nghệ thuật */}
               <div
@@ -285,7 +285,7 @@ function SaleContent() {
                 />
 
                 {/* Sticker giảm giá */}
-                <div className="absolute top-2.5 right-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-extrabold text-[11px] sm:text-xs px-3 py-1 rounded-full shadow-md border border-white -rotate-6 flex items-center space-x-1 pointer-events-none">
+                <div className="absolute top-2.5 right-2.5 bg-gradient-to-r from-honey-500 to-rose-500 text-white font-extrabold text-[11px] sm:text-xs px-3 py-1 rounded-full shadow-md border border-white -rotate-6 flex items-center space-x-1 pointer-events-none">
                   <span>🏷️</span>
                   <span>Giảm tới 35%</span>
                 </div>
@@ -325,8 +325,8 @@ function SaleContent() {
         <div className="snap-x snap-mandatory flex overflow-x-auto no-scrollbar gap-2.5 sm:gap-3.5 pb-1 -mx-3 px-3 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3">
           {/* Voucher 1: Giảm 20k */}
           <div className="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
-            <div className="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10" />
-            <div className="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10" />
+            <div className="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFBFC] border border-rose-200 z-10" />
+            <div className="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFBFC] border border-rose-200 z-10" />
             <div className="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none" />
 
             <div className="space-y-0.5 pr-4 flex-1 min-w-0">
@@ -353,8 +353,8 @@ function SaleContent() {
 
           {/* Voucher 2: Freeship */}
           <div className="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
-            <div className="absolute -top-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10" />
-            <div className="absolute -bottom-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10" />
+            <div className="absolute -top-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFBFC] border border-rose-200 z-10" />
+            <div className="absolute -bottom-2.5 right-[96px] sm:right-[106px] w-4 h-4 rounded-full bg-[#FFFBFC] border border-rose-200 z-10" />
             <div className="absolute top-2 bottom-2 right-[103px] sm:right-[113px] border-r border-dashed border-rose-200/90 pointer-events-none" />
 
             <div className="space-y-0.5 pr-4 flex-1 min-w-0">
@@ -372,12 +372,12 @@ function SaleContent() {
 
           {/* Voucher 3: Giảm 10% First Order */}
           <div className="min-w-[275px] sm:min-w-0 snap-center p-3 sm:p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-dashed border-rose-200 flex items-center justify-between shadow-card hover:border-rose-300 hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 shrink-0 relative overflow-hidden group">
-            <div className="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10" />
-            <div className="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFDF9] border border-rose-200 z-10" />
+            <div className="absolute -top-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFBFC] border border-rose-200 z-10" />
+            <div className="absolute -bottom-2.5 right-[86px] sm:right-[96px] w-4 h-4 rounded-full bg-[#FFFBFC] border border-rose-200 z-10" />
             <div className="absolute top-2 bottom-2 right-[93px] sm:right-[103px] border-r border-dashed border-rose-200/90 pointer-events-none" />
 
             <div className="space-y-0.5 pr-4 flex-1 min-w-0">
-              <div className="text-amber-600 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
+              <div className="text-honey-600 font-bold text-xs sm:text-sm flex items-center space-x-1 truncate">
                 <span>🎁</span>
                 <span>Giảm 10% Tối Đa 50k</span>
               </div>
@@ -391,7 +391,7 @@ function SaleContent() {
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 shrink-0 min-h-[36px] flex items-center justify-center space-x-1 border ${
                 copiedVoucher === 'MEMBERVIP'
                   ? 'bg-emerald-50 text-emerald-600 border-emerald-200'
-                  : 'bg-amber-50 hover:bg-amber-500 text-amber-700 hover:text-white border-amber-200'
+                  : 'bg-honey-50 hover:bg-honey-500 text-honey-700 hover:text-white border-honey-200'
               }`}
             >
               <span>{copiedVoucher === 'MEMBERVIP' ? '✓ Đã Lưu' : 'Lưu Mã'}</span>

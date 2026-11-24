@@ -11,10 +11,10 @@ const config: Config = {
     extend: {
       colors: {
         cream: {
-          50: '#FFFDF9',
-          100: '#FFF8EE',
-          200: '#F5EBE1',
-          300: '#EADCCF',
+          50: '#FFFBFC',
+          100: '#FFF4F7',
+          200: '#FAE6ED',
+          300: '#F2D2DE',
         },
         sage: {
           50: '#F4FAF5',
@@ -23,11 +23,16 @@ const config: Config = {
           700: '#4B834E',
         },
         honey: {
-          50: '#FFFBF0',
-          100: '#FFF2D6',
-          500: '#F5A623',
-          600: '#D97706',
-          700: '#B45309',
+          50: '#FFF5F8',
+          100: '#FFE6EE',
+          200: '#FACAD9',
+          300: '#F3A6C0',
+          400: '#EA85A8',
+          500: '#DF6D96',
+          600: '#C8507E',
+          700: '#AD3C68',
+          800: '#8F2F55',
+          900: '#722443',
         },
         blush: {
           50: '#FFF5F5',
@@ -47,7 +52,7 @@ const config: Config = {
         serif: ['Playfair Display', 'Georgia', 'serif'],
       },
       boxShadow: {
-        soft: '0 4px 20px -2px rgba(220, 190, 160, 0.15)',
+        soft: '0 4px 20px -2px rgba(223, 109, 150, 0.14)',
         card: '0 2px 10px rgba(0, 0, 0, 0.04)',
       },
       borderRadius: {

@@ -12,7 +12,7 @@ const banners = [
     alt: 'BST Trung Thu: Rằm Tháng Tám',
     href: '/bo-suu-tap/trung-thu-kem-com',
     collection: 'BST Trung Thu: Rằm Tháng Tám',
-    bg: '#FFF8E7',
+    bg: '#FFF5F8',
     objectPosition: 'center center'
   },
   {
@@ -29,7 +29,7 @@ const banners = [
     alt: 'BST Hạ Mật: Embracing the colour of Summer',
     href: '/bo-suu-tap/ha-mat',
     collection: 'BST Hạ Mật: Hè Yêu Nhẹ Nhàng',
-    bg: '#FFF8E7',
+    bg: '#FFF5F8',
     objectPosition: 'center center'
   }
 ];
@@ -108,7 +108,7 @@ export function HeroCarousel() {
       </div>
 
       {/* Quick Action & Info Bar under Banner */}
-      <div className="p-4 sm:p-5 bg-gradient-to-r from-cream-100 via-blush-50 to-sage-50 border-t border-cream-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="p-4 sm:p-5 bg-gradient-to-r from-cream-100 via-blush-50 to-cream-50 border-t border-cream-200 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="flex items-center space-x-2 text-xs sm:text-sm text-charcoal-700 text-center sm:text-left transition-opacity duration-300">
           <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-honey-500 text-white text-[11px] font-bold shrink-0 shadow-sm">
             <Sparkles className="w-3 h-3 mr-1" />
