@@ -4,13 +4,12 @@
 
 ## Liên kết nhanh
 
-- **Looker Studio (Google Data Studio) trực tiếp:** [Mở Dashboard Looker Studio](https://datastudio.google.com/u/0/reporting/3c5a1df3-e79d-47fd-ac0a-94720a20d85d/page/p_meph5qlj9d/edit)
-  - URL gốc: `https://datastudio.google.com/u/0/reporting/3c5a1df3-e79d-47fd-ac0a-94720a20d85d/page/p_meph5qlj9d/edit`
-- **Bản PDF đính kèm (5 trang đầy đủ):** [Dashboard_Hệ_Sinh_Thái.pdf](./Dashboard_H%E1%BB%87_Sinh_Th%C3%A1i.pdf)
+- **Looker Studio (Google Data Studio) trực tiếp:** [Mở Dashboard Looker Studio](https://datastudio.google.com/u/0/reporting/3c5a1df3-e79d-47fd-ac0a-94720a20d85d/page/9Q3DG/edit)
+  - URL gốc: `https://datastudio.google.com/u/0/reporting/3c5a1df3-e79d-47fd-ac0a-94720a20d85d/page/9Q3DG/edit`
 
 ---
 
-## Tổng quan 5 trang trong bản PDF
+## Tổng quan 5 trang báo cáo trong Dashboard
 
 ### Trang 1 — Báo cáo số liệu Google Analytics (Website T'Petie)
 
@@ -116,3 +115,4 @@
 | IG03 | INSTAGRAM | Tổng tương tác Instagram | 1.340 | 887 | 66,19% | CHUA_DAT | Cao nhất 3 kênh social; kéo 176 phiên về Web |
 | IG02 | INSTAGRAM | Tổng lượt xem Instagram | 13.300 | 8.666 | 65,16% | CHUA_DAT | Tuần 5 bứt phá 5.480 lượt nhờ ads ngày 12/11 (~2.778 lượt) |
 | IG01 | INSTAGRAM | Số bài đăng Instagram | 38 bài | 32 bài | 84,21% | CHUA_DAT | Đạt 100% Tuần 1 & 2; Tuần 5 đạt 7/11 bài |
+
