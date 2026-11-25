@@ -281,14 +281,15 @@ Bé nhà các mẹ có bộ nào mặc xong đòi mặc tiếp không? 👉 tpet
 
 ### Ảnh thật làm gốc, thiết kế chỉ làm cho xinh hơn
 
-> **Quy tắc thiết kế:** Luôn lấy ảnh thật làm gốc rồi thiết kế cho xinh đúng phong cách BST đó — không dùng ảnh vẽ lại hay ảnh mẫu khác. Năm trên ảnh là **2027**. Không ghi tuổi bé. Chữ chừa lề an toàn, không chạm mép, không đè lên chi tiết thêu. Set 1 Noel giữ **ảnh gốc** làm ảnh chính, chỉ thiết kế lại khi up bài.
+> **Quy tắc thiết kế:** **Trước khi tạo/thiết kế ảnh, bắt buộc viết prompt (mô tả chi tiết ảnh gốc sử dụng, bố cục, nội dung chữ, phong cách BST) gửi sếp duyệt trước; chỉ sau khi sếp duyệt prompt mới tiến hành tạo ảnh.** Luôn lấy ảnh thật làm gốc rồi thiết kế cho xinh đúng phong cách BST đó — không dùng ảnh vẽ lại hay ảnh mẫu khác. Năm trên ảnh là **2027**. Không ghi tuổi bé. Chữ chừa lề an toàn, không chạm mép, không đè lên chi tiết thêu. Set 1 Noel giữ **ảnh gốc** làm ảnh chính, chỉ thiết kế lại khi up bài.
 
-#### 4 bước chọn và xử lý ảnh
+#### Quy trình chọn, duyệt prompt và xử lý ảnh
 
 1. **Chọn thư mục theo trụ** — theo bảng ghép ở dưới.
 2. **Liệt kê và tải ảnh** — chỉ tải file ảnh/video đã lưu, kiểm tra lại quyền truy cập Drive trước khi tải.
 3. **Đổi HEIC sang JPG** — Threads chỉ nhận JPEG, PNG, WebP tĩnh, MP4, MOV; dung lượng dưới 100 MB; ưu tiên dọc 4:5 cho Threads, 9:16 cho TikTok.
-4. **Soi ảnh trước khi đăng** — đọc mọi chữ trên ảnh, đối chiếu năm, thương hiệu, tên sản phẩm, giá với shop/Sheet; ghi tên file + thư mục nguồn vào file queue để không chọn trùng.
+4. **Viết prompt gửi sếp duyệt trước** — trình bày rõ ảnh gốc dự kiến dùng, ý tưởng thiết kế và chữ đặt trên ảnh; **chờ sếp duyệt prompt xong mới bắt đầu tạo ảnh**.
+5. **Tạo ảnh & soi ảnh trước khi đăng** — tạo/thiết kế ảnh theo đúng prompt đã duyệt; đọc mọi chữ trên ảnh, đối chiếu năm, thương hiệu, tên sản phẩm, giá với shop/Sheet; ghi tên file + thư mục nguồn vào file queue để không chọn trùng.
 
 #### Ảnh gốc 3 set Noel — dùng ngay, không qua Drive
 
@@ -351,6 +352,7 @@ Bé nhà các mẹ có bộ nào mặc xong đòi mặc tiếp không? 👉 tpet
 | **Thân bài** | Phần chính | 2–3 ý, mỗi ý 1 câu ngắn gắn 1 chi tiết thật: sản phẩm — chất liệu/thêu tay — ưu đãi (chỉ khi đang chạy, ghi đúng mức và điều kiện). |
 | **Kết** | 3–5 giây cuối | 1 câu hỏi mở hoặc lời mời khoe. Không dùng CTA dụ comment. Link và hotline để trong caption, không nhồi vào video. |
 
+- **Duyệt prompt trước khi tạo:** **Trước khi tạo/dựng video, bắt buộc viết prompt (nêu rõ nguồn ảnh thật, kịch bản 3 phần, chữ hiển thị trên video, hiệu ứng chuyển động, khung hình 9:16) gửi sếp duyệt trước; chỉ sau khi sếp duyệt prompt mới tiến hành tạo video.**
 - **Độ dài:** 5–8 giây cho video 2 ảnh; tối đa 15 giây cho video giới thiệu 1 set. Mỗi ảnh giữ 2,5–4 giây.
 - **Chuyển động:** zoom chậm, pan nhẹ — tuyệt đối không để ảnh đứng yên nhìn đơ.
 - **Khung hình:** 9:16, 1080×1920 cho Reel/TikTok. Chữ trên video ngắn, đúng chính tả, năm 2027, không nhắc tuổi bé.
@@ -410,6 +412,7 @@ Mặc định video T'Petie là **nhạc + chữ trên hình, không voiceover**
 - [ ] Không CTA dụ comment. Lời khách trích nguyên văn, giữ lỗi chính tả và emoji.
 
 #### Checklist ảnh
+- [ ] Đã viết prompt tạo/thiết kế ảnh và được sếp duyệt trước khi tạo ảnh.
 - [ ] Ảnh thật phòng may mẫu. Set 1 Noel giữ ảnh gốc làm ảnh chính.
 - [ ] Soi từng chữ 2 lần (lúc làm ảnh + lúc gửi duyệt): tên set, giá, năm **2027**, chính tả. Bài học: ảnh teaser 17/11 từng ghi nhầm năm.
 - [ ] Chữ chừa lề, không cắt mép, không đè chi tiết thêu. Không ghi tuổi bé.
@@ -417,6 +420,7 @@ Mặc định video T'Petie là **nhạc + chữ trên hình, không voiceover**
 - [ ] Không trùng sản phẩm hôm trước; dùng lại trong tuần thì đổi góc/thiết kế. HEIC đã đổi sang JPG.
 
 #### Checklist video
+- [ ] Đã viết prompt tạo/dựng video và được sếp duyệt trước khi tạo video.
 - [ ] Có chuyển động thật (zoom/pan), không ảnh đứng yên. Nhạc miễn phí đã duyệt, gắn chìm, credit nếu cần.
 - [ ] Đúng khung: TikTok/Reel 9:16 1080×1920; carousel IG 4:5. Mở xem thử đúng tỉ lệ trước khi gửi.
 - [ ] Voice (nếu có) đã được sếp yêu cầu và chọn giọng riêng cho video đó; không dùng giọng Ngọc Ngạn.
@@ -574,8 +578,8 @@ Câu nguyên văn của mẹ, lấy từ 10 ảnh tin nhắn trong thư mục Dr
 | Xếp lịch tuần mới | **01** | 7 bước: trụ → topic → định dạng → kênh → ảnh → deadline → người phụ trách. 3 bài/ngày, 19h–21h. |
 | Tìm ý tưởng bài | **02** | 4 trụ, 20 chủ đề con, tỉ lệ 60/30/10, chấm ≥ 50 điểm mới vào lịch. |
 | Viết bài mới | **03** | Threads ≤ 500 ký tự, IG/TikTok ≤ 2.200, 3–5 hashtag, cổng 3 câu hỏi, 3 bản khác nhau cho 3 kênh. |
-| Chọn / làm ảnh | **04** | Ảnh thật làm gốc, năm 2027, HEIC → JPG, soi chữ 2 lần, ghi queue. |
-| Dựng video / Reel | **05** | 5–8 giây cho video 2 ảnh, tối đa 15 giây cho video giới thiệu 1 set, zoom chậm, nhạc chờ sếp duyệt trong 3 lựa chọn A/B/C, TikTok đăng tay. |
+| Chọn / làm ảnh | **04** | Viết prompt gửi sếp duyệt trước → tạo ảnh từ ảnh thật, năm 2027, HEIC → JPG, soi chữ 2 lần, ghi queue. |
+| Dựng video / Reel | **05** | Viết prompt gửi sếp duyệt trước → tạo video 5–8 giây (2 ảnh) / tối đa 15 giây (1 set), zoom chậm, nhạc chờ sếp duyệt trong 3 lựa chọn A/B/C, TikTok đăng tay. |
 | Chuẩn bị đăng | **06** | Checklist caption + ảnh + video → sếp duyệt → đăng → ghi log. |
 | Tra bối cảnh / số liệu chuẩn | **07** | Mở `tpetie-bo-canh.md`: Doc trình bày đủ ở đầu file (Giới thiệu DN, Vấn đề DN, hệ sinh thái), các mục 4–12 trình bày đủ ở các trang Skill 07, không tóm tắt. |
 
@@ -590,3 +594,4 @@ Câu nguyên văn của mẹ, lấy từ 10 ảnh tin nhắn trong thư mục Dr
 `01-ke-hoach-social.md` • `02-content-pillar-topic.md` • `03-viet-content-caption.md` • `04-tao-anh.md` • `05-tao-video.md` • `06-kiem-tra-va-dang-bai.md` • `07-boi-canh.md` — trong thư mục `tpetie-skill-content`; nội dung Skill 07 chính là file bối cảnh chung `tpetie-bo-canh.md` và file vòng lặp `threads-loop-tpetie.md`. Bản PDF là bản tổng hợp để đọc và in; khi số liệu mâu thuẫn, lấy bối cảnh chung làm chuẩn và kiểm lại trên shop/Sheet ngay trước giờ đăng.
 
 > **Bài nào cũng gửi sếp check trước khi đăng. Đó là quy tắc không có ngoại lệ trong cả 7 skill.**
+
